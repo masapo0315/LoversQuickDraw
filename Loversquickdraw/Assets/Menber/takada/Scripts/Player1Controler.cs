@@ -15,7 +15,8 @@ public class Player1Controler : MonoBehaviour {
 
         rb = GetComponent<Rigidbody>();
 
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
