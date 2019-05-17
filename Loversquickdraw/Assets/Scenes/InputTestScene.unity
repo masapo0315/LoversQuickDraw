@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 590574077}
   - component: {fileID: 590574076}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: RightCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -373,6 +373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f6f2d498e963d4383f582f9451a279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Lcube: {fileID: 2043059891}
+  Rcube: {fileID: 590574074}
 --- !u!4 &1369615497
 Transform:
   m_ObjectHideFlags: 0
@@ -557,7 +559,7 @@ GameObject:
   - component: {fileID: 2043059894}
   - component: {fileID: 2043059893}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: LeftCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
