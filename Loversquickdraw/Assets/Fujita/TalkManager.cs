@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TalkManager : MonoBehaviour
-{
+public class TalkManager : MonoBehaviour {
 
     int comment = 0;
     int name = 0;
@@ -14,14 +13,20 @@ public class TalkManager : MonoBehaviour
         new string[]{"こんにちは","Player2"},
         new string[]{"こんばんは","Player1"},
     };
-
+    
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Talk[" + name + "][" + comment + "]=" + Talk[name][comment]);
             name++;
-            name %= 3;
+            if (name >= 3)
+            {
+                name = 0;
+            }
+
+            //name %= 3;
+
+            Debug.Log("Talk[" + name + "][" + comment + "]=" + Talk[name][comment]);
         }
 
         //if (Input.GetMouseButtonDown(1))
