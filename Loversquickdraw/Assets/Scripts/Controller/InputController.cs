@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//岩崎
 public class InputController : MonoBehaviour
 {
 
 	void Update ()
     {
-        if (OVRInput.GetDown(OVRInput.RawButton.A))
+        if (OVRInput.GetDown(OVRInput.Touch.One))
         {
             Debug.Log("Aボタンを押した");
         }
-        if (OVRInput.GetDown(OVRInput.RawButton.B))
+        if (OVRInput.GetDown(OVRInput.RawTouch.B))
         {
             Debug.Log("Bボタンを押した");
         }

@@ -5,6 +5,8 @@ using UnityEngine.XR;
 /// <summary>
 /// いじらないで
 /// </summary>右コントローラーのスティック押し込み
+
+//岩崎
 public static class InputManager
 {
     //ボタン入力
