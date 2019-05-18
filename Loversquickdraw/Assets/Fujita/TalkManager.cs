@@ -11,30 +11,29 @@ public class TalkManager : MonoBehaviour {
     {
         new string[]{"おはよう","Player1"},
         new string[]{"こんにちは","Player2"},
-        new string[]{"こんばんは","Player1"},
+        new string[]{"こんばんは","Player3"},
     };
     
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
+
+            Debug.Log("Talk[" + name + "][" + comment + "]=" + Talk[name][comment]);
             name++;
             if (name >= 3)
             {
                 name = 0;
             }
-
             //name %= 3;
-
-            Debug.Log("Talk[" + name + "][" + comment + "]=" + Talk[name][comment]);
         }
 
-        //if (Input.GetMouseButtonDown(1))
-        //{
-        //    comment++;
-        //    comment %= 2;
-        //    Debug.Log("Talk[" + name + "][" + comment + "]=" + Talk[name][comment]);
-        //}
+        if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log("Talk[" + name + "][" + comment + "]=" + Talk[name][comment]);
+            comment++;
+            comment %= 2;
+        }
     }
 
 }
