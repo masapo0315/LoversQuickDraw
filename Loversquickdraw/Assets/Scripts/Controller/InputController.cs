@@ -6,53 +6,57 @@ using UnityEngine.UI;
 //岩崎
 public class InputController : MonoBehaviour
 {
-    [SerializeField] private GameObject Lcube;
-    [SerializeField] private GameObject Rcube;
+    //左コン
     [SerializeField] private Text L_text;
-    [SerializeField] private Text R_text;
-
-    private Vector3 L_defPos;
-    private Vector3 R_defPos;
-
+    [SerializeField] private Text L_debugtext;
+    [SerializeField] private GameObject Lcube;
     private int L_count = 0;
+    private Vector3 L_defPos;
+    private Vector3 L_initialPos;
+    
+    //右コン
+    [SerializeField] private Text R_text;
+    [SerializeField] private Text R_debugtext;
+    [SerializeField] private GameObject Rcube;
     private int R_count = 0;
+    private Vector3 R_defPos;
+    private Vector3 R_initialPos;
 
-    private bool L_Concheck = false;
-    private bool R_Concheck = false;
+    [SerializeField] private float sheikuTime;
+    
+    private int posGetCount = 0;
 
-    private void Start()
-    {
-        L_defPos = Lcube.transform.position;
-        R_defPos = Rcube.transform.position;
-    }
-
+    private bool getPosFlag = false;
+    
     void Update ()
     {
-        L_text.text = Lcube.transform.position.y.ToString();
-        R_text.text = Rcube.transform.position.y.ToString();
-        //Debug.Log(L_defPos.y);
-        //Debug.Log(R_defPos.y);
-        if (L_Concheck == false && Lcube.transform.position.y < L_defPos.y + 0.02f && Lcube.transform.position.y > L_defPos.y - 0.02f)
+        /*
+         コントローラーを振ったときに一定の範囲内に入ったときにcountが進む
+         */
+        if(posGetCount <= 5)
         {
-            L_Concheck = true;
+            L_initialPos.y = L_defPos.y;
+            R_initialPos = R_defPos;
+            posGetCount = posGetCount + 1;
         }
-        if (L_Concheck == true)
+       //左コントローラー
+        L_defPos = Lcube.transform.position;
+        L_text.text = L_defPos.y.ToString();
+        L_debugtext.text = L_count.ToString();
+        if(L_defPos.y >= L_initialPos.y + sheikuTime || L_defPos.y <= L_initialPos.y - sheikuTime)
         {
+            //狭い範囲に入った判定になってる
+            //startしたときの値＋0.2fとコントローラーの値を比べてる。わからないことあったら聞いて
             L_count = L_count + 1;
-            Debug.Log(L_count);
             Debug.Log("L_Con反応アリ");
-            L_Concheck = false;
         }
-
-        if (R_Concheck == false && Rcube.transform.position.y < R_defPos.y + 0.02f && Rcube.transform.position.y > R_defPos.y - 0.02f)
+        //右コントローラー
+        R_defPos = Rcube.transform.position;
+        R_text.text = R_defPos.y.ToString();
+        R_debugtext.text = R_count.ToString();
+        if (R_defPos.y >= R_initialPos.y + sheikuTime || R_defPos.y <= R_initialPos.y - sheikuTime)
         {
-            R_Concheck = true;
-        }
-        if(R_Concheck == true)
-        {
-            R_Concheck = false;
             R_count = R_count + 1;
-            Debug.Log(L_count);
             Debug.Log("R_Con反応アリ");
         }
     }
