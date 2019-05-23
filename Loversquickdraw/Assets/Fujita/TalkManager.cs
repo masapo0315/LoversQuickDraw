@@ -14,9 +14,9 @@ public class TalkManager : MonoBehaviour {
 
     string[][] Talk = new string[][]
     {
-        new string[]{"おはよう","Player1"},
-        new string[]{"こんにちは","Player2"},
-        new string[]{"こんばんは","Player3"},
+        new string[]{"おはようああああああああああああああ\n改行", "夢宮 華恋"},
+        new string[]{"こんにちは","Player1"},
+        new string[]{"こんばんは","Player2"},
     };
     
     void Update()
@@ -40,17 +40,6 @@ public class TalkManager : MonoBehaviour {
             }
             //name %= 3;
         }
-
-        //if (Input.GetMouseButtonDown(1))
-        //{
-        //    name = 0;
-        //    Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Talk[Talktext][name]);
-        //    Talktext++;
-        //    if (Talktext == 3)
-        //    {
-        //        Talktext = 0;
-        //    }
-        //}
     }
 
 }

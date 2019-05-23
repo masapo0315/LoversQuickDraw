@@ -7,8 +7,10 @@ public class Player1Controler : MonoBehaviour {
     // 1Pのコントローラー
 
     public Rigidbody rb;
-    float moveSpeed = 10.0f; //速度
-    float moveForceMultipliter = 1.0f; // 追従度
+    [SerializeField]
+    float moveSpeed; //速度
+    [SerializeField]
+    float moveForceMultipliter; // 追従度
 
     // Use this for initialization
     void Start () {
