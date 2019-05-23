@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class CountDown : MonoBehaviour {
 
+    //スタート時のカウントダウン
+
     public Image readyImage;
     public Image goImage;
 

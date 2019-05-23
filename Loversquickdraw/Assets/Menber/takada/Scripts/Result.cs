@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Result : MonoBehaviour {
 
+    //ゴールした時のリザルトを表示する
+
     public Image[] images = new Image[3];
    
 

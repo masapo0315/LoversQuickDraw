@@ -1047,7 +1047,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 945539924}
-  moveSpeed: 20
   moveForceMultipliter: 1
 --- !u!54 &945539924
 Rigidbody:
