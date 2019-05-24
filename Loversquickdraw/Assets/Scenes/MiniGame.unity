@@ -1204,7 +1204,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1097208598}
-  moveSpeed: 20
   moveForceMultipliter: 1
 --- !u!54 &1097208598
 Rigidbody:
@@ -1365,6 +1364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1350161425}
   - component: {fileID: 1350161426}
+  - component: {fileID: 1350161427}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -1441,6 +1441,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1350161427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1350161424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e1db9597e273a46a1bcf2aac4194f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1097208596}
 --- !u!1 &1391349934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,6 +2001,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1812401598}
   - component: {fileID: 1812401599}
+  - component: {fileID: 1812401600}
   m_Layer: 5
   m_Name: Slider2
   m_TagString: Untagged
@@ -2065,6 +2078,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1812401600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1812401597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e1db9597e273a46a1bcf2aac4194f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 945539922}
 --- !u!1 &1818007035
 GameObject:
   m_ObjectHideFlags: 0
