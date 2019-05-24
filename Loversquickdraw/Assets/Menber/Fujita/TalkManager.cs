@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TalkManager : MonoBehaviour {
 
+
     //縦
     int Talktext = 0;
     //横
@@ -16,7 +17,7 @@ public class TalkManager : MonoBehaviour {
     string[][] Talk = new string[][]
     {
         //画面表示文字は今は仮で２行まで(全32文字)
-        new string[]{"１６文字目で改行させるあいうえお\n↑で１６字", "夢宮 華恋"},
+        new string[]{"１８文字目で改行させるあいうえおかき\n↑で１８字", "夢宮 華恋"},
         new string[]{"こんにちは","Player1"},
         new string[]{"こんばんは","Player2"},
     };
