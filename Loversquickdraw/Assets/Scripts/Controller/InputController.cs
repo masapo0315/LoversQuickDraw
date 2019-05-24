@@ -48,7 +48,7 @@ public class InputController : MonoBehaviour
             //狭い範囲に入った判定になってる
             //startしたときの値＋0.2fとコントローラーの値を比べてる。わからないことあったら聞いて
             L_count = L_count + 1;
-            Debug.Log("L_Con反応アリ");
+            //Debug.Log("L_Con反応アリ");
         }
         //右コントローラー
         R_defPos = Rcube.transform.position;
@@ -57,7 +57,7 @@ public class InputController : MonoBehaviour
         if (R_defPos.y >= R_initialPos.y + sheikuTime || R_defPos.y <= R_initialPos.y - sheikuTime)
         {
             R_count = R_count + 1;
-            Debug.Log("R_Con反応アリ");
+            //Debug.Log("R_Con反応アリ");
         }
     }
 }
