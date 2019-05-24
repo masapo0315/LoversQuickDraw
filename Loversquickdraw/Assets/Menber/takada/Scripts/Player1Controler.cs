@@ -7,16 +7,17 @@ public class Player1Controler : MonoBehaviour {
     // 1Pのコントローラー
 
     public Rigidbody rb;
-    float moveSpeed = 10.0f; //速度
-    float moveForceMultipliter = 1.0f; // 追従度
+    float moveSpeed; //速度
+    [SerializeField]
+    float moveForceMultipliter; // 追従度
 
     // Use this for initialization
     void Start () {
 
         rb = GetComponent<Rigidbody>();
-
-
-    }
+        StartCoroutine("StartDelay");
+  
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -33,5 +34,17 @@ public class Player1Controler : MonoBehaviour {
         moveVector.z = moveSpeed * horizontalInput;
 
         rb.AddForce(moveForceMultipliter * (moveVector - rb.velocity));
+    }
+
+    //遅延処理
+    private IEnumerator StartDelay()
+    {
+        moveSpeed = 0f;
+
+        yield return new WaitForSeconds(2.0f);
+
+        moveSpeed = 20.0f;
+
+        yield break;
     }
 }
