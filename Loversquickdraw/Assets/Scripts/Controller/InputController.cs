@@ -6,80 +6,58 @@ using UnityEngine.UI;
 //岩崎
 public class InputController : MonoBehaviour
 {
-    [SerializeField] GameObject Lcube;
-    [SerializeField] GameObject Rcube;
-    [SerializeField] Text L_text;
-    [SerializeField] Text R_text;
-
-    Vector3 L_defPos;
-    Vector3 R_defPos;
+    //左コン
+    [SerializeField] private Text L_text;
+    [SerializeField] private Text L_debugtext;
+    [SerializeField] private GameObject Lcube;
+    private int L_count = 0;
+    private Vector3 L_defPos;
+    private Vector3 L_initialPos;
     
+    //右コン
+    [SerializeField] private Text R_text;
+    [SerializeField] private Text R_debugtext;
+    [SerializeField] private GameObject Rcube;
+    private int R_count = 0;
+    private Vector3 R_defPos;
+    private Vector3 R_initialPos;
 
+    [SerializeField] private float sheikuTime;
+    
+    private int posGetCount = 0;
 
-    private void Start()
-    {
-        L_defPos = Lcube.transform.position;
-        R_defPos = Rcube.transform.position;
-    }
+    private bool getPosFlag = false;
+    
     void Update ()
     {
-        Debug.Log(L_defPos.y);
-        Debug.Log(R_defPos.y);
-        if (Lcube.transform.position.y >= L_defPos.y + 0.3f && Lcube.transform.position.y <= L_defPos.y - 0.3f)
+        /*
+         コントローラーを振ったときに一定の範囲内に入ったときにcountが進む
+         */
+        if(posGetCount <= 5)
         {
-            Debug.Log("L_Conふってる");
+            L_initialPos.y = L_defPos.y;
+            R_initialPos = R_defPos;
+            posGetCount = posGetCount + 1;
         }
-        else if (Lcube.transform.position.y < L_defPos.y + 0.3f && Lcube.transform.position.y > L_defPos.y - 0.3f)
+       //左コントローラー
+        L_defPos = Lcube.transform.position;
+        L_text.text = L_defPos.y.ToString();
+        L_debugtext.text = L_count.ToString();
+        if(L_defPos.y >= L_initialPos.y + sheikuTime || L_defPos.y <= L_initialPos.y - sheikuTime)
         {
-            Debug.Log("L_Conふってる");
+            //狭い範囲に入った判定になってる
+            //startしたときの値＋0.2fとコントローラーの値を比べてる。わからないことあったら聞いて
+            L_count = L_count + 1;
+            //Debug.Log("L_Con反応アリ");
         }
-        L_text.text = Lcube.transform.position.y.ToString();
-        R_text.text = Rcube.transform.position.y.ToString();
-        //if (L_defPos.y < -0.7f || L_defPos.y > 0f)
-        //{
-        //    Debug.Log("aaa");
-        //}
-        //else 
-        //{
-        //    Debug.Log("ssssssssssssssssssssssss");
-        //}
-
-        //if (OVRInput.GetDown(OVRInput.Touch.One))
-        //{
-        //    Debug.Log("Aボタンを押した");
-        //}
-        //if (OVRInput.GetDown(OVRInput.RawTouch.B))
-        //{
-        //    Debug.Log("Bボタンを押した");
-        //}
-        //if (OVRInput.GetDown(OVRInput.RawButton.X))
-        //{
-        //    Debug.Log("Xボタンを押した");
-        //}
-        //if (OVRInput.GetDown(OVRInput.RawButton.Y))
-        //{
-        //    Debug.Log("Yボタンを押した");
-        //}
-        //if (OVRInput.GetDown(OVRInput.RawButton.Start))
-        //{
-        //    Debug.Log("メニューボタン（左アナログスティックの下にある）を押した");
-        //}
-
-        //if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
-        //{
-        //    Debug.Log("右人差し指トリガーを押した");
-        //}
-        //if (OVRInput.GetDown(OVRInput.RawButton.RHandTrigger))
-        //{
-        //    Debug.Log("右中指トリガーを押した");
-        //}
-        //if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
-        //{
-        //    Debug.Log("左人差し指トリガーを押した");
-        //}
-        //if (OVRInput.GetDown(OVRInput.RawButton.LHandTrigger))
-        //{
-        //    Debug.Log("左中指トリガーを押した");
-        //}
+        //右コントローラー
+        R_defPos = Rcube.transform.position;
+        R_text.text = R_defPos.y.ToString();
+        R_debugtext.text = R_count.ToString();
+        if (R_defPos.y >= R_initialPos.y + sheikuTime || R_defPos.y <= R_initialPos.y - sheikuTime)
+        {
+            R_count = R_count + 1;
+            //Debug.Log("R_Con反応アリ");
+        }
     }
 }

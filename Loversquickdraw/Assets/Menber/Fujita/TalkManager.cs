@@ -12,13 +12,16 @@ public class TalkManager : MonoBehaviour {
     public GameObject NameTextmanager;
     public GameObject CommentTextmanager;
 
+    //コメントと話すキャラの名前の配列
     string[][] Talk = new string[][]
     {
-        new string[]{"おはようああああああああああああああ\n改行", "夢宮 華恋"},
+        //画面表示文字は今は仮で２行まで(全32文字)
+        new string[]{"１６文字目で改行させるあいうえお\n↑で１６字", "夢宮 華恋"},
         new string[]{"こんにちは","Player1"},
         new string[]{"こんばんは","Player2"},
     };
     
+    //左クリックしたとき名前とコメントの表示、Debug.logは配列番号とそれに対して画面表示する文字を確認
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -26,19 +29,18 @@ public class TalkManager : MonoBehaviour {
             Text Nametext = NameTextmanager.GetComponent<Text>();
             Text Commenttext = CommentTextmanager.GetComponent<Text>();
             name = 1;
+            Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Talk[Talktext][name]);
             Nametext.text = Talk[Talktext][name];
             name = 0;
             Commenttext.text = Talk[Talktext][name];
-        //name = 1;
-            Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Talk[Talktext][name]);
-        //name = 0;
             Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Talk[Talktext][name]);
             Talktext++;
+
+            //とりあえず配列３つを仮で作ったから３回ループでリセット
             if (Talktext == 3)
             {
                 Talktext = 0;
             }
-            //name %= 3;
         }
     }
 
