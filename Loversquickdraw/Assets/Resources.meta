@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: 7b0e538722ff444428c9cc070fdedb3e
 =======
 guid: c0c2455463050e44081a1fca97d668a9
 >>>>>>> タイトルロゴの追加
+=======
+guid: c0c2455463050e44081a1fca97d668a9
+>>>>>>> f8ab865b7d2421591ec58b2ff91e20db6ac5f685
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
