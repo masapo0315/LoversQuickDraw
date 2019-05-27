@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player2Controler : MonoBehaviour {
+public class Player2Controler : MonoBehaviour
+{
 
     //　2Pのコントローラー
 
@@ -11,19 +12,38 @@ public class Player2Controler : MonoBehaviour {
     [SerializeField]
     float moveForceMultipliter; // 追従度
 
-    // Use this for initialization
-    void Start () {
+    //右コン
+    [SerializeField] private GameObject Rcube; 
+    private Vector3 R_defPos;            
+    private Vector3 R_initialPos;                   
 
+    [SerializeField] private float sheikuTime;      
+
+    private int R_posGetCount = 0;
+    
+    void Start()
+    {
         rb = GetComponent<Rigidbody>();
-        StartCoroutine(StartDelay());
+        StartCoroutine("StartDelay");
     }
-	
-	// Update is called once per frame
-	void Update () {
 
-        SpeedUp();
-
-	}
+    // Update is called once per frame
+    void Update()
+    {
+        //                 
+        if (R_posGetCount <= 5)
+        {
+            R_initialPos = R_defPos;
+            R_posGetCount = R_posGetCount + 1;
+        }
+        //右コントローラー
+        R_defPos = Rcube.transform.position;
+        if (R_defPos.y >= R_initialPos.y + sheikuTime || R_defPos.y <= R_initialPos.y - sheikuTime)
+        {
+            SpeedUp();
+            //Debug.Log("R_Con反応アリ");
+        }
+    }
 
     // 加速処理
     void SpeedUp()
@@ -33,7 +53,6 @@ public class Player2Controler : MonoBehaviour {
         moveVector.z = moveSpeed * horizontalInput;
 
         rb.AddForce(moveForceMultipliter * (moveVector - rb.velocity));
-
     }
 
     //遅延処理

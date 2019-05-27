@@ -8,6 +8,16 @@ public class Player1Controler : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     private float moveSpeed; //速度
     [SerializeField] private float moveForceMultipliter; // 追従度
+
+    //左コン
+    [SerializeField] private GameObject Lcube;
+    private Vector3 L_defPos;                             
+    private Vector3 L_initialPos;                         
+
+    [SerializeField] private float sheikuTime;            
+
+    private int L_posGetCount = 0;               
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -15,7 +25,23 @@ public class Player1Controler : MonoBehaviour
     }
     void Update()
     {
-        SpeedUp();
+        /*
+        コントローラーを振ったときに一定の範囲内に入ったときにcountが進む
+        */
+        if (L_posGetCount <= 5)
+        {
+            L_initialPos.y = L_defPos.y;
+            L_posGetCount = L_posGetCount + 1;
+        }
+        //左コントローラー
+        L_defPos = Lcube.transform.position;
+        if (L_defPos.y >= L_initialPos.y + sheikuTime || L_defPos.y <= L_initialPos.y - sheikuTime)
+        {
+            //狭い範囲に入った判定になってる
+            //startしたときの値＋0.2fとコントローラーの値を比べてる。わからないことあったら聞いて
+            SpeedUp();
+            //Debug.Log("L_Con反応アリ");
+        }
     }
     // 加速処理
     void SpeedUp()

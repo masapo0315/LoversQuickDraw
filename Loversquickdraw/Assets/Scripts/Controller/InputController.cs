@@ -14,50 +14,70 @@ public class InputController : MonoBehaviour
     private Vector3 L_defPos;
     private Vector3 L_initialPos;
     
-    //右コン
-    [SerializeField] private Text R_text;
-    [SerializeField] private Text R_debugtext;
-    [SerializeField] private GameObject Rcube;
-    private int R_count = 0;
-    private Vector3 R_defPos;
-    private Vector3 R_initialPos;
-
     [SerializeField] private float sheikuTime;
     
     private int posGetCount = 0;
 
     private bool getPosFlag = false;
+    // 1Pのコントローラー
+    [SerializeField] private Rigidbody rb;
+    private float moveSpeed; //速度
+    [SerializeField] private float moveForceMultipliter; // 追従度
+
+    Vector3 force;
     
-    void Update ()
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        StartCoroutine("StartDelay");
+    }
+    void Update()
     {
         /*
          コントローラーを振ったときに一定の範囲内に入ったときにcountが進む
          */
-        if(posGetCount <= 5)
+        if (posGetCount <= 5)
         {
             L_initialPos.y = L_defPos.y;
-            R_initialPos = R_defPos;
             posGetCount = posGetCount + 1;
         }
-       //左コントローラー
+        //左コントローラー
         L_defPos = Lcube.transform.position;
         L_text.text = L_defPos.y.ToString();
         L_debugtext.text = L_count.ToString();
-        if(L_defPos.y >= L_initialPos.y + sheikuTime || L_defPos.y <= L_initialPos.y - sheikuTime)
+        if (L_defPos.y >= L_initialPos.y + sheikuTime || L_defPos.y <= L_initialPos.y - sheikuTime)
         {
             //狭い範囲に入った判定になってる
             //startしたときの値＋0.2fとコントローラーの値を比べてる。わからないことあったら聞いて
+            rb.isKinematic = false;
+            force = new Vector3(0.0f, 0.0f, 5.0f);
+            rb.AddForce(force);  // 力を加える
             L_count = L_count + 1;
             //Debug.Log("L_Con反応アリ");
         }
-        //右コントローラー
-        R_defPos = Rcube.transform.position;
-        R_text.text = R_defPos.y.ToString();
-        R_debugtext.text = R_count.ToString();
-        if (R_defPos.y >= R_initialPos.y + sheikuTime || R_defPos.y <= R_initialPos.y - sheikuTime)
+        else
         {
-            R_count = R_count + 1;
-            //Debug.Log("R_Con反応アリ");
+            rb.velocity = Vector3.zero;
+            //rb.isKinematic = true;
         }
+    }
+    void SpeedUp()
+    {
+        Vector3 moveVector = Vector3.zero;
+        float horizontalInput = Input.GetAxis("Horizontal");
+        moveVector.z = moveSpeed * horizontalInput;
+
+        rb.AddForce(moveForceMultipliter * (moveVector - rb.velocity));
+    }
+    //遅延処理
+    private IEnumerator StartDelay()
+    {
+        moveSpeed = 0f;
+
+        yield return new WaitForSeconds(2.0f);
+
+        moveSpeed = 20.0f;
+
+        yield break;
     }
 }
