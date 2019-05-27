@@ -2,49 +2,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player1Controler : MonoBehaviour {
-
+public class Player1Controler : MonoBehaviour
+{
+    //左コン
+    [SerializeField] private GameObject Lcube;
+    [SerializeField] private float sheikuTime;
+    private Vector3 L_defPos;
+    private Vector3 L_initialPos;
+    
+    private int posGetCount = 0;
+  
     // 1Pのコントローラー
+    [SerializeField] private Rigidbody rb;
+    private float moveSpeed; //速度
 
-    public Rigidbody rb;
-    float moveSpeed; //速度
-    [SerializeField]
-    float moveForceMultipliter; // 追従度
+    private Vector3 force;
 
-    // Use this for initialization
-    void Start () {
-
+    void Start()
+    {
         rb = GetComponent<Rigidbody>();
         StartCoroutine("StartDelay");
-  
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-        SpeedUp();
-
-	}
-
-    // 加速処理
-    void SpeedUp()
-    {
-        Vector3 moveVector = Vector3.zero;
-        float horizontalInput = Input.GetAxis("Horizontal");
-        moveVector.z = moveSpeed * horizontalInput;
-
-        rb.AddForce(moveForceMultipliter * (moveVector - rb.velocity));
     }
-
+    void Update()
+    {
+        /*
+         コントローラーを振ったときに一定の範囲内に入ったときにcountが進む
+         */
+        if (posGetCount <= 5)
+        {
+            L_initialPos.y = L_defPos.y;
+            posGetCount = posGetCount + 1;
+        }
+        //左コントローラー
+        L_defPos = Lcube.transform.position;
+        if (L_defPos.y >= L_initialPos.y + sheikuTime || L_defPos.y <= L_initialPos.y - sheikuTime)
+        {
+            //狭い範囲に入った判定になってる
+            //startしたときの値＋0.2fとコントローラーの値を比べてる。わからないことあったら聞いて
+            force = new Vector3(0.0f, 0.0f, 3.0f);
+            rb.AddForce(force);  // 力を加える
+            //Debug.Log("L_Con反応アリ");
+        }
+        else
+        {
+            rb.velocity = Vector3.zero;
+            //rb.isKinematic = true;
+        }
+    }
     //遅延処理
     private IEnumerator StartDelay()
     {
         moveSpeed = 0f;
-
         yield return new WaitForSeconds(2.0f);
 
         moveSpeed = 20.0f;
-
         yield break;
     }
 }

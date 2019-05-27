@@ -4,11 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TalkManager : MonoBehaviour {
-
-<<<<<<< HEAD
-
-=======
->>>>>>> タイトルロゴの追加
+    
     //縦
     int Talktext = 0;
     //横
@@ -19,7 +15,6 @@ public class TalkManager : MonoBehaviour {
     //コメントと話すキャラの名前の配列
     string[][] Talk = new string[][]
     {
-<<<<<<< HEAD
         //画面表示18文字を2行まで(全32文字)
         new string[]{ "俺は［１　Ｐ］。\n色濃（いろこい）高校の新入生だ。", "プレイヤー１"},
         new string[]{ "高校――すなわち青春。華々しい\n“高校生”の期間、俺は…", "プレイヤー１"},
@@ -48,12 +43,10 @@ public class TalkManager : MonoBehaviour {
         new string[]{"この俺だァァアアァァァッッ！！！！","両プレイヤー"},
         new string[]{"あいつと同時に駆け出す俺、\n目の前には十字路が迫っている。","両プレイヤー"},
         new string[]{"あいつよりも前に出て華恋とぶつかる。\nそのために俺はーー！！","両プレイヤー"},
-=======
         //画面表示文字は今は仮で２行まで(全32文字)
         new string[]{"１６文字目で改行させるあいうえお\n↑で１６字", "夢宮 華恋"},
         new string[]{"こんにちは","Player1"},
         new string[]{"こんばんは","Player2"},
->>>>>>> タイトルロゴの追加
     };
     
     //左クリックしたとき名前とコメントの表示、Debug.logは配列番号とそれに対して画面表示する文字を確認
@@ -72,11 +65,8 @@ public class TalkManager : MonoBehaviour {
             Talktext++;
 
             //とりあえず配列３つを仮で作ったから３回ループでリセット
-<<<<<<< HEAD
             if (Talktext == 25)
-=======
             if (Talktext == 3)
->>>>>>> タイトルロゴの追加
             {
                 Talktext = 0;
             }

@@ -1516,10 +1516,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1769c6e8fbcbf204292a52ed4e30491c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 945539924}
-  moveForceMultipliter: 1
   Rcube: {fileID: 887261208}
-  sheikuTime: 0.02
+  R_shake: 0.02
+  rb: {fileID: 945539924}
 --- !u!1 &1035062005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,13 +1624,11 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1097208596}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5f6f2d498e963d4383f582f9451a279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  L_text: {fileID: 1035062007}
-  L_debugtext: {fileID: 107843076}
   Lcube: {fileID: 1078634944}
   sheikuTime: 0.2
   rb: {fileID: 1097208598}
@@ -1724,15 +1721,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1097208596}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c69d2bea59ce8744b8987a14b408caea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Lcube: {fileID: 0}
+  sheikuTime: 0
   rb: {fileID: 1097208598}
-  moveForceMultipliter: 1
-  Lcube: {fileID: 1078634944}
-  sheikuTime: 0.02
 --- !u!1 &1195888209
 GameObject:
   m_ObjectHideFlags: 0
@@ -2379,6 +2375,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74e38de79ec5ad848ba0409fa6ae6766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mode: 0
+  player1Camera: {fileID: 0}
+  player2Camera: {fileID: 0}
 --- !u!1 &1654648043
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,38 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player2Controler : MonoBehaviour {
+public class Player2Controler : MonoBehaviour
+{
+    //右コン
+    [SerializeField] private GameObject Rcube;
+    [SerializeField] private float R_shake;
+    private Vector3 R_defPos;
+    private Vector3 R_initialPos;
+
+    private int R_posGetCount = 0;
 
     //　2Pのコントローラー
+    [SerializeField] private Rigidbody rb;
+    private float moveSpeed; //速度
 
-    public Rigidbody rb;
-    float moveSpeed; //速度
-    [SerializeField]
-    float moveForceMultipliter; // 追従度
+    private Vector3 force;
 
-    // Use this for initialization
-    void Start () {
-
-        rb = GetComponent<Rigidbody>();
-        StartCoroutine(StartDelay());
-    }
-	
-	// Update is called once per frame
-	void Update () {
-
-        SpeedUp();
-
-	}
-
-    // 加速処理
-    void SpeedUp()
+    void Start()
     {
-        Vector3 moveVector = Vector3.zero;
-        float horizontalInput = Input.GetAxis("Horizontal2");
-        moveVector.z = moveSpeed * horizontalInput;
+        rb = GetComponent<Rigidbody>();
+        StartCoroutine("StartDelay");
+    }
 
-        rb.AddForce(moveForceMultipliter * (moveVector - rb.velocity));
-
+    // Update is called once per frame
+    void Update()
+    {
+        if (R_posGetCount <= 5)
+        {
+            R_initialPos.y = R_defPos.y;
+            R_posGetCount = R_posGetCount + 1;
+        }
+        R_defPos = Rcube.transform.position;
+        if (R_defPos.y >= R_initialPos.y + R_shake || R_defPos.y <= R_initialPos.y - R_shake)
+        {
+            force = new Vector3(0.0f, 0.0f, 3.0f);
+            rb.AddForce(force);
+        }
+        else
+        {
+            rb.velocity = Vector3.zero;
+        }
     }
 
     //遅延処理
