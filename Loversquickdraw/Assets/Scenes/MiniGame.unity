@@ -1517,7 +1517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rcube: {fileID: 887261208}
-  R_shake: 0.02
+  R_shake: 0.002
   rb: {fileID: 945539924}
 --- !u!1 &1035062005
 GameObject:
@@ -1610,7 +1610,6 @@ GameObject:
   - component: {fileID: 1097208599}
   - component: {fileID: 1097208598}
   - component: {fileID: 1097208603}
-  - component: {fileID: 1097208597}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player1
@@ -1618,21 +1617,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1097208597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1097208596}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5f6f2d498e963d4383f582f9451a279, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lcube: {fileID: 1078634944}
-  sheikuTime: 0.2
-  rb: {fileID: 1097208598}
-  moveForceMultipliter: 2
 --- !u!54 &1097208598
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1726,8 +1710,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c69d2bea59ce8744b8987a14b408caea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lcube: {fileID: 0}
-  sheikuTime: 0
+  Lcube: {fileID: 1078634944}
+  sheikuTime: 0.02
   rb: {fileID: 1097208598}
 --- !u!1 &1195888209
 GameObject:
