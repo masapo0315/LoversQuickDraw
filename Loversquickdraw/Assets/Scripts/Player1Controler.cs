@@ -2,21 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player1Controler : MonoBehaviour
-{
+public class Player1Controler : MonoBehaviour {
+
     // 1Pのコントローラー
-    [SerializeField] private Rigidbody rb;
-    private float moveSpeed; //速度
-    [SerializeField] private float moveForceMultipliter; // 追従度
-    void Start()
-    {
+
+    public Rigidbody rb;
+    float moveSpeed; //速度
+    [SerializeField]
+    float moveForceMultipliter; // 追従度
+
+    // Use this for initialization
+    void Start () {
+
         rb = GetComponent<Rigidbody>();
         StartCoroutine("StartDelay");
-    }
-    void Update()
-    {
+  
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
         SpeedUp();
-    }
+
+	}
+
     // 加速処理
     void SpeedUp()
     {
@@ -26,6 +35,7 @@ public class Player1Controler : MonoBehaviour
 
         rb.AddForce(moveForceMultipliter * (moveVector - rb.velocity));
     }
+
     //遅延処理
     private IEnumerator StartDelay()
     {
