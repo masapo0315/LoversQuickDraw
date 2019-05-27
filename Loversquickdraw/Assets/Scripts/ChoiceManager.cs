@@ -35,6 +35,7 @@ public class ChoiceManager : MonoBehaviour
 
     bool stopChoice = false;
 
+    //基準は2.5秒
     [SerializeField]
     private float invokeTime;
 
