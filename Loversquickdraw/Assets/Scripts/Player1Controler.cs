@@ -2,47 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player1Controler : MonoBehaviour
-{
+public class Player1Controler : MonoBehaviour {
+
     // 1Pのコントローラー
-    [SerializeField] private Rigidbody rb;
-    private float moveSpeed; //速度
-    [SerializeField] private float moveForceMultipliter; // 追従度
 
-    //左コン
-    [SerializeField] private GameObject Lcube;
-    private Vector3 L_defPos;                             
-    private Vector3 L_initialPos;                         
+    public Rigidbody rb;
+    float moveSpeed; //速度
+    [SerializeField]
+    float moveForceMultipliter; // 追従度
 
-    [SerializeField] private float sheikuTime;            
+    // Use this for initialization
+    void Start () {
 
-    private int L_posGetCount = 0;               
-
-    void Start()
-    {
         rb = GetComponent<Rigidbody>();
         StartCoroutine("StartDelay");
-    }
-    void Update()
-    {
-        /*
-        コントローラーを振ったときに一定の範囲内に入ったときにcountが進む
-        */
-        if (L_posGetCount <= 5)
-        {
-            L_initialPos.y = L_defPos.y;
-            L_posGetCount = L_posGetCount + 1;
-        }
-        //左コントローラー
-        L_defPos = Lcube.transform.position;
-        if (L_defPos.y >= L_initialPos.y + sheikuTime || L_defPos.y <= L_initialPos.y - sheikuTime)
-        {
-            //狭い範囲に入った判定になってる
-            //startしたときの値＋0.2fとコントローラーの値を比べてる。わからないことあったら聞いて
-            SpeedUp();
-            //Debug.Log("L_Con反応アリ");
-        }
-    }
+  
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
+        SpeedUp();
+
+	}
+
     // 加速処理
     void SpeedUp()
     {
@@ -52,6 +35,7 @@ public class Player1Controler : MonoBehaviour
 
         rb.AddForce(moveForceMultipliter * (moveVector - rb.velocity));
     }
+
     //遅延処理
     private IEnumerator StartDelay()
     {

@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+>>>>>>> タイトルロゴの追加
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -142,12 +146,21 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 954282236}
+<<<<<<< HEAD
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -329.62, y: -141.9}
   m_SizeDelta: {x: 198.25, y: 40.8}
+=======
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -341.8, y: -141.9}
+  m_SizeDelta: {x: 173.9, y: 40.8}
+>>>>>>> タイトルロゴの追加
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &700450888
 MonoBehaviour:
@@ -183,10 +196,17 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
     m_FontSize: 33
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
+=======
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+>>>>>>> タイトルロゴの追加
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -201,6 +221,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 700450886}
+<<<<<<< HEAD
 --- !u!1 &905110691
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +290,8 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 905110691}
+=======
+>>>>>>> タイトルロゴの追加
 --- !u!1 &954282232
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +355,11 @@ Canvas:
   m_GameObject: {fileID: 954282232}
   m_Enabled: 1
   serializedVersion: 3
+<<<<<<< HEAD
   m_RenderMode: 0
+=======
+  m_RenderMode: 1
+>>>>>>> タイトルロゴの追加
   m_Camera: {fileID: 1077983065}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -355,11 +382,17 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1006135536}
+<<<<<<< HEAD
   - {fileID: 905110692}
   - {fileID: 1813469779}
   - {fileID: 1215040392}
   - {fileID: 700450887}
   - {fileID: 2001597011}
+=======
+  - {fileID: 1813469779}
+  - {fileID: 1215040392}
+  - {fileID: 700450887}
+>>>>>>> タイトルロゴの追加
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -545,12 +578,21 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 954282236}
+<<<<<<< HEAD
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -44, y: -245}
   m_SizeDelta: {x: 730.1, y: 102.3}
+=======
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -18, y: -256}
+  m_SizeDelta: {x: 720.8, y: 116}
+>>>>>>> タイトルロゴの追加
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1215040393
 MonoBehaviour:
@@ -723,7 +765,11 @@ RectTransform:
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 954282236}
+<<<<<<< HEAD
   m_RootOrder: 2
+=======
+  m_RootOrder: 1
+>>>>>>> タイトルロゴの追加
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -828,6 +874,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+<<<<<<< HEAD
 --- !u!1 &2001597010
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,3 +957,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameTextmanager: {fileID: 0}
   CommentTextmanager: {fileID: 0}
+=======
+>>>>>>> タイトルロゴの追加
