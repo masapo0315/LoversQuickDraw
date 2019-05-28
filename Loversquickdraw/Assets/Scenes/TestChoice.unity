@@ -868,9 +868,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d2473deabac97b44885d8c575f90eee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choice1: {fileID: 1382253813}
-  choice2: {fileID: 1774031764}
-  choice3: {fileID: 653077604}
+  choiceAorX: {fileID: 1382253813}
+  choiceBorY: {fileID: 1774031764}
+  choiceTrigger: {fileID: 653077604}
   invokeTime: 2.5
   firstsPlayer: 0
 --- !u!4 &1848254639
