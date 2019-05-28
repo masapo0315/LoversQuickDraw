@@ -3,15 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TalkManager : MonoBehaviour {
+public class TalkManager : MonoBehaviour
+{
+
+    int Talktext = 0; //縦
+    new int name = 0; //横
+    public float fa; //点滅用
+    private float fade = 0.035f;
 
 
-    //縦
-    int Talktext = 0;
-    //横
-    new int name = 0;
     public GameObject NameTextmanager;
     public GameObject CommentTextmanager;
+    public GameObject Sakura;
+    //private Image sakuraImage;
+
+
+    public void Start()
+    {
+        fa = Sakura.GetComponent<Image>().color.a;
+    }
 
     //コメントと話すキャラの名前の配列
     string[][] Talk = new string[][]
@@ -45,12 +55,26 @@ public class TalkManager : MonoBehaviour {
         new string[]{"あいつと同時に駆け出す俺、\n目の前には十字路が迫っている。","両プレイヤー"},
         new string[]{"あいつよりも前に出て華恋とぶつかる。\nそのために俺はーー！！","両プレイヤー"},
     };
-    
+
     //左クリックしたとき名前とコメントの表示、Debug.logは配列番号とそれに対して画面表示する文字を確認
     void Update()
     {
+
+
         if (Input.GetMouseButtonDown(0))
         {
+            //25回ループでリセット
+            if (Talktext == 25)
+            {
+                StopCoroutine("SakuraOut");
+                Talktext = 0;
+            }
+
+            if (Talktext == 0)
+            {
+                StartCoroutine("SakuraOut");
+            }
+
             Text Nametext = NameTextmanager.GetComponent<Text>();
             Text Commenttext = CommentTextmanager.GetComponent<Text>();
             name = 1;
@@ -61,12 +85,25 @@ public class TalkManager : MonoBehaviour {
             Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Talk[Talktext][name]);
             Talktext++;
 
-            //とりあえず配列３つを仮で作ったから３回ループでリセット
-            if (Talktext == 25)
-            {
-                Talktext = 0;
-            }
         }
     }
 
+    IEnumerator SakuraOut()
+    {
+        while (true)
+        {
+            while (fa <= 1)
+            {
+                Sakura.GetComponent<Image>().color += new Color(0, 0, 0, fade);
+                fa += fade;
+                yield return null;
+            }
+            while (fa >= 0)
+            {
+                Sakura.GetComponent<Image>().color -= new Color(0, 0, 0, fade);
+                fa -= fade;
+                yield return null;
+            }
+        }
+    }
 }

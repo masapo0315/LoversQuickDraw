@@ -160,8 +160,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5dc1e516f8b62443b6320297a1fbf2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fa: 0
   NameTextmanager: {fileID: 0}
   CommentTextmanager: {fileID: 0}
+  Sakura: {fileID: 0}
 --- !u!114 &700450889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,8 +620,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5dc1e516f8b62443b6320297a1fbf2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fa: 0
   NameTextmanager: {fileID: 700450886}
   CommentTextmanager: {fileID: 1215040391}
+  Sakura: {fileID: 2001597010}
 --- !u!4 &1326858000
 Transform:
   m_ObjectHideFlags: 0
@@ -838,7 +842,6 @@ GameObject:
   - component: {fileID: 2001597011}
   - component: {fileID: 2001597013}
   - component: {fileID: 2001597012}
-  - component: {fileID: 2001597014}
   m_Layer: 5
   m_Name: sakura
   m_TagString: Untagged
@@ -883,7 +886,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 78e5d3e602e4c1f4eb5fb1edf681de5e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b7bf6343ad8186a41a31e33211c6ee9a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -897,16 +900,3 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2001597010}
---- !u!114 &2001597014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2001597010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5dc1e516f8b62443b6320297a1fbf2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NameTextmanager: {fileID: 0}
-  CommentTextmanager: {fileID: 0}
