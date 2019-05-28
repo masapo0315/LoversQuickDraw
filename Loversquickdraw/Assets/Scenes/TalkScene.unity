@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5dc1e516f8b62443b6320297a1fbf2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fa: 0
+  fo: 0
   NameTextmanager: {fileID: 0}
   CommentTextmanager: {fileID: 0}
   Sakura: {fileID: 0}
@@ -620,7 +620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5dc1e516f8b62443b6320297a1fbf2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fa: 0
+  fo: 0
   NameTextmanager: {fileID: 700450886}
   CommentTextmanager: {fileID: 1215040391}
   Sakura: {fileID: 2001597010}
@@ -753,7 +753,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a113961ce63f88b49860952bc8f120dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2952f33737ca7bc4196d191cf559b32b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
