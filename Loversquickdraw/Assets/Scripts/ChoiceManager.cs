@@ -37,7 +37,7 @@ public class ChoiceManager : MonoBehaviour
 
     //基準は2.5秒
     [SerializeField]
-    private float invokeTime;
+    private float invokeTime = 2.5f;
 
 
     //trueの場合は1Pの勝ち、falseの場合は2Pの勝ち
