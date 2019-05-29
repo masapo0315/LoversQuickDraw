@@ -199,9 +199,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1022070939}
-  - {fileID: 1382253814}
   - {fileID: 1774031765}
   - {fileID: 653077605}
+  - {fileID: 1382253814}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 488772924}
   - component: {fileID: 488772923}
   m_Layer: 5
-  m_Name: Text1
+  m_Name: Text3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -235,14 +235,14 @@ RectTransform:
   m_GameObject: {fileID: 488772921}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6038985, y: 0.6038985, z: 0.6038985}
   m_Children: []
   m_Father: {fileID: 1382253814}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1.4}
+  m_AnchoredPosition: {x: 0, y: 2}
   m_SizeDelta: {x: 275, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &488772923
@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 653077607}
   - component: {fileID: 653077606}
   m_Layer: 5
-  m_Name: Choice3
+  m_Name: ChoiceBorY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -374,15 +374,15 @@ RectTransform:
   m_GameObject: {fileID: 653077604}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000306, y: 1.0000306, z: 1.0000306}
+  m_LocalScale: {x: 1.5525827, y: 1.5525827, z: 1.5525827}
   m_Children:
   - {fileID: 904409211}
   m_Father: {fileID: 217142618}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 300, y: 102.000015}
+  m_AnchoredPosition: {x: 378, y: 100}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &653077606
@@ -404,7 +404,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4a7c03dd60944fa4981bf8480310e83d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7319b63da9e46174a8ae78afb2ee5054, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 904409213}
   - component: {fileID: 904409212}
   m_Layer: 5
-  m_Name: Text3
+  m_Name: Text2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -524,14 +524,14 @@ RectTransform:
   m_GameObject: {fileID: 904409210}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6441078, y: 0.6441078, z: 0.6441078}
   m_Children: []
   m_Father: {fileID: 653077605}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 3.1997423, y: 0}
   m_SizeDelta: {x: 275, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &904409212
@@ -714,7 +714,7 @@ GameObject:
   - component: {fileID: 1382253816}
   - component: {fileID: 1382253815}
   m_Layer: 5
-  m_Name: Choice
+  m_Name: ChoiceTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -728,15 +728,15 @@ RectTransform:
   m_GameObject: {fileID: 1382253813}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6559075, y: 1.6559075, z: 1.6559075}
   m_Children:
   - {fileID: 488772922}
   m_Father: {fileID: 217142618}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -109}
+  m_AnchoredPosition: {x: 0, y: -149}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1382253815
@@ -758,7 +758,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4a7c03dd60944fa4981bf8480310e83d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7319b63da9e46174a8ae78afb2ee5054, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -783,7 +783,7 @@ GameObject:
   - component: {fileID: 1774031767}
   - component: {fileID: 1774031766}
   m_Layer: 5
-  m_Name: Choice2
+  m_Name: ChoiceAorX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -797,15 +797,15 @@ RectTransform:
   m_GameObject: {fileID: 1774031764}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000306, y: 1.0000306, z: 1.0000306}
+  m_LocalScale: {x: 1.5525827, y: 1.5525827, z: 1.5525827}
   m_Children:
   - {fileID: 1876959452}
   m_Father: {fileID: 217142618}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -300, y: 102.000015}
+  m_AnchoredPosition: {x: -378, y: 100}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1774031766
@@ -827,7 +827,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4a7c03dd60944fa4981bf8480310e83d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7319b63da9e46174a8ae78afb2ee5054, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -868,9 +868,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d2473deabac97b44885d8c575f90eee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choiceAorX: {fileID: 1382253813}
-  choiceBorY: {fileID: 1774031764}
-  choiceTrigger: {fileID: 653077604}
+  choiceAorX: {fileID: 1774031764}
+  choiceBorY: {fileID: 653077604}
+  choiceTrigger: {fileID: 1382253813}
   invokeTime: 2.5
   firstsPlayer: 0
 --- !u!4 &1848254639
@@ -897,7 +897,7 @@ GameObject:
   - component: {fileID: 1876959454}
   - component: {fileID: 1876959453}
   m_Layer: 5
-  m_Name: Text2
+  m_Name: Text1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -911,14 +911,14 @@ RectTransform:
   m_GameObject: {fileID: 1876959451}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6441078, y: 0.6441078, z: 0.6441078}
   m_Children: []
   m_Father: {fileID: 1774031765}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 11.732434, y: 0}
   m_SizeDelta: {x: 275, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1876959453

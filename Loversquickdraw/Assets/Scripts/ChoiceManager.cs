@@ -64,7 +64,7 @@ public class ChoiceManager : MonoBehaviour
             Debug.Log("1Pが1を押した");
             //Debug.Log("1を押した");
             ChangeColor1();
-            Invoke("Choise1", invokeTime);
+            Invoke("GetAorX", invokeTime);
             stopChoice = true;
             firstsPlayer = true;
 
@@ -76,7 +76,7 @@ public class ChoiceManager : MonoBehaviour
             Debug.Log("2Pが1を押した");
             //Debug.Log("1を押した");
             ChangeColor1();
-            Invoke("Choise1", invokeTime);
+            Invoke("GetAorX", invokeTime);
             stopChoice = true;
             firstsPlayer = false;
 
@@ -89,7 +89,7 @@ public class ChoiceManager : MonoBehaviour
             Debug.Log("1Pが2を押した");
             //Debug.Log("2を押した");
             ChangeColor2();
-            Invoke("Choise2", invokeTime);
+            Invoke("GetBorY", invokeTime);
             stopChoice = true;
             firstsPlayer = true;
 
@@ -101,7 +101,7 @@ public class ChoiceManager : MonoBehaviour
             Debug.Log("2Pが2を押した");
             //Debug.Log("2を押した");
             ChangeColor2();
-            Invoke("Choise2", invokeTime);
+            Invoke("GetBorY", invokeTime);
             stopChoice = true;
             firstsPlayer = false;
 
@@ -115,7 +115,7 @@ public class ChoiceManager : MonoBehaviour
             Debug.Log("1Pが3を押した");
             //Debug.Log("3を押した");
             ChangeColor3();
-            Invoke("Choise3", invokeTime);
+            Invoke("GetTrigger", invokeTime);
             stopChoice = true;
             firstsPlayer = true;
 
@@ -127,7 +127,7 @@ public class ChoiceManager : MonoBehaviour
             Debug.Log("2Pが3を押した");
             //Debug.Log("3を押した");
             ChangeColor3();
-            Invoke("Choise3", invokeTime);
+            Invoke("GetTrigger", invokeTime);
             stopChoice = true;
             firstsPlayer = false;
 
@@ -172,21 +172,21 @@ public class ChoiceManager : MonoBehaviour
 
 
 
-    private void Choise1()
+    private void GetAorX()
     {
         Destroy(choiceBorY);
         Destroy(choiceTrigger);
         Debug.Log("Choise1を通った");
     }
 
-    private void Choise2()
+    private void GetBorY()
     {
         Destroy(choiceAorX);
         Destroy(choiceTrigger);
         Debug.Log("Choise2を通った");
     }
 
-    private void Choise3()
+    private void GetTrigger()
     {
         Destroy(choiceAorX);
         Destroy(choiceBorY);
