@@ -3,16 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+<<<<<<< HEAD
 public class TalkManager : MonoBehaviour {
     
     //縦
     int Talktext = 0;
     //横
     new int name = 0;
+=======
+public class TalkManager : MonoBehaviour
+{
+
+    int Talktext = 0; //縦
+    new int name = 0; //横
+    public float fo; //点滅用
+    private float fade = 0.035f;
+
+
+>>>>>>> origin/Fujita
     public GameObject NameTextmanager;
     public GameObject CommentTextmanager;
+    public GameObject Sakura;
+    //private Image sakuraImage;
 
-    //コメントと話すキャラの名前の配列
+
+    public void Start()
+    {
+        fo = Sakura.GetComponent<Image>().color.a;
+    }
+
+    //コメントと話すキャラの名前の配列(会話文は25個)
     string[][] Talk = new string[][]
     {
         //画面表示18文字を2行まで(全32文字)
@@ -48,12 +68,24 @@ public class TalkManager : MonoBehaviour {
         new string[]{"こんにちは","Player1"},
         new string[]{"こんばんは","Player2"},
     };
-    
+
     //左クリックしたとき名前とコメントの表示、Debug.logは配列番号とそれに対して画面表示する文字を確認
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
+            //前回の点滅の処理を止める
+            for (int i = 0; i < 25; i++)
+            {
+                StopCoroutine("SakuraOut");
+            }
+            //今は仮で会話数(25個)をループさせてる
+            if (Talktext == 25)
+            {
+                Talktext = 0;
+            }
+
             Text Nametext = NameTextmanager.GetComponent<Text>();
             Text Commenttext = CommentTextmanager.GetComponent<Text>();
             name = 1;
@@ -62,15 +94,41 @@ public class TalkManager : MonoBehaviour {
             name = 0;
             Commenttext.text = Talk[Talktext][name];
             Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Talk[Talktext][name]);
-            Talktext++;
 
+<<<<<<< HEAD
             //とりあえず配列３つを仮で作ったから３回ループでリセット
             if (Talktext == 25)
             if (Talktext == 3)
+=======
+            //テキストが出終わったら点滅開始
+            for (int i = 0; i < 25; i++)
+>>>>>>> origin/Fujita
             {
-                Talktext = 0;
+                StartCoroutine("SakuraOut");
             }
+            Talktext++;
         }
     }
 
+    //透明度を1~0と0~1へと徐々に変更することにより点滅させる(fadein,fadeoutの要領)
+    IEnumerator SakuraOut()
+    {
+        while (true)
+        {
+            //fadein
+            while (fo <= 1)
+            {
+                Sakura.GetComponent<Image>().color += new Color(0, 0, 0, fade);
+                fo += fade;
+                yield return null;
+            }
+            //fadeout
+            while (fo >= 0)
+            {
+                Sakura.GetComponent<Image>().color -= new Color(0, 0, 0, fade);
+                fo -= fade;
+                yield return null;
+            }
+        }
+    }
 }
