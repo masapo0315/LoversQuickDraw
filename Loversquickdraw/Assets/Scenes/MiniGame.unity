@@ -1516,10 +1516,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1769c6e8fbcbf204292a52ed4e30491c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 945539924}
-  moveForceMultipliter: 1
   Rcube: {fileID: 887261208}
-  sheikuTime: 0.02
+  R_shake: 0.002
+  rb: {fileID: 945539924}
 --- !u!1 &1035062005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,6 +1593,26 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1035062005}
+--- !u!1 &1067299720 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1983321904398200, guid: 126d619cf4daa52469682f85c1378b4a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1695120139}
+--- !u!54 &1067299721
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1067299720}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 10
+  m_CollisionDetection: 0
 --- !u!1 &1078634944 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 109308, guid: 126d619cf4daa52469682f85c1378b4a, type: 2}
@@ -1611,7 +1630,6 @@ GameObject:
   - component: {fileID: 1097208599}
   - component: {fileID: 1097208598}
   - component: {fileID: 1097208603}
-  - component: {fileID: 1097208597}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player1
@@ -1619,23 +1637,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1097208597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1097208596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5f6f2d498e963d4383f582f9451a279, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  L_text: {fileID: 1035062007}
-  L_debugtext: {fileID: 107843076}
-  Lcube: {fileID: 1078634944}
-  sheikuTime: 0.2
-  rb: {fileID: 1097208598}
-  moveForceMultipliter: 2
 --- !u!54 &1097208598
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1724,15 +1725,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1097208596}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c69d2bea59ce8744b8987a14b408caea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 1097208598}
-  moveForceMultipliter: 1
   Lcube: {fileID: 1078634944}
   sheikuTime: 0.02
+  rb: {fileID: 1097208598}
 --- !u!1 &1195888209
 GameObject:
   m_ObjectHideFlags: 0
@@ -2447,6 +2447,26 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1654648043}
+--- !u!1 &1654763529 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1054112583220142, guid: 126d619cf4daa52469682f85c1378b4a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1695120139}
+--- !u!54 &1654763530
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1654763529}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 10
+  m_CollisionDetection: 0
 --- !u!1001 &1695120139
 Prefab:
   m_ObjectHideFlags: 0

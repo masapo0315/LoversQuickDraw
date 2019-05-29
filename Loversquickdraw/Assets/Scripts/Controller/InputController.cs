@@ -7,10 +7,7 @@ using UnityEngine.UI;
 public class InputController : MonoBehaviour
 {
     //左コン
-    [SerializeField] private Text L_text;
-    [SerializeField] private Text L_debugtext;
     [SerializeField] private GameObject Lcube;
-    private int L_count = 0;
     private Vector3 L_defPos;
     private Vector3 L_initialPos;
     
@@ -43,16 +40,13 @@ public class InputController : MonoBehaviour
         }
         //左コントローラー
         L_defPos = Lcube.transform.position;
-        L_text.text = L_defPos.y.ToString();
-        L_debugtext.text = L_count.ToString();
-        if (L_defPos.y >= L_initialPos.y + sheikuTime || L_defPos.y <= L_initialPos.y - sheikuTime)
+        if (getPosFlag == true && L_defPos.y >= L_initialPos.y + sheikuTime || L_defPos.y <= L_initialPos.y - sheikuTime)
         {
             //狭い範囲に入った判定になってる
             //startしたときの値＋0.2fとコントローラーの値を比べてる。わからないことあったら聞いて
             rb.isKinematic = false;
             force = new Vector3(0.0f, 0.0f, 5.0f);
             rb.AddForce(force);  // 力を加える
-            L_count = L_count + 1;
             //Debug.Log("L_Con反応アリ");
         }
         else
@@ -61,23 +55,14 @@ public class InputController : MonoBehaviour
             //rb.isKinematic = true;
         }
     }
-    void SpeedUp()
-    {
-        Vector3 moveVector = Vector3.zero;
-        float horizontalInput = Input.GetAxis("Horizontal");
-        moveVector.z = moveSpeed * horizontalInput;
-
-        rb.AddForce(moveForceMultipliter * (moveVector - rb.velocity));
-    }
     //遅延処理
     private IEnumerator StartDelay()
     {
         moveSpeed = 0f;
-
+        getPosFlag = true;
         yield return new WaitForSeconds(2.0f);
-
+        
         moveSpeed = 20.0f;
-
         yield break;
     }
 }

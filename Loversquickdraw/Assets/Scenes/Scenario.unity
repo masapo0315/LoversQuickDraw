@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -113,34 +113,127 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
 --- !u!1 &122218252
+=======
+--- !u!1 &76524339
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   - component: {fileID: 122218255}
   - component: {fileID: 122218254}
   - component: {fileID: 122218253}
   m_Layer: 0
   m_Name: EventSystem
+=======
+  - component: {fileID: 76524341}
+  - component: {fileID: 76524340}
+  m_Layer: 0
+  m_Name: sakura
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
 --- !u!114 &122218253
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 122218252}
+=======
+--- !u!212 &76524340
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 76524339}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 78e5d3e602e4c1f4eb5fb1edf681de5e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.64, y: 0.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!4 &76524341
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 76524339}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.15, y: -0.504, z: -11.907}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &151044202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 151044205}
+  - component: {fileID: 151044204}
+  - component: {fileID: 151044203}
+  m_Layer: 0
+  m_Name: sitaText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &151044203
+=======
+  m_GameObject: {fileID: 700450886}
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -149,16 +242,29 @@ MonoBehaviour:
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
 --- !u!114 &122218254
+=======
+  fo: 0
+  NameTextmanager: {fileID: 0}
+  CommentTextmanager: {fileID: 0}
+  Sakura: {fileID: 0}
+--- !u!114 &700450889
+>>>>>>> origin/Fujita
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   m_GameObject: {fileID: 122218252}
+=======
+  m_GameObject: {fileID: 151044202}
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
@@ -176,30 +282,95 @@ Transform:
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &326594117
+=======
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: text
+--- !u!222 &151044204
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 151044202}
+--- !u!224 &151044205
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 151044202}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 423191779}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -48, y: -226}
+  m_SizeDelta: {x: 800, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &423191775
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   - component: {fileID: 326594121}
   - component: {fileID: 326594120}
   - component: {fileID: 326594119}
   - component: {fileID: 326594118}
   - component: {fileID: 326594122}
   m_Layer: 5
+=======
+  - component: {fileID: 423191779}
+  - component: {fileID: 423191778}
+  - component: {fileID: 423191777}
+  - component: {fileID: 423191776}
+  m_Layer: 0
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
 --- !u!114 &326594118
+=======
+--- !u!114 &423191776
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   m_GameObject: {fileID: 326594117}
+=======
+  m_GameObject: {fileID: 423191775}
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -210,12 +381,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
 --- !u!114 &326594119
+=======
+--- !u!114 &423191777
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   m_GameObject: {fileID: 326594117}
+=======
+  m_GameObject: {fileID: 423191775}
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -231,16 +410,28 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
 --- !u!223 &326594120
+=======
+--- !u!223 &423191778
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
 Canvas:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   m_GameObject: {fileID: 326594117}
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
+=======
+  m_GameObject: {fileID: 423191775}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 808856610}
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -251,30 +442,44 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
 --- !u!224 &326594121
+=======
+--- !u!224 &423191779
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
 RectTransform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   m_GameObject: {fileID: 326594117}
+=======
+  m_GameObject: {fileID: 423191775}
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   - {fileID: 958223726}
   - {fileID: 1203053052}
   - {fileID: 1965957115}
   - {fileID: 869735167}
   - {fileID: 469389192}
   - {fileID: 1936188186}
+=======
+  - {fileID: 1951245029}
+  - {fileID: 151044205}
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
 --- !u!114 &326594122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,12 +496,16 @@ MonoBehaviour:
   CommentTextmanager: {fileID: 0}
   Sakura: {fileID: 0}
 --- !u!1 &469389191
+=======
+--- !u!1 &808856609
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   - component: {fileID: 469389192}
   - component: {fileID: 469389194}
   - component: {fileID: 469389193}
@@ -375,13 +584,20 @@ GameObject:
   - component: {fileID: 637467928}
   - component: {fileID: 637467927}
   - component: {fileID: 637467926}
+=======
+  - component: {fileID: 808856613}
+  - component: {fileID: 808856610}
+  - component: {fileID: 808856612}
+  - component: {fileID: 808856611}
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
+  m_Name: Camera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
 --- !u!81 &637467926
 AudioListener:
   m_ObjectHideFlags: 0
@@ -397,11 +613,18 @@ Behaviour:
   m_GameObject: {fileID: 637467925}
   m_Enabled: 1
 --- !u!20 &637467928
+=======
+--- !u!20 &808856610
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
 Camera:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   m_GameObject: {fileID: 637467925}
+=======
+  m_GameObject: {fileID: 808856609}
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -414,17 +637,17 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 63
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
+  m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
@@ -432,6 +655,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
 --- !u!4 &637467929
 Transform:
   m_ObjectHideFlags: 0
@@ -577,10 +801,33 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 869735166}
+=======
+--- !u!81 &808856611
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 808856609}
+  m_Enabled: 1
+--- !u!124 &808856612
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 808856609}
+  m_Enabled: 1
+--- !u!4 &808856613
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 808856609}
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -13.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   m_Father: {fileID: 326594121}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -629,32 +876,111 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 869735166}
 --- !u!1 &958223725
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &995906733
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   - component: {fileID: 958223726}
   - component: {fileID: 958223728}
   - component: {fileID: 958223727}
   m_Layer: 5
   m_Name: Buck
+=======
+  - component: {fileID: 995906735}
+  - component: {fileID: 995906734}
+  m_Layer: 0
+  m_Name: talk
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
 --- !u!224 &958223726
 RectTransform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 958223725}
+=======
+--- !u!212 &995906734
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 995906733}
+  m_Enabled: 1
+<<<<<<< HEAD
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: a113961ce63f88b49860952bc8f120dc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 9, y: 2.2}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!4 &995906735
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5dc1e516f8b62443b6320297a1fbf2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fo: 0
+  NameTextmanager: {fileID: 700450886}
+  CommentTextmanager: {fileID: 1215040391}
+  Sakura: {fileID: 2001597010}
+--- !u!4 &1326858000
+>>>>>>> origin/Fujita
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 995906733}
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.34, z: -8.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   m_Father: {fileID: 326594121}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -664,16 +990,62 @@ RectTransform:
   m_SizeDelta: {x: 1290, y: 968}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &958223727
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1083812189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1083812192}
+  - component: {fileID: 1083812191}
+  - component: {fileID: 1083812190}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1083812190
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1083812189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1083812191
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   m_GameObject: {fileID: 958223725}
+=======
+  m_GameObject: {fileID: 1083812189}
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -697,22 +1069,49 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 958223725}
 --- !u!1 &1203053051
+=======
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 5
+--- !u!4 &1083812192
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1083812189}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1406094644
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   - component: {fileID: 1203053052}
   - component: {fileID: 1203053054}
   - component: {fileID: 1203053053}
   m_Layer: 5
   m_Name: Karen1
+=======
+  - component: {fileID: 1406094646}
+  - component: {fileID: 1406094645}
+  m_Layer: 0
+  m_Name: karen1
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
 --- !u!224 &1203053052
 RectTransform:
   m_ObjectHideFlags: 0
@@ -737,13 +1136,129 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1203053051}
+=======
+--- !u!212 &1406094645
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1406094644}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: dc81e6f843aaf4a43ad16e03e637039b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 10.25, y: 14.5}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!4 &1406094646
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1406094644}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.01, y: -13.26, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1860041227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1860041229}
+  - component: {fileID: 1860041228}
+  m_Layer: 0
+  m_Name: Buck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1860041228
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1860041227}
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 6a827d36c9d0fe94ab4a936fc7785a50, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< HEAD
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 36.87, y: 27.65}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!4 &1860041229
+Transform:
+=======
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -760,27 +1275,48 @@ MonoBehaviour:
   m_FillOrigin: 0
 --- !u!222 &1203053054
 CanvasRenderer:
+>>>>>>> origin/Fujita
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   m_GameObject: {fileID: 1203053051}
 --- !u!1 &1936188185
+=======
+  m_GameObject: {fileID: 1860041227}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1904995369
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   - component: {fileID: 1936188186}
   - component: {fileID: 1936188188}
   - component: {fileID: 1936188187}
   m_Layer: 5
   m_Name: sakura
+=======
+  - component: {fileID: 1904995371}
+  - component: {fileID: 1904995370}
+  m_Layer: 0
+  m_Name: GameObject
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
 --- !u!224 &1936188186
 RectTransform:
   m_ObjectHideFlags: 0
@@ -800,10 +1336,14 @@ RectTransform:
   m_SizeDelta: {x: 45, y: 38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1936188187
+=======
+--- !u!114 &1904995370
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   m_GameObject: {fileID: 1936188185}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -833,32 +1373,81 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1936188185}
 --- !u!1 &1965957114
+=======
+  m_GameObject: {fileID: 1904995369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5dc1e516f8b62443b6320297a1fbf2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameTextmanager: {fileID: 1951245028}
+  CommentTextmanager: {fileID: 151044202}
+--- !u!4 &1904995371
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1904995369}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.34, z: -8.62}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1951245028
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   - component: {fileID: 1965957115}
   - component: {fileID: 1965957117}
   - component: {fileID: 1965957116}
   m_Layer: 5
   m_Name: Textframe
+=======
+<<<<<<< HEAD
+  - component: {fileID: 1951245029}
+  - component: {fileID: 1951245031}
+  - component: {fileID: 1951245030}
+  m_Layer: 0
+  m_Name: ueText
+=======
+  - component: {fileID: 2001597011}
+  - component: {fileID: 2001597013}
+  - component: {fileID: 2001597012}
+  m_Layer: 5
+  m_Name: sakura
+>>>>>>> origin/Fujita
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
 --- !u!224 &1965957115
+=======
+--- !u!224 &1951245029
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
 RectTransform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   m_GameObject: {fileID: 1965957114}
+=======
+  m_GameObject: {fileID: 1951245028}
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   m_Father: {fileID: 326594121}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -868,25 +1457,63 @@ RectTransform:
   m_SizeDelta: {x: 1080, y: 264}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1965957116
+=======
+  m_Father: {fileID: 423191779}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -287, y: -106}
+  m_SizeDelta: {x: 320, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1951245030
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   m_GameObject: {fileID: 1965957114}
+=======
+  m_GameObject: {fileID: 1951245028}
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   m_Sprite: {fileID: 21300000, guid: 2952f33737ca7bc4196d191cf559b32b, type: 3}
+=======
+<<<<<<< HEAD
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'name
+
+'
+--- !u!222 &1951245031
+=======
+  m_Sprite: {fileID: 21300000, guid: b7bf6343ad8186a41a31e33211c6ee9a, type: 3}
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -894,9 +1521,22 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
 --- !u!222 &1965957117
+=======
+--- !u!222 &2001597013
+>>>>>>> origin/Fujita
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD:Loversquickdraw/Assets/Scenes/Scenario.unity
   m_GameObject: {fileID: 1965957114}
+=======
+<<<<<<< HEAD
+  m_GameObject: {fileID: 1951245028}
+=======
+  m_GameObject: {fileID: 2001597010}
+>>>>>>> origin/Fujita
+>>>>>>> master:Loversquickdraw/Assets/Scenes/TalkScene.unity
