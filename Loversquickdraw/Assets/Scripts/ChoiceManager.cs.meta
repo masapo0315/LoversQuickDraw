@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
+guid: bd667f7a0f1e21f4bb61da80a814143f
+=======
 guid: 1d2473deabac97b44885d8c575f90eee
+>>>>>>> タイトルロゴの追加
+=======
+guid: 1d2473deabac97b44885d8c575f90eee
+>>>>>>> f8ab865b7d2421591ec58b2ff91e20db6ac5f685
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

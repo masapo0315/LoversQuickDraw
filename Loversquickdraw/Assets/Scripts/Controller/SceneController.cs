@@ -16,13 +16,18 @@ public class SceneController : MonoBehaviour
     void Update ()
     {
         CheckInput(_button);
-	}
+        Debug.Log(_button);
+        if(OVRInput.GetDown(OVRInput.Touch.One))
+        {
+            //Debug.Log("Aボタンを押した");
+        }
+    }
     private void CheckInput(OVRInput.Button button)
     {
         if(OVRInput.GetDown(button))
         {
             Debug.Log(button);
-            SceneManager.LoadScene("Sinario");
+            SceneManager.LoadScene("TalkScene");
         }
     }
 }
