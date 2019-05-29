@@ -15,8 +15,7 @@ public class TalkManager : MonoBehaviour
     public GameObject NameTextmanager;
     public GameObject CommentTextmanager;
     public GameObject Sakura;
-    //private Image sakuraImage;
-
+    
 
     public void Start()
     {
