@@ -15,8 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MiniGame.unity
     guid: 5866ba438dacc99488b8d5c4126ff107
   - enabled: 1
-    path: Assets/Scenes/TalkScene.unity
-    guid: 2f8f2a7591a066e43bb43e27170308bc
+    path: Assets/Scenes/Scenario.unity
+    guid: 1a775c647d829c544b03f9cc7cec412e
   - enabled: 1
     path: Assets/Scenes/TestChoice.unity
     guid: 75927962b3d1cd741a645d9334b1288d

@@ -8,7 +8,7 @@ public class TalkManager : MonoBehaviour
 
     private int Talktext = 0; //縦
     private new int name = 0; //横
-    private float fadeIn,fadeOut; //点滅用
+    private float fadeInOut; //点滅用
     private float fade = 0.035f;
 
 
@@ -18,8 +18,7 @@ public class TalkManager : MonoBehaviour
     
     private void Start()
     {
-        fadeIn = Sakura.GetComponent<Image>().color.a;
-        fadeOut = Sakura.GetComponent<Image>().color.a;
+        fadeInOut = Sakura.GetComponent<Image>().color.a;
     }
 
     //コメントと話すキャラの名前の配列(会話文は25個)
@@ -96,17 +95,17 @@ public class TalkManager : MonoBehaviour
         while (true)
         {
             //fadein
-            while (fadeIn <= 1)
+            while (fadeInOut <= 1)
             {
                 Sakura.GetComponent<Image>().color += new Color(0, 0, 0, fade);
-                fadeIn += fade;
+                fadeInOut += fade;
                 yield return null;
             }
             //fadeout
-            while (fadeOut >= 0)
+            while (fadeInOut >= 0)
             {
                 Sakura.GetComponent<Image>().color -= new Color(0, 0, 0, fade);
-                fadeOut -= fade;
+                fadeInOut -= fade;
                 yield return null;
             }
         }
