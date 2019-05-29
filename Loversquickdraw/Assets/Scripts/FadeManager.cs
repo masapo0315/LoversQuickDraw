@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//岩崎
 public class FadeManager : MonoBehaviour
 {
     private OVRInput.Button _button;

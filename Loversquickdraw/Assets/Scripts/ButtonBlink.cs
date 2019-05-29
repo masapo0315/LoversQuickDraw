@@ -6,6 +6,8 @@ using UnityEngine.UI;
 /// <summary>
 /// タイトルのpush any bottunの点滅
 /// </summary>
+
+//岩崎
 public class ButtonBlink : MonoBehaviour
 {
     [SerializeField]private float speed = 1.0f;
