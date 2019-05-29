@@ -33,7 +33,7 @@ public class ChoiceManager : MonoBehaviour
     //GameObject choice3Text;
 
 
-    bool stopChoice = false;
+    private bool stopChoice = false;
 
     //基準は2.5秒
     [SerializeField]
@@ -44,13 +44,6 @@ public class ChoiceManager : MonoBehaviour
     [HideInInspector]
     public bool firstsPlayer = false;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         /// <summary>
@@ -62,24 +55,20 @@ public class ChoiceManager : MonoBehaviour
         if (stopChoice == false && Input.GetKeyDown(KeyCode.Keypad1))
         {
             Debug.Log("1Pが1を押した");
-            //Debug.Log("1を押した");
             ChangeColor1();
             Invoke("GetAorX", invokeTime);
             stopChoice = true;
             firstsPlayer = true;
-
         }
 
         //2Pが1を押した判定
         if (stopChoice == false && Input.GetKeyDown(KeyCode.Z))
         {
             Debug.Log("2Pが1を押した");
-            //Debug.Log("1を押した");
             ChangeColor1();
             Invoke("GetAorX", invokeTime);
             stopChoice = true;
             firstsPlayer = false;
-
         }
 
 
@@ -87,25 +76,20 @@ public class ChoiceManager : MonoBehaviour
         if (stopChoice == false && Input.GetKeyDown(KeyCode.Keypad2))
         {
             Debug.Log("1Pが2を押した");
-            //Debug.Log("2を押した");
             ChangeColor2();
             Invoke("GetBorY", invokeTime);
             stopChoice = true;
             firstsPlayer = true;
-
         }
 
         //2Pが2を押した判定
         if (stopChoice == false && Input.GetKeyDown(KeyCode.X))
         {
             Debug.Log("2Pが2を押した");
-            //Debug.Log("2を押した");
             ChangeColor2();
             Invoke("GetBorY", invokeTime);
             stopChoice = true;
             firstsPlayer = false;
-
-
         }
 
 
@@ -113,65 +97,51 @@ public class ChoiceManager : MonoBehaviour
         if (stopChoice == false && Input.GetKeyDown(KeyCode.Keypad3))
         {
             Debug.Log("1Pが3を押した");
-            //Debug.Log("3を押した");
             ChangeColor3();
             Invoke("GetTrigger", invokeTime);
             stopChoice = true;
             firstsPlayer = true;
-
         }
 
         //2Pが3を押した判定
         if (stopChoice == false && Input.GetKeyDown(KeyCode.C))
         {
             Debug.Log("2Pが3を押した");
-            //Debug.Log("3を押した");
             ChangeColor3();
             Invoke("GetTrigger", invokeTime);
             stopChoice = true;
             firstsPlayer = false;
-
-
         }
-
-
     }
     //カラーコードは〇〇/255, で表示
     private void ChangeColor1()
     {
         Debug.Log("2と3を暗くする");
-
-        //choice2.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);//下に変更
+        
         choiceBorY.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
-
-        //choice3.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);//下に変更
+        
         choiceTrigger.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
     }
 
     private void ChangeColor2()
     {
         Debug.Log("1と3を暗くする");
-
-        //choice1.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);//下に変更
+        
         choiceAorX.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
-
-        //choice3.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);//下に変更
+        
         choiceTrigger.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
     }
 
     private void ChangeColor3()
     {
         Debug.Log("1と2を暗くする");
-
-        //choice1.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);//下に変更
+        
         choiceAorX.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
-
-        //choice2.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);//下に変更
+        
         choiceBorY.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
     }
 
-
-
+    
     private void GetAorX()
     {
         Destroy(choiceBorY);

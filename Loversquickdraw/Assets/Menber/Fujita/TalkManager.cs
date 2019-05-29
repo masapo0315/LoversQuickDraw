@@ -6,20 +6,20 @@ using UnityEngine.UI;
 public class TalkManager : MonoBehaviour
 {
 
-    int Talktext = 0; //縦
-    new int name = 0; //横
-    public float fo; //点滅用
+    private int Talktext = 0; //縦
+    private new int name = 0; //横
+    private float fadeIn,fadeOut; //点滅用
     private float fade = 0.035f;
 
 
-    public GameObject NameTextmanager;
-    public GameObject CommentTextmanager;
-    public GameObject Sakura;
+    [SerializeField] private GameObject NameTextmanager;
+    [SerializeField]private GameObject CommentTextmanager;
+    [SerializeField]private GameObject Sakura;
     
-
-    public void Start()
+    private void Start()
     {
-        fo = Sakura.GetComponent<Image>().color.a;
+        fadeIn = Sakura.GetComponent<Image>().color.a;
+        fadeOut = Sakura.GetComponent<Image>().color.a;
     }
 
     //コメントと話すキャラの名前の配列(会話文は25個)
@@ -96,17 +96,17 @@ public class TalkManager : MonoBehaviour
         while (true)
         {
             //fadein
-            while (fo <= 1)
+            while (fadeIn <= 1)
             {
                 Sakura.GetComponent<Image>().color += new Color(0, 0, 0, fade);
-                fo += fade;
+                fadeIn += fade;
                 yield return null;
             }
             //fadeout
-            while (fo >= 0)
+            while (fadeOut >= 0)
             {
                 Sakura.GetComponent<Image>().color -= new Color(0, 0, 0, fade);
-                fo -= fade;
+                fadeOut -= fade;
                 yield return null;
             }
         }
