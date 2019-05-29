@@ -871,7 +871,7 @@ MonoBehaviour:
   choiceAorX: {fileID: 1774031764}
   choiceBorY: {fileID: 653077604}
   choiceTrigger: {fileID: 1382253813}
-  invokeTime: 0
+  invokeTime: 2.5
   firstsPlayer: 0
 --- !u!4 &1848254639
 Transform:

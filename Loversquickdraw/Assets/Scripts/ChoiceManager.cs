@@ -52,7 +52,7 @@ public class ChoiceManager : MonoBehaviour
         /// </summary>
 
         //1Pが1を押した判定
-        if (stopChoice == false && Input.GetKeyDown(KeyCode.Keypad1))
+        if (stopChoice == false && OVRInput.GetDown(OVRInput.Touch.One))
         {
             Debug.Log("1Pが1を押した");
             ChangeColor1();

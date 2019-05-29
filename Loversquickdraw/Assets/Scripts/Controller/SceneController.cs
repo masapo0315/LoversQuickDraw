@@ -27,7 +27,7 @@ public class SceneController : MonoBehaviour
         if(OVRInput.GetDown(button))
         {
             Debug.Log(button);
-            SceneManager.LoadScene("TalkScene");
+            SceneManager.LoadScene("Scenario");
         }
     }
 }
