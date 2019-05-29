@@ -3,14 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-<<<<<<< HEAD
-public class TalkManager : MonoBehaviour {
-    
-    //縦
-    int Talktext = 0;
-    //横
-    new int name = 0;
-=======
 public class TalkManager : MonoBehaviour
 {
 
@@ -18,9 +10,7 @@ public class TalkManager : MonoBehaviour
     new int name = 0; //横
     public float fo; //点滅用
     private float fade = 0.035f;
-
-
->>>>>>> origin/Fujita
+    
     public GameObject NameTextmanager;
     public GameObject CommentTextmanager;
     public GameObject Sakura;
@@ -94,15 +84,12 @@ public class TalkManager : MonoBehaviour
             name = 0;
             Commenttext.text = Talk[Talktext][name];
             Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Talk[Talktext][name]);
-
-<<<<<<< HEAD
+            
             //とりあえず配列３つを仮で作ったから３回ループでリセット
             if (Talktext == 25)
             if (Talktext == 3)
-=======
             //テキストが出終わったら点滅開始
             for (int i = 0; i < 25; i++)
->>>>>>> origin/Fujita
             {
                 StartCoroutine("SakuraOut");
             }
