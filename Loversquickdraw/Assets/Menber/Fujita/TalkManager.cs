@@ -10,12 +10,12 @@ public class TalkManager : MonoBehaviour
     new int name = 0; //横
     public float fo; //点滅用
     private float fade = 0.035f;
-    
+
+
     public GameObject NameTextmanager;
     public GameObject CommentTextmanager;
     public GameObject Sakura;
-    //private Image sakuraImage;
-
+    
 
     public void Start()
     {
@@ -53,10 +53,6 @@ public class TalkManager : MonoBehaviour
         new string[]{"この俺だァァアアァァァッッ！！！！","両プレイヤー"},
         new string[]{"あいつと同時に駆け出す俺、\n目の前には十字路が迫っている。","両プレイヤー"},
         new string[]{"あいつよりも前に出て華恋とぶつかる。\nそのために俺はーー！！","両プレイヤー"},
-        //画面表示文字は今は仮で２行まで(全32文字)
-        new string[]{"１６文字目で改行させるあいうえお\n↑で１６字", "夢宮 華恋"},
-        new string[]{"こんにちは","Player1"},
-        new string[]{"こんばんは","Player2"},
     };
 
     //左クリックしたとき名前とコメントの表示、Debug.logは配列番号とそれに対して画面表示する文字を確認
@@ -84,10 +80,7 @@ public class TalkManager : MonoBehaviour
             name = 0;
             Commenttext.text = Talk[Talktext][name];
             Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Talk[Talktext][name]);
-            
-            //とりあえず配列３つを仮で作ったから３回ループでリセット
-            if (Talktext == 25)
-            if (Talktext == 3)
+
             //テキストが出終わったら点滅開始
             for (int i = 0; i < 25; i++)
             {
