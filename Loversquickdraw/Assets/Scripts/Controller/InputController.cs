@@ -8,6 +8,8 @@ public class InputController : MonoBehaviour
 {
     //左コン
     [SerializeField] private GameObject Lcube;
+    public Text text;
+    public Text aaaa;
     private Vector3 L_defPos;
     private Vector3 L_initialPos;
     
@@ -16,17 +18,9 @@ public class InputController : MonoBehaviour
     private int posGetCount = 0;
 
     private bool getPosFlag = false;
-    // 1Pのコントローラー
-    [SerializeField] private Rigidbody rb;
-    private float moveSpeed; //速度
-    [SerializeField] private float moveForceMultipliter; // 追従度
-
-    Vector3 force;
     
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        StartCoroutine("StartDelay");
     }
     void Update()
     {
@@ -40,29 +34,14 @@ public class InputController : MonoBehaviour
         }
         //左コントローラー
         L_defPos = Lcube.transform.position;
+        text.text = posGetCount.ToString();
+        aaaa.text = L_defPos.y.ToString();
         if (getPosFlag == true && L_defPos.y >= L_initialPos.y + sheikuTime || L_defPos.y <= L_initialPos.y - sheikuTime)
         {
+            posGetCount = posGetCount + 1;
             //狭い範囲に入った判定になってる
             //startしたときの値＋0.2fとコントローラーの値を比べてる。わからないことあったら聞いて
-            rb.isKinematic = false;
-            force = new Vector3(0.0f, 0.0f, 5.0f);
-            rb.AddForce(force);  // 力を加える
             //Debug.Log("L_Con反応アリ");
         }
-        else
-        {
-            rb.velocity = Vector3.zero;
-            //rb.isKinematic = true;
-        }
-    }
-    //遅延処理
-    private IEnumerator StartDelay()
-    {
-        moveSpeed = 0f;
-        getPosFlag = true;
-        yield return new WaitForSeconds(2.0f);
-        
-        moveSpeed = 20.0f;
-        yield break;
     }
 }

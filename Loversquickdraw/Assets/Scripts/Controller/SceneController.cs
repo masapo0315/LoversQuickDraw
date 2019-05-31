@@ -17,13 +17,9 @@ public class SceneController : MonoBehaviour
     {
         CheckInput(_button);
         //Debug.Log(_button);
-        if(OVRInput.GetDown(OVRInput.Touch.One))
+        if (OVRInput.GetDown(OVRInput.RawButton.A))
         {
-            Debug.Log("Aボタンを押した");
-        }
-        if (OVRInput.GetDown(OVRInput.Button.One))
-        {
-            Debug.Log("Aボタンを押した");
+            Debug.Log("Aボタンを押したRawButton");
         }
     }
     private void CheckInput(OVRInput.Button button)

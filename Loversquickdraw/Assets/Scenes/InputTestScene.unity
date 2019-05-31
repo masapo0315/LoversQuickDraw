@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -413,10 +413,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 590574074}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &967622094 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 113768, guid: 126d619cf4daa52469682f85c1378b4a, type: 2}
-  m_PrefabInternal: {fileID: 516463851}
 --- !u!1 &1001736567
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,6 +643,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1369615497}
   - component: {fileID: 1369615496}
+  - component: {fileID: 1369615498}
   m_Layer: 0
   m_Name: InputCheck
   m_TagString: Untagged
@@ -665,12 +662,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f6f2d498e963d4383f582f9451a279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  L_text: {fileID: 1001736569}
-  L_debugtext: {fileID: 543055561}
   Lcube: {fileID: 1115853189}
-  R_text: {fileID: 2117822500}
-  R_debugtext: {fileID: 259844481}
-  Rcube: {fileID: 967622094}
+  text: {fileID: 1001736569}
+  aaaa: {fileID: 543055561}
   sheikuTime: 0.015
 --- !u!4 &1369615497
 Transform:
@@ -685,6 +679,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1369615498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1369615495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd9bc2aba5e81b408647133207a969c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1423365800
 GameObject:
   m_ObjectHideFlags: 0

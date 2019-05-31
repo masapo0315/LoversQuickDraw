@@ -11,5 +11,8 @@ public class CameraController : MonoBehaviour
     {
         //カメラのトラッキングOFF
         XRDevice.DisableAutoXRCameraTracking(target, true);
+        //Camera camera;
+        target.stereoTargetEye = StereoTargetEyeMask.Both;
+        //target.stereoTargetEye = StereoTargetEyeMask.None;
     }
 }
