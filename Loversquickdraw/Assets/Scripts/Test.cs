@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+public class Test : MonoBehaviour
+{
+    void Update()
+    {
         if (OVRInput.GetDown(OVRInput.RawButton.A))
         {
             Debug.Log("Aボタンを押した");

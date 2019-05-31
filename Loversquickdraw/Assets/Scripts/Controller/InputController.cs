@@ -18,10 +18,7 @@ public class InputController : MonoBehaviour
     private int posGetCount = 0;
 
     private bool getPosFlag = false;
-    
-    void Start()
-    {
-    }
+   
     void Update()
     {
         /*
