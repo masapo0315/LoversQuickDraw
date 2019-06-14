@@ -58,7 +58,7 @@ public class TalkManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)||Input.GetKeyDown(KeyCode.Space))
         {
             //前回の点滅の処理を止める
             for (int i = 0; i < 25; i++)
