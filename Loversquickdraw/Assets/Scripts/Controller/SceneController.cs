@@ -32,7 +32,7 @@ public class SceneController : MonoBehaviour
     }
     private void CheckInput(OVRInput.Button button)
     {
-        if(OVRInput.GetDown(button))
+        if(SceneManager.GetActiveScene().name == "" && OVRInput.GetDown(button))
         {
             Debug.Log(button);
             //SceneManager.LoadScene("Scenario");
