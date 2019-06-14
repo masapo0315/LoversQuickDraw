@@ -11,15 +11,23 @@ public class SceneController : MonoBehaviour
     private void Start()
     {
         _button = InputManager.GetButton(_buttonNum);
-        Debug.Log(_button);
+        //Debug.Log(_button);
     }
     void Update ()
     {
-        CheckInput(_button);
-        Debug.Log(_button);
-        if(OVRInput.GetDown(OVRInput.Touch.One))
+        DebugInput();
+        //CheckInput(_button);
+        //Debug.Log(_button);
+        if (OVRInput.GetDown(OVRInput.RawButton.A))
         {
-            //Debug.Log("Aボタンを押した");
+            Debug.Log("Aボタンを押したRawButton");
+        }
+    }
+    private void DebugInput()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("Scenario");
         }
     }
     private void CheckInput(OVRInput.Button button)

@@ -6,10 +6,12 @@ using UnityEngine.XR;
 //岩崎
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] Camera target;
+    [SerializeField]private Camera target;
     void Start()
     {
         //カメラのトラッキングOFF
         XRDevice.DisableAutoXRCameraTracking(target, true);
+        //スクリプトからカメラを固定
+        target.stereoTargetEye = StereoTargetEyeMask.Both;
     }
 }
