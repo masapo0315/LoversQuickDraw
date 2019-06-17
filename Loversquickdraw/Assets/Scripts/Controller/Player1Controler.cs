@@ -6,13 +6,22 @@ public class Player1Controler : MonoBehaviour {
 
     // 1Pのコントローラー
 
-    public Rigidbody rb;
-    float moveSpeed; //速度
-    [SerializeField]
-    float moveForceMultipliter; // 追従度
+    //左コン
+    [SerializeField] private GameObject Lcube;
+    [SerializeField] private float L_shake;
+    private Vector3 L_defPos;
+    private Vector3 L_initialPos;
+
+    private int L_posGetCount = 0;
+
+    [SerializeField] private Rigidbody rb;
+    private float moveSpeed; //速度
+
+    private Vector3 force;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
 
         rb = GetComponent<Rigidbody>();
         StartCoroutine("StartDelay");
@@ -20,7 +29,8 @@ public class Player1Controler : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 
         SpeedUp();
 
@@ -29,11 +39,21 @@ public class Player1Controler : MonoBehaviour {
     // 加速処理
     void SpeedUp()
     {
-        Vector3 moveVector = Vector3.zero;
-        float horizontalInput = Input.GetAxis("Horizontal");
-        moveVector.z = moveSpeed * horizontalInput;
-
-        rb.AddForce(moveForceMultipliter * (moveVector - rb.velocity));
+        if (L_posGetCount <= 5)
+        {
+            L_initialPos.y = L_defPos.y;
+            L_posGetCount = L_posGetCount + 1;
+        }
+        L_defPos = Lcube.transform.position;
+        if (L_defPos.y >= L_initialPos.y + L_shake || L_defPos.y <= L_initialPos.y - L_shake)
+        {
+            force = new Vector3(3.0f, 0.0f, 0.0f);
+            rb.AddForce(force);
+        }
+        else
+        {
+            rb.velocity = Vector3.zero;
+        }
     }
 
     //遅延処理
