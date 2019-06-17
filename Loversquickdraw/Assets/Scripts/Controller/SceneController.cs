@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 //岩崎
 public class SceneController : MonoBehaviour
 {
+    //inputManagerからの取得を
     private OVRInput.Button _button;
     private int _buttonNum = 1;
     private void Start()
@@ -15,13 +16,9 @@ public class SceneController : MonoBehaviour
     }
     void Update ()
     {
+        //Debug.Log(_button);
         //DebugInput();
         CheckInput(_button);
-        //Debug.Log(_button);
-        if (OVRInput.GetDown(OVRInput.RawButton.A))
-        {
-            Debug.Log("Aボタンを押したRawButton");
-        }
     }
     private void DebugInput()
     {
@@ -32,10 +29,10 @@ public class SceneController : MonoBehaviour
     }
     private void CheckInput(OVRInput.Button button)
     {
-        if(SceneManager.GetActiveScene().name == "" && OVRInput.GetDown(button))
+        if(/*SceneManager.GetActiveScene().name == "Title" &&*/ OVRInput.GetDown(button))
         {
             Debug.Log(button);
-            //SceneManager.LoadScene("Scenario");
+            SceneManager.LoadScene("Scenario");
         }
     }
 }
