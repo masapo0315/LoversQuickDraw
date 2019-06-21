@@ -11,21 +11,27 @@ public class TalkManager : MonoBehaviour
     private float fadeInOut; //点滅用
     private float fade = 0.035f;
 
+    string[] TEXTTAG_LIST = { "プレイヤー１", "プレイヤー２"};
 
-    [SerializeField] private GameObject NameTextmanager;
+    #region
+
+    [SerializeField]private GameObject NameTextmanager;
     [SerializeField]private GameObject CommentTextmanager;
     [SerializeField]private GameObject Sakura;
     
     private void Start()
     {
+        //string x = "プレイヤー１";
+        //x = x.Replace("プレイヤー１", "name1");
         fadeInOut = Sakura.GetComponent<Image>().color.a;
     }
-
+    
+    
     //コメントと話すキャラの名前の配列(会話文は25個)
     string[][] Talk = new string[][]
     {
-        //画面表示18文字を2行まで(全32文字)
-        new string[]{ "俺は［１　Ｐ］。\n色濃（いろこい）高校の新入生だ。", "プレイヤー１"},
+        //画面表示18文字を2行まで(全36文字)
+        new string[]{ "俺は。プレイヤー１\n色濃（いろこい）高校の新入生だ。", "プレイヤー１"},
         new string[]{ "高校――すなわち青春。華々しい\n“高校生”の期間、俺は…", "プレイヤー１"},
         new string[]{ "「彼女」と過ごしたいッッッ！！", "プレイヤー１"},
         new string[]{ "というのも、俺には長い間淡い恋情を抱き続けてきた相手がいるのだ。", "プレイヤー１"},
@@ -34,12 +40,12 @@ public class TalkManager : MonoBehaviour
         new string[]{ "正直、高嶺の花かと思わなくもないが、\n覚悟は決まっている。俺は彼女が好――", "プレイヤー１"},
         new string[]{ "いや、俺の方が好きなんだが？？", "プレイヤー２"},
         new string[]{ "――は？いや、誰？", "プレイヤー１"},
-        new string[]{ "俺は［２　Ｐ］。\n色濃（いろこい）高校の新入生だ。", "プレイヤー２"},
+        new string[]{ "俺は。プレイヤー２。\n色濃（いろこい）高校の新入生だ。", "プレイヤー２"},
 
         new string[]{ "高校――すなわち青春。華々しい\n“高校生”の期間、俺は…", "プレイヤー２"},
-        new string[]{ "お前もそれやるんかァ！？\nつーか［２　Ｐ］かよ、何のつもりだ？", "プレイヤー１"},
+        new string[]{ "お前もそれやるんかァ！？\nつーかプレイヤー２かよ、何のつもりだ？", "プレイヤー１"},
         new string[]{"そう、忌々しいことに、華恋の幼馴染は俺だけではない。","プレイヤー１"},
-        new string[]{ "この［２　Ｐ］と３人ですくすく育ってきた仲良し３人組なのだーー！", "プレイヤー１"},
+        new string[]{ "このプレイヤー２と３人ですくすく育ってきた仲良し３人組なのだーー！", "プレイヤー１"},
         new string[]{"同じこと考えてるクセによく言うぜ。","プレイヤー２"},
         new string[]{"この道を通るってことは、だろ？","プレイヤー１"},
         new string[]{"！！","プレイヤー１"},
@@ -53,11 +59,10 @@ public class TalkManager : MonoBehaviour
         new string[]{"あいつと同時に駆け出す俺、\n目の前には十字路が迫っている。","両プレイヤー"},
         new string[]{"あいつよりも前に出て華恋とぶつかる。\nそのために俺はーー！！","両プレイヤー"},
     };
-
+    #endregion
     //左クリックしたとき名前とコメントの表示、Debug.logは配列番号とそれに対して画面表示する文字を確認
     void Update()
     {
-
         if (Input.GetMouseButtonDown(0)||Input.GetKeyDown(KeyCode.Space))
         {
             //前回の点滅の処理を止める
@@ -65,6 +70,7 @@ public class TalkManager : MonoBehaviour
             {
                 StopCoroutine("SakuraOut");
             }
+
             //今は仮で会話数(25個)をループさせてる
             if (Talktext == 25)
             {
@@ -75,9 +81,9 @@ public class TalkManager : MonoBehaviour
             Text Commenttext = CommentTextmanager.GetComponent<Text>();
             name = 1;
             Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Talk[Talktext][name]);
-            Nametext.text = Talk[Talktext][name];
+            Nametext.text = ReplaceTag(Talk[Talktext][name]);
             name = 0;
-            Commenttext.text = Talk[Talktext][name];
+            Commenttext.text = ReplaceTag(Talk[Talktext][name]);
             Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Talk[Talktext][name]);
 
             //テキストが出終わったら点滅開始
@@ -87,6 +93,27 @@ public class TalkManager : MonoBehaviour
             }
             Talktext++;
         }
+    }
+
+    string ReplaceTag(string _text)
+    {
+        string tmp = _text;
+        int cnt = 0;
+
+        foreach (string tag in TEXTTAG_LIST)
+        {
+            switch(cnt)
+            {
+                case 0:
+                    tmp = tmp.Replace(tag, "リーダー");
+                    break;
+                case 1:
+                    tmp = tmp.Replace(tag, "プログラマー");
+                    break;
+            }
+            cnt++;
+        }
+        return tmp;
     }
 
     //透明度を1~0と0~1へと徐々に変更することにより点滅させる(fadein,fadeoutの要領)
