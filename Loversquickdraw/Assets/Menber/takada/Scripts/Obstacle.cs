@@ -16,8 +16,8 @@ public class Obstacle : MonoBehaviour {
 
     void ObstacleSporn()
     {
-        Instantiate(obstacle, new Vector3(Player1.transform.position.x + 5f,-50,0), Quaternion.identity);
-        Instantiate(obstacle, new Vector3(Player2.transform.position.x + 5f, -100, 0), Quaternion.identity);
+        Instantiate(obstacle, new Vector3(Player1.transform.position.x + 5f,-51,0), Quaternion.identity);
+        Instantiate(obstacle, new Vector3(Player2.transform.position.x + 5f, -99, 0), Quaternion.identity);
     }
 
 }

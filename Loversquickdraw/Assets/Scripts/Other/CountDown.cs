@@ -13,7 +13,6 @@ public class CountDown : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         StartCoroutine(CountdownCoroutine());
-        
 	}
 	
 	// Update is called once per frame
