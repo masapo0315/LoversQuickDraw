@@ -105,10 +105,10 @@ public class TalkManager : MonoBehaviour
             switch(cnt)
             {
                 case 0:
-                    tmp = tmp.Replace(tag, "プレイヤー11");
+                    tmp = tmp.Replace(tag, "リーダー");
                     break;
                 case 1:
-                    tmp = tmp.Replace(tag, "プレイヤー22");
+                    tmp = tmp.Replace(tag, "プログラマー");
                     break;
             }
             cnt++;
