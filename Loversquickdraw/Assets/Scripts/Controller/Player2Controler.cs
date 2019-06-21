@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player2Controler : MonoBehaviour
 {
+    //　2Pのコントローラー
+
     //右コン
     [SerializeField] private GameObject Rcube;
     [SerializeField] private float R_shake;
@@ -12,7 +14,6 @@ public class Player2Controler : MonoBehaviour
 
     private int R_posGetCount = 0;
 
-    //　2Pのコントローラー
     [SerializeField] private Rigidbody rb;
     private float moveSpeed; //速度
 
@@ -27,6 +28,12 @@ public class Player2Controler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SpeedUp();
+    }
+
+    //加速処理
+    private void SpeedUp()
+    {
         if (R_posGetCount <= 5)
         {
             R_initialPos.y = R_defPos.y;
@@ -35,7 +42,7 @@ public class Player2Controler : MonoBehaviour
         R_defPos = Rcube.transform.position;
         if (R_defPos.y >= R_initialPos.y + R_shake || R_defPos.y <= R_initialPos.y - R_shake)
         {
-            force = new Vector3(0.0f, 0.0f, 3.0f);
+            force = new Vector3(3.0f, 0.0f, 0.0f);
             rb.AddForce(force);
         }
         else
