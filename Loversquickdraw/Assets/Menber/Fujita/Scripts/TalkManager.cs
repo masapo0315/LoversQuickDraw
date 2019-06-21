@@ -12,8 +12,6 @@ public class TalkManager : MonoBehaviour
     private float fade = 0.035f;
 
     string[] TEXTTAG_LIST = { "プレイヤー１", "プレイヤー２"};
-    //string[] NAMETAG_LIST = { "プレイヤー１", "プレイヤー２"};
-
 
     #region
 
@@ -83,8 +81,7 @@ public class TalkManager : MonoBehaviour
             Text Commenttext = CommentTextmanager.GetComponent<Text>();
             name = 1;
             Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Talk[Talktext][name]);
-            //Nametext.text = ReplaceTag(Talk[Talktext][name]);
-            Nametext.text = Talk[Talktext][name];
+            Nametext.text = ReplaceTag(Talk[Talktext][name]);
             name = 0;
             Commenttext.text = ReplaceTag(Talk[Talktext][name]);
             Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Talk[Talktext][name]);
@@ -118,29 +115,6 @@ public class TalkManager : MonoBehaviour
         }
         return tmp;
     }
-
-    #region
-    //string NameReplaceTag(string _text)
-    //{
-    //    string tmp2 = _text;
-    //    int cnt = 0;
-
-    //    foreach (string tag in NAMETAG_LIST)
-    //    {
-    //        switch (cnt)
-    //        {
-    //            case 0:
-    //                tmp2 = tmp2.Replace(tag, "プレイヤー11");
-    //                break;
-    //            case 1:
-    //                tmp2 = tmp2.Replace(tag, "プレイヤー22");
-    //                break;
-    //        }
-    //        cnt++;
-    //    }
-    //    return tmp2;
-    //}
-    #endregion
 
     //透明度を1~0と0~1へと徐々に変更することにより点滅させる(fadein,fadeoutの要領)
     IEnumerator SakuraOut()
