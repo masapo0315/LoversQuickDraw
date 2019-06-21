@@ -7,13 +7,13 @@ public class Result : MonoBehaviour {
 
     //ゴールした時のリザルトを表示する
 
-    public Image[] images = new Image[3];
+    public Image[] images = new Image[4];
    
 
 	// Use this for initialization
 	void Start () {
 
-        for (int i = 0; i <= 2; i++)
+        for (int i = 0; i <= images.Length; i++)
         {
             images[i].enabled = false;
         }
@@ -40,7 +40,7 @@ public class Result : MonoBehaviour {
         else if (col.gameObject.tag == "Player2")
         {
             images[1].enabled = true;
-            images[2].enabled = true;
+            images[3].enabled = true;
             Time.timeScale = 0f;
             Debug.Log("2Pの勝利");
         }
