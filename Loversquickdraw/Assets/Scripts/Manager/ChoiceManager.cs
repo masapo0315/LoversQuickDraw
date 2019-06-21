@@ -34,6 +34,7 @@ public class ChoiceManager : MonoBehaviour
 
 
     private bool stopChoice = false;
+    private bool Active = false;
 
     //基準は2.5秒
     [SerializeField]
@@ -44,13 +45,33 @@ public class ChoiceManager : MonoBehaviour
     [HideInInspector]
     public bool firstsPlayer = false;
 
+    void Start()
+    {
+
+    }
+
     void Update()
     {
-        /// <summary>
-        /// ボタンを押し選択肢を選んだら
-        /// それ以降ボタンを消し入力を断つ
-        /// </summary>
+        if (Active == true)
+        {
+            PushButton();
+        }
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            Active = true;
+            choiceAorX.SetActive(true);
+            choiceBorY.SetActive(true);
+            choiceTrigger.SetActive(true);
+        }
+    }
+
+    /// <summary>
+    /// ボタンを押し選択肢を選んだら
+    /// それ以降ボタンを消し入力を断つ
+    /// </summary>
+    private void PushButton()
+    {
         //1Pが1を押した判定
         if (stopChoice == false && Input.GetKeyDown(KeyCode.Keypad1))
         {
@@ -113,35 +134,37 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
         }
     }
+
+
     //カラーコードは〇〇/255, で表示
     private void ChangeColor1()
     {
         Debug.Log("2と3を暗くする");
-        
+
         choiceBorY.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
-        
+
         choiceTrigger.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
     }
 
     private void ChangeColor2()
     {
         Debug.Log("1と3を暗くする");
-        
+
         choiceAorX.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
-        
+
         choiceTrigger.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
     }
 
     private void ChangeColor3()
     {
         Debug.Log("1と2を暗くする");
-        
+
         choiceAorX.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
-        
+
         choiceBorY.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
     }
 
-    
+
     private void GetAorX()
     {
         Destroy(choiceBorY);
