@@ -14,7 +14,8 @@ public class DistanceGauge : MonoBehaviour {
 	void Start () {
 
         distanceSlider = GetComponent<Slider>();
-        player = GetComponent<GameObject>();
+        //player = GetComponent<GameObject>();
+        Debug.Log(player);
 
         float goalPos = 150;
         float startPos = 1;

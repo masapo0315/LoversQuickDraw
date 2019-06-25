@@ -7,13 +7,13 @@ public class Result : MonoBehaviour {
 
     //ゴールした時のリザルトを表示する
 
-    public Image[] images = new Image[4];
+    public Image[] images;
    
 
 	// Use this for initialization
 	void Start () {
 
-        for (int i = 0; i <= images.Length; i++)
+        for (int i = 0; i <= images.Length - 1; i++)
         {
             images[i].enabled = false;
         }
