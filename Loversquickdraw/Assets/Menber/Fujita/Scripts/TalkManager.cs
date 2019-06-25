@@ -10,11 +10,13 @@ public class TalkManager : MonoBehaviour
     private new int name = 0; //横
     private float fadeInOut; //点滅用
     private float fade = 0.035f;
+    private bool choice = false; 
 
     string[] TEXTTAG_LIST = { "プレイヤー１", "プレイヤー２"};
 
     #region
 
+    [SerializeField]private ChoiceManager ChoiceManager;
     [SerializeField]private GameObject NameTextmanager;
     [SerializeField]private GameObject CommentTextmanager;
     [SerializeField]private GameObject Sakura;
@@ -63,6 +65,12 @@ public class TalkManager : MonoBehaviour
     //左クリックしたとき名前とコメントの表示、Debug.logは配列番号とそれに対して画面表示する文字を確認
     void Update()
     {
+        if(choice == true)
+        {
+            ChoiceManager.PushButton();
+        }
+
+
         if (Input.GetMouseButtonDown(0)||Input.GetKeyDown(KeyCode.Space))
         {
             //前回の点滅の処理を止める
@@ -74,7 +82,10 @@ public class TalkManager : MonoBehaviour
             //今は仮で会話数(25個)をループさせてる
             if (Talktext == 25)
             {
-                Talktext = 0;
+
+                choice = true;
+                ChoiceManager.SetActive();
+                //Talktext = 0;
             }
 
             Text Nametext = NameTextmanager.GetComponent<Text>();

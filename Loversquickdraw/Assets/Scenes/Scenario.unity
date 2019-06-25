@@ -1568,9 +1568,6 @@ RectTransform:
   - {fileID: 958223726}
   - {fileID: 1203053052}
   - {fileID: 1965957115}
-  - {fileID: 869735167}
-  - {fileID: 469389192}
-  - {fileID: 1936188186}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2742,12 +2739,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 326594121}
-  m_RootOrder: 12
+  m_Father: {fileID: 1965957115}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -498, y: -102}
+  m_AnchoredPosition: {x: -498, y: 104.5}
   m_SizeDelta: {x: 284, y: 63.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &469389193
@@ -4646,6 +4643,7 @@ GameObject:
   m_Component:
   - component: {fileID: 840345691}
   - component: {fileID: 840345692}
+  - component: {fileID: 840345693}
   m_Layer: 0
   m_Name: Textmanager
   m_TagString: Untagged
@@ -4677,9 +4675,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b268e9fcd379c84f83cbbad96a1a95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ChoiceManager: {fileID: 840345693}
   NameTextmanager: {fileID: 469389191}
   CommentTextmanager: {fileID: 869735166}
   Sakura: {fileID: 1936188185}
+--- !u!114 &840345693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 840345690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd667f7a0f1e21f4bb61da80a814143f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choiceAorX: {fileID: 1358779200}
+  choiceBorY: {fileID: 390847639}
+  choiceTrigger: {fileID: 1006015923}
+  invokeTime: 2.5
+  firstsPlayer: 0
 --- !u!1 &857662209
 GameObject:
   m_ObjectHideFlags: 0
@@ -4781,12 +4796,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 326594121}
-  m_RootOrder: 11
+  m_Father: {fileID: 1965957115}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -24.37, y: -264}
+  m_AnchoredPosition: {x: -24.369995, y: -57.5}
   m_SizeDelta: {x: 1148.8, y: 139.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &869735168
@@ -9156,12 +9171,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 326594121}
-  m_RootOrder: 13
+  m_Father: {fileID: 1965957115}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 572.5, y: -314.65}
+  m_AnchoredPosition: {x: 572.5, y: -108.149994}
   m_SizeDelta: {x: 70, y: 59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1936188187
@@ -9223,7 +9238,10 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 869735167}
+  - {fileID: 469389192}
+  - {fileID: 1936188186}
   m_Father: {fileID: 326594121}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

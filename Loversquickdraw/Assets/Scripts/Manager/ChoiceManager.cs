@@ -46,6 +46,10 @@ public class ChoiceManager : MonoBehaviour
 
     void Update()
     {
+
+    }
+    public void PushButton()
+    {
         /// <summary>
         /// ボタンを押し選択肢を選んだら
         /// それ以降ボタンを消し入力を断つ
@@ -113,35 +117,37 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
         }
     }
+
+
     //カラーコードは〇〇/255, で表示
     private void ChangeColor1()
     {
         Debug.Log("2と3を暗くする");
-        
+
         choiceBorY.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
-        
+
         choiceTrigger.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
     }
 
     private void ChangeColor2()
     {
         Debug.Log("1と3を暗くする");
-        
+
         choiceAorX.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
-        
+
         choiceTrigger.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
     }
 
     private void ChangeColor3()
     {
         Debug.Log("1と2を暗くする");
-        
+
         choiceAorX.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
-        
+
         choiceBorY.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
     }
 
-    
+
     private void GetAorX()
     {
         Destroy(choiceBorY);
@@ -163,4 +169,10 @@ public class ChoiceManager : MonoBehaviour
         Debug.Log("Choise3を通った");
     }
 
+    public void SetActive()
+    {
+        choiceAorX.SetActive(true);
+        choiceBorY.SetActive(true);
+        choiceTrigger.SetActive(true);
+    }
 }
