@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour {
 
+    //障害物を生成
+
     [SerializeField] GameObject[] obstacle;
-    [SerializeField] GameObject Player1;
-    [SerializeField] GameObject Player2;
+    [SerializeField] GameObject spawnPoint;
+
+    private void Start()
+    {
+        int num = Random.Range(0, obstacle.Length);
+        Instantiate(obstacle[num], new Vector3(spawnPoint.transform.position.x,spawnPoint.transform.position.y,spawnPoint.transform.position.z),Quaternion.identity);
+    }
 
     // Update is called once per frame
     void Update () {
-        ObstacleSporn();
-	}
 
-    void ObstacleSporn()
-    {
-        int num = Random.Range(0, obstacle.Length);
-        Instantiate(obstacle[num], new Vector3(Player1.transform.position.x + 5f,-51,0), Quaternion.identity);
-        Instantiate(obstacle[num], new Vector3(Player2.transform.position.x + 5f, -99, 0), Quaternion.identity);
     }
-
 }

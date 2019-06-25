@@ -1118,6 +1118,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 564236206}
+  - component: {fileID: 564236207}
   m_Layer: 0
   m_Name: p1ObjectSpawns
   m_TagString: Untagged
@@ -1132,12 +1133,26 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 564236205}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20, y: -50, z: 0}
+  m_LocalPosition: {x: 20, y: -50.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1395138437}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &564236207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 564236205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36101dbd678c9214c8eda672f569815f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacle:
+  - {fileID: 1271613294616424, guid: a379a74ff7beb9e4785680af32f86041, type: 2}
+  spawnPoint: {fileID: 564236205}
 --- !u!1 &579883368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,6 +1615,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 740683927}
+  - component: {fileID: 740683928}
   m_Layer: 0
   m_Name: p1ObjectSpawns (2)
   m_TagString: Untagged
@@ -1614,12 +1630,26 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 740683926}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 110, y: -50, z: 0}
+  m_LocalPosition: {x: 110, y: -50.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1395138437}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &740683928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 740683926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36101dbd678c9214c8eda672f569815f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacle:
+  - {fileID: 1271613294616424, guid: a379a74ff7beb9e4785680af32f86041, type: 2}
+  spawnPoint: {fileID: 740683926}
 --- !u!1 &783940896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,6 +1934,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 845570651}
+  - component: {fileID: 845570652}
   m_Layer: 0
   m_Name: p1ObjectSpawns (1)
   m_TagString: Untagged
@@ -1918,12 +1949,26 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 845570650}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 60, y: -50, z: 0}
+  m_LocalPosition: {x: 60, y: -50.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1395138437}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &845570652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 845570650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36101dbd678c9214c8eda672f569815f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacle:
+  - {fileID: 1271613294616424, guid: a379a74ff7beb9e4785680af32f86041, type: 2}
+  spawnPoint: {fileID: 845570650}
 --- !u!1 &856840999
 GameObject:
   m_ObjectHideFlags: 0
@@ -3937,6 +3982,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1715109855}
+  - component: {fileID: 1715109856}
   m_Layer: 0
   m_Name: p1ObjectSpawns (3)
   m_TagString: Untagged
@@ -3951,12 +3997,26 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1715109854}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 130, y: -50, z: 0}
+  m_LocalPosition: {x: 130, y: -50.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1395138437}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1715109856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1715109854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36101dbd678c9214c8eda672f569815f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacle:
+  - {fileID: 1271613294616424, guid: a379a74ff7beb9e4785680af32f86041, type: 2}
+  spawnPoint: {fileID: 1715109854}
 --- !u!1 &1732137841
 GameObject:
   m_ObjectHideFlags: 0
