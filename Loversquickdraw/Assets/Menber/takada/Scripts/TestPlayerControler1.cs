@@ -29,7 +29,7 @@ public class TestPlayerControler1 : MonoBehaviour {
         Vector3 moveVector = Vector3.zero;
         float horizontalInput = Input.GetAxis("Horizontal");
         moveVector.x = moveSpeed * horizontalInput;
-
+        
         rb.AddForce(moveForceMultipliter * (moveVector - rb.velocity));
     }
 
