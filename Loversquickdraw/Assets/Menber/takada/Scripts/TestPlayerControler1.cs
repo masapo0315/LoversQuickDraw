@@ -8,6 +8,9 @@ public class TestPlayerControler1 : MonoBehaviour {
     float moveSpeed = 5.0f;
     float moveForceMultipliter = 1.0f;
 
+    float jumpPower = 10f;
+    bool jump = false;
+
 
 	// Use this for initialization
 	void Start () {
@@ -31,6 +34,21 @@ public class TestPlayerControler1 : MonoBehaviour {
         moveVector.x = moveSpeed * horizontalInput;
         
         rb.AddForce(moveForceMultipliter * (moveVector - rb.velocity));
+    }
+
+    void Jump()
+    {
+        if (Input.GetButtonDown("Jump") && !jump)
+        {
+            rb.AddForce(Vector3.up * jumpPower);
+            jump = true;
+        }
+
+    }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        jump = false;
     }
 
 
