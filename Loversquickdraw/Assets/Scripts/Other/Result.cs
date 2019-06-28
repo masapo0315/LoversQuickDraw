@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Result : MonoBehaviour {
 
     //ゴールした時のリザルトを表示する
 
     public Image[] images;
+
+    bool gameSet = false;
    
 
 	// Use this for initialization
@@ -23,7 +26,15 @@ public class Result : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        GameSet();
+    }
 
+    void GameSet()
+    {
+        if(gameSet == true)
+        {
+            SceneManager.LoadScene("");
+        }
     }
 
     private void OnTriggerEnter(Collider col)
@@ -36,6 +47,7 @@ public class Result : MonoBehaviour {
             images[2].enabled = true;
             Time.timeScale = 0f;
             Debug.Log("1Pの勝利");
+            gameSet = true;
         }
         else if (col.gameObject.tag == "Player2")
         {
@@ -43,6 +55,7 @@ public class Result : MonoBehaviour {
             images[3].enabled = true;
             Time.timeScale = 0f;
             Debug.Log("2Pの勝利");
+            gameSet = true;
         }
 
     }
