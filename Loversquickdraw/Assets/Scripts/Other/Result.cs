@@ -11,10 +11,16 @@ public class Result : MonoBehaviour {
     public Image[] images;
 
     bool gameSet = false;
-   
 
-	// Use this for initialization
-	void Start () {
+    int player1LoveMetar;
+    int player2LoveMetar;
+
+
+    // Use this for initialization
+    void Start () {
+
+        player1LoveMetar = LoveMetar.getPlayer1LoveMetar();
+        player2LoveMetar = LoveMetar.getPlayer2LoveMetar();
 
         for (int i = 0; i <= images.Length - 1; i++)
         {
@@ -45,6 +51,7 @@ public class Result : MonoBehaviour {
         {
             images[0].enabled = true;
             images[2].enabled = true;
+            player1LoveMetar += 10;
             Time.timeScale = 0f;
             Debug.Log("1Pの勝利");
             gameSet = true;
@@ -53,6 +60,7 @@ public class Result : MonoBehaviour {
         {
             images[1].enabled = true;
             images[3].enabled = true;
+            player2LoveMetar += 10;
             Time.timeScale = 0f;
             Debug.Log("2Pの勝利");
             gameSet = true;
