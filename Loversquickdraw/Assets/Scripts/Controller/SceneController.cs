@@ -15,7 +15,7 @@ public class SceneController : MonoBehaviour
     }
     void Update ()
     {
-        //DebugInput();
+        DebugInput();
         CheckInput(_button);
         //Debug.Log(_button);
         if (OVRInput.GetDown(OVRInput.RawButton.A))
