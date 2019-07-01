@@ -34,6 +34,7 @@ public class ChoiceManager : MonoBehaviour
 
 
     private bool stopChoice = false;
+    private bool Active = false;
 
     //基準は2.5秒
     [SerializeField]
@@ -44,8 +45,14 @@ public class ChoiceManager : MonoBehaviour
     [HideInInspector]
     public bool firstsPlayer = false;
 
+    void Start()
+    {
+
+    }
+
     void Update()
     {
+<<<<<<< HEAD
 
     }
     public void PushButton()
@@ -54,7 +61,28 @@ public class ChoiceManager : MonoBehaviour
         /// ボタンを押し選択肢を選んだら
         /// それ以降ボタンを消し入力を断つ
         /// </summary>
+=======
+        if (Active == true)
+        {
+            PushButton();
+        }
+>>>>>>> f171de767d7de2b2f9121aa7b39183d9089ff6d0
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            Active = true;
+            choiceAorX.SetActive(true);
+            choiceBorY.SetActive(true);
+            choiceTrigger.SetActive(true);
+        }
+    }
+
+    /// <summary>
+    /// ボタンを押し選択肢を選んだら
+    /// それ以降ボタンを消し入力を断つ
+    /// </summary>
+    private void PushButton()
+    {
         //1Pが1を押した判定
         if (stopChoice == false && Input.GetKeyDown(KeyCode.Keypad1))
         {
