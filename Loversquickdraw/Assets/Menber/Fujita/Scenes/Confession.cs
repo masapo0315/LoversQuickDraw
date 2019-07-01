@@ -4,19 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class TalkManager : MonoBehaviour
+public class Confession : MonoBehaviour
 {
 
     private int Talktext = 0; //縦
     private new int name = 0; //横
     private float fadeInOut; //点滅用
     private float fade = 0.035f;
-    private bool choice = false;
+    public bool choice = false;
     private bool choiceAfterText = true;
-  
 
-    [SerializeField]
-    private GameObject TextFrame;
+
+    [SerializeField] private GameObject TextFrame;
 
     string[] TEXTTAG_LIST = { "プレイヤー１", "プレイヤー２" };
 
@@ -79,7 +78,6 @@ public class TalkManager : MonoBehaviour
         if (choice == true)
         {
             ChoiceManager.PushButton();
-            
             if (ChoiceManager.getdestroyFlag())
             {
                 choice = false;
@@ -88,7 +86,6 @@ public class TalkManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
-
             if (!choice)
             {
                 sakuraOut();

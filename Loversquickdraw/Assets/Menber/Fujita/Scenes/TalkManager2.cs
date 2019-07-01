@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class TalkManager : MonoBehaviour
+public class TalkManager2 : MonoBehaviour
 {
 
     private int Talktext = 0; //縦
@@ -13,7 +13,7 @@ public class TalkManager : MonoBehaviour
     private float fade = 0.035f;
     private bool choice = false;
     private bool choiceAfterText = true;
-  
+
 
     [SerializeField]
     private GameObject TextFrame;
@@ -79,7 +79,7 @@ public class TalkManager : MonoBehaviour
         if (choice == true)
         {
             ChoiceManager.PushButton();
-            
+
             if (ChoiceManager.getdestroyFlag())
             {
                 choice = false;
@@ -187,7 +187,7 @@ public class TalkManager : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                SceneManager.LoadScene("testMiniGame");
+                SceneManager.LoadScene("testMiniGame2");
             }
         }
     }
