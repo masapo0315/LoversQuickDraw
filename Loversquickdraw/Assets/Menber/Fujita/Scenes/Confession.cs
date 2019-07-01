@@ -12,10 +12,6 @@ public class Confession : MonoBehaviour
     private float fadeInOut; //点滅用
     private float fade = 0.035f;
     public bool choice = false;
-    private bool choiceAfterText = true;
-
-
-    [SerializeField] private GameObject TextFrame;
 
     string[] TEXTTAG_LIST = { "プレイヤー１", "プレイヤー２" };
 
@@ -25,6 +21,7 @@ public class Confession : MonoBehaviour
     [SerializeField] private GameObject NameTextmanager;
     [SerializeField] private GameObject CommentTextmanager;
     [SerializeField] private GameObject Sakura;
+    [SerializeField] private GameObject TextFrame;
 
     private void Start()
     {
@@ -91,14 +88,10 @@ public class Confession : MonoBehaviour
                 sakuraOut();
 
                 LordMinigame();
-                choiceAfterText = true;
-                //今は仮で会話数(25個)をループさせてる
+                //画像入れ替え用
                 if (Talktext == 25)
                 {
-                    choiceAfterText = false;
-                    choice = true;
-                    ChoiceManager.SetActive();
-                    //Talktext = 0;
+                    
                 }
 
                 Text Nametext = NameTextmanager.GetComponent<Text>();
@@ -184,7 +177,7 @@ public class Confession : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                SceneManager.LoadScene("testMiniGame");
+                SceneManager.LoadScene("Title");
             }
         }
     }

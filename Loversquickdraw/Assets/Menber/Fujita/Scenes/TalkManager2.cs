@@ -12,16 +12,12 @@ public class TalkManager2 : MonoBehaviour
     private float fadeInOut; //点滅用
     private float fade = 0.035f;
     private bool choice = false;
-    private bool choiceAfterText = true;
-
-
-    [SerializeField]
-    private GameObject TextFrame;
 
     string[] TEXTTAG_LIST = { "プレイヤー１", "プレイヤー２" };
 
     #region
 
+    [SerializeField] private GameObject TextFrame;
     [SerializeField] private ChoiceManager ChoiceManager;
     [SerializeField] private GameObject NameTextmanager;
     [SerializeField] private GameObject CommentTextmanager;
@@ -79,7 +75,6 @@ public class TalkManager2 : MonoBehaviour
         if (choice == true)
         {
             ChoiceManager.PushButton();
-
             if (ChoiceManager.getdestroyFlag())
             {
                 choice = false;
@@ -88,20 +83,18 @@ public class TalkManager2 : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
-
             if (!choice)
             {
                 sakuraOut();
-
                 LordMinigame();
-                choiceAfterText = true;
+                TextFrame.SetActive(true);
+
                 //今は仮で会話数(25個)をループさせてる
                 if (Talktext == 25)
                 {
-                    choiceAfterText = false;
+                    TextFrame.SetActive(false);
                     choice = true;
                     ChoiceManager.SetActive();
-                    //Talktext = 0;
                 }
 
                 Text Nametext = NameTextmanager.GetComponent<Text>();

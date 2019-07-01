@@ -4675,7 +4675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b268e9fcd379c84f83cbbad96a1a95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choice: 0
+  choiceAfterText: 1
   TextFrame: {fileID: 1965957114}
   ChoiceManager: {fileID: 840345693}
   NameTextmanager: {fileID: 469389191}

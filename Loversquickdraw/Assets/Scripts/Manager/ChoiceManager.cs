@@ -17,7 +17,6 @@ public class ChoiceManager : MonoBehaviour
     [SerializeField]private GameObject choiceTrigger;
     [SerializeField]private GameObject FrameText;
     
-
     //[SerializeField]
     //private GameObject choice1Text;
     //[SerializeField]
@@ -44,7 +43,6 @@ public class ChoiceManager : MonoBehaviour
         //1Pが1を押した判定
         if (stopChoice == false && Input.GetKeyDown(KeyCode.Keypad1))
         {
-
             Debug.Log("1Pが1を押した");
             ChangeColor1();
             Invoke("GetAorX", invokeTime);
@@ -179,7 +177,6 @@ public class ChoiceManager : MonoBehaviour
         Destroy(choiceBorY);
         FrameText.SetActive(true);
         destroyFlag = true;
-        //choiceAfterText = true;
     }
 
     private void DestroyTrigger()
