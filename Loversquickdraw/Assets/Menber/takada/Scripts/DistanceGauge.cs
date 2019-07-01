@@ -7,21 +7,23 @@ public class DistanceGauge : MonoBehaviour {
 
     //playerのゴールまでの距離に連動してゲージを変化させる
 
-    float startPos = 1;
-    float goalPos = 100;
-
-    private Slider distanceSlider;
+    Slider distanceSlider;
     [SerializeField] private GameObject player;
 
 	// Use this for initialization
 	void Start () {
+
         distanceSlider = GetComponent<Slider>();
-        player = GetComponent<GameObject>();
+        //player = GetComponent<GameObject>();
+        Debug.Log(player);
 
-        distanceSlider.minValue = startPos;
+        float goalPos = 150;
+        float startPos = 1;
+
         distanceSlider.maxValue = goalPos;
+        distanceSlider.value = startPos;
 
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -29,7 +31,7 @@ public class DistanceGauge : MonoBehaviour {
 	}
     
     //playerのX地点でvalueが変化
-    void ValuePlus()
+    public void ValuePlus()
     {
         Vector3 pos = player.transform.position;
         float x = pos.x;
