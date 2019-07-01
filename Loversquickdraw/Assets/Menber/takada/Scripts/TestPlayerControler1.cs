@@ -11,6 +11,9 @@ public class TestPlayerControler1 : MonoBehaviour {
     float jumpPower = 10f;
     bool jump = false;
 
+    [SerializeField]
+    Animator _animator;
+
 
 	// Use this for initialization
 	void Start () {
@@ -34,6 +37,8 @@ public class TestPlayerControler1 : MonoBehaviour {
         moveVector.x = moveSpeed * horizontalInput;
         
         rb.AddForce(moveForceMultipliter * (moveVector - rb.velocity));
+
+        _animator.SetBool("Run", true);
     }
 
     void Jump()
