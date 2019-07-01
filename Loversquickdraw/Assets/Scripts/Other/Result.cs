@@ -15,9 +15,14 @@ public class Result : MonoBehaviour {
     int player1LoveMetar;
     int player2LoveMetar;
 
+    [SerializeField]
+    Animator _animator;
+
 
     // Use this for initialization
     void Start () {
+
+        Time.timeScale = 1.0f;
 
         player1LoveMetar = LoveMetar.getPlayer1LoveMetar();
         player2LoveMetar = LoveMetar.getPlayer2LoveMetar();
@@ -49,6 +54,7 @@ public class Result : MonoBehaviour {
 
         if (col.gameObject.tag == "Player1")
         {
+            _animator.SetBool("Goal", true);
             images[0].enabled = true;
             images[2].enabled = true;
             player1LoveMetar += 10;
@@ -58,6 +64,7 @@ public class Result : MonoBehaviour {
         }
         else if (col.gameObject.tag == "Player2")
         {
+            _animator.SetBool("Goal", true);
             images[1].enabled = true;
             images[3].enabled = true;
             player2LoveMetar += 10;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TestPlayerControler1 : MonoBehaviour {
 
     public Rigidbody rb;
-    float moveSpeed = 5.0f;
+    float moveSpeed;
     float moveForceMultipliter = 1.0f;
 
     float jumpPower = 10f;
@@ -63,7 +63,7 @@ public class TestPlayerControler1 : MonoBehaviour {
 
         yield return new WaitForSeconds(2.0f);
 
-        moveSpeed = 5.0f;
+        moveSpeed = 10.0f;
 
         yield break;
     }
