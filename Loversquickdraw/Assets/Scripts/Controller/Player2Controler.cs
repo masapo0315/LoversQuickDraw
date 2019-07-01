@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player2Controler : MonoBehaviour
 {
+    //Player2のカメラ固定よう
+    [SerializeField] private Camera _mainCamera;
+    [SerializeField] private Camera _camera;
     //　2Pのコントローラー
 
     //右コン
@@ -28,6 +31,8 @@ public class Player2Controler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _mainCamera.transform.localRotation = Quaternion.identity;
+        _camera.transform.localRotation = Quaternion.identity;
         SpeedUp();
     }
 
