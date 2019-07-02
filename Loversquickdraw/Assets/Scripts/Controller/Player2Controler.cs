@@ -19,6 +19,12 @@ public class Player2Controler : MonoBehaviour
 
     private Vector3 force;
 
+    float jumpPower = 10f; //ジャンプ力
+    bool jump = false;     //設置判定
+
+    [SerializeField]
+    Animator _animator;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -42,13 +48,33 @@ public class Player2Controler : MonoBehaviour
         R_defPos = Rcube.transform.position;
         if (R_defPos.y >= R_initialPos.y + R_shake || R_defPos.y <= R_initialPos.y - R_shake)
         {
-            force = new Vector3(3.0f, 0.0f, 0.0f);
+            _animator.SetBool("Run", true);
+            force = new Vector3(moveSpeed, 0.0f, 0.0f);
             rb.AddForce(force);
         }
         else
         {
+            _animator.SetBool("Run", false);
             rb.velocity = Vector3.zero;
         }
+    }
+
+    //ジャンプの処理
+    private void Jump()
+    {
+        if (Input.GetButtonDown("Jump") && !jump)
+        {
+            rb.AddForce(Vector3.up * jumpPower);
+            _animator.SetBool("Jump", true);
+            jump = true;
+        }
+
+    }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        _animator.SetBool("Jump", false);
+        jump = false;
     }
 
     //遅延処理

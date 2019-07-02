@@ -19,6 +19,12 @@ public class Player1Controler : MonoBehaviour {
 
     private Vector3 force;
 
+    float jumpPower = 10f; //ジャンプ力
+    bool jump = false;     //設置判定
+
+    [SerializeField]
+    Animator _animator;
+
     // Use this for initialization
     void Start ()
     {
@@ -47,13 +53,33 @@ public class Player1Controler : MonoBehaviour {
         L_defPos = Lcube.transform.position;
         if (L_defPos.y >= L_initialPos.y + L_shake || L_defPos.y <= L_initialPos.y - L_shake)
         {
-            force = new Vector3(3.0f, 0.0f, 0.0f);
+            _animator.SetBool("Run", true);
+            force = new Vector3(moveSpeed, 0.0f, 0.0f);
             rb.AddForce(force);
         }
         else
         {
+            _animator.SetBool("Run", false);
             rb.velocity = Vector3.zero;
         }
+    }
+
+    //ジャンプの処理
+    private void Jump()
+    {
+        if (Input.GetButtonDown("Jump") && !jump)
+        {
+            rb.AddForce(Vector3.up * jumpPower);
+            _animator.SetBool("Jump", true);
+            jump = true;
+        }
+
+    }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        _animator.SetBool("Jump", false);
+        jump = false;
     }
 
     //遅延処理
