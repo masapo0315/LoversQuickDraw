@@ -8,7 +8,7 @@ public class TestPlayerControler1 : MonoBehaviour {
     float moveSpeed;
     float moveForceMultipliter = 1.0f;
 
-    float jumpPower = 10f;
+    float jumpPower = 10;
     bool jump = false;
 
     [SerializeField]
@@ -27,7 +27,7 @@ public class TestPlayerControler1 : MonoBehaviour {
 	void Update () {
 
         SpeedUp();
-
+        Jump();
 	}
 
     void SpeedUp()
@@ -43,9 +43,10 @@ public class TestPlayerControler1 : MonoBehaviour {
 
     void Jump()
     {
-        if (Input.GetButtonDown("Jump") && !jump)
+        if (Input.GetButtonDown("Jump") && jump == false)
         {
-            rb.AddForce(Vector3.up * jumpPower);
+            _animator.SetBool("Jump", true);
+            rb.velocity = new Vector3(0, jumpPower, 0);
             jump = true;
         }
 
@@ -53,7 +54,12 @@ public class TestPlayerControler1 : MonoBehaviour {
 
     private void OnCollisionEnter(Collision col)
     {
-        jump = false;
+        if (col.gameObject.tag == "ground")
+        {
+            _animator.SetBool("Jump", false);
+            jump = false;
+        }
+
     }
 
 
@@ -63,7 +69,7 @@ public class TestPlayerControler1 : MonoBehaviour {
 
         yield return new WaitForSeconds(2.0f);
 
-        moveSpeed = 10.0f;
+        moveSpeed = 20.0f;
 
         yield break;
     }

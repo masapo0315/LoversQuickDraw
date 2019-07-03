@@ -65,12 +65,12 @@ public class Player1Controler : MonoBehaviour {
     }
 
     //ジャンプの処理
-    private void Jump()
+    void Jump()
     {
-        if (Input.GetButtonDown("Jump") && !jump)
+        if (Input.GetButtonDown("Jump") && jump == false)
         {
-            rb.AddForce(Vector3.up * jumpPower);
             _animator.SetBool("Jump", true);
+            rb.velocity = new Vector3(0, jumpPower, 0);
             jump = true;
         }
 
@@ -78,8 +78,12 @@ public class Player1Controler : MonoBehaviour {
 
     private void OnCollisionEnter(Collision col)
     {
-        _animator.SetBool("Jump", false);
-        jump = false;
+        if (col.gameObject.tag == "ground")
+        {
+            _animator.SetBool("Jump", false);
+            jump = false;
+        }
+
     }
 
     //遅延処理
