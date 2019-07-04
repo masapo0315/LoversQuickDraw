@@ -12,8 +12,9 @@ public class MiniGame2Manager : MonoBehaviour
     private string Karen;
     private int Dankai = 1;
 
-    private int Select1P;
-    private int Select2P;
+    //1Pと2Pがとった文字数
+    private int Select1P = 0;
+    private int Select2P = 0;
 
     [SerializeField]
     private PlayerCursorController playerCursorController;
@@ -212,7 +213,7 @@ public class MiniGame2Manager : MonoBehaviour
         {
             case 1:
                 Debug.Log("1を通った");
-                switch (playerCursorController.LeftMenu)
+                switch (playerCursorController.RightMenu)
                 {
                     case 0:
                         button1_1.Select();
@@ -222,6 +223,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 2:
                         button1_3.Select();
+                        Select1P++;
+                        Debug.Log(Select1P);
                         break;
                     case 3:
                         button1_4.Select();
@@ -249,6 +252,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 4:
                         button2_5.Select();
+                        Select1P++;
+                        Debug.Log(Select1P);
                         break;
                 }
                 break;
@@ -258,6 +263,8 @@ public class MiniGame2Manager : MonoBehaviour
                 {
                     case 0:
                         button3_1.Select();
+                        Select1P++;
+                        Debug.Log(Select1P);
                         break;
                     case 1:
                         button3_2.Select();
@@ -282,6 +289,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 1:
                         button4_2.Select();
+                        Select1P++;
+                        Debug.Log(Select1P);
                         break;
                     case 2:
                         button4_3.Select();
@@ -312,6 +321,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 4:
                         button5_5.Select();
+                        Select1P++;
+                        Debug.Log(Select1P);
                         break;
                 }
                 break;
@@ -324,6 +335,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 1:
                         button6_2.Select();
+                        Select1P++;
+                        Debug.Log(Select1P);
                         break;
                     case 2:
                         button6_3.Select();
@@ -354,6 +367,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 4:
                         button7_5.Select();
+                        Select1P++;
+                        Debug.Log(Select1P);
                         break;
                 }
                 break;
@@ -372,6 +387,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 3:
                         button8_4.Select();
+                        Select1P++;
+                        Debug.Log(Select1P);
                         break;
                     case 4:
                         button8_5.Select();
@@ -384,6 +401,8 @@ public class MiniGame2Manager : MonoBehaviour
                 {
                     case 0:
                         button9_1.Select();
+                        Select1P++;
+                        Debug.Log(Select1P);
                         break;
                     case 1:
                         button9_2.Select();
@@ -411,6 +430,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 2:
                         button10_3.Select();
+                        Select1P++;
+                        Debug.Log(Select1P);
                         break;
                     case 3:
                         button10_4.Select();
@@ -432,6 +453,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 2:
                         button11_3.Select();
+                        Select1P++;
+                        Debug.Log(Select1P);
                         break;
                     case 3:
                         button11_4.Select();
@@ -447,6 +470,8 @@ public class MiniGame2Manager : MonoBehaviour
                 {
                     case 0:
                         button12_1.Select();
+                        Select1P++;
+                        Debug.Log(Select1P);
                         break;
                     case 1:
                         button12_2.Select();
@@ -480,6 +505,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 4:
                         button13_5.Select();
+                        Select1P++;
+                        Debug.Log(Select1P);
                         break;
                 }
                 break;
@@ -498,6 +525,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 3:
                         button14_4.Select();
+                        Select1P++;
+                        Debug.Log(Select1P);
                         break;
                     case 4:
                         button14_5.Select();
@@ -513,6 +542,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 1:
                         button15_2.Select();
+                        Select1P++;
+                        Debug.Log(Select1P);
                         break;
                     case 2:
                         button15_3.Select();
@@ -534,6 +565,7 @@ public class MiniGame2Manager : MonoBehaviour
         switch (Dankai)
         {
             case 1:
+                Debug.Log("1を通った");
                 switch (playerCursorController.LeftMenu)
                 {
                     case 0:
@@ -544,6 +576,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 2:
                         button1_3.Select();
+                        Select2P++;
+                        Debug.Log(Select2P);
                         break;
                     case 3:
                         button1_4.Select();
@@ -571,6 +605,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 4:
                         button2_5.Select();
+                        Select2P++;
+                        Debug.Log(Select2P);
                         break;
                 }
                 break;
@@ -580,6 +616,8 @@ public class MiniGame2Manager : MonoBehaviour
                 {
                     case 0:
                         button3_1.Select();
+                        Select2P++;
+                        Debug.Log(Select2P);
                         break;
                     case 1:
                         button3_2.Select();
@@ -604,6 +642,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 1:
                         button4_2.Select();
+                        Select2P++;
+                        Debug.Log(Select2P);
                         break;
                     case 2:
                         button4_3.Select();
@@ -634,6 +674,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 4:
                         button5_5.Select();
+                        Select2P++;
+                        Debug.Log(Select2P);
                         break;
                 }
                 break;
@@ -646,6 +688,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 1:
                         button6_2.Select();
+                        Select2P++;
+                        Debug.Log(Select2P);
                         break;
                     case 2:
                         button6_3.Select();
@@ -676,6 +720,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 4:
                         button7_5.Select();
+                        Select2P++;
+                        Debug.Log(Select2P);
                         break;
                 }
                 break;
@@ -694,6 +740,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 3:
                         button8_4.Select();
+                        Select2P++;
+                        Debug.Log(Select2P);
                         break;
                     case 4:
                         button8_5.Select();
@@ -706,6 +754,8 @@ public class MiniGame2Manager : MonoBehaviour
                 {
                     case 0:
                         button9_1.Select();
+                        Select2P++;
+                        Debug.Log(Select2P);
                         break;
                     case 1:
                         button9_2.Select();
@@ -733,6 +783,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 2:
                         button10_3.Select();
+                        Select2P++;
+                        Debug.Log(Select2P);
                         break;
                     case 3:
                         button10_4.Select();
@@ -754,6 +806,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 2:
                         button11_3.Select();
+                        Select2P++;
+                        Debug.Log(Select2P);
                         break;
                     case 3:
                         button11_4.Select();
@@ -769,6 +823,8 @@ public class MiniGame2Manager : MonoBehaviour
                 {
                     case 0:
                         button12_1.Select();
+                        Select2P++;
+                        Debug.Log(Select2P);
                         break;
                     case 1:
                         button12_2.Select();
@@ -802,6 +858,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 4:
                         button13_5.Select();
+                        Select2P++;
+                        Debug.Log(Select2P);
                         break;
                 }
                 break;
@@ -820,6 +878,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 3:
                         button14_4.Select();
+                        Select2P++;
+                        Debug.Log(Select2P);
                         break;
                     case 4:
                         button14_5.Select();
@@ -835,6 +895,8 @@ public class MiniGame2Manager : MonoBehaviour
                         break;
                     case 1:
                         button15_2.Select();
+                        Select2P++;
+                        Debug.Log(Select2P);
                         break;
                     case 2:
                         button15_3.Select();

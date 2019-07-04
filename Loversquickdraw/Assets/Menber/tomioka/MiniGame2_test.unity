@@ -5566,7 +5566,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3057"
+  m_Text: "\u3076"
 --- !u!222 &543734678
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6216,7 +6216,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1770000128}
-        m_MethodName: Clickfalse
+        m_MethodName: ClickTrue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6820,7 +6820,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3076"
+  m_Text: "\u3057"
 --- !u!222 &753051820
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7370,7 +7370,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1770000128}
-        m_MethodName: ClickTrue
+        m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
