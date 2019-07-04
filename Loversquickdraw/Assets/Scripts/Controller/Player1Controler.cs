@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VR;
 
-public class Player1Controler : MonoBehaviour {
-
+public class Player1Controler : MonoBehaviour
+{
+    //Player1のカメラ固定よう
+    [SerializeField] private Camera _mainCamera;
+    [SerializeField] private Camera _camera;
     // 1Pのコントローラー
 
     //左コン
@@ -29,18 +33,16 @@ public class Player1Controler : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-
         rb = GetComponent<Rigidbody>();
         StartCoroutine("StartDelay");
-  
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-
+        _mainCamera.transform.localRotation = Quaternion.identity;
+        _camera.transform.localRotation = Quaternion.identity;
         SpeedUp();
-
 	}
 
     // 加速処理
