@@ -211,6 +211,7 @@ public class MiniGame2Manager : MonoBehaviour
         switch (Dankai)
         {
             case 1:
+                Debug.Log("1を通った");
                 switch (playerCursorController.LeftMenu)
                 {
                     case 0:
