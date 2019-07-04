@@ -1040,5 +1040,4 @@ public class MiniGame2Manager : MonoBehaviour
         Debug.Log(Karen);
         ChangeText();
     }
-
 }
