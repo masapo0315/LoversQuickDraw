@@ -25,9 +25,9 @@ public static class InputManager
             case 5:
                 return OVRInput.Button.Start;               //Startボタン(左コントローラーのスティックの下のボタン)
             case 6:
-                return OVRInput.Button.SecondaryThumbstick; //右コントローラーのスティック押し込み
+                return OVRInput.Button.SecondaryThumbstickDown; //右コントローラーのスティック押し込み
             case 7:
-                return OVRInput.Button.PrimaryThumbstick;   //左コントローラーのスティック押し込み
+                return OVRInput.Button.SecondaryThumbstickLeft;   //左コントローラーのスティック押し込み
             default:
                 return OVRInput.Button.None;                //defaultの値
         }
