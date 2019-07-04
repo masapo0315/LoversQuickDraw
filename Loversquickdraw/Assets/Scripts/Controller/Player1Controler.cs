@@ -13,6 +13,7 @@ public class Player1Controler : MonoBehaviour {
     private Vector3 L_initialPos;
 
     private int L_posGetCount = 0;
+     
 
     [SerializeField] private Rigidbody rb;
     private float moveSpeed; //速度
@@ -67,7 +68,7 @@ public class Player1Controler : MonoBehaviour {
     //ジャンプの処理
     void Jump()
     {
-        if (Input.GetButtonDown("Jump") && jump == false)
+        if (jump == false)
         {
             _animator.SetBool("Jump", true);
             rb.velocity = new Vector3(0, jumpPower, 0);
