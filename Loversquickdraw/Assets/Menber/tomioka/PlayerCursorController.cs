@@ -25,6 +25,9 @@ public class PlayerCursorController : MonoBehaviour
     [SerializeField]
     private GameObject MenuNumber4;
 
+    [SerializeField]
+    private MiniGame2Manager miniGame2Manager;
+
     private Vector3 tmp0;
     private Vector3 tmp1;
     private Vector3 tmp2;
@@ -59,6 +62,20 @@ public class PlayerCursorController : MonoBehaviour
     void Update()
     {
         Select();
+        
+        //1Pの決定
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            //Debug.Log("エンター");
+            miniGame2Manager.OnSelect1P();
+        }
+
+        //2Pの決定
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //Debug.Log("スペースキー");
+            miniGame2Manager.OnSelect2P();
+        }
     }
 
     //プレイヤーの操作

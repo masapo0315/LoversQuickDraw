@@ -144,7 +144,7 @@ Transform:
   - {fileID: 459655856}
   - {fileID: 6132009}
   m_Father: {fileID: 977499945}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6132008
 GameObject:
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 24362700}
   - component: {fileID: 24362699}
   m_Layer: 5
-  m_Name: Button5_1
+  m_Name: Button15_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,7 +288,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 27090831}
   - component: {fileID: 27090830}
   m_Layer: 5
-  m_Name: Button2_2
+  m_Name: Button12_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -410,7 +410,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 52930697}
   - component: {fileID: 52930696}
   m_Layer: 5
-  m_Name: Button4_2
+  m_Name: Button9_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -532,7 +532,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -654,7 +654,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -939,7 +939,7 @@ GameObject:
   - component: {fileID: 107021602}
   - component: {fileID: 107021601}
   m_Layer: 5
-  m_Name: Button2_4
+  m_Name: Button3_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1003,7 +1003,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -1061,7 +1061,7 @@ GameObject:
   - component: {fileID: 119000051}
   - component: {fileID: 119000050}
   m_Layer: 5
-  m_Name: Button2_1
+  m_Name: Button3_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1125,7 +1125,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: ClickTrue
         m_Mode: 1
         m_Arguments:
@@ -1197,7 +1197,7 @@ RectTransform:
   m_LocalScale: {x: 1.0000306, y: 1.0000306, z: 1.0000306}
   m_Children: []
   m_Father: {fileID: 977499945}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1567,7 +1567,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u304D"
+  m_Text: "\u304E"
 --- !u!222 &188006214
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1586,7 +1586,7 @@ GameObject:
   - component: {fileID: 190776502}
   - component: {fileID: 190776501}
   m_Layer: 5
-  m_Name: Button3_2
+  m_Name: Button1_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1623,7 +1623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1650,7 +1650,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -1708,7 +1708,7 @@ GameObject:
   - component: {fileID: 191513214}
   - component: {fileID: 191513213}
   m_Layer: 5
-  m_Name: Button3_4
+  m_Name: Button13_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1772,7 +1772,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -1830,7 +1830,7 @@ GameObject:
   - component: {fileID: 202450309}
   - component: {fileID: 202450308}
   m_Layer: 5
-  m_Name: Button1_2
+  m_Name: Button2_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1875,7 +1875,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -2026,7 +2026,7 @@ GameObject:
   - component: {fileID: 210533869}
   - component: {fileID: 210533868}
   m_Layer: 5
-  m_Name: Button2_1
+  m_Name: Button12_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2090,7 +2090,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: ClickTrue
         m_Mode: 1
         m_Arguments:
@@ -2148,7 +2148,7 @@ GameObject:
   - component: {fileID: 221073078}
   - component: {fileID: 221073077}
   m_Layer: 5
-  m_Name: Button3_3
+  m_Name: Button13_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2212,7 +2212,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -2418,7 +2418,7 @@ GameObject:
   - component: {fileID: 270158270}
   - component: {fileID: 270158269}
   m_Layer: 5
-  m_Name: Button5_2
+  m_Name: Button15_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2482,8 +2482,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
-        m_MethodName: Clickfalse
+      - m_Target: {fileID: 1770000128}
+        m_MethodName: ClickTrue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2554,7 +2554,7 @@ RectTransform:
   m_LocalScale: {x: 1.0000306, y: 1.0000306, z: 1.0000306}
   m_Children: []
   m_Father: {fileID: 977499945}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2680,7 +2680,7 @@ GameObject:
   - component: {fileID: 298778392}
   - component: {fileID: 298778391}
   m_Layer: 5
-  m_Name: Button3_5
+  m_Name: Button1_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2717,7 +2717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -2744,7 +2744,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -2802,7 +2802,7 @@ GameObject:
   - component: {fileID: 315518278}
   - component: {fileID: 315518277}
   m_Layer: 5
-  m_Name: Button1_1
+  m_Name: Button8_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2847,7 +2847,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -2924,7 +2924,7 @@ GameObject:
   - component: {fileID: 317474590}
   - component: {fileID: 317474589}
   m_Layer: 5
-  m_Name: Button4_3
+  m_Name: Button14_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2988,7 +2988,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -3258,7 +3258,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -3316,7 +3316,7 @@ GameObject:
   - component: {fileID: 337685696}
   - component: {fileID: 337685695}
   m_Layer: 5
-  m_Name: Button1_5
+  m_Name: Button8_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3380,7 +3380,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -3502,7 +3502,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -3560,7 +3560,7 @@ GameObject:
   - component: {fileID: 352839498}
   - component: {fileID: 352839497}
   m_Layer: 5
-  m_Name: Button2_2
+  m_Name: Button3_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3624,7 +3624,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -3737,7 +3737,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u305B"
+  m_Text: "\u3046"
 --- !u!222 &362176802
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3835,7 +3835,7 @@ GameObject:
   - component: {fileID: 385674344}
   - component: {fileID: 385674343}
   m_Layer: 5
-  m_Name: Button5_2
+  m_Name: Button10_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3899,7 +3899,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -4095,7 +4095,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -4260,7 +4260,7 @@ GameObject:
   - component: {fileID: 423314788}
   - component: {fileID: 423314787}
   m_Layer: 5
-  m_Name: Button5_4
+  m_Name: Button10_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4324,7 +4324,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -4382,7 +4382,7 @@ GameObject:
   - component: {fileID: 429480526}
   - component: {fileID: 429480525}
   m_Layer: 5
-  m_Name: Button1_4
+  m_Name: Button2_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4427,7 +4427,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -4504,7 +4504,7 @@ GameObject:
   - component: {fileID: 437478679}
   - component: {fileID: 437478678}
   m_Layer: 5
-  m_Name: Button3_4
+  m_Name: Button1_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4541,7 +4541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -4568,7 +4568,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -4626,7 +4626,7 @@ GameObject:
   - component: {fileID: 448391216}
   - component: {fileID: 448391215}
   m_Layer: 5
-  m_Name: Button3_3
+  m_Name: Button1_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4663,7 +4663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -4690,7 +4690,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: ClickTrue
         m_Mode: 1
         m_Arguments:
@@ -4748,7 +4748,7 @@ GameObject:
   - component: {fileID: 453387934}
   - component: {fileID: 453387933}
   m_Layer: 5
-  m_Name: Button2_4
+  m_Name: Button12_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4812,7 +4812,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -4870,7 +4870,7 @@ GameObject:
   - component: {fileID: 456449301}
   - component: {fileID: 456449300}
   m_Layer: 5
-  m_Name: Button1_3
+  m_Name: Button11_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4934,7 +4934,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: ClickTrue
         m_Mode: 1
         m_Arguments:
@@ -5098,7 +5098,7 @@ GameObject:
   - component: {fileID: 479429885}
   - component: {fileID: 479429884}
   m_Layer: 5
-  m_Name: BackGround
+  m_Name: BackGround1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5115,7 +5115,7 @@ RectTransform:
   m_LocalScale: {x: 1.0000306, y: 1.0000306, z: 1.0000306}
   m_Children: []
   m_Father: {fileID: 977499945}
-  m_RootOrder: 0
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5389,7 +5389,7 @@ GameObject:
   - component: {fileID: 529758067}
   - component: {fileID: 529758066}
   m_Layer: 5
-  m_Name: Button4_3
+  m_Name: Button9_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5453,7 +5453,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -5640,7 +5640,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u306D"
+  m_Text: "\u3064"
 --- !u!222 &543806850
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5955,7 +5955,7 @@ GameObject:
   - component: {fileID: 625833968}
   - component: {fileID: 625833967}
   m_Layer: 5
-  m_Name: Button1_1
+  m_Name: Button11_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6019,7 +6019,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -6151,7 +6151,7 @@ GameObject:
   - component: {fileID: 676225717}
   - component: {fileID: 676225716}
   m_Layer: 5
-  m_Name: Button4_1
+  m_Name: Button9_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6215,7 +6215,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -6485,7 +6485,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -6672,7 +6672,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3088"
+  m_Text: "\u3093"
 --- !u!222 &729490872
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6977,7 +6977,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -7109,7 +7109,7 @@ GameObject:
   - component: {fileID: 779407845}
   - component: {fileID: 779407844}
   m_Layer: 5
-  m_Name: Button1_5
+  m_Name: Button11_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7173,7 +7173,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -7286,7 +7286,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3058"
+  m_Text: "\u305F"
 --- !u!222 &826050274
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7305,7 +7305,7 @@ GameObject:
   - component: {fileID: 853112999}
   - component: {fileID: 853112998}
   m_Layer: 5
-  m_Name: Button4_4
+  m_Name: Button9_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7369,7 +7369,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: ClickTrue
         m_Mode: 1
         m_Arguments:
@@ -7460,7 +7460,7 @@ GameObject:
   - component: {fileID: 878662841}
   - component: {fileID: 878662840}
   m_Layer: 5
-  m_Name: Button1_5
+  m_Name: Button2_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7524,7 +7524,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: ClickTrue
         m_Mode: 1
         m_Arguments:
@@ -7625,7 +7625,7 @@ Prefab:
     - target: {fileID: 224980158422226758, guid: 8b35ec594366c7c4aacb733bab7ffdc8,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -221.99637
+      value: -714.3949
       objectReference: {fileID: 0}
     - target: {fileID: 224980158422226758, guid: 8b35ec594366c7c4aacb733bab7ffdc8,
         type: 2}
@@ -7645,7 +7645,7 @@ Prefab:
     - target: {fileID: 224980158422226758, guid: 8b35ec594366c7c4aacb733bab7ffdc8,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224980158422226758, guid: 8b35ec594366c7c4aacb733bab7ffdc8,
         type: 2}
@@ -7655,7 +7655,7 @@ Prefab:
     - target: {fileID: 224980158422226758, guid: 8b35ec594366c7c4aacb733bab7ffdc8,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224980158422226758, guid: 8b35ec594366c7c4aacb733bab7ffdc8,
         type: 2}
@@ -7665,7 +7665,7 @@ Prefab:
     - target: {fileID: 224980158422226758, guid: 8b35ec594366c7c4aacb733bab7ffdc8,
         type: 2}
       propertyPath: m_Pivot.y
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1837763327408566, guid: 8b35ec594366c7c4aacb733bab7ffdc8, type: 2}
       propertyPath: m_Name
@@ -7686,7 +7686,7 @@ GameObject:
   - component: {fileID: 887989073}
   - component: {fileID: 887989072}
   m_Layer: 5
-  m_Name: Button1_2
+  m_Name: Button11_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7750,7 +7750,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -7808,7 +7808,7 @@ GameObject:
   - component: {fileID: 895496342}
   - component: {fileID: 895496341}
   m_Layer: 5
-  m_Name: Button1_1
+  m_Name: Button2_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7853,7 +7853,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -8050,7 +8050,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3087"
+  m_Text: "\u3089"
 --- !u!222 &917904345
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8176,7 +8176,7 @@ GameObject:
   - component: {fileID: 940369745}
   - component: {fileID: 940369744}
   m_Layer: 5
-  m_Name: Button2_5
+  m_Name: Button3_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8240,7 +8240,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -8362,7 +8362,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: ClickTrue
         m_Mode: 1
         m_Arguments:
@@ -8494,7 +8494,7 @@ GameObject:
   - component: {fileID: 976154022}
   - component: {fileID: 976154021}
   m_Layer: 5
-  m_Name: Button2_3
+  m_Name: Button3_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8558,7 +8558,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -8632,20 +8632,23 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 479429883}
   - {fileID: 275748871}
   - {fileID: 1206288116}
   - {fileID: 1022008215}
   - {fileID: 1840082195}
   - {fileID: 136046762}
-  - {fileID: 1236843388}
-  - {fileID: 1998254965}
-  - {fileID: 1761330822}
+  - {fileID: 1707653514}
+  - {fileID: 1620995553}
   - {fileID: 1559279}
+  - {fileID: 1626611329}
   - {fileID: 1800498565}
+  - {fileID: 479429883}
   - {fileID: 13356836}
   - {fileID: 1854248855}
   - {fileID: 56634393}
+  - {fileID: 1998254965}
+  - {fileID: 1761330822}
+  - {fileID: 1236843388}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8723,7 +8726,7 @@ GameObject:
   - component: {fileID: 981497943}
   - component: {fileID: 981497942}
   m_Layer: 5
-  m_Name: Button2_4
+  m_Name: Button7_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8787,7 +8790,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -8919,7 +8922,7 @@ GameObject:
   - component: {fileID: 985252879}
   - component: {fileID: 985252878}
   m_Layer: 5
-  m_Name: Button4_2
+  m_Name: Button14_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8983,7 +8986,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -9041,7 +9044,7 @@ GameObject:
   - component: {fileID: 993106521}
   - component: {fileID: 993106520}
   m_Layer: 5
-  m_Name: Button5_5
+  m_Name: Button15_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9105,7 +9108,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -9218,7 +9221,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u306A"
+  m_Text: "\u308A"
 --- !u!222 &1001475375
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9237,7 +9240,7 @@ GameObject:
   - component: {fileID: 1001578968}
   - component: {fileID: 1001578967}
   m_Layer: 5
-  m_Name: Button2_3
+  m_Name: Button12_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9301,7 +9304,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -9373,7 +9376,7 @@ RectTransform:
   m_LocalScale: {x: 1.0000306, y: 1.0000306, z: 1.0000306}
   m_Children: []
   m_Father: {fileID: 977499945}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9392,7 +9395,7 @@ GameObject:
   - component: {fileID: 1036002662}
   - component: {fileID: 1036002661}
   m_Layer: 5
-  m_Name: Button2_5
+  m_Name: Button7_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9456,8 +9459,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
-        m_MethodName: Clickfalse
+      - m_Target: {fileID: 1770000128}
+        m_MethodName: ClickTrue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9514,7 +9517,7 @@ GameObject:
   - component: {fileID: 1046156092}
   - component: {fileID: 1046156091}
   m_Layer: 5
-  m_Name: Button3_2
+  m_Name: Button13_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9578,7 +9581,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -9636,7 +9639,7 @@ GameObject:
   - component: {fileID: 1069106202}
   - component: {fileID: 1069106201}
   m_Layer: 5
-  m_Name: Button3_1
+  m_Name: Button6_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9700,7 +9703,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -9896,7 +9899,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -9987,7 +9990,7 @@ GameObject:
   - component: {fileID: 1139725746}
   - component: {fileID: 1139725745}
   m_Layer: 5
-  m_Name: Button3_4
+  m_Name: Button6_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10051,7 +10054,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -10333,7 +10336,7 @@ RectTransform:
   m_LocalScale: {x: 1.0000306, y: 1.0000306, z: 1.0000306}
   m_Children: []
   m_Father: {fileID: 977499945}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10426,7 +10429,7 @@ GameObject:
   - component: {fileID: 1208131011}
   - component: {fileID: 1208131010}
   m_Layer: 5
-  m_Name: Button3_2
+  m_Name: Button6_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10490,8 +10493,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
-        m_MethodName: Clickfalse
+      - m_Target: {fileID: 1770000128}
+        m_MethodName: ClickTrue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10548,7 +10551,7 @@ GameObject:
   - component: {fileID: 1210773086}
   - component: {fileID: 1210773085}
   m_Layer: 5
-  m_Name: Button5_3
+  m_Name: Button10_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10612,7 +10615,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: ClickTrue
         m_Mode: 1
         m_Arguments:
@@ -10818,7 +10821,7 @@ GameObject:
   - component: {fileID: 1236371199}
   - component: {fileID: 1236371198}
   m_Layer: 5
-  m_Name: Button5_1
+  m_Name: Button10_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10882,7 +10885,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -10956,11 +10959,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 977499945}
-  m_RootOrder: 6
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.25, y: 1}
-  m_AnchoredPosition: {x: 6.5, y: -201}
+  m_AnchoredPosition: {x: -10, y: -201}
   m_SizeDelta: {x: 548, y: 368}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1236843389
@@ -11082,7 +11085,7 @@ GameObject:
   - component: {fileID: 1245627901}
   - component: {fileID: 1245627900}
   m_Layer: 5
-  m_Name: Button1_4
+  m_Name: Button8_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11127,8 +11130,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
-        m_MethodName: Clickfalse
+      - m_Target: {fileID: 1770000128}
+        m_MethodName: ClickTrue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11259,7 +11262,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3063"
+  m_Text: "\u3044"
 --- !u!222 &1248169169
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11395,7 +11398,7 @@ Prefab:
     - target: {fileID: 224547258051384640, guid: 1b4456a94bbfcd64980588f67e857c52,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -221.99997
+      value: -174.4
       objectReference: {fileID: 0}
     - target: {fileID: 224547258051384640, guid: 1b4456a94bbfcd64980588f67e857c52,
         type: 2}
@@ -11435,7 +11438,7 @@ Prefab:
     - target: {fileID: 224547258051384640, guid: 1b4456a94bbfcd64980588f67e857c52,
         type: 2}
       propertyPath: m_Pivot.y
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1896472292177068, guid: 1b4456a94bbfcd64980588f67e857c52, type: 2}
       propertyPath: m_Name
@@ -11544,7 +11547,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3043"
+  m_Text: "\u3080"
 --- !u!222 &1332479061
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11563,7 +11566,7 @@ GameObject:
   - component: {fileID: 1358578735}
   - component: {fileID: 1358578734}
   m_Layer: 5
-  m_Name: Button5_3
+  m_Name: Button15_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11627,8 +11630,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
-        m_MethodName: ClickTrue
+      - m_Target: {fileID: 1770000128}
+        m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11759,7 +11762,7 @@ GameObject:
   - component: {fileID: 1408929220}
   - component: {fileID: 1408929219}
   m_Layer: 5
-  m_Name: Button4_1
+  m_Name: Button14_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11823,7 +11826,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -11936,7 +11939,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u306E"
+  m_Text: "\u3053"
 --- !u!222 &1420332171
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12122,7 +12125,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3072"
+  m_Text: "\u3093"
 --- !u!222 &1459024466
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12141,7 +12144,7 @@ GameObject:
   - component: {fileID: 1462591229}
   - component: {fileID: 1462591228}
   m_Layer: 5
-  m_Name: Button1_3
+  m_Name: Button2_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12186,7 +12189,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -12263,7 +12266,7 @@ GameObject:
   - component: {fileID: 1486250448}
   - component: {fileID: 1486250447}
   m_Layer: 5
-  m_Name: Button3_5
+  m_Name: Button6_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12327,8 +12330,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
-        m_MethodName: ClickTrue
+      - m_Target: {fileID: 1770000128}
+        m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12440,7 +12443,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3085"
+  m_Text: "\u304B"
 --- !u!222 &1507039199
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12459,7 +12462,7 @@ GameObject:
   - component: {fileID: 1523519807}
   - component: {fileID: 1523519806}
   m_Layer: 5
-  m_Name: Button3_3
+  m_Name: Button6_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12523,7 +12526,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -12581,7 +12584,7 @@ GameObject:
   - component: {fileID: 1533726577}
   - component: {fileID: 1533726576}
   m_Layer: 5
-  m_Name: Button1_3
+  m_Name: Button8_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12626,8 +12629,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
-        m_MethodName: ClickTrue
+      - m_Target: {fileID: 1770000128}
+        m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12777,7 +12780,7 @@ GameObject:
   - component: {fileID: 1591460272}
   - component: {fileID: 1591460271}
   m_Layer: 5
-  m_Name: Button3_1
+  m_Name: Button13_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12841,7 +12844,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -12899,7 +12902,7 @@ GameObject:
   - component: {fileID: 1598102459}
   - component: {fileID: 1598102458}
   m_Layer: 5
-  m_Name: Button2_5
+  m_Name: Button12_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12963,7 +12966,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -13083,6 +13086,142 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1613051184}
+--- !u!1 &1620995552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1620995553}
+  - component: {fileID: 1620995555}
+  - component: {fileID: 1620995554}
+  m_Layer: 5
+  m_Name: BackGround3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1620995553
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1620995552}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000306, y: 1.0000306, z: 1.0000306}
+  m_Children: []
+  m_Father: {fileID: 977499945}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.00000047683716}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1620995554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1620995552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1620995555
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1620995552}
+--- !u!1 &1626611328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1626611329}
+  - component: {fileID: 1626611331}
+  - component: {fileID: 1626611330}
+  m_Layer: 5
+  m_Name: BackGround2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1626611329
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1626611328}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000306, y: 1.0000306, z: 1.0000306}
+  m_Children: []
+  m_Father: {fileID: 977499945}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.00000047683716}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1626611330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1626611328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9558824, g: 0.43576992, b: 0.43576992, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1626611331
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1626611328}
 --- !u!1 &1634748432
 GameObject:
   m_ObjectHideFlags: 0
@@ -13150,7 +13289,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3083"
+  m_Text: "\u3051"
 --- !u!222 &1634748435
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13202,7 +13341,7 @@ GameObject:
   - component: {fileID: 1649599139}
   - component: {fileID: 1649599138}
   m_Layer: 5
-  m_Name: Button3_5
+  m_Name: Button13_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13266,7 +13405,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: ClickTrue
         m_Mode: 1
         m_Arguments:
@@ -13462,7 +13601,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -13675,7 +13814,7 @@ GameObject:
   - component: {fileID: 1703172795}
   - component: {fileID: 1703172794}
   m_Layer: 5
-  m_Name: Button2_3
+  m_Name: Button7_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13739,7 +13878,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -13797,7 +13936,7 @@ GameObject:
   - component: {fileID: 1705552123}
   - component: {fileID: 1705552122}
   m_Layer: 5
-  m_Name: Button1_2
+  m_Name: Button8_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13842,7 +13981,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -13981,6 +14120,74 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1707212718}
+--- !u!1 &1707653513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1707653514}
+  - component: {fileID: 1707653516}
+  - component: {fileID: 1707653515}
+  m_Layer: 5
+  m_Name: LastBackGround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1707653514
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1707653513}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000306, y: 1.0000306, z: 1.0000306}
+  m_Children: []
+  m_Father: {fileID: 977499945}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.00000047683716}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1707653515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1707653513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1707653516
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1707653513}
 --- !u!1 &1723967558
 GameObject:
   m_ObjectHideFlags: 0
@@ -13993,7 +14200,7 @@ GameObject:
   - component: {fileID: 1723967561}
   - component: {fileID: 1723967560}
   m_Layer: 5
-  m_Name: Button4_5
+  m_Name: Button9_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14057,7 +14264,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -14148,7 +14355,7 @@ GameObject:
   - component: {fileID: 1732980702}
   - component: {fileID: 1732980701}
   m_Layer: 5
-  m_Name: Button1_4
+  m_Name: Button11_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14212,7 +14419,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -14399,7 +14606,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3064"
+  m_Text: "\u3093"
 --- !u!222 &1739489704
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14435,7 +14642,7 @@ RectTransform:
   m_Children:
   - {fileID: 166682978}
   m_Father: {fileID: 977499945}
-  m_RootOrder: 8
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14551,7 +14758,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: ClickTrue
         m_Mode: 1
         m_Arguments:
@@ -14634,6 +14841,7 @@ MonoBehaviour:
   MenuNumber2: {fileID: 1022008214}
   MenuNumber3: {fileID: 1840082194}
   MenuNumber4: {fileID: 136046761}
+  miniGame2Manager: {fileID: 1770000128}
 --- !u!4 &1770000127
 Transform:
   m_ObjectHideFlags: 0
@@ -14658,13 +14866,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8403580092552884eb46abbe105562d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TalkKarenObject: {fileID: 0}
-  playerController: {fileID: 0}
-  BackGround: {fileID: 0}
+  Place: {fileID: 1998254963}
+  playerCursorController: {fileID: 1770000126}
+  BackGround: {fileID: 479429884}
   PlaceList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 479429884}
+  - {fileID: 1626611330}
+  - {fileID: 1620995554}
   buttonMenuList:
   - {fileID: 2036019809}
   - {fileID: 1836848414}
@@ -14681,21 +14889,81 @@ MonoBehaviour:
   - {fileID: 1727632405}
   - {fileID: 1126546457}
   - {fileID: 1868513717}
-  button1List: []
-  button2List: []
-  button3List: []
-  button4List: []
-  button5List: []
-  button6List: []
-  button7List: []
-  button8List: []
-  button9List: []
-  button10List: []
-  button11List: []
-  button12List: []
-  button13List: []
-  button14List: []
-  button15List: []
+  button1_1: {fileID: 1847341817}
+  button1_2: {fileID: 190776501}
+  button1_3: {fileID: 448391215}
+  button1_4: {fileID: 437478678}
+  button1_5: {fileID: 298778391}
+  button2_1: {fileID: 895496341}
+  button2_2: {fileID: 202450308}
+  button2_3: {fileID: 1462591228}
+  button2_4: {fileID: 429480525}
+  button2_5: {fileID: 878662840}
+  button3_1: {fileID: 119000050}
+  button3_2: {fileID: 352839497}
+  button3_3: {fileID: 976154021}
+  button3_4: {fileID: 107021601}
+  button3_5: {fileID: 940369744}
+  button4_1: {fileID: 1660302805}
+  button4_2: {fileID: 1766375112}
+  button4_3: {fileID: 764873804}
+  button4_4: {fileID: 332227131}
+  button4_5: {fileID: 56304491}
+  button5_1: {fileID: 1125096129}
+  button5_2: {fileID: 403509784}
+  button5_3: {fileID: 349908363}
+  button5_4: {fileID: 702774925}
+  button5_5: {fileID: 959233554}
+  button6_1: {fileID: 1069106201}
+  button6_2: {fileID: 1208131010}
+  button6_3: {fileID: 1523519806}
+  button6_4: {fileID: 1139725745}
+  button6_5: {fileID: 1486250447}
+  button7_1: {fileID: 1906365988}
+  button7_2: {fileID: 1939738384}
+  button7_3: {fileID: 1703172794}
+  button7_4: {fileID: 981497942}
+  button7_5: {fileID: 1036002661}
+  button8_1: {fileID: 315518277}
+  button8_2: {fileID: 1705552122}
+  button8_3: {fileID: 1533726576}
+  button8_4: {fileID: 1245627900}
+  button8_5: {fileID: 337685695}
+  button9_1: {fileID: 676225716}
+  button9_2: {fileID: 52930696}
+  button9_3: {fileID: 529758066}
+  button9_4: {fileID: 853112998}
+  button9_5: {fileID: 1723967560}
+  button10_1: {fileID: 1236371198}
+  button10_2: {fileID: 385674343}
+  button10_3: {fileID: 1210773085}
+  button10_4: {fileID: 423314787}
+  button10_5: {fileID: 2066070605}
+  button11_1: {fileID: 625833967}
+  button11_2: {fileID: 887989072}
+  button11_3: {fileID: 456449300}
+  button11_4: {fileID: 1732980701}
+  button11_5: {fileID: 779407844}
+  button12_1: {fileID: 210533868}
+  button12_2: {fileID: 27090830}
+  button12_3: {fileID: 1001578967}
+  button12_4: {fileID: 453387933}
+  button12_5: {fileID: 1598102458}
+  button13_1: {fileID: 1591460271}
+  button13_2: {fileID: 1046156091}
+  button13_3: {fileID: 221073077}
+  button13_4: {fileID: 191513213}
+  button13_5: {fileID: 1649599138}
+  button14_1: {fileID: 1408929219}
+  button14_2: {fileID: 985252878}
+  button14_3: {fileID: 317474589}
+  button14_4: {fileID: 1977782890}
+  button14_5: {fileID: 2092718490}
+  button15_1: {fileID: 24362699}
+  button15_2: {fileID: 270158269}
+  button15_3: {fileID: 1358578734}
+  button15_4: {fileID: 1855707908}
+  button15_5: {fileID: 993106520}
 --- !u!1 &1800498564
 GameObject:
   m_ObjectHideFlags: 0
@@ -14727,7 +14995,7 @@ Transform:
   - {fileID: 876736911}
   - {fileID: 413622712}
   m_Father: {fileID: 977499945}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1828305705
 GameObject:
@@ -14862,7 +15130,7 @@ RectTransform:
   m_LocalScale: {x: 1.0000306, y: 1.0000306, z: 1.0000306}
   m_Children: []
   m_Father: {fileID: 977499945}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14881,7 +15149,7 @@ GameObject:
   - component: {fileID: 1847341818}
   - component: {fileID: 1847341817}
   m_Layer: 5
-  m_Name: Button3_1
+  m_Name: Button1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14918,7 +15186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -14945,7 +15213,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -15008,7 +15276,7 @@ GameObject:
   - component: {fileID: 1855707909}
   - component: {fileID: 1855707908}
   m_Layer: 5
-  m_Name: Button5_4
+  m_Name: Button15_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15072,7 +15340,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -15196,7 +15464,7 @@ GameObject:
   - component: {fileID: 1906365989}
   - component: {fileID: 1906365988}
   m_Layer: 5
-  m_Name: Button2_1
+  m_Name: Button7_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15260,8 +15528,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
-        m_MethodName: ClickTrue
+      - m_Target: {fileID: 1770000128}
+        m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15318,7 +15586,7 @@ GameObject:
   - component: {fileID: 1939738385}
   - component: {fileID: 1939738384}
   m_Layer: 5
-  m_Name: Button2_2
+  m_Name: Button7_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15382,7 +15650,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -15495,7 +15763,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3071"
+  m_Text: "\u304B"
 --- !u!222 &1954243108
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15514,7 +15782,7 @@ GameObject:
   - component: {fileID: 1977782891}
   - component: {fileID: 1977782890}
   m_Layer: 5
-  m_Name: Button4_4
+  m_Name: Button14_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15578,7 +15846,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: ClickTrue
         m_Mode: 1
         m_Arguments:
@@ -15821,7 +16089,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6587\u5B57\u5217\u304C\u5165\u308B"
+  m_Text: "\u3069\u3053\u3060\u308D\u3046\uFF1F"
 --- !u!222 &1998254964
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15839,7 +16107,7 @@ RectTransform:
   m_LocalScale: {x: 1.0000306, y: 1.0000306, z: 1.0000306}
   m_Children: []
   m_Father: {fileID: 977499945}
-  m_RootOrder: 7
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -16113,7 +16381,7 @@ GameObject:
   - component: {fileID: 2066070606}
   - component: {fileID: 2066070605}
   m_Layer: 5
-  m_Name: Button5_5
+  m_Name: Button10_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16177,7 +16445,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -16309,7 +16577,7 @@ GameObject:
   - component: {fileID: 2092718491}
   - component: {fileID: 2092718490}
   m_Layer: 5
-  m_Name: Button4_5
+  m_Name: Button14_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16373,7 +16641,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1770000126}
+      - m_Target: {fileID: 1770000128}
         m_MethodName: Clickfalse
         m_Mode: 1
         m_Arguments:
@@ -16560,7 +16828,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3078"
+  m_Text: "\u307B"
 --- !u!222 &2113170559
 CanvasRenderer:
   m_ObjectHideFlags: 0
