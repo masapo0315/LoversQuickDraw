@@ -16,6 +16,11 @@ public class ChoiceManager : MonoBehaviour
     [SerializeField]private GameObject choiceBorY;
     [SerializeField]private GameObject choiceTrigger;
     [SerializeField]private GameObject FrameText;
+    [HideInInspector] public int rootflag;
+
+    [SerializeField]
+    TalkManager talkManager;
+
     
     //[SerializeField]
     //private GameObject choice1Text;
@@ -49,6 +54,7 @@ public class ChoiceManager : MonoBehaviour
             stopChoice = true;
             firstsPlayer = true;
             Invoke("DestroyAorX", invokeTime * 2);
+            rootflag = 1;
         }
 
         //2Pが1を押した判定
@@ -60,6 +66,7 @@ public class ChoiceManager : MonoBehaviour
             stopChoice = true;
             firstsPlayer = false;
             Invoke("DestroyAorX", invokeTime * 2);
+            rootflag = 1;
         }
 
         //1Pが2を押した判定
@@ -71,6 +78,7 @@ public class ChoiceManager : MonoBehaviour
             stopChoice = true;
             firstsPlayer = true;
             Invoke("DestroyBorY", invokeTime * 2);
+            rootflag = 2;
         }
 
         //2Pが2を押した判定
@@ -82,6 +90,7 @@ public class ChoiceManager : MonoBehaviour
             stopChoice = true;
             firstsPlayer = false;
             Invoke("DestroyBorY", invokeTime * 2);
+            rootflag = 2;
         }
 
         //1Pが3を押した判定
@@ -93,6 +102,7 @@ public class ChoiceManager : MonoBehaviour
             stopChoice = true;
             firstsPlayer = true;
             Invoke("DestroyTrigger", invokeTime * 2);
+            rootflag = 3;
         }
 
         //2Pが3を押した判定
@@ -104,34 +114,30 @@ public class ChoiceManager : MonoBehaviour
             stopChoice = true;
             firstsPlayer = false;
             Invoke("DestroyTrigger", invokeTime * 2);
+            rootflag = 3;
         }
+        talkManager.ChoiceRoot();
     }
 
     //カラーコードは〇〇/255, で表示
     private void ChangeColor1()
     {
         Debug.Log("2と3を暗くする");
-
         choiceBorY.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
-
         choiceTrigger.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
     }
 
     private void ChangeColor2()
     {
         Debug.Log("1と3を暗くする");
-
         choiceAorX.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
-
         choiceTrigger.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
     }
 
     private void ChangeColor3()
     {
         Debug.Log("1と2を暗くする");
-
         choiceAorX.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
-
         choiceBorY.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
     }
 

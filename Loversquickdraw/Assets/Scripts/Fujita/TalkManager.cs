@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class TalkManager : MonoBehaviour
 {
-
     private int Talktext = 0; //縦
     private new int name = 0; //横
     private float fadeInOut; //点滅用
     private float fade = 0.035f;
     public bool choiceAfterText = true;
     private bool choice = false;
+    //public int T1_rootflag;
+
 
     string[] TEXTTAG_LIST = { "プレイヤー１", "プレイヤー２" };
 
@@ -48,24 +49,25 @@ public class TalkManager : MonoBehaviour
 
         new string[]{ "高校――すなわち青春。華々しい\n“高校生”の期間、俺は…", "プレイヤー２"},
         new string[]{ "お前もそれやるんかァ！？\nつーかプレイヤー２かよ、何のつもりだ？", "プレイヤー１"},
-        new string[]{"そう、忌々しいことに、華恋の幼馴染は俺だけではない。","プレイヤー１"},
+        new string[]{ "そう、忌々しいことに、華恋の幼馴染は俺だけではない。","プレイヤー１"},
         new string[]{ "このプレイヤー２と３人ですくすく育ってきた仲良し３人組なのだーー！", "プレイヤー１"},
-        new string[]{"同じこと考えてるクセによく言うぜ。","プレイヤー２"},
-        new string[]{"この道を通るってことは、だろ？","プレイヤー１"},
-        new string[]{"！！","プレイヤー１"},
-        new string[]{"華恋はこの先の角を左に曲がった通りを必ず通って登校する…。","プレイヤー１"},
-        new string[]{"つまり、俺がこの道を通る理由は１つ！","プレイヤー１"},
-        new string[]{"この先の曲がり角で\n華恋とぶつかることだーーッ！！","両プレイヤー"},
+        new string[]{ "同じこと考えてるクセによく言うぜ。","プレイヤー２"},
+        new string[]{ "この道を通るってことは、だろ？","プレイヤー１"},
+        new string[]{ "！！","プレイヤー１"},
+        new string[]{ "華恋はこの先の角を左に曲がった通りを必ず通って登校する…。","プレイヤー１"},
+        new string[]{ "つまり、俺がこの道を通る理由は１つ！","プレイヤー１"},
+        new string[]{ "この先の曲がり角で\n華恋とぶつかることだーーッ！！","両プレイヤー"},
 
-        new string[]{"この先はもう仲良し３人組ではない。華恋を巡る恋のライバル…！！！","プレイヤー１"},
-        new string[]{"お前なんかに渡さない。夢宮華恋とイチャイチャするのはーー","両プレイヤー"},
-        new string[]{"この俺だァァアアァァァッッ！！！！","両プレイヤー"},
-        new string[]{"あいつと同時に駆け出す俺、\n目の前には十字路が迫っている。","両プレイヤー"},
-        new string[]{"あいつよりも前に出て華恋とぶつかる。\nそのために俺はーー！！","両プレイヤー"},
+        new string[]{ "この先はもう仲良し３人組ではない。華恋を巡る恋のライバル…！！！","プレイヤー１"},
+        new string[]{ "お前なんかに渡さない。夢宮華恋とイチャイチャするのはーー","両プレイヤー"},
+        new string[]{ "この俺だァァアアァァァッッ！！！！","両プレイヤー"},
+        new string[]{ "あいつと同時に駆け出す俺、\n目の前には十字路が迫っている。","両プレイヤー"},
+        new string[]{ "あいつよりも前に出て華恋とぶつかる。\nそのために俺はーー！！","両プレイヤー"},
         //ここまでで25行
 
         //選択１の場合
-        new string[]{ "一歩先んじた俺は、十字路で急ブレーキ、\n迷いなくインド人を右に！","択プレイヤー"},
+        new string[]{ "1111111111111111111","択プレイヤー"},
+        //new string[]{ "一歩先んじた俺は、十字路で急ブレーキ、\n迷いなくインド人を右に！","択プレイヤー"},
         new string[]{ "思惑通り、角の向こうには華恋の頭が\n見え――ない！？", "択プレイヤー"},
         new string[]{ "スピードを出しすぎた……！", "択プレイヤー"},
         new string[]{ "あれ、［択　Ｐ］くん！？もー、また\n危ないことして―！気を付けてね～！？","華恋"},
@@ -83,14 +85,15 @@ public class TalkManager : MonoBehaviour
         new string[]{ "今度こそ急ブレーキ、１８０゜ターン！\nしかしこれで勝負は振出しに戻る…！", "択プレイヤー"},
         
         //選択３の場合
-        new string[]{ "一歩先んじた俺は、急ブレーキを\nキャンセルして猛進！十字路を――","択プレイヤー"},
+        new string[]{ "3333333333333333","択プレイヤー"},
+        //new string[]{ "一歩先んじた俺は、急ブレーキを\nキャンセルして猛進！十字路を――","択プレイヤー"},
         new string[]{ "曲がり損ねたァァァ！！！", "択プレイヤー"},
         new string[]{ "ふはははバカめ！チキレンースやってる\n場合じゃないんだよ！！","非選択Ｐ"},
         new string[]{ "［非択Ｐ］は後ろの角に消えてゆく…！\n逆に出遅れてしまった！","択プレイヤー"},
 
         //選択肢後の共通シナリオ
-        new string[]{"くそ、最初の接触は失敗か！\n少女漫画も楽じゃねぇな！","プレイヤー１"},
-        new string[]{"こんなハナから汗臭い少女漫画が\nあるかよ!","プレイヤー２"},
+        new string[]{ "くそ、最初の接触は失敗か！\n少女漫画も楽じゃねぇな！","プレイヤー１"},
+        new string[]{ "こんなハナから汗臭い少女漫画が\nあるかよ!","プレイヤー２"},
     };
     #endregion
     //左クリックしたとき名前とコメントの表示、Debug.logは配列番号とそれに対して画面表示する文字を確認
@@ -119,6 +122,11 @@ public class TalkManager : MonoBehaviour
                     TextFrame.SetActive(false);
                     choice = true;
                     ChoiceManager.SetActive();
+                }
+                
+                if (Talktext == 29 || Talktext == 38 || Talktext == 42)
+                {
+                    Talktext = 43;
                 }
 
                 Text Nametext = NameTextmanager.GetComponent<Text>();
@@ -200,12 +208,31 @@ public class TalkManager : MonoBehaviour
 
     public void LordMinigame()
     {
-        if (Talktext == 27)
+        if (Talktext == 44)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 SceneManager.LoadScene("testMiniGame");
             }
+        }
+    }
+
+    public void ChoiceRoot()
+    {
+        Debug.Log(ChoiceManager.rootflag);
+        switch (ChoiceManager.rootflag)
+        {
+            case 1:
+                Talktext = 25;
+                Debug.Log(ChoiceManager.rootflag);
+                break;
+            case 2:
+                Talktext = 33;
+
+                break;
+            case 3:
+                Talktext = 40;
+                break;
         }
     }
 }
