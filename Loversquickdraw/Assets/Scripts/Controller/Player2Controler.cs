@@ -22,7 +22,7 @@ public class Player2Controler : MonoBehaviour
 
     private Vector3 force;
 
-    float jumpPower = 10f; //ジャンプ力
+    float jumpPower = 20; //ジャンプ力
     bool jump = false;     //設置判定
 
     [SerializeField]

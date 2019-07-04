@@ -8,7 +8,7 @@ public class TestPlayerControler1 : MonoBehaviour {
     float moveSpeed;
     float moveForceMultipliter = 1.0f;
 
-    float jumpPower = 10;
+    float jumpPower = 20;
     bool jump = false;
 
     [SerializeField]
