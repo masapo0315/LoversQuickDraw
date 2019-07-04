@@ -4079,7 +4079,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
+  m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
@@ -4783,7 +4783,7 @@ MonoBehaviour:
   choiceTrigger: {fileID: 1006015923}
   FrameText: {fileID: 1965957114}
   rootflag: 0
-  talkManager: {fileID: 840345692}
+  talkManager2: {fileID: 0}
   invokeTime: 2.5
   firstsPlayer: 0
 --- !u!1 &857662209
