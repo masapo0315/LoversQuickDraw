@@ -8,6 +8,12 @@ public class TestPlayer2Controler : MonoBehaviour {
     float moveSpeed = 5.0f;
     float moveForceMultipliter = 1.0f;
 
+    float jumpPower = 10;
+    bool jump = false;
+
+    [SerializeField]
+    Animator _animator;
+
 
     // Use this for initialization
     void Start()
@@ -21,6 +27,7 @@ public class TestPlayer2Controler : MonoBehaviour {
     void Update()
     {
         SpeedUp();
+        Jump();
     }
 
     void SpeedUp()
@@ -30,7 +37,33 @@ public class TestPlayer2Controler : MonoBehaviour {
         moveVector.x = moveSpeed * horizontalInput;
 
         rb.AddForce(moveForceMultipliter * (moveVector - rb.velocity));
+
+        _animator.SetBool("Run", true);
     }
+
+    void Jump()
+    {
+        if (Input.GetButtonDown("Jump2") && jump == false)
+        {
+            Debug.Log("ジャンプなう");
+
+            _animator.SetBool("Run", false);
+            _animator.SetBool("Jump", true);
+            rb.velocity = new Vector3(0,jumpPower,0);
+            jump = true;
+        }
+
+    }
+
+    private void OnCollisionStay(Collision col)
+    {
+        if (col.gameObject.tag == "ground")
+        {
+            _animator.SetBool("Jump", false);
+            jump = false;
+        }
+    }
+
 
     //遅延処理
     private IEnumerator StartDelay()
@@ -39,7 +72,7 @@ public class TestPlayer2Controler : MonoBehaviour {
 
         yield return new WaitForSeconds(2.0f);
 
-        moveSpeed = 5.0f;
+        moveSpeed = 20.0f;
 
         yield break;
     }
