@@ -12,6 +12,8 @@ public class CameraController : MonoBehaviour
         //カメラのトラッキングOFF
         XRDevice.DisableAutoXRCameraTracking(target, true);
         //スクリプトからカメラを固定
-        target.stereoTargetEye = StereoTargetEyeMask.None;
+        target.stereoTargetEye = StereoTargetEyeMask.Both;
+        //UnityEngine.VR.VRSettings.showDeviceView = false;
+        XRSettings.showDeviceView = false;
     }
 }
