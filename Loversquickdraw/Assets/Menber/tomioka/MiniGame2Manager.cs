@@ -960,19 +960,19 @@ public class MiniGame2Manager : MonoBehaviour
 
             case 6:
                 Debug.Log("6回目");
-                Karen += "き";
+                Karen += "ほ";
                 Destroy(buttonMenuList[5]);
                 break;
 
             case 7:
                 Debug.Log("7回目");
-                Karen += "ょ";
+                Karen += "け";
                 Destroy(buttonMenuList[6]);
                 break;
 
             case 8:
                 Debug.Log("8回目");
-                Karen += "う";
+                Karen += "ん";
                 Destroy(buttonMenuList[7]);
                 break;
 
