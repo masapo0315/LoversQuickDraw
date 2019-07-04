@@ -33,7 +33,8 @@ public class TalkManager : MonoBehaviour
     }
 
     //コメントと話すキャラの名前の配列(会話文は25個)
-    string[][] Text = new string[][]
+    [SerializeField]
+    private string[][] Text = new string[][]
     {
         //画面表示18文字を2行まで(全36文字)
         new string[]{ "俺は。プレイヤー１\n色濃（いろこい）高校の新入生だ。", "プレイヤー１"},
@@ -65,15 +66,14 @@ public class TalkManager : MonoBehaviour
         new string[]{ "あいつよりも前に出て華恋とぶつかる。\nそのために俺はーー！！","両プレイヤー"},
         //ここまでで25行
 
-        //選択１の場合
-        new string[]{ "1111111111111111111","択プレイヤー"},
-        //new string[]{ "一歩先んじた俺は、十字路で急ブレーキ、\n迷いなくインド人を右に！","択プレイヤー"},
+        //選択１の場合(26)
+        new string[]{ "一歩先んじた俺は、十字路で急ブレーキ、\n迷いなくインド人を右に！","択プレイヤー"},
         new string[]{ "思惑通り、角の向こうには華恋の頭が\n見え――ない！？", "択プレイヤー"},
         new string[]{ "スピードを出しすぎた……！", "択プレイヤー"},
         new string[]{ "あれ、［択　Ｐ］くん！？もー、また\n危ないことして―！気を付けてね～！？","華恋"},
         new string[]{ "しかし、遠目に目が合ったのは俺。\n何はともあれ一歩リードだ。やったぜ。", "択プレイヤー"},
 
-        //選択２の場合
+        //選択２の場合(31)
         new string[]{ "一歩先んじた俺は、十字路で急ブレーキ、\n迷いなくインド人を右に！","択プレイヤー"},
         new string[]{ "遅れた［非択Ｐ］が遅れて曲がる！\nこれは勝ったも同然……！","択プレイヤー"},
         new string[]{ "なあ、曲がり角逆じゃねえか！？", "非選択Ｐ"},
@@ -84,9 +84,8 @@ public class TalkManager : MonoBehaviour
         new string[]{ "うおおおお南無三ッ！！", "択プレイヤー"},
         new string[]{ "今度こそ急ブレーキ、１８０゜ターン！\nしかしこれで勝負は振出しに戻る…！", "択プレイヤー"},
         
-        //選択３の場合
-        new string[]{ "3333333333333333","択プレイヤー"},
-        //new string[]{ "一歩先んじた俺は、急ブレーキを\nキャンセルして猛進！十字路を――","択プレイヤー"},
+        //選択３の場合(40)
+        new string[]{ "一歩先んじた俺は、急ブレーキを\nキャンセルして猛進！十字路を――","択プレイヤー"},
         new string[]{ "曲がり損ねたァァァ！！！", "択プレイヤー"},
         new string[]{ "ふはははバカめ！チキレンースやってる\n場合じゃないんだよ！！","非選択Ｐ"},
         new string[]{ "［非択Ｐ］は後ろの角に消えてゆく…！\n逆に出遅れてしまった！","択プレイヤー"},
@@ -124,7 +123,7 @@ public class TalkManager : MonoBehaviour
                     ChoiceManager.SetActive();
                 }
                 
-                if (Talktext == 29 || Talktext == 38 || Talktext == 42)
+                if (Talktext == 30 || Talktext == 39 || Talktext == 43)
                 {
                     Talktext = 43;
                 }
@@ -208,11 +207,11 @@ public class TalkManager : MonoBehaviour
 
     public void LordMinigame()
     {
-        if (Talktext == 44)
+        if (Talktext == 45)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                SceneManager.LoadScene("testMiniGame");
+                SceneManager.LoadScene("MiniGame1");
             }
         }
     }
@@ -223,12 +222,11 @@ public class TalkManager : MonoBehaviour
         switch (ChoiceManager.rootflag)
         {
             case 1:
-                Talktext = 25;
+                Talktext = 26;
                 Debug.Log(ChoiceManager.rootflag);
                 break;
             case 2:
-                Talktext = 33;
-
+                Talktext = 31;
                 break;
             case 3:
                 Talktext = 40;

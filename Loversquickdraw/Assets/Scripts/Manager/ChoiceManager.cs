@@ -55,6 +55,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
+            talkManager.ChoiceRoot();
         }
 
         //2Pが1を押した判定
@@ -67,6 +68,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
+            talkManager.ChoiceRoot();
         }
 
         //1Pが2を押した判定
@@ -79,6 +81,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
+            talkManager.ChoiceRoot();
         }
 
         //2Pが2を押した判定
@@ -91,6 +94,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
+            talkManager.ChoiceRoot();
         }
 
         //1Pが3を押した判定
@@ -103,6 +107,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
+            talkManager.ChoiceRoot();
         }
 
         //2Pが3を押した判定
@@ -115,8 +120,8 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
+            talkManager.ChoiceRoot();
         }
-        talkManager.ChoiceRoot();
     }
 
     //カラーコードは〇〇/255, で表示
@@ -140,7 +145,6 @@ public class ChoiceManager : MonoBehaviour
         choiceAorX.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
         choiceBorY.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
     }
-
 
     private void GetAorX()
     {
