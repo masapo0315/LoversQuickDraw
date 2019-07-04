@@ -31,7 +31,7 @@ public class ChoiceManager : MonoBehaviour
     [SerializeField]private float invokeTime = 2.5f;
     
     //trueの場合は1Pの勝ち、falseの場合は2Pの勝ち
-    [HideInInspector]public bool firstsPlayer = false;//publicなのは何故か…
+    [HideInInspector]public bool firstsPlayer = false;
 
     public void PushButton()
     {
