@@ -70,7 +70,7 @@ public class Player1Controler : MonoBehaviour
     //ジャンプの処理
     void Jump()
     {
-        if (jump == false)
+        if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger) && jump == false)
         {
             _animator.SetBool("Jump", true);
             rb.velocity = new Vector3(0, jumpPower, 0);
