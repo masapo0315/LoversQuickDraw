@@ -12,7 +12,7 @@ public class BackGroundContorol : MonoBehaviour {
 
     //背景の回り込み
     float rightOffset = 1.45f;
-    float leftOffset = -0.4f;
+    float leftOffset = 20f;
 
     Transform bgTfm;
     SpriteRenderer spriteRenderer;
