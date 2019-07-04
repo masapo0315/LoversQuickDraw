@@ -10942,7 +10942,7 @@ GameObject:
   - component: {fileID: 1236843390}
   - component: {fileID: 1236843389}
   m_Layer: 5
-  m_Name: Fle\nda
+  m_Name: Karen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14863,32 +14863,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1770000125}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8403580092552884eb46abbe105562d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 043c59be958a0794599df195fea8c256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Place: {fileID: 1998254963}
   playerCursorController: {fileID: 1770000126}
-  BackGround: {fileID: 479429884}
   PlaceList:
   - {fileID: 479429884}
   - {fileID: 1626611330}
   - {fileID: 1620995554}
-  buttonMenuList:
-  - {fileID: 2036019809}
-  - {fileID: 1836848414}
-  - {fileID: 1316322271}
-  - {fileID: 1451901888}
-  - {fileID: 932188457}
-  - {fileID: 413622711}
-  - {fileID: 876736910}
-  - {fileID: 1904353060}
-  - {fileID: 277345265}
-  - {fileID: 1642706029}
-  - {fileID: 6132008}
-  - {fileID: 459655855}
-  - {fileID: 1727632405}
-  - {fileID: 1126546457}
-  - {fileID: 1868513717}
+  buttonMenuList: []
   button1_1: {fileID: 1847341817}
   button1_2: {fileID: 190776501}
   button1_3: {fileID: 448391215}

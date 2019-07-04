@@ -18,8 +18,8 @@ public class MiniGame2Manager : MonoBehaviour
     [SerializeField]
     private PlayerCursorController playerCursorController;
 
-    [SerializeField]
-    private Image BackGround;
+    //[SerializeField]
+    //private Image BackGround;
 
     //1図書館・2保健室・3教室
     [SerializeField]
@@ -190,7 +190,7 @@ public class MiniGame2Manager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        BackGround.GetComponent<Image>();
+        //BackGround.GetComponent<Image>();
     }
 
     // Update is called once per frame
