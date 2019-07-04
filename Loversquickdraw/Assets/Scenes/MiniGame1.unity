@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -257,15 +257,15 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.5
     width: 1
-    height: 1
+    height: 0.5
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -838,12 +838,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c69d2bea59ce8744b8987a14b408caea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainCamera: {fileID: 874411628}
   _camera: {fileID: 44863939}
   Lcube: {fileID: 0}
   L_shake: 0
   rb: {fileID: 404583207}
-  _animator: {fileID: 404583205}
+  _animator: {fileID: 0}
 --- !u!95 &404583205
 Animator:
   serializedVersion: 3
@@ -1012,12 +1011,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1769c6e8fbcbf204292a52ed4e30491c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainCamera: {fileID: 1272855922}
   _camera: {fileID: 1624017421}
   Rcube: {fileID: 0}
   R_shake: 0
   rb: {fileID: 483472371}
-  _animator: {fileID: 483472369}
+  _animator: {fileID: 0}
 --- !u!95 &483472369
 Animator:
   serializedVersion: 3
@@ -2763,7 +2761,7 @@ MonoBehaviour:
   - {fileID: 80050749}
   - {fileID: 1135575401}
   - {fileID: 1686115752}
-  _animator: {fileID: 1367570837}
+  _animator: {fileID: 0}
 --- !u!65 &1367570839
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3100,7 +3098,7 @@ MonoBehaviour:
   - {fileID: 80050749}
   - {fileID: 1135575401}
   - {fileID: 1686115752}
-  _animator: {fileID: 1599366644}
+  _animator: {fileID: 0}
 --- !u!65 &1599366646
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3314,7 +3312,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 1
+    height: 0.5
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
