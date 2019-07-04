@@ -840,7 +840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 874411628}
   _camera: {fileID: 44863939}
-  Lcube: {fileID: 0}
+  Lcube: {fileID: 1934509149}
   L_shake: 0
   rb: {fileID: 404583207}
   _animator: {fileID: 404583205}
@@ -1014,7 +1014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 1272855922}
   _camera: {fileID: 1624017421}
-  Rcube: {fileID: 0}
+  Rcube: {fileID: 1096842369}
   R_shake: 0
   rb: {fileID: 483472371}
   _animator: {fileID: 483472369}
@@ -1978,7 +1978,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1096842370
 Transform:
   m_ObjectHideFlags: 0
@@ -3674,7 +3674,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1934509150
 Transform:
   m_ObjectHideFlags: 0
