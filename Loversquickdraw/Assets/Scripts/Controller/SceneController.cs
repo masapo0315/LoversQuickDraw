@@ -8,9 +8,10 @@ public class SceneController : MonoBehaviour
 {
     void Update ()
     {
-        if(OVRInput.GetDown(OVRInput.Button.One))
+        if(OVRInput.GetDown(OVRInput.Button.One)||Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("Scenario");
+            SceneLoadManager.LoadScene("Scenario");
+            //SceneManager.LoadScene("Scenario");
             Debug.Log("Aボタン");
         }
        // DebugInput();
