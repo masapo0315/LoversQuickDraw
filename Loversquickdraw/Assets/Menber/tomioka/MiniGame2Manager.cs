@@ -207,10 +207,11 @@ public class MiniGame2Manager : MonoBehaviour
 
     public void OnSelect1P()
     {
+        Debug.Log("OnSelect1Pを通った");
         switch (Dankai)
         {
             case 1:
-                switch (playerCursorController.RightMenu)
+                switch (playerCursorController.LeftMenu)
                 {
                     case 0:
                         button1_1.Select();
@@ -528,6 +529,7 @@ public class MiniGame2Manager : MonoBehaviour
 
     public void OnSelect2P()
     {
+        Debug.Log("OnSelect2Pを通った");
         switch (Dankai)
         {
             case 1:
@@ -976,139 +978,4 @@ public class MiniGame2Manager : MonoBehaviour
         ChangeText();
     }
 
-    /*
-    public void ClickPlayer1()
-    {
-        Select1P = playerController.RightMenu;
-        switch (Dankai)
-        {
-            case 1:
-                button1List[Select1P].Select();
-                break;
-
-            case 2:
-                button2List[Select1P].Select();
-                break;
-
-            case 3:
-                button3List[Select1P].Select();
-                break;
-
-            case 4:
-                button4List[Select1P].Select();
-                break;
-
-            case 5:
-                button5List[Select1P].Select();
-                break;
-
-            case 6:
-                button6List[Select1P].Select();
-                break;
-
-            case 7:
-                button7List[Select1P].Select();
-                break;
-
-            case 8:
-                button8List[Select1P].Select();
-                break;
-
-            case 9:
-                button9List[Select1P].Select();
-                break;
-
-            case 10:
-                button10List[Select1P].Select();
-                break;
-
-            case 11:
-                button11List[Select1P].Select();
-                break;
-
-            case 12:
-                button12List[Select1P].Select();
-                break;
-
-            case 13:
-                button13List[Select1P].Select();
-                break;
-
-            case 14:
-                button14List[Select1P].Select();
-                break;
-
-            case 15:
-                button15List[Select1P].Select();
-                break;
-        }
-    }
-
-    public void ClickPlayer2()
-    {
-        Select2P = playerController.LeftMenu;
-        switch (Dankai)
-        {
-            case 1:
-                button1List[Select2P].Select();
-                break;
-
-            case 2:
-                button2List[Select2P].Select();
-                break;
-
-            case 3:
-                button3List[Select2P].Select();
-                break;
-
-            case 4:
-                button4List[Select2P].Select();
-                break;
-
-            case 5:
-                button5List[Select2P].Select();
-                break;
-
-            case 6:
-                button6List[Select2P].Select();
-                break;
-
-            case 7:
-                button7List[Select2P].Select();
-                break;
-
-            case 8:
-                button8List[Select2P].Select();
-                break;
-
-            case 9:
-                button9List[Select2P].Select();
-                break;
-
-            case 10:
-                button10List[Select2P].Select();
-                break;
-
-            case 11:
-                button11List[Select2P].Select();
-                break;
-
-            case 12:
-                button12List[Select2P].Select();
-                break;
-
-            case 13:
-                button13List[Select2P].Select();
-                break;
-
-            case 14:
-                button14List[Select2P].Select();
-                break;
-
-            case 15:
-                button15List[Select2P].Select();
-                break;
-        }
-    }
-    */
 }
