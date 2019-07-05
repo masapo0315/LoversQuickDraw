@@ -31,98 +31,7 @@ public class MiniGame2Manager : MonoBehaviour
     //ミスした時の秒数　今後実装
     //private float TimeCount = 2;
     //
-    #region
-    [SerializeField]private Button button1_1;
-    [SerializeField]private Button button1_2;
-    [SerializeField]private Button button1_3;
-    [SerializeField]private Button button1_4;
-    [SerializeField]private Button button1_5;
-    //
-    [SerializeField]private Button button2_1;
-    [SerializeField]private Button button2_2;
-    [SerializeField]private Button button2_3;
-    [SerializeField]private Button button2_4;
-    [SerializeField]private Button button2_5;
-    //
-    [SerializeField]private Button button3_1;
-    [SerializeField]private Button button3_2;
-    [SerializeField]private Button button3_3;
-    [SerializeField]private Button button3_4;
-    [SerializeField]private Button button3_5;
-    //
-    [SerializeField]private Button button4_1;
-    [SerializeField]private Button button4_2;
-    [SerializeField]private Button button4_3;
-    [SerializeField]private Button button4_4;
-    [SerializeField]private Button button4_5;
-    //
-    [SerializeField]private Button button5_1;
-    [SerializeField]private Button button5_2;
-    [SerializeField]private Button button5_3;
-    [SerializeField]private Button button5_4;
-    [SerializeField]private Button button5_5;
-    //
-    [SerializeField]private Button button6_1;
-    [SerializeField]private Button button6_2;
-    [SerializeField]private Button button6_3;
-    [SerializeField]private Button button6_4;
-    [SerializeField]private Button button6_5;
-    //
-    [SerializeField]private Button button7_1;
-    [SerializeField]private Button button7_2;
-    [SerializeField]private Button button7_3;
-    [SerializeField]private Button button7_4;
-    [SerializeField]private Button button7_5;
-    //
-    [SerializeField]private Button button8_1;
-    [SerializeField]private Button button8_2;
-    [SerializeField]private Button button8_3;
-    [SerializeField]private Button button8_4;
-    [SerializeField]private Button button8_5;
-    //
-    [SerializeField]private Button button9_1;
-    [SerializeField]private Button button9_2;
-    [SerializeField]private Button button9_3;
-    [SerializeField]private Button button9_4;
-    [SerializeField]private Button button9_5;
-    //
-    [SerializeField]private Button button10_1;
-    [SerializeField]private Button button10_2;
-    [SerializeField]private Button button10_3;
-    [SerializeField]private Button button10_4;
-    [SerializeField]private Button button10_5;
-    //
-    [SerializeField]private Button button11_1;
-    [SerializeField]private Button button11_2;
-    [SerializeField]private Button button11_3;
-    [SerializeField]private Button button11_4;
-    [SerializeField]private Button button11_5;
-    //
-    [SerializeField]private Button button12_1;
-    [SerializeField]private Button button12_2;
-    [SerializeField]private Button button12_3;
-    [SerializeField]private Button button12_4;
-    [SerializeField]private Button button12_5;
-    //
-    [SerializeField]private Button button13_1;
-    [SerializeField]private Button button13_2;
-    [SerializeField]private Button button13_3;
-    [SerializeField]private Button button13_4;
-    [SerializeField]private Button button13_5;
-    //
-    [SerializeField]private Button button14_1;
-    [SerializeField]private Button button14_2;
-    [SerializeField]private Button button14_3;
-    [SerializeField]private Button button14_4;
-    [SerializeField]private Button button14_5;
-    //
-    [SerializeField]private Button button15_1;
-    [SerializeField]private Button button15_2;
-    [SerializeField]private Button button15_3;
-    [SerializeField]private Button button15_4;
-    [SerializeField]private Button button15_5;
-
-    #endregion
+    [SerializeField]private Button[] _buttons;
     //
     void Start()
     {
@@ -150,21 +59,21 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.RightMenu)
                 {
                     case 0:
-                        button1_1.Select();
+                        _buttons[0].Select();
                         break;
                     case 1:
-                        button1_2.Select();
+                        _buttons[1].Select();
                         break;
                     case 2:
-                        button1_3.Select();
+                        _buttons[2].Select();
                         Select1P++;
                         Debug.Log(Select1P);
                         break;
                     case 3:
-                        button1_4.Select();
+                        _buttons[3].Select();
                         break;
                     case 4:
-                        button1_5.Select();
+                        _buttons[4].Select();
                         break;
                 }
                 break;
@@ -172,19 +81,19 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.RightMenu)
                 {
                     case 0:
-                        button2_1.Select();
+                        _buttons[5].Select();
                         break;
                     case 1:
-                        button2_2.Select();
+                        _buttons[6].Select();
                         break;
                     case 2:
-                        button2_3.Select();
+                        _buttons[7].Select();
                         break;
                     case 3:
-                        button2_4.Select();
+                        _buttons[8].Select();
                         break;
                     case 4:
-                        button2_5.Select();
+                        _buttons[9].Select();
                         Select1P++;
                         Debug.Log(Select1P);
                         break;
@@ -194,21 +103,21 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.RightMenu)
                 {
                     case 0:
-                        button3_1.Select();
+                        _buttons[10].Select();
                         Select1P++;
                         Debug.Log(Select1P);
                         break;
                     case 1:
-                        button3_2.Select();
+                        _buttons[11].Select();
                         break;
                     case 2:
-                        button3_3.Select();
+                        _buttons[12].Select();
                         break;
                     case 3:
-                        button3_4.Select();
+                        _buttons[13].Select();
                         break;
                     case 4:
-                        button3_5.Select();
+                        _buttons[14].Select();
                         break;
                 }
                 break;
@@ -216,21 +125,21 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.RightMenu)
                 {
                     case 0:
-                        button4_1.Select();
+                        _buttons[15].Select();
                         break;
                     case 1:
-                        button4_2.Select();
+                        _buttons[16].Select();
                         Select1P++;
                         Debug.Log(Select1P);
                         break;
                     case 2:
-                        button4_3.Select();
+                        _buttons[17].Select();
                         break;
                     case 3:
-                        button4_4.Select();
+                        _buttons[18].Select();
                         break;
                     case 4:
-                        button4_5.Select();
+                        _buttons[19].Select();
                         break;
                 }
                 break;
@@ -238,19 +147,19 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.RightMenu)
                 {
                     case 0:
-                        button5_1.Select();
+                        _buttons[20].Select();
                         break;
                     case 1:
-                        button5_2.Select();
+                        _buttons[21].Select();
                         break;
                     case 2:
-                        button5_3.Select();
+                        _buttons[22].Select();
                         break;
                     case 3:
-                        button5_4.Select();
+                        _buttons[23].Select();
                         break;
                     case 4:
-                        button5_5.Select();
+                        _buttons[24].Select();
                         Select1P++;
                         Debug.Log(Select1P);
                         break;
@@ -260,21 +169,21 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.RightMenu)
                 {
                     case 0:
-                        button6_1.Select();
+                        _buttons[25].Select();
                         break;
                     case 1:
-                        button6_2.Select();
+                        _buttons[26].Select();
                         Select1P++;
                         Debug.Log(Select1P);
                         break;
                     case 2:
-                        button6_3.Select();
+                        _buttons[27].Select();
                         break;
                     case 3:
-                        button6_4.Select();
+                        _buttons[28].Select();
                         break;
                     case 4:
-                        button6_5.Select();
+                        _buttons[29].Select();
                         break;
                 }
                 break;
@@ -282,19 +191,19 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.RightMenu)
                 {
                     case 0:
-                        button7_1.Select();
+                        _buttons[30].Select();
                         break;
                     case 1:
-                        button7_2.Select();
+                        _buttons[31].Select();
                         break;
                     case 2:
-                        button7_3.Select();
+                        _buttons[32].Select();
                         break;
                     case 3:
-                        button7_4.Select();
+                        _buttons[33].Select();
                         break;
                     case 4:
-                        button7_5.Select();
+                        _buttons[34].Select();
                         Select1P++;
                         Debug.Log(Select1P);
                         break;
@@ -304,21 +213,21 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.RightMenu)
                 {
                     case 0:
-                        button8_1.Select();
+                        _buttons[35].Select();
                         break;
                     case 1:
-                        button8_2.Select();
+                        _buttons[36].Select();
                         break;
                     case 2:
-                        button8_3.Select();
+                        _buttons[37].Select();
                         break;
                     case 3:
-                        button8_4.Select();
+                        _buttons[38].Select();
                         Select1P++;
                         Debug.Log(Select1P);
                         break;
                     case 4:
-                        button8_5.Select();
+                        _buttons[39].Select();
                         break;
                 }
                 break;
@@ -326,21 +235,21 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.RightMenu)
                 {
                     case 0:
-                        button9_1.Select();
+                        _buttons[40].Select();
                         Select1P++;
                         Debug.Log(Select1P);
                         break;
                     case 1:
-                        button9_2.Select();
+                        _buttons[41].Select();
                         break;
                     case 2:
-                        button9_3.Select();
+                        _buttons[42].Select();
                         break;
                     case 3:
-                        button9_4.Select();
+                        _buttons[43].Select();
                         break;
                     case 4:
-                        button9_5.Select();
+                        _buttons[44].Select();
                         break;
                 }
                 break;
@@ -348,21 +257,21 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.RightMenu)
                 {
                     case 0:
-                        button10_1.Select();
+                        _buttons[45].Select();
                         break;
                     case 1:
-                        button10_2.Select();
+                        _buttons[46].Select();
                         break;
                     case 2:
-                        button10_3.Select();
+                        _buttons[47].Select();
                         Select1P++;
                         Debug.Log(Select1P);
                         break;
                     case 3:
-                        button10_4.Select();
+                        _buttons[48].Select();
                         break;
                     case 4:
-                        button10_5.Select();
+                        _buttons[49].Select();
                         break;
                 }
                 break;
@@ -370,21 +279,21 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.RightMenu)
                 {
                     case 0:
-                        button11_1.Select();
+                        _buttons[50].Select();
                         break;
                     case 1:
-                        button11_2.Select();
+                        _buttons[51].Select();
                         break;
                     case 2:
-                        button11_3.Select();
+                        _buttons[52].Select();
                         Select1P++;
                         Debug.Log(Select1P);
                         break;
                     case 3:
-                        button11_4.Select();
+                        _buttons[53].Select();
                         break;
                     case 4:
-                        button11_5.Select();
+                        _buttons[54].Select();
                         break;
                 }
                 break;
@@ -392,21 +301,21 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.RightMenu)
                 {
                     case 0:
-                        button12_1.Select();
+                        _buttons[55].Select();
                         Select1P++;
                         Debug.Log(Select1P);
                         break;
                     case 1:
-                        button12_2.Select();
+                        _buttons[56].Select();
                         break;
                     case 2:
-                        button12_3.Select();
+                        _buttons[57].Select();
                         break;
                     case 3:
-                        button12_4.Select();
+                        _buttons[58].Select();
                         break;
                     case 4:
-                        button12_5.Select();
+                        _buttons[59].Select();
                         break;
                 }
                 break;
@@ -414,19 +323,19 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.RightMenu)
                 {
                     case 0:
-                        button13_1.Select();
+                        _buttons[60].Select();
                         break;
                     case 1:
-                        button13_2.Select();
+                        _buttons[61].Select();
                         break;
                     case 2:
-                        button13_3.Select();
+                        _buttons[62].Select();
                         break;
                     case 3:
-                        button13_4.Select();
+                        _buttons[63].Select();
                         break;
                     case 4:
-                        button13_5.Select();
+                        _buttons[64].Select();
                         Select1P++;
                         Debug.Log(Select1P);
                         break;
@@ -436,21 +345,21 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.RightMenu)
                 {
                     case 0:
-                        button14_1.Select();
+                        _buttons[65].Select();
                         break;
                     case 1:
-                        button14_2.Select();
+                        _buttons[66].Select();
                         break;
                     case 2:
-                        button14_3.Select();
+                        _buttons[67].Select();
                         break;
                     case 3:
-                        button14_4.Select();
+                        _buttons[68].Select();
                         Select1P++;
                         Debug.Log(Select1P);
                         break;
                     case 4:
-                        button14_5.Select();
+                        _buttons[69].Select();
                         break;
                 }
                 break;
@@ -458,21 +367,21 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.RightMenu)
                 {
                     case 0:
-                        button15_1.Select();
+                        _buttons[70].Select();
                         break;
                     case 1:
-                        button15_2.Select();
+                        _buttons[71].Select();
                         Select1P++;
                         Debug.Log(Select1P);
                         break;
                     case 2:
-                        button15_3.Select();
+                        _buttons[72].Select();
                         break;
                     case 3:
-                        button15_4.Select();
+                        _buttons[73].Select();
                         break;
                     case 4:
-                        button15_5.Select();
+                        _buttons[74].Select();
                         break;
                 }
                 break;
@@ -489,21 +398,21 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.LeftMenu)
                 {
                     case 0:
-                        button1_1.Select();
+                        _buttons[0].Select();
                         break;
                     case 1:
-                        button1_2.Select();
+                        _buttons[1].Select();
                         break;
                     case 2:
-                        button1_3.Select();
+                        _buttons[2].Select();
                         Select2P++;
                         Debug.Log(Select2P);
                         break;
                     case 3:
-                        button1_4.Select();
+                        _buttons[3].Select();
                         break;
                     case 4:
-                        button1_5.Select();
+                        _buttons[4].Select();
                         break;
                 }
                 break;
@@ -511,19 +420,19 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.LeftMenu)
                 {
                     case 0:
-                        button2_1.Select();
+                        _buttons[5].Select();
                         break;
                     case 1:
-                        button2_2.Select();
+                        _buttons[6].Select();
                         break;
                     case 2:
-                        button2_3.Select();
+                        _buttons[7].Select();
                         break;
                     case 3:
-                        button2_4.Select();
+                        _buttons[8].Select();
                         break;
                     case 4:
-                        button2_5.Select();
+                        _buttons[9].Select();
                         Select2P++;
                         Debug.Log(Select2P);
                         break;
@@ -533,44 +442,43 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.LeftMenu)
                 {
                     case 0:
-                        button3_1.Select();
+                        _buttons[10].Select();
                         Select2P++;
                         Debug.Log(Select2P);
                         break;
                     case 1:
-                        button3_2.Select();
+                        _buttons[11].Select();
                         break;
                     case 2:
-                        button3_3.Select();
+                        _buttons[12].Select();
                         break;
                     case 3:
-                        button3_4.Select();
+                        _buttons[13].Select();
                         break;
                     case 4:
-                        button3_5.Select();
+                        _buttons[14].Select();
                         break;
                 }
                 break;
-
             case 4:
                 switch (playerCursorController.LeftMenu)
                 {
                     case 0:
-                        button4_1.Select();
+                        _buttons[15].Select();
                         break;
                     case 1:
-                        button4_2.Select();
+                        _buttons[16].Select();
                         Select2P++;
                         Debug.Log(Select2P);
                         break;
                     case 2:
-                        button4_3.Select();
+                        _buttons[17].Select();
                         break;
                     case 3:
-                        button4_4.Select();
+                        _buttons[18].Select();
                         break;
                     case 4:
-                        button4_5.Select();
+                        _buttons[19].Select();
                         break;
                 }
                 break;
@@ -578,19 +486,19 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.LeftMenu)
                 {
                     case 0:
-                        button5_1.Select();
+                        _buttons[20].Select();
                         break;
                     case 1:
-                        button5_2.Select();
+                        _buttons[21].Select();
                         break;
                     case 2:
-                        button5_3.Select();
+                        _buttons[22].Select();
                         break;
                     case 3:
-                        button5_4.Select();
+                        _buttons[23].Select();
                         break;
                     case 4:
-                        button5_5.Select();
+                        _buttons[24].Select();
                         Select2P++;
                         Debug.Log(Select2P);
                         break;
@@ -600,21 +508,21 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.LeftMenu)
                 {
                     case 0:
-                        button6_1.Select();
+                        _buttons[25].Select();
                         break;
                     case 1:
-                        button6_2.Select();
+                        _buttons[26].Select();
                         Select2P++;
                         Debug.Log(Select2P);
                         break;
                     case 2:
-                        button6_3.Select();
+                        _buttons[27].Select();
                         break;
                     case 3:
-                        button6_4.Select();
+                        _buttons[28].Select();
                         break;
                     case 4:
-                        button6_5.Select();
+                        _buttons[29].Select();
                         break;
                 }
                 break;
@@ -622,19 +530,19 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.LeftMenu)
                 {
                     case 0:
-                        button7_1.Select();
+                        _buttons[30].Select();
                         break;
                     case 1:
-                        button7_2.Select();
+                        _buttons[31].Select();
                         break;
                     case 2:
-                        button7_3.Select();
+                        _buttons[32].Select();
                         break;
                     case 3:
-                        button7_4.Select();
+                        _buttons[33].Select();
                         break;
                     case 4:
-                        button7_5.Select();
+                        _buttons[34].Select();
                         Select2P++;
                         Debug.Log(Select2P);
                         break;
@@ -644,21 +552,21 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.LeftMenu)
                 {
                     case 0:
-                        button8_1.Select();
+                        _buttons[35].Select();
                         break;
                     case 1:
-                        button8_2.Select();
+                        _buttons[36].Select();
                         break;
                     case 2:
-                        button8_3.Select();
+                        _buttons[37].Select();
                         break;
                     case 3:
-                        button8_4.Select();
+                        _buttons[38].Select();
                         Select2P++;
                         Debug.Log(Select2P);
                         break;
                     case 4:
-                        button8_5.Select();
+                        _buttons[39].Select();
                         break;
                 }
                 break;
@@ -666,21 +574,21 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.LeftMenu)
                 {
                     case 0:
-                        button9_1.Select();
+                        _buttons[40].Select();
                         Select2P++;
                         Debug.Log(Select2P);
                         break;
                     case 1:
-                        button9_2.Select();
+                        _buttons[41].Select();
                         break;
                     case 2:
-                        button9_3.Select();
+                        _buttons[42].Select();
                         break;
                     case 3:
-                        button9_4.Select();
+                        _buttons[43].Select();
                         break;
                     case 4:
-                        button9_5.Select();
+                        _buttons[44].Select();
                         break;
                 }
                 break;
@@ -688,49 +596,43 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.LeftMenu)
                 {
                     case 0:
-                        button10_1.Select();
+                        _buttons[45].Select();
                         break;
                     case 1:
-                        button10_2.Select();
+                        _buttons[46].Select();
                         break;
                     case 2:
-                        button10_3.Select();
+                        _buttons[47].Select();
                         Select2P++;
                         Debug.Log(Select2P);
                         break;
                     case 3:
-                        button10_4.Select();
+                        _buttons[48].Select();
                         break;
                     case 4:
-                        button10_5.Select();
+                        _buttons[49].Select();
                         break;
                 }
                 break;
             case 11:
-                Debug.Log("11を通った");
                 switch (playerCursorController.LeftMenu)
                 {
                     case 0:
-                        Debug.Log("11_1を通った");
-                        button11_1.Select();
+                        _buttons[50].Select();
                         break;
                     case 1:
-                        Debug.Log("11_2を通った");
-                        button11_2.Select();
+                        _buttons[51].Select();
                         break;
                     case 2:
-                        Debug.Log("11_3を通った");
-                        button11_3.Select();
+                        _buttons[52].Select();
                         Select2P++;
                         Debug.Log(Select2P);
                         break;
                     case 3:
-                        Debug.Log("11_4を通った");
-                        button11_4.Select();
+                        _buttons[53].Select();
                         break;
                     case 4:
-                        Debug.Log("11_5を通った");
-                        button11_5.Select();
+                        _buttons[54].Select();
                         break;
                 }
                 break;
@@ -738,21 +640,21 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.LeftMenu)
                 {
                     case 0:
-                        button12_1.Select();
+                        _buttons[55].Select();
                         Select2P++;
                         Debug.Log(Select2P);
                         break;
                     case 1:
-                        button12_2.Select();
+                        _buttons[56].Select();
                         break;
                     case 2:
-                        button12_3.Select();
+                        _buttons[57].Select();
                         break;
                     case 3:
-                        button12_4.Select();
+                        _buttons[58].Select();
                         break;
                     case 4:
-                        button12_5.Select();
+                        _buttons[59].Select();
                         break;
                 }
                 break;
@@ -760,19 +662,19 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.LeftMenu)
                 {
                     case 0:
-                        button13_1.Select();
+                        _buttons[60].Select();
                         break;
                     case 1:
-                        button13_2.Select();
+                        _buttons[61].Select();
                         break;
                     case 2:
-                        button13_3.Select();
+                        _buttons[62].Select();
                         break;
                     case 3:
-                        button13_4.Select();
+                        _buttons[63].Select();
                         break;
                     case 4:
-                        button13_5.Select();
+                        _buttons[64].Select();
                         Select2P++;
                         Debug.Log(Select2P);
                         break;
@@ -782,21 +684,21 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.LeftMenu)
                 {
                     case 0:
-                        button14_1.Select();
+                        _buttons[65].Select();
                         break;
                     case 1:
-                        button14_2.Select();
+                        _buttons[66].Select();
                         break;
                     case 2:
-                        button14_3.Select();
+                        _buttons[67].Select();
                         break;
                     case 3:
-                        button14_4.Select();
+                        _buttons[68].Select();
                         Select2P++;
                         Debug.Log(Select2P);
                         break;
                     case 4:
-                        button14_5.Select();
+                        _buttons[69].Select();
                         break;
                 }
                 break;
@@ -804,21 +706,21 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.LeftMenu)
                 {
                     case 0:
-                        button15_1.Select();
+                        _buttons[70].Select();
                         break;
                     case 1:
-                        button15_2.Select();
+                        _buttons[71].Select();
                         Select2P++;
                         Debug.Log(Select2P);
                         break;
                     case 2:
-                        button15_3.Select();
+                        _buttons[72].Select();
                         break;
                     case 3:
-                        button15_4.Select();
+                        _buttons[73].Select();
                         break;
                     case 4:
-                        button15_5.Select();
+                        _buttons[74].Select();
                         break;
                 }
                 break;
