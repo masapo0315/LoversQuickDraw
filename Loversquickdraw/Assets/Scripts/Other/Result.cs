@@ -5,27 +5,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Result : MonoBehaviour {
-
+public class Result : MonoBehaviour
+{
     //ゴールした時のリザルトを表示する
 
-    public Image[] images;
+    [SerializeField]private Image[] images;
+    [SerializeField]private Animator _animator;
 
-    bool gameSet = false;
+    private bool gameSet = false;
     public static bool Player1Win;
     public static bool Player2Win;
 
-
-    int player1LoveMetar;
-    int player2LoveMetar;
-
-    [SerializeField]
-    Animator _animator;
-
-
-    // Use this for initialization
-    void Start () {
-
+    private int player1LoveMetar;
+    private int player2LoveMetar;
+    
+    void Start ()
+    {
         Time.timeScale = 1.0f;
 
         player1LoveMetar = LoveMetar.getPlayer1LoveMetar();
@@ -35,22 +30,21 @@ public class Result : MonoBehaviour {
         {
             images[i].enabled = false;
         }
-        
-        
     }
 	
-	// Update is called once per frame
-	void Update () {
-
+	void Update ()
+    {
         GameSet();
-
     }
 
     void GameSet()
     {
-        if(OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) || OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger) && gameSet == true)
+        if(gameSet == true)
         {
-            SceneManager.LoadScene("Scenario2");
+            if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) || OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
+            {
+                SceneManager.LoadScene("Scenario2");
+            }
         }
     }
 
@@ -88,6 +82,5 @@ public class Result : MonoBehaviour {
             Player2Win = true;
             gameSet = true;
         }
-
     }
 }

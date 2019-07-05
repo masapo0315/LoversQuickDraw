@@ -26,7 +26,6 @@ public class Test : MonoBehaviour
         {
             Debug.Log("メニューボタン（左アナログスティックの下にある）を押した");
         }
-
         if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
         {
             Debug.Log("右人差し指トリガーを押した");

@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class Player2Controler : MonoBehaviour
 {
+    //2Pのコントローラー
     //Player2のカメラ固定よう
-    //[SerializeField] private Camera _mainCamera;
     [SerializeField] private Camera _camera;
-    //　2Pのコントローラー
-
     //右コン
     [SerializeField] private GameObject Rcube;
     [SerializeField] private float R_shake;
@@ -17,29 +15,26 @@ public class Player2Controler : MonoBehaviour
 
     private int R_posGetCount = 0;
 
-    [SerializeField] private Rigidbody rb;
+    [SerializeField]private Rigidbody rb;
     private float moveSpeed; //速度
 
     private Vector3 force;
 
-    float jumpPower = 20; //ジャンプ力
-    bool jump = false;     //設置判定
+    private float jumpPower = 20; //ジャンプ力
+    private bool jump = false;     //設置判定
 
-    [SerializeField]
-    Animator _animator;
+    [SerializeField]private Animator _animator;
 
-    Quaternion quaternion;
+    private Quaternion quaternion;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         StartCoroutine("StartDelay");
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        //_mainCamera.transform.localRotation = Quaternion.identity;
         _camera.transform.localRotation = Quaternion.identity;
         SpeedUp();
     }
@@ -75,7 +70,6 @@ public class Player2Controler : MonoBehaviour
             rb.velocity = new Vector3(0, jumpPower, 0);
             jump = true;
         }
-
     }
 
     private void OnCollisionEnter(Collision col)
@@ -85,7 +79,6 @@ public class Player2Controler : MonoBehaviour
             _animator.SetBool("Jump", false);
             jump = false;
         }
-
     }
 
     //遅延処理
@@ -95,7 +88,7 @@ public class Player2Controler : MonoBehaviour
 
         yield return new WaitForSeconds(2.0f);
 
-        moveSpeed = 20.0f;
+        moveSpeed = 9.0f;
 
         yield break;
     }
