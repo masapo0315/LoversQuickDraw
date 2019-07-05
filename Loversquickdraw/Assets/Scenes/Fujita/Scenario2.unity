@@ -9276,7 +9276,9 @@ MonoBehaviour:
   choiceAorX: {fileID: 660620013}
   choiceBorY: {fileID: 1929726498}
   choiceTrigger: {fileID: 788356556}
-  FrameText: {fileID: 0}
+  FrameText: {fileID: 986062094}
+  rootflag: 0
+  talkManager: {fileID: 0}
   invokeTime: 2.5
   firstsPlayer: 0
 --- !u!4 &1802529713

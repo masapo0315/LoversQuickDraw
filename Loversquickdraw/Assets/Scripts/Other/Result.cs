@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -40,14 +41,16 @@ public class Result : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         GameSet();
+
     }
 
     void GameSet()
     {
-        if(gameSet == true)
+        if(OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) || OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger) && gameSet == true)
         {
-            SceneManager.LoadScene("");
+            SceneManager.LoadScene("Scenario2");
         }
     }
 

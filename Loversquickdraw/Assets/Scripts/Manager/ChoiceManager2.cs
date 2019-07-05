@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //富岡
-public class ChoiceManager : MonoBehaviour
+public class ChoiceManager2 : MonoBehaviour
 {
     /// <summary>
     /// 選択肢を選んだあとその選択肢を光らせ
@@ -12,24 +12,33 @@ public class ChoiceManager : MonoBehaviour
     /// 一定時間後に選択肢を消す
     /// </summary>
 
-    [SerializeField]private GameObject choiceAorX;
-    [SerializeField]private GameObject choiceBorY;
-    [SerializeField]private GameObject choiceTrigger;
-    [SerializeField]private GameObject FrameText;
+    [SerializeField] private GameObject choiceAorX;
+    [SerializeField] private GameObject choiceBorY;
+    [SerializeField] private GameObject choiceTrigger;
+    [SerializeField] private GameObject FrameText;
     [HideInInspector] public int rootflag;
+
+    [SerializeField]
+    TalkManager2 talkManager2;
+
+
+
+    //[SerializeField]
+    //private GameObject choice1Text;
+    //[SerializeField]
+    //GameObject choice2Text;
+    //[SerializeField]
+    //GameObject choice3Text;
 
     private bool destroyFlag = false;
 
     //基準は2.5秒
-    [SerializeField]private float invokeTime = 2.5f;
-
-    [SerializeField]
-    private TalkManager talkManager;
+    [SerializeField] private float invokeTime = 2.5f;
 
 
     [HideInInspector] public bool stopChoice = false;
     //trueの場合は1Pの勝ち、falseの場合は2Pの勝ち
-    [HideInInspector]public bool firstsPlayer = false;
+    [HideInInspector] public bool firstsPlayer = false;
 
     public void PushButton()
     {
@@ -48,7 +57,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
-            talkManager.ChoiceRoot();
+            talkManager2.ChoiceRoot();
         }
 
         //2Pが1を押した判定
@@ -61,7 +70,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
-            talkManager.ChoiceRoot();
+            talkManager2.ChoiceRoot();
         }
 
         //1Pが2を押した判定
@@ -74,7 +83,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
-            talkManager.ChoiceRoot();
+            talkManager2.ChoiceRoot();
         }
 
         //2Pが2を押した判定
@@ -87,21 +96,20 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
-            talkManager.ChoiceRoot();
+            talkManager2.ChoiceRoot();
         }
 
         //1Pが3を押した判定
         if (stopChoice == false && Input.GetKeyDown(KeyCode.Keypad3))
         {
-            rootflag = 3;
-            talkManager.ChoiceRoot();
             Debug.Log("1Pが3を押した");
             ChangeColor3();
             Invoke("GetTrigger", invokeTime);
             stopChoice = true;
             firstsPlayer = true;
             Invoke("DestroyTrigger", invokeTime * 2);
-            
+            rootflag = 3;
+            talkManager2.ChoiceRoot();
         }
 
         //2Pが3を押した判定
@@ -114,7 +122,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
-            talkManager.ChoiceRoot();
+            talkManager2.ChoiceRoot();
         }
     }
 
@@ -164,7 +172,7 @@ public class ChoiceManager : MonoBehaviour
     {
         return stopChoice;
     }
-    public  bool getdestroyFlag()
+    public bool getdestroyFlag()
     {
         return destroyFlag;
     }
