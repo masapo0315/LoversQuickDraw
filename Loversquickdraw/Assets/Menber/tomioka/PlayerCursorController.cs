@@ -14,6 +14,7 @@ public class PlayerCursorController : MonoBehaviour
     [SerializeField]
     private GameObject Cursor2;
 
+    //カーソルの位置を決めるオブジェクト
     [SerializeField]
     private GameObject MenuNumber0;
     [SerializeField]
@@ -24,6 +25,9 @@ public class PlayerCursorController : MonoBehaviour
     private GameObject MenuNumber3;
     [SerializeField]
     private GameObject MenuNumber4;
+
+    [SerializeField]
+    private MiniGame2Manager miniGame2Manager;
 
     private Vector3 tmp0;
     private Vector3 tmp1;
@@ -59,6 +63,20 @@ public class PlayerCursorController : MonoBehaviour
     void Update()
     {
         Select();
+
+        //1Pの決定
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Debug.Log("エンター");
+            miniGame2Manager.OnSelect1P();
+        }
+
+        //2Pの決定
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("スペースキー");
+            miniGame2Manager.OnSelect2P();
+        }
     }
 
     //プレイヤーの操作
@@ -70,7 +88,7 @@ public class PlayerCursorController : MonoBehaviour
         {
             RightMenu++;
             RightMenu %= 5;
-            //Debug.Log(RightMenu);
+            Debug.Log("右は" + RightMenu);
         }
 
         //左を押すと左に移動
@@ -80,13 +98,13 @@ public class PlayerCursorController : MonoBehaviour
             if (RightMenu == 0)
             {
                 RightMenu = 4;
-                //Debug.Log(RightMenu);
+                Debug.Log("右は" + RightMenu);
             }
             else
             {
                 RightMenu--;
                 RightMenu %= 5;
-                //Debug.Log(RightMenu);
+                Debug.Log("右は" + RightMenu);
             }
         }
 
@@ -124,7 +142,7 @@ public class PlayerCursorController : MonoBehaviour
         {
             LeftMenu++;
             LeftMenu %= 5;
-            //Debug.Log(LeftMenu);
+            Debug.Log("左は" + LeftMenu);
         }
 
         //Aを押すと左に移動
@@ -134,13 +152,13 @@ public class PlayerCursorController : MonoBehaviour
             if (LeftMenu == 0)
             {
                 LeftMenu = 4;
-                //Debug.Log(LeftMenu);
+                Debug.Log("左は" + LeftMenu);
             }
             else
             {
                 LeftMenu--;
                 LeftMenu %= 5;
-                //Debug.Log(LeftMenu);
+                Debug.Log("左は" + LeftMenu);
             }
         }
 
