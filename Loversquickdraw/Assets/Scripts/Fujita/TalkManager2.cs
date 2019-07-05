@@ -147,6 +147,7 @@ public class TalkManager2 : MonoBehaviour
 
         if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log("aaaaaaaaaaaaaaaaaaaa");
             if (!choice)
             {
                 sakuraOut();
@@ -358,10 +359,7 @@ public class TalkManager2 : MonoBehaviour
     {
         if (Talktext == 78)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
                 SceneManager.LoadScene("MiniGame2");
-            }
         }
     }
 
