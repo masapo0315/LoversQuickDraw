@@ -4783,8 +4783,9 @@ MonoBehaviour:
   choiceTrigger: {fileID: 1006015923}
   FrameText: {fileID: 1965957114}
   rootflag: 0
-  talkManager2: {fileID: 0}
   invokeTime: 2.5
+  talkManager: {fileID: 840345692}
+  stopChoice: 0
   firstsPlayer: 0
 --- !u!1 &857662209
 GameObject:
