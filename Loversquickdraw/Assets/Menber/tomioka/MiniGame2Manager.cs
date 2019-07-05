@@ -8,7 +8,10 @@ public class MiniGame2Manager : MonoBehaviour
     //問題の答えが入るテキスト(保健室、図書館、教室)
     [SerializeField]
     private Text Place;
+    [SerializeField]
+    private Text Karen_Hint;
 
+    private string Hint = "この教室に来る前は\n本が沢山あるところにいて...";
     private string Karen;
     private int Dankai = 1;
 
@@ -191,6 +194,8 @@ public class MiniGame2Manager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Karen_Hint.GetComponent<Text>();
+        Karen_Hint.text = Hint;
         //BackGround.GetComponent<Image>();
     }
 
@@ -204,6 +209,9 @@ public class MiniGame2Manager : MonoBehaviour
     {
         Place.GetComponent<Text>();
         Place.text = Karen;
+
+        Karen_Hint.GetComponent<Text>();
+        Karen_Hint.text = Hint;
     }
 
     public void OnSelect1P()
@@ -796,23 +804,29 @@ public class MiniGame2Manager : MonoBehaviour
                 break;
 
             case 11:
+                Debug.Log("11を通った");
                 switch (playerCursorController.LeftMenu)
                 {
                     case 0:
+                        Debug.Log("11_1を通った");
                         button11_1.Select();
                         break;
                     case 1:
+                        Debug.Log("11_2を通った");
                         button11_2.Select();
                         break;
                     case 2:
+                        Debug.Log("11_3を通った");
                         button11_3.Select();
                         Select2P++;
                         Debug.Log(Select2P);
                         break;
                     case 3:
+                        Debug.Log("11_4を通った");
                         button11_4.Select();
                         break;
                     case 4:
+                        Debug.Log("11_5を通った");
                         button11_5.Select();
                         break;
                 }
@@ -955,6 +969,7 @@ public class MiniGame2Manager : MonoBehaviour
 
                 Destroy(buttonMenuList[1]);
                 ResetText();
+                Hint = "そのあとは体調悪い時に\n行くところに行って...";
                 //BackGround.sprite = PlaceList[0];
                 break;
 
@@ -989,6 +1004,7 @@ public class MiniGame2Manager : MonoBehaviour
                 //一度クリアにする関数
                 Destroy(PlaceList[1]);
                 ResetText();
+                Hint = "それで2人に会った\n場所に来たんだよね";
                 break;
 
             case 11:
