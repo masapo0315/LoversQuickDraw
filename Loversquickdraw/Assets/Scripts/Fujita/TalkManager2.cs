@@ -17,7 +17,7 @@ public class TalkManager2 : MonoBehaviour
     #region
 
     [SerializeField] private GameObject TextFrame;
-    [SerializeField] private ChoiceManager ChoiceManager;
+    [SerializeField] private ChoiceManager2 choiceManager2;
     [SerializeField] private GameObject NameTextmanager;
     [SerializeField] private GameObject CommentTextmanager;
     [SerializeField] private GameObject Sakura;
@@ -132,8 +132,8 @@ public class TalkManager2 : MonoBehaviour
     {
         if (choice == true)
         {
-            ChoiceManager.PushButton();
-            if (ChoiceManager.getdestroyFlag())
+            choiceManager2.PushButton();
+            if (choiceManager2.getdestroyFlag())
             {
                 choice = false;
             }
@@ -159,7 +159,7 @@ public class TalkManager2 : MonoBehaviour
                 {
                     TextFrame.SetActive(false);
                     choice = true;
-                    ChoiceManager.SetActive();
+                    choiceManager2.SetActive();
                 }
 
                 if (Talktext == 50 || Talktext == 57 || Talktext == 71)
@@ -197,7 +197,7 @@ public class TalkManager2 : MonoBehaviour
                 {
                     TextFrame.SetActive(false);
                     choice = true;
-                    ChoiceManager.SetActive();
+                    choiceManager2.SetActive();
                 }
 
                 if (Talktext == 50 || Talktext == 57 || Talktext == 71)
@@ -263,13 +263,13 @@ public class TalkManager2 : MonoBehaviour
 
     private string JudgedChoice(string Player1, string Player2)
     {
-        if (ChoiceManager.stopChoice == true && ChoiceManager.firstsPlayer == true)
+        if (choiceManager2.stopChoice == true && choiceManager2.firstsPlayer == true)
         {
             //１pが選択した
             Debug.Log("１がjudgedChoiceを通った");
             return Player1;
         }
-        else if (ChoiceManager.stopChoice == true && ChoiceManager.firstsPlayer == false)
+        else if (choiceManager2.stopChoice == true && choiceManager2.firstsPlayer == false)
         {
             //２pが選択した
             Debug.Log("２がjudgedChoiceを通った");
@@ -359,18 +359,18 @@ public class TalkManager2 : MonoBehaviour
     {
         if (Talktext == 78)
         {
-                SceneManager.LoadScene("MiniGame2");
+                SceneManager.LoadScene("MiniGame2_test");
         }
     }
 
     public void ChoiceRoot()
     {
-        Debug.Log(ChoiceManager.rootflag);
-        switch (ChoiceManager.rootflag)
+        Debug.Log(choiceManager2.rootflag);
+        switch (choiceManager2.rootflag)
         {
             case 1:
                 Talktext = 43;
-                Debug.Log(ChoiceManager.rootflag);
+                Debug.Log(choiceManager2.rootflag);
                 break;
             case 2:
                 Talktext = 51;

@@ -24,7 +24,7 @@ public class ChoiceManager : MonoBehaviour
     [SerializeField]private float invokeTime = 2.5f;
 
     [SerializeField]
-    private TalkManager talkManager;
+    private TalkManager2 talkManager2;
 
 
     [HideInInspector] public bool stopChoice = false;
@@ -48,7 +48,8 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
-            talkManager.ChoiceRoot();
+            talkManager2.ChoiceRoot();
+            Debug.Log("choice1-1");
         }
 
         //2Pが1を押した判定
@@ -61,7 +62,8 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
-            talkManager.ChoiceRoot();
+            talkManager2.ChoiceRoot();
+            Debug.Log("choice2-1");
         }
 
         //1Pが2を押した判定
@@ -74,7 +76,8 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
-            talkManager.ChoiceRoot();
+            talkManager2.ChoiceRoot();
+            Debug.Log("choice1-2");
         }
 
         //2Pが2を押した判定
@@ -87,21 +90,23 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
-            talkManager.ChoiceRoot();
+            talkManager2.ChoiceRoot();
+            Debug.Log("choice2-2");
         }
 
         //1Pが3を押した判定
         if (stopChoice == false && Input.GetKeyDown(KeyCode.Keypad3))
         {
-            rootflag = 3;
-            talkManager.ChoiceRoot();
+            
             Debug.Log("1Pが3を押した");
             ChangeColor3();
             Invoke("GetTrigger", invokeTime);
             stopChoice = true;
             firstsPlayer = true;
             Invoke("DestroyTrigger", invokeTime * 2);
-            
+            rootflag = 3;
+            talkManager2.ChoiceRoot();
+            Debug.Log("choice1-3");
         }
 
         //2Pが3を押した判定
@@ -114,7 +119,8 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
-            talkManager.ChoiceRoot();
+            talkManager2.ChoiceRoot();
+            Debug.Log("choice2-3");
         }
     }
 

@@ -2761,7 +2761,7 @@ MonoBehaviour:
   - {fileID: 80050749}
   - {fileID: 1135575401}
   - {fileID: 1686115752}
-  _animator: {fileID: 0}
+  _animator: {fileID: 1367570837}
 --- !u!65 &1367570839
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3098,7 +3098,7 @@ MonoBehaviour:
   - {fileID: 80050749}
   - {fileID: 1135575401}
   - {fileID: 1686115752}
-  _animator: {fileID: 0}
+  _animator: {fileID: 1599366644}
 --- !u!65 &1599366646
 BoxCollider:
   m_ObjectHideFlags: 0

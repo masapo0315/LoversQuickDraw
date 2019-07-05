@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2687,7 +2687,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uFF11\uFF12\uFF13\uFF14\uFF15\uFF16\uFF17\uFF18\uFF19101112131415161718"
+  m_Text: 
 --- !u!222 &529810238
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6514,7 +6514,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3053\u308C\u3067\uFF16\u6587\u5B57"
+  m_Text: 
 --- !u!222 &1199103777
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9258,7 +9258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextFrame: {fileID: 986062094}
-  ChoiceManager: {fileID: 1802529712}
+  choiceManager2: {fileID: 1802529712}
   NameTextmanager: {fileID: 1199103774}
   CommentTextmanager: {fileID: 529810235}
   Sakura: {fileID: 511034024}
@@ -9270,7 +9270,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1802529710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd667f7a0f1e21f4bb61da80a814143f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9503ffcc1fdce6042ba1e9acab09760f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   choiceAorX: {fileID: 660620013}
@@ -9278,8 +9278,9 @@ MonoBehaviour:
   choiceTrigger: {fileID: 788356556}
   FrameText: {fileID: 986062094}
   rootflag: 0
-  talkManager: {fileID: 0}
-  invokeTime: 2.5
+  talkManager2: {fileID: 1802529711}
+  invokeTime: 1
+  stopChoice: 0
   firstsPlayer: 0
 --- !u!4 &1802529713
 Transform:

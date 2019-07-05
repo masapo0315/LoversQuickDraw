@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 //富岡
 public class ChoiceManager2 : MonoBehaviour
@@ -57,6 +58,7 @@ public class ChoiceManager2 : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
+            SceneLoadManager.LoadScene("MiniGame2_test");
             talkManager2.ChoiceRoot();
         }
 
@@ -70,6 +72,7 @@ public class ChoiceManager2 : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
+            SceneLoadManager.LoadScene("MiniGame2_test");
             talkManager2.ChoiceRoot();
         }
 
@@ -83,6 +86,7 @@ public class ChoiceManager2 : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
+            SceneLoadManager.LoadScene("MiniGame2_test");
             talkManager2.ChoiceRoot();
         }
 
@@ -96,6 +100,7 @@ public class ChoiceManager2 : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
+            SceneLoadManager.LoadScene("MiniGame2_test");
             talkManager2.ChoiceRoot();
         }
 
@@ -109,6 +114,7 @@ public class ChoiceManager2 : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
+            SceneLoadManager.LoadScene("MiniGame2_test");
             talkManager2.ChoiceRoot();
         }
 
@@ -122,6 +128,7 @@ public class ChoiceManager2 : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
+            SceneLoadManager.LoadScene("MiniGame2_test");
             talkManager2.ChoiceRoot();
         }
     }

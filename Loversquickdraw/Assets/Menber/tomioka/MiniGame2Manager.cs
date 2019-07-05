@@ -206,7 +206,15 @@ public class MiniGame2Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            OnSelect1P();
+        }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            OnSelect2P();
+        }
     }
 
     private void ChangeText()
@@ -1066,6 +1074,6 @@ public class MiniGame2Manager : MonoBehaviour
     //仮
     private void Scene()
     {
-        SceneLoadManager.LoadScene("Title-iwasaki");
+        SceneManager.LoadScene("Title-iwasaki");
     }
 }

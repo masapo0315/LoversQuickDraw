@@ -276,12 +276,9 @@ public class TalkManager : MonoBehaviour
 
     public void LordMinigame()
     {
-        if (Talktext == 45)
+        if (Talktext == 44)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
                 SceneManager.LoadScene("MiniGame1");
-            }
         }
     }
 
