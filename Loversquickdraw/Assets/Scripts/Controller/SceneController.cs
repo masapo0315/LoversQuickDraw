@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class SceneController : MonoBehaviour
 {
-
+    private bool once;
 	void Update ()
-    {
-	    if(OVRInput.GetDown(OVRInput.Button.One)||Input.GetKeyDown(KeyCode.Space))
+    {if (once == false)
         {
-            SceneLoadManager.LoadScene("Scenario");
+            if (OVRInput.GetDown(OVRInput.Button.One) || Input.GetKeyDown(KeyCode.Space))
+            {
+                once = true;
+                SceneLoadManager.LoadScene("Scenario");
+            }
         }
 	}
 }
