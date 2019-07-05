@@ -139,7 +139,45 @@ public class TalkManager2 : MonoBehaviour
                 choice = false;
             }
         }
+        //debug();
+        Inputkey();
+    }
+    //キー入寮kｂ
+    void Inputkey()
+    {
+        if (OVRInput.GetDown(OVRInput.RawButton.A)|| OVRInput.GetDown(OVRInput.RawButton.X))
+        {
+            if (!choice)
+            {
+                sakuraOut();
+                LordMinigame();
+                TextFrame.SetActive(true);
 
+                //会話数25個まで回したら選択肢を出してテキストフレームを消す
+                if (Talktext == 25)
+                {
+                    TextFrame.SetActive(false);
+                    choice = true;
+                    ChoiceManager.SetActive();
+                }
+
+                Text Nametext = NameTextmanager.GetComponent<Text>();
+                Text Commenttext = CommentTextmanager.GetComponent<Text>();
+                name = 1;
+                Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
+                Nametext.text = ReplaceTag(Text[Talktext][name]);
+                name = 0;
+                Commenttext.text = ReplaceTag(Text[Talktext][name]);
+                Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
+
+                sakuraStart();
+                Talktext++;
+            }
+        }
+    }
+    //デバック
+    void debug()
+    {
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
             if (!choice)
@@ -170,7 +208,6 @@ public class TalkManager2 : MonoBehaviour
             }
         }
     }
-
     //桜の点滅
     private void sakuraStart()
     {
