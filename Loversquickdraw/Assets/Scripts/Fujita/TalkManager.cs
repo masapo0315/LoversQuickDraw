@@ -10,6 +10,7 @@ public class TalkManager : MonoBehaviour
     private new int name = 0; //横
     private float fadeInOut; //点滅用
     private float fade = 0.035f;
+    public bool choiceAfterText = true;
     private bool choice = false;
 
     string[] TEXTTAG_LIST = { "択プレイヤー", "非選択Ｐ" };
@@ -104,40 +105,9 @@ public class TalkManager : MonoBehaviour
                 choice = false;
             }
         }
-        if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
-        {
-            if (!choice)
-            {
-                SakuraFadeChange();
-                LordMinigame();
-                TextFrame.SetActive(true);
 
-                //今は仮で会話数(25個)をループさせてる
-                if (Talktext == 25)
-                {
-                    TextFrame.SetActive(false);
-                    choice = true;
-                    ChoiceManager.SetActive();
-                }
+        TextMove();
 
-                if (Talktext == 30 || Talktext == 39 || Talktext == 43)
-                {
-                    Talktext = 43;
-                }
-
-                Text Nametext = NameTextmanager.GetComponent<Text>();
-                Text Commenttext = CommentTextmanager.GetComponent<Text>();
-                name = 1;
-                Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
-                Nametext.text = ReplaceTag(Text[Talktext][name]);
-                name = 0;
-                Commenttext.text = ReplaceTag(Text[Talktext][name]);
-                Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
-
-                SakuraStart();
-                Talktext++;
-            }
-        }
         /*
         //if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         //{
@@ -175,8 +145,46 @@ public class TalkManager : MonoBehaviour
         //}*/
     }
 
+    private void TextMove()
+    {
+        if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+        {
+            if (!choice)
+            {
+                sakuraOut();
+                LordMinigame();
+                TextFrame.SetActive(true);
+
+                //今は仮で会話数(25個)をループさせてる
+                if (Talktext == 25)
+                {
+                    TextFrame.SetActive(false);
+                    choice = true;
+                    ChoiceManager.SetActive();
+                }
+
+                if (Talktext == 30 || Talktext == 39 || Talktext == 43)
+                {
+                    Talktext = 43;
+                }
+
+                Text Nametext = NameTextmanager.GetComponent<Text>();
+                Text Commenttext = CommentTextmanager.GetComponent<Text>();
+                name = 1;
+                Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
+                Nametext.text = ReplaceTag(Text[Talktext][name]);
+                name = 0;
+                Commenttext.text = ReplaceTag(Text[Talktext][name]);
+                Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
+
+                sakuraStart();
+                Talktext++;
+            }
+        }
+    }
+
     //桜の点滅
-    private void SakuraStart()
+    private void sakuraStart()
     {
         //テキストが出終わったら点滅開始
         for (int i = 0; i < 46; i++)
@@ -185,7 +193,7 @@ public class TalkManager : MonoBehaviour
         }
     }
 
-    private void SakuraOut()
+    private void sakuraOut()
     {
         //前回の点滅の処理を止める
         for (int i = 0; i < 46; i++)
@@ -252,7 +260,7 @@ public class TalkManager : MonoBehaviour
     }
 
     //透明度を1~0と0~1へと徐々に変更することにより点滅させる(fadein,fadeoutの要領)
-    IEnumerator SakuraFadeChange()
+    IEnumerator SakuraOut()
     {
         while (true)
         {

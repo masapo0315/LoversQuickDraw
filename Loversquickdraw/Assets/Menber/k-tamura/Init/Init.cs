@@ -5,6 +5,7 @@ using UnityEngine;
 public class Init : MonoBehaviour {
 
 	bool onLoad = false;
+    [SerializeField] private string SceneLoad="";
 
 	private void Awake()
 	{
@@ -18,7 +19,7 @@ public class Init : MonoBehaviour {
         if (!Application.isShowingSplashScreen && !onLoad)
         {
             onLoad = true;
-            SceneLoadManager.LoadScene("Title");
+            SceneLoadManager.LoadScene(SceneLoad);
         }
     }
 
