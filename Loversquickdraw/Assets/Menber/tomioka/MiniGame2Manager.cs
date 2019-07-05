@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MiniGame2Manager : MonoBehaviour
@@ -10,6 +11,9 @@ public class MiniGame2Manager : MonoBehaviour
     private Text Place;
     [SerializeField]
     private Text Karen_Hint;
+
+    [SerializeField]
+    private GameObject HintFrame;
 
     private string Hint = "この教室に来る前は\n本が沢山あるところにいて...";
     private string Karen;
@@ -1038,6 +1042,8 @@ public class MiniGame2Manager : MonoBehaviour
                 Destroy(PlaceList[2]);
                 //BackGround.sprite = PlaceList[2];
                 Destroy(Place);
+                Destroy(HintFrame);
+                Invoke("Scene", 2);
                 break;
         }
         ChangeText();
@@ -1046,7 +1052,7 @@ public class MiniGame2Manager : MonoBehaviour
 
     public void Clickfalse()
     {
-        //音鳴らす
+        //音鳴らす予定
     }
 
     private void ResetText()
@@ -1055,5 +1061,11 @@ public class MiniGame2Manager : MonoBehaviour
         Karen = "";
         Debug.Log(Karen);
         ChangeText();
+    }
+
+    //仮
+    private void Scene()
+    {
+        SceneLoadManager.LoadScene("Title-iwasaki");
     }
 }
