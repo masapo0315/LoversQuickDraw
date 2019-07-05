@@ -144,7 +144,8 @@ public class TalkManager2 : MonoBehaviour
     //キー入寮kｂ
     void Inputkey()
     {
-        if (OVRInput.GetDown(OVRInput.RawButton.A)|| OVRInput.GetDown(OVRInput.RawButton.X))
+
+        if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
             if (!choice)
             {
@@ -152,12 +153,17 @@ public class TalkManager2 : MonoBehaviour
                 LordMinigame();
                 TextFrame.SetActive(true);
 
-                //会話数25個まで回したら選択肢を出してテキストフレームを消す
-                if (Talktext == 25)
+                //会話数42個まで回したら選択肢を出してテキストフレームを消す
+                if (Talktext == 42)
                 {
                     TextFrame.SetActive(false);
                     choice = true;
                     ChoiceManager.SetActive();
+                }
+
+                if (Talktext == 50 || Talktext == 57 || Talktext == 71)
+                {
+                    Talktext = 72;
                 }
 
                 Text Nametext = NameTextmanager.GetComponent<Text>();

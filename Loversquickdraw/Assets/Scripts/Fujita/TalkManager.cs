@@ -105,8 +105,7 @@ public class TalkManager : MonoBehaviour
                 choice = false;
             }
         }
-
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+        if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
             if (!choice)
             {
@@ -115,7 +114,7 @@ public class TalkManager : MonoBehaviour
                 TextFrame.SetActive(true);
 
                 //今は仮で会話数(25個)をループさせてる
-                if (Talktext == 26)
+                if (Talktext == 25)
                 {
                     TextFrame.SetActive(false);
                     choice = true;
@@ -140,6 +139,41 @@ public class TalkManager : MonoBehaviour
                 Talktext++;
             }
         }
+        /*
+        //if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    if (!choice)
+        //    {
+        //        sakuraOut();
+        //        LordMinigame();
+        //        TextFrame.SetActive(true);
+
+        //        //今は仮で会話数(25個)をループさせてる
+        //        if (Talktext == 25)
+        //        {
+        //            TextFrame.SetActive(false);
+        //            choice = true;
+        //            ChoiceManager.SetActive();
+        //        }
+
+        //        if (Talktext == 30 || Talktext == 39 || Talktext == 43)
+        //        {
+        //            Talktext = 43;
+        //        }
+
+        //        Text Nametext = NameTextmanager.GetComponent<Text>();
+        //        Text Commenttext = CommentTextmanager.GetComponent<Text>();
+        //        name = 1;
+        //        Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
+        //        Nametext.text = ReplaceTag(Text[Talktext][name]);
+        //        name = 0;
+        //        Commenttext.text = ReplaceTag(Text[Talktext][name]);
+        //        Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
+
+        //        sakuraStart();
+        //        Talktext++;
+        //    }
+        //}*/
     }
 
     //桜の点滅
@@ -177,7 +211,7 @@ public class TalkManager : MonoBehaviour
             Debug.Log("２がjudgedChoiceを通った");
             return Player2;
         }
-        else return "Error";
+        else return "";
     }
 
     private string NotJudgeChoice(string Player1, string Player2)
@@ -194,7 +228,7 @@ public class TalkManager : MonoBehaviour
             Debug.Log("1がNotjudgedChoiceを通った");
             return Player2;
         }
-        else return "Error";
+        else return "";
     }
 
     string ReplaceTag(string _text)
