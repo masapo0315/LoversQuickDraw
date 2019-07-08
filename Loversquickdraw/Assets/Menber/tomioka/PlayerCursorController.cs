@@ -11,7 +11,7 @@ public class PlayerCursorController : MonoBehaviour
     [SerializeField]private GameObject Cursor2;
 
     //カーソルの位置を決めるオブジェクト
-    [SerializeField] private GameObject[] menuNum;
+    [SerializeField] private GameObject[] menuNum = new GameObject[5];
     [SerializeField] private MiniGame2Manager miniGame2Manager;
 
     private Vector3[] tmp = new Vector3[5];
