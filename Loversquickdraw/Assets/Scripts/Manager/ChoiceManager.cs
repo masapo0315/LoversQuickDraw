@@ -24,7 +24,7 @@ public class ChoiceManager : MonoBehaviour
     [SerializeField]private float invokeTime = 2.5f;
 
     [SerializeField]
-    private TalkManager2 talkManager2;
+    private TalkManager talkManager;
 
 
     [HideInInspector] public bool stopChoice = false;
@@ -48,7 +48,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
-            talkManager2.ChoiceRoot();
+            talkManager.ChoiceRoot();
             Debug.Log("choice1-1");
         }
 
@@ -62,7 +62,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
-            talkManager2.ChoiceRoot();
+            talkManager.ChoiceRoot();
             Debug.Log("choice2-1");
         }
 
@@ -76,7 +76,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
-            talkManager2.ChoiceRoot();
+            talkManager.ChoiceRoot();
             Debug.Log("choice1-2");
         }
 
@@ -90,7 +90,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
-            talkManager2.ChoiceRoot();
+            talkManager.ChoiceRoot();
             Debug.Log("choice2-2");
         }
 
@@ -105,7 +105,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
-            talkManager2.ChoiceRoot();
+            talkManager.ChoiceRoot();
             Debug.Log("choice1-3");
         }
 
@@ -119,7 +119,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
-            talkManager2.ChoiceRoot();
+            talkManager.ChoiceRoot();
             Debug.Log("choice2-3");
         }
     }
