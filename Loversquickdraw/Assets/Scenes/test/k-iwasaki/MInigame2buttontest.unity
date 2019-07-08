@@ -14988,11 +14988,12 @@ MonoBehaviour:
   LeftMenu: 4
   Cursor: {fileID: 1433315853}
   Cursor2: {fileID: 368363436}
-  MenuNumber0: {fileID: 275748870}
-  MenuNumber1: {fileID: 1206288115}
-  MenuNumber2: {fileID: 1022008214}
-  MenuNumber3: {fileID: 1840082194}
-  MenuNumber4: {fileID: 136046761}
+  menuNum:
+  - {fileID: 275748870}
+  - {fileID: 1206288115}
+  - {fileID: 1022008214}
+  - {fileID: 1840082194}
+  - {fileID: 136046761}
   miniGame2Manager: {fileID: 1770000128}
 --- !u!4 &1770000127
 Transform:

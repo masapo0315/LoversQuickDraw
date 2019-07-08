@@ -6,7 +6,8 @@ public class SceneController : MonoBehaviour
 {
     private bool once;
 	void Update ()
-    {if (once == false)
+    {
+        if (once == false)
         {
             if (OVRInput.GetDown(OVRInput.Button.One) || Input.GetKeyDown(KeyCode.Space))
             {
