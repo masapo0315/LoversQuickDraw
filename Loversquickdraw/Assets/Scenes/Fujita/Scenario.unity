@@ -4761,7 +4761,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b268e9fcd379c84f83cbbad96a1a95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Talktext: 0
   choiceAfterText: 1
+  fade: 0.035
   TextFrame: {fileID: 1965957114}
   ChoiceManager: {fileID: 840345693}
   NameTextmanager: {fileID: 469389191}
@@ -4784,7 +4786,7 @@ MonoBehaviour:
   FrameText: {fileID: 1965957114}
   rootflag: 0
   invokeTime: 1
-  talkManager2: {fileID: 0}
+  talkManager: {fileID: 840345692}
   stopChoice: 0
   firstsPlayer: 0
 --- !u!1 &857662209
