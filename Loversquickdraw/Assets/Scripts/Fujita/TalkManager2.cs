@@ -139,8 +139,9 @@ public class TalkManager2 : MonoBehaviour
             }
         }
         //debug();
-        Inputkey();
+        //Inputkey();
     }
+    /*
     //キー入寮kｂ
     void Inputkey()
     {
@@ -196,7 +197,7 @@ public class TalkManager2 : MonoBehaviour
         sakuraStart();
         Talktext++;
     }
-
+    */
     //debug
     #region
     //デバック
@@ -320,7 +321,7 @@ public class TalkManager2 : MonoBehaviour
         }
         else return "通ってないよ";
     }
-
+    /*
     private string Winner(string Player1, string Player2)
     {
         if (Result.Player1Win == true && Result.Player2Win == false)
@@ -350,7 +351,7 @@ public class TalkManager2 : MonoBehaviour
         }
         else return "LoseError";
     }
-
+    
     string ReplaceTag(string _text)
     {
         string tmp = _text;
@@ -375,7 +376,7 @@ public class TalkManager2 : MonoBehaviour
         }
         return tmp;
     }
-
+    */
     public void LordMinigame()
     {
         if (Talktext == 78)
@@ -392,15 +393,15 @@ public class TalkManager2 : MonoBehaviour
             case 1:
                 Talktext = 42;
                 Debug.Log(choiceManager2.rootflag);
-                road();
+                //road();
                 break;
             case 2:
                 Talktext = 50;
-                road();
+                //road();
                 break;
             case 3:
                 Talktext = 57;
-                road();
+                //road();
                 break;
         }
     }
