@@ -10,12 +10,12 @@ public class TalkManager2 : MonoBehaviour
     private int Talktext = 0; //縦
     private new int name = 0; //横
     private float fadeInOut; //点滅用
-    private float fade = 0.035f;
     private bool choice = false;
-    string[] TEXTTAG_LIST = { "勝利者","敗者","択プレイヤー" };
+    string[] TEXTTAG_LIST = { "勝利者", "［敗北者］", "択プレイヤー" };
 
     #region
 
+    [SerializeField] private float fade;
     [SerializeField] private GameObject TextFrame;
     [SerializeField] private ChoiceManager2 choiceManager2;
     [SerializeField] private GameObject NameTextmanager;
@@ -160,11 +160,12 @@ public class TalkManager2 : MonoBehaviour
                     TextFrame.SetActive(false);
                     choice = true;
                     choiceManager2.SetActive();
+                    return;
                 }
 
                 if (Talktext == 50 || Talktext == 57 || Talktext == 71)
                 {
-                    Talktext = 72;
+                    Talktext = 71;
                 }
 
                 Text Nametext = NameTextmanager.GetComponent<Text>();
@@ -181,49 +182,68 @@ public class TalkManager2 : MonoBehaviour
             }
         }
     }
-    //デバック
-    void debug()
+    private void road()
     {
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
-        {
-            if (!choice)
-            {
-                sakuraOut();
-                LordMinigame();
-                TextFrame.SetActive(true);
+        Text Nametext = NameTextmanager.GetComponent<Text>();
+        Text Commenttext = CommentTextmanager.GetComponent<Text>();
+        name = 1;
+        Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
+        Nametext.text = ReplaceTag(Text[Talktext][name]);
+        name = 0;
+        Commenttext.text = ReplaceTag(Text[Talktext][name]);
+        Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
 
-                //会話数42個まで回したら選択肢を出してテキストフレームを消す
-                if (Talktext == 42)
-                {
-                    TextFrame.SetActive(false);
-                    choice = true;
-                    choiceManager2.SetActive();
-                }
-
-                if (Talktext == 50 || Talktext == 57 || Talktext == 71)
-                {
-                    Talktext = 72;
-                }
-
-                Text Nametext = NameTextmanager.GetComponent<Text>();
-                Text Commenttext = CommentTextmanager.GetComponent<Text>();
-                name = 1;
-                Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
-                Nametext.text = ReplaceTag(Text[Talktext][name]);
-                name = 0;
-                Commenttext.text = ReplaceTag(Text[Talktext][name]);
-                Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
-
-                sakuraStart();
-                Talktext++;
-            }
-        }
+        sakuraStart();
+        Talktext++;
     }
+
+    //debug
+    #region
+    //デバック
+    //void Move()
+    //{
+    //    if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+    //    {
+    //        if (!choice)
+    //        {
+    //            sakuraOut();
+    //            LordMinigame();
+    //            TextFrame.SetActive(true);
+
+    //            //会話数42個まで回したら選択肢を出してテキストフレームを消す
+    //            if (Talktext == 41)
+    //            {
+    //                TextFrame.SetActive(false);
+    //                choice = true;
+    //                choiceManager2.SetActive();
+    //            }
+
+    //            if (Talktext == 50 || Talktext == 57 || Talktext == 71)
+    //            {
+    //                Talktext = 71;
+    //            }
+
+    //            Text Nametext = NameTextmanager.GetComponent<Text>();
+    //            Text Commenttext = CommentTextmanager.GetComponent<Text>();
+    //            name = 1;
+    //            Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
+    //            Nametext.text = ReplaceTag(Text[Talktext][name]);
+    //            name = 0;
+    //            Commenttext.text = ReplaceTag(Text[Talktext][name]);
+    //            Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
+
+    //            sakuraStart();
+    //            Talktext++;
+    //        }
+    //    }
+    //}
+    #endregion //
+
     //桜の点滅
     private void sakuraStart()
     {
         //テキストが出終わったら点滅開始
-        for (int i = 0; i < 71; i++)
+        for (int i = 0; i < 78; i++)
         {
             StartCoroutine("SakuraOut");
         }
@@ -232,11 +252,34 @@ public class TalkManager2 : MonoBehaviour
     private void sakuraOut()
     {
         //前回の点滅の処理を止める
-        for (int i = 0; i < 71; i++)
+        for (int i = 0; i < 78; i++)
         {
             StopCoroutine("SakuraOut");
         }
     }
+
+    //透明度を1~0と0~1へと徐々に変更することにより点滅させる(fadein,fadeoutの要領)
+    IEnumerator SakuraOut()
+    {
+        while (true)
+        {
+            //fadein
+            while (fadeInOut <= 1)
+            {
+                Sakura.GetComponent<Image>().color += new Color(0, 0, 0, fade);
+                fadeInOut += fade;
+                yield return null;
+            }
+            //fadeout
+            while (fadeInOut >= 0)
+            {
+                Sakura.GetComponent<Image>().color -= new Color(0, 0, 0, fade);
+                fadeInOut -= fade;
+                yield return null;
+            }
+        }
+    }
+
 
     #region
     //string ReplaceTag(string _text)
@@ -275,7 +318,7 @@ public class TalkManager2 : MonoBehaviour
             Debug.Log("２がjudgedChoiceを通った");
             return Player2;
         }
-        else return "Error";
+        else return "通ってないよ";
     }
 
     private string Winner(string Player1, string Player2)
@@ -290,7 +333,7 @@ public class TalkManager2 : MonoBehaviour
             //2P勝利
             return Player2;
         }
-        else return "Error";
+        else return "WinError";
     }
 
     private string Loser(string Player1, string Player2)
@@ -305,7 +348,7 @@ public class TalkManager2 : MonoBehaviour
             //1P敗者
             return Player1;
         }
-        else return "Error";
+        else return "LoseError";
     }
 
     string ReplaceTag(string _text)
@@ -333,28 +376,6 @@ public class TalkManager2 : MonoBehaviour
         return tmp;
     }
 
-    //透明度を1~0と0~1へと徐々に変更することにより点滅させる(fadein,fadeoutの要領)
-    IEnumerator SakuraOut()
-    {
-        while (true)
-        {
-            //fadein
-            while (fadeInOut <= 1)
-            {
-                Sakura.GetComponent<Image>().color += new Color(0, 0, 0, fade);
-                fadeInOut += fade;
-                yield return null;
-            }
-            //fadeout
-            while (fadeInOut >= 0)
-            {
-                Sakura.GetComponent<Image>().color -= new Color(0, 0, 0, fade);
-                fadeInOut -= fade;
-                yield return null;
-            }
-        }
-    }
-
     public void LordMinigame()
     {
         if (Talktext == 78)
@@ -369,14 +390,17 @@ public class TalkManager2 : MonoBehaviour
         switch (choiceManager2.rootflag)
         {
             case 1:
-                Talktext = 43;
+                Talktext = 42;
                 Debug.Log(choiceManager2.rootflag);
+                road();
                 break;
             case 2:
-                Talktext = 51;
+                Talktext = 50;
+                road();
                 break;
             case 3:
-                Talktext = 58;
+                Talktext = 57;
+                road();
                 break;
         }
     }

@@ -6,10 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class TalkManager : MonoBehaviour
 {
-    private int Talktext = 0; //縦
+    public int Talktext = 0; //縦
     private new int name = 0; //横
     private float fadeInOut; //点滅用
-    private float fade = 0.035f;
     public bool choiceAfterText = true;
     private bool choice = false;
 
@@ -17,6 +16,7 @@ public class TalkManager : MonoBehaviour
 
     #region
 
+    [SerializeField] private float fade;
     [SerializeField] private GameObject TextFrame;
     [SerializeField] private ChoiceManager ChoiceManager;
     [SerializeField] private GameObject NameTextmanager;
@@ -29,6 +29,8 @@ public class TalkManager : MonoBehaviour
         //string x = "プレイヤー１";
         //x = x.Replace("プレイヤー１", "name1");
         fadeInOut = Sakura.GetComponent<Image>().color.a;
+        Text Nametext = NameTextmanager.GetComponent<Text>();
+        Text Commenttext = CommentTextmanager.GetComponent<Text>();
     }
 
     //コメントと話すキャラの名前の配列(会話文は25個)
@@ -63,17 +65,17 @@ public class TalkManager : MonoBehaviour
         new string[]{ "この俺だァァアアァァァッッ！！！！","両プレイヤー"},
         new string[]{ "あいつと同時に駆け出す俺、\n目の前には十字路が迫っている。","両プレイヤー"},
         new string[]{ "あいつよりも前に出て華恋とぶつかる。\nそのために俺はーー！！","両プレイヤー"},
-        //ここまでで25行
+        //ここまでで25行 配列なら24
 
         //選択１の場合(26)
-        new string[]{ "一歩先んじた俺は、十字路で急ブレーキ、\n迷いなくインド人を右に！","択プレイヤー"},
+        new string[]{ "11111一歩先んじた俺は、十字路で急ブレーキ、\n迷いなくインド人を右に！","択プレイヤー"},
         new string[]{ "思惑通り、角の向こうには華恋の頭が\n見え――ない！？", "択プレイヤー"},
         new string[]{ "スピードを出しすぎた……！", "択プレイヤー"},
         new string[]{ "あれ、択プレイヤーくん！？もー、また\n危ないことして―！気を付けてね～！？", "華恋"},
         new string[]{ "しかし、遠目に目が合ったのは俺。\n何はともあれ一歩リードだ。やったぜ。", "択プレイヤー"},
 
         //選択２の場合(31)
-        new string[]{ "一歩先んじた俺は、十字路で急ブレーキ、\n迷いなくインド人を右に！","択プレイヤー"},
+        new string[]{ "22222一歩先んじた俺は、十字路で急ブレーキ、\n迷いなくインド人を右に！","択プレイヤー"},
         new string[]{ "遅れた非選択Ｐが遅れて曲がる！\nこれは勝ったも同然……！", "択プレイヤー"},
         new string[]{ "なあ、曲がり角逆じゃねえか！？", "非選択Ｐ"},
         new string[]{ "はあ！？", "択プレイヤー"},
@@ -105,44 +107,7 @@ public class TalkManager : MonoBehaviour
                 choice = false;
             }
         }
-
         TextMove();
-
-        /*
-        //if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    if (!choice)
-        //    {
-        //        sakuraOut();
-        //        LordMinigame();
-        //        TextFrame.SetActive(true);
-
-        //        //今は仮で会話数(25個)をループさせてる
-        //        if (Talktext == 25)
-        //        {
-        //            TextFrame.SetActive(false);
-        //            choice = true;
-        //            ChoiceManager.SetActive();
-        //        }
-
-        //        if (Talktext == 30 || Talktext == 39 || Talktext == 43)
-        //        {
-        //            Talktext = 43;
-        //        }
-
-        //        Text Nametext = NameTextmanager.GetComponent<Text>();
-        //        Text Commenttext = CommentTextmanager.GetComponent<Text>();
-        //        name = 1;
-        //        Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
-        //        Nametext.text = ReplaceTag(Text[Talktext][name]);
-        //        name = 0;
-        //        Commenttext.text = ReplaceTag(Text[Talktext][name]);
-        //        Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
-
-        //        sakuraStart();
-        //        Talktext++;
-        //    }
-        //}*/
     }
 
     private void TextMove()
@@ -161,6 +126,7 @@ public class TalkManager : MonoBehaviour
                     TextFrame.SetActive(false);
                     choice = true;
                     ChoiceManager.SetActive();
+                    return;
                 }
 
                 if (Talktext == 30 || Talktext == 39 || Talktext == 43)
@@ -183,11 +149,26 @@ public class TalkManager : MonoBehaviour
         }
     }
 
+    private void road()
+    {
+        Text Nametext = NameTextmanager.GetComponent<Text>();
+        Text Commenttext = CommentTextmanager.GetComponent<Text>();
+        name = 1;
+        Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
+        Nametext.text = ReplaceTag(Text[Talktext][name]);
+        name = 0;
+        Commenttext.text = ReplaceTag(Text[Talktext][name]);
+        Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
+
+        sakuraStart();
+        Talktext++;
+    }
+
     //桜の点滅
     private void sakuraStart()
     {
         //テキストが出終わったら点滅開始
-        for (int i = 0; i < 46; i++)
+        for (int i = 0; i < 45; i++)
         {
             StartCoroutine("SakuraOut");
         }
@@ -196,67 +177,10 @@ public class TalkManager : MonoBehaviour
     private void sakuraOut()
     {
         //前回の点滅の処理を止める
-        for (int i = 0; i < 46; i++)
+        for (int i = 0; i < 45; i++)
         {
             StopCoroutine("SakuraOut");
         }
-    }
-
-    private string JudgeChoice(string Player1, string Player2)
-    {
-        Debug.Log(ChoiceManager.firstsPlayer);
-        Debug.Log(ChoiceManager.stopChoice);
-        if (ChoiceManager.stopChoice == true && ChoiceManager.firstsPlayer == true)
-        {
-            //１pが選択した
-            Debug.Log("１がjudgedChoiceを通った");
-            return Player1;
-        }
-        else if (ChoiceManager.stopChoice == true && ChoiceManager.firstsPlayer == false)
-        {
-            //２pが選択出来なかった
-            Debug.Log("２がjudgedChoiceを通った");
-            return Player2;
-        }
-        else return "";
-    }
-
-    private string NotJudgeChoice(string Player1, string Player2)
-    {
-        if (ChoiceManager.stopChoice == true && ChoiceManager.firstsPlayer == true)
-        {
-            //２pが選択した
-            Debug.Log("2がNotjudgedChoiceを通った");
-            return Player1;
-        }
-        else if (ChoiceManager.stopChoice == true && ChoiceManager.firstsPlayer == false)
-        {
-            //１pが選択出来なかった
-            Debug.Log("1がNotjudgedChoiceを通った");
-            return Player2;
-        }
-        else return "";
-    }
-
-    string ReplaceTag(string _text)
-    {
-        string tmp = _text;
-        int cnt = 0;
-
-        foreach (string tag in TEXTTAG_LIST)
-        {
-            switch (cnt)
-            {
-                case 0:
-                    tmp = tmp.Replace(tag, JudgeChoice("プレイヤー１","プレイヤー２"));
-                    break;
-                case 1:
-                    tmp = tmp.Replace(tag, NotJudgeChoice("プレイヤー１", "プレイヤー２"));
-                    break;
-            }
-            cnt++;
-        }
-        return tmp;
     }
 
     //透明度を1~0と0~1へと徐々に変更することにより点滅させる(fadein,fadeoutの要領)
@@ -281,9 +205,66 @@ public class TalkManager : MonoBehaviour
         }
     }
 
+    private string JudgeChoice(string Player1, string Player2)
+    {
+        Debug.Log(ChoiceManager.firstsPlayer);
+        Debug.Log(ChoiceManager.stopChoice);
+        if (ChoiceManager.stopChoice == true && ChoiceManager.firstsPlayer == true)
+        {
+            //１pが選択した
+            Debug.Log("１がjudgedChoiceを通った");
+            return Player1;
+        }
+        else if (ChoiceManager.stopChoice == true && ChoiceManager.firstsPlayer == false)
+        {
+            //２pが選択出来なかった
+            Debug.Log("２がjudgedChoiceを通った");
+            return Player2;
+        }
+        else return "通ってない";
+    }
+
+    private string NotJudgeChoice(string Player1, string Player2)
+    {
+        if (ChoiceManager.stopChoice == true && ChoiceManager.firstsPlayer == true)
+        {
+            //２pが選択した
+            Debug.Log("2がNotjudgedChoiceを通った");
+            return Player1;
+        }
+        else if (ChoiceManager.stopChoice == true && ChoiceManager.firstsPlayer == false)
+        {
+            //１pが選択出来なかった
+            Debug.Log("1がNotjudgedChoiceを通った");
+            return Player2;
+        }
+        else return "通ってない２";
+    }
+
+    string ReplaceTag(string _text)
+    {
+        string tmp = _text;
+        int cnt = 0;
+
+        foreach (string tag in TEXTTAG_LIST)
+        {
+            switch (cnt)
+            {
+                case 0:
+                    tmp = tmp.Replace(tag, JudgeChoice("プレイヤー１","プレイヤー２"));
+                    break;
+                case 1:
+                    tmp = tmp.Replace(tag, NotJudgeChoice("プレイヤー１", "プレイヤー２"));
+                    break;
+            }
+            cnt++;
+        }
+        return tmp;
+    }
+
     public void LordMinigame()
     {
-        if (Talktext == 44)
+        if (Talktext == 45)
         {
                 SceneManager.LoadScene("MiniGame1");
         }
@@ -291,20 +272,24 @@ public class TalkManager : MonoBehaviour
 
     public void ChoiceRoot()
     {
-        Debug.Log("ここをとおった");
+        Debug.Log("ChoiceRootを通った");
         Debug.Log(ChoiceManager.rootflag);
         switch (ChoiceManager.rootflag)
         {
             case 1:
-                Talktext = 26;
+                Talktext = 25;
                 Debug.Log(ChoiceManager.rootflag);
+                road();
                 break;
             case 2:
-                Talktext = 31;
+                Talktext = 30;
+                Debug.Log(ChoiceManager.rootflag);
+                road();
                 break;
             case 3:
-                Talktext = 40;
+                Talktext = 39;
                 Debug.Log(ChoiceManager.rootflag);
+                road();
                 break;
             default:
                 break;
