@@ -10,12 +10,15 @@ public class Singlton : MonoBehaviour {
     {
         get
         {
-            if (instance == null) instance = new Singlton();
-
+            if (instance == null)
+            {
+                instance = new Singlton();
+            }
             return instance;
         }
     }
 
-    public static int[] WinFlag = {0, 0,};
+    //配列[0]がミニゲーム１配列[1]がミニゲーム2の勝利判定
+    public int[] WinFlag = new int[2] {0, 0};
 
 }
