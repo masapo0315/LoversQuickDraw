@@ -5,22 +5,27 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Result : MonoBehaviour
-{
+public class Result : MonoBehaviour {
+
     //ゴールした時のリザルトを表示する
 
-    [SerializeField]private Image[] images;
-    [SerializeField]private Animator _animator;
+    public Image[] images;
 
-    private bool gameSet = false;
-    public static bool Player1Win;
-    public static bool Player2Win;
+    bool gameSet = false;
+    /*public static bool Player1Win;
+    public static bool Player2Win;*/
 
-    private int player1LoveMetar;
-    private int player2LoveMetar;
-    
-    void Start ()
-    {
+
+    int player1LoveMetar;
+    int player2LoveMetar;
+
+    [SerializeField]
+    Animator _animator;
+
+
+    // Use this for initialization
+    void Start () {
+
         Time.timeScale = 1.0f;
 
         player1LoveMetar = LoveMetar.getPlayer1LoveMetar();
@@ -30,21 +35,22 @@ public class Result : MonoBehaviour
         {
             images[i].enabled = false;
         }
+        
+        
     }
 	
-	void Update ()
-    {
+	// Update is called once per frame
+	void Update () {
+
         GameSet();
+
     }
 
     void GameSet()
     {
-        if(gameSet == true)
+        if(OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) || OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger) && gameSet == true)
         {
-            if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) || OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
-            {
-                SceneManager.LoadScene("Scenario2");
-            }
+            SceneManager.LoadScene("Scenario2");
         }
     }
 
@@ -63,8 +69,9 @@ public class Result : MonoBehaviour
             Time.timeScale = 0f;
 
             //Debug.Log("1Pの勝利");
+            //Player1Win = true;
 
-            Player1Win = true;
+            Singlton.Instance.WinFlag[0] = 1;
             gameSet = true;
         }
         else if (col.gameObject.tag == "Player2")
@@ -78,9 +85,11 @@ public class Result : MonoBehaviour
             Time.timeScale = 0f;
 
             //Debug.Log("2Pの勝利");
+            //Player2Win = true;
 
-            Player2Win = true;
+            Singlton.Instance.WinFlag[0] = 2;
             gameSet = true;
         }
+
     }
 }
