@@ -26,6 +26,7 @@ public class SoundManager : MonoBehaviour {
     /// </summary>
     void Update () {
         if (FirstBGM_Play) BGMLOOP();
+        FadeOutScript();
 	}
     /// <summary>
     /// BGM_Loop BGMはAudioSources[0]使用
@@ -80,6 +81,9 @@ public class SoundManager : MonoBehaviour {
     void FadeOut(){
         FadeFlag = true;
     }
+    /// <summary>
+    /// 内部用
+    /// </summary>
     void FadeOutScript(){
         if (FadeFlag){
             for (int i=0; i <= AudioSources.Length; i++){
