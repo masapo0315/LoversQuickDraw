@@ -8,7 +8,7 @@ public class TestPlayerControler1 : MonoBehaviour {
     float moveSpeed;
     float moveForceMultipliter = 1.0f;
 
-    float jumpPower = 20;
+    float jumpPower = 15;
     bool jump = false;
 
     [SerializeField]
@@ -58,6 +58,12 @@ public class TestPlayerControler1 : MonoBehaviour {
         {
             _animator.SetBool("Jump", false);
             jump = false;
+        }
+
+        if (col.gameObject.tag == "Obstacles")
+        {
+            moveSpeed = 0;
+            Destroy(col.gameObject);
         }
 
     }
