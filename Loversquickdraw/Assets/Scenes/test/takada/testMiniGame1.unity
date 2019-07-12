@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -336,11 +336,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 164532742}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fb3a88fe0bc2b0499f8e796d9c944ce, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  readyImage: {fileID: 1031557925}
-  goImage: {fileID: 1732137842}
 --- !u!1 &210479219
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,7 +1005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &564236206
 Transform:
   m_ObjectHideFlags: 0
@@ -1033,7 +1031,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle:
-  - {fileID: 0}
+  - {fileID: 1386902727257114, guid: 1bb703c285100e046a50a0bb6d73b94f, type: 2}
+  - {fileID: 1072701746712164, guid: 9791d7a450b90cc4dbf38fa2c85075eb, type: 2}
+  - {fileID: 1779567281303820, guid: be892dabfe355ba41ba416c15b2ccccb, type: 2}
   spawnPoint: {fileID: 564236205}
 --- !u!1 &626965279
 GameObject:
@@ -1050,7 +1050,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &626965280
 Transform:
   m_ObjectHideFlags: 0
@@ -1076,7 +1076,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle:
-  - {fileID: 0}
+  - {fileID: 1386902727257114, guid: 1bb703c285100e046a50a0bb6d73b94f, type: 2}
+  - {fileID: 1072701746712164, guid: 9791d7a450b90cc4dbf38fa2c85075eb, type: 2}
+  - {fileID: 1779567281303820, guid: be892dabfe355ba41ba416c15b2ccccb, type: 2}
   spawnPoint: {fileID: 626965279}
 --- !u!1 &632317905
 GameObject:
@@ -1517,7 +1519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &740683927
 Transform:
   m_ObjectHideFlags: 0
@@ -1543,7 +1545,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle:
-  - {fileID: 0}
+  - {fileID: 1386902727257114, guid: 1bb703c285100e046a50a0bb6d73b94f, type: 2}
+  - {fileID: 1072701746712164, guid: 9791d7a450b90cc4dbf38fa2c85075eb, type: 2}
+  - {fileID: 1779567281303820, guid: be892dabfe355ba41ba416c15b2ccccb, type: 2}
   spawnPoint: {fileID: 740683926}
 --- !u!1 &783940896
 GameObject:
@@ -1755,7 +1759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &845570651
 Transform:
   m_ObjectHideFlags: 0
@@ -1781,7 +1785,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle:
-  - {fileID: 0}
+  - {fileID: 1386902727257114, guid: 1bb703c285100e046a50a0bb6d73b94f, type: 2}
+  - {fileID: 1072701746712164, guid: 9791d7a450b90cc4dbf38fa2c85075eb, type: 2}
+  - {fileID: 1779567281303820, guid: be892dabfe355ba41ba416c15b2ccccb, type: 2}
   spawnPoint: {fileID: 845570650}
 --- !u!1 &856840999
 GameObject:
@@ -2656,7 +2662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1328407671
 Transform:
   m_ObjectHideFlags: 0
@@ -2682,7 +2688,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle:
-  - {fileID: 0}
+  - {fileID: 1386902727257114, guid: 1bb703c285100e046a50a0bb6d73b94f, type: 2}
+  - {fileID: 1072701746712164, guid: 9791d7a450b90cc4dbf38fa2c85075eb, type: 2}
+  - {fileID: 1779567281303820, guid: be892dabfe355ba41ba416c15b2ccccb, type: 2}
   spawnPoint: {fileID: 1328407670}
 --- !u!1 &1352427423
 GameObject:
@@ -2772,7 +2780,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1366871215
 Transform:
   m_ObjectHideFlags: 0
@@ -2798,7 +2806,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle:
-  - {fileID: 0}
+  - {fileID: 1386902727257114, guid: 1bb703c285100e046a50a0bb6d73b94f, type: 2}
+  - {fileID: 1072701746712164, guid: 9791d7a450b90cc4dbf38fa2c85075eb, type: 2}
+  - {fileID: 1779567281303820, guid: be892dabfe355ba41ba416c15b2ccccb, type: 2}
   spawnPoint: {fileID: 1366871214}
 --- !u!1 &1395138436
 GameObject:
@@ -3360,7 +3370,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1715109855
 Transform:
   m_ObjectHideFlags: 0
@@ -3386,7 +3396,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle:
-  - {fileID: 0}
+  - {fileID: 1386902727257114, guid: 1bb703c285100e046a50a0bb6d73b94f, type: 2}
+  - {fileID: 1072701746712164, guid: 9791d7a450b90cc4dbf38fa2c85075eb, type: 2}
+  - {fileID: 1779567281303820, guid: be892dabfe355ba41ba416c15b2ccccb, type: 2}
   spawnPoint: {fileID: 1715109854}
 --- !u!1 &1732137841
 GameObject:
@@ -3471,7 +3483,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1770363001
 Transform:
   m_ObjectHideFlags: 0
@@ -3497,7 +3509,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle:
-  - {fileID: 0}
+  - {fileID: 1386902727257114, guid: 1bb703c285100e046a50a0bb6d73b94f, type: 2}
+  - {fileID: 1072701746712164, guid: 9791d7a450b90cc4dbf38fa2c85075eb, type: 2}
+  - {fileID: 1779567281303820, guid: be892dabfe355ba41ba416c15b2ccccb, type: 2}
   spawnPoint: {fileID: 1770363000}
 --- !u!1 &1889748819
 GameObject:

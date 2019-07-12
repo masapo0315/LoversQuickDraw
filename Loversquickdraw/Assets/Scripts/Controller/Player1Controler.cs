@@ -6,7 +6,6 @@ using UnityEngine.VR;
 public class Player1Controler : MonoBehaviour
 {
     //Player1のカメラ固定よう
-    //[SerializeField] private Camera _mainCamera;
     [SerializeField] private Camera _camera;
     // 1Pのコントローラー
 
@@ -17,30 +16,25 @@ public class Player1Controler : MonoBehaviour
     private Vector3 L_initialPos;
 
     private int L_posGetCount = 0;
-     
-
+    
     [SerializeField] private Rigidbody rb;
     private float moveSpeed; //速度
 
     private Vector3 force;
 
-    float jumpPower = 10f; //ジャンプ力
-    bool jump = false;     //設置判定
+    private float jumpPower = 10f; //ジャンプ力
+    private bool jump = false;     //設置判定
 
-    [SerializeField]
-    Animator _animator;
-
-    // Use this for initialization
+    [SerializeField]private Animator _animator;
+    
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
         StartCoroutine("StartDelay");
 	}
 	
-	// Update is called once per frame
 	void Update ()
     {
-        //_mainCamera.transform.localRotation = Quaternion.identity;
         _camera.transform.localRotation = Quaternion.identity;
         SpeedUp();
 	}
@@ -76,7 +70,6 @@ public class Player1Controler : MonoBehaviour
             rb.velocity = new Vector3(0, jumpPower, 0);
             jump = true;
         }
-
     }
 
     private void OnCollisionEnter(Collision col)
@@ -86,7 +79,6 @@ public class Player1Controler : MonoBehaviour
             _animator.SetBool("Jump", false);
             jump = false;
         }
-
     }
 
     //遅延処理
@@ -96,7 +88,7 @@ public class Player1Controler : MonoBehaviour
 
         yield return new WaitForSeconds(2.0f);
 
-        moveSpeed = 20.0f;
+        moveSpeed = 9.0f;
 
         yield break;
     }

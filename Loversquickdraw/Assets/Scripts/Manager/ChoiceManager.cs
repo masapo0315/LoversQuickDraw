@@ -16,20 +16,18 @@ public class ChoiceManager : MonoBehaviour
     [SerializeField]private GameObject choiceBorY;
     [SerializeField]private GameObject choiceTrigger;
     [SerializeField]private GameObject FrameText;
-    
-    //[SerializeField]
-    //private GameObject choice1Text;
-    //[SerializeField]
-    //GameObject choice2Text;
-    //[SerializeField]
-    //GameObject choice3Text;
+    [HideInInspector] public int rootflag;
 
-    private bool stopChoice = false;
     private bool destroyFlag = false;
 
     //基準は2.5秒
     [SerializeField]private float invokeTime = 2.5f;
-    
+
+    [SerializeField]
+    private TalkManager talkManager;
+
+
+    [HideInInspector] public bool stopChoice = false;
     //trueの場合は1Pの勝ち、falseの場合は2Pの勝ち
     [HideInInspector]public bool firstsPlayer = false;
 
@@ -49,6 +47,9 @@ public class ChoiceManager : MonoBehaviour
             stopChoice = true;
             firstsPlayer = true;
             Invoke("DestroyAorX", invokeTime * 2);
+            rootflag = 1;
+            talkManager.ChoiceRoot();
+            Debug.Log("choice1-1");
         }
 
         //2Pが1を押した判定
@@ -60,6 +61,9 @@ public class ChoiceManager : MonoBehaviour
             stopChoice = true;
             firstsPlayer = false;
             Invoke("DestroyAorX", invokeTime * 2);
+            rootflag = 1;
+            talkManager.ChoiceRoot();
+            Debug.Log("choice2-1");
         }
 
         //1Pが2を押した判定
@@ -71,6 +75,9 @@ public class ChoiceManager : MonoBehaviour
             stopChoice = true;
             firstsPlayer = true;
             Invoke("DestroyBorY", invokeTime * 2);
+            rootflag = 2;
+            talkManager.ChoiceRoot();
+            Debug.Log("choice1-2");
         }
 
         //2Pが2を押した判定
@@ -82,17 +89,24 @@ public class ChoiceManager : MonoBehaviour
             stopChoice = true;
             firstsPlayer = false;
             Invoke("DestroyBorY", invokeTime * 2);
+            rootflag = 2;
+            talkManager.ChoiceRoot();
+            Debug.Log("choice2-2");
         }
 
         //1Pが3を押した判定
         if (stopChoice == false && Input.GetKeyDown(KeyCode.Keypad3))
         {
+            
             Debug.Log("1Pが3を押した");
             ChangeColor3();
             Invoke("GetTrigger", invokeTime);
             stopChoice = true;
             firstsPlayer = true;
             Invoke("DestroyTrigger", invokeTime * 2);
+            rootflag = 3;
+            talkManager.ChoiceRoot();
+            Debug.Log("choice1-3");
         }
 
         //2Pが3を押した判定
@@ -104,6 +118,9 @@ public class ChoiceManager : MonoBehaviour
             stopChoice = true;
             firstsPlayer = false;
             Invoke("DestroyTrigger", invokeTime * 2);
+            rootflag = 3;
+            talkManager.ChoiceRoot();
+            Debug.Log("choice2-3");
         }
     }
 
@@ -111,30 +128,23 @@ public class ChoiceManager : MonoBehaviour
     private void ChangeColor1()
     {
         Debug.Log("2と3を暗くする");
-
         choiceBorY.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
-
         choiceTrigger.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
     }
 
     private void ChangeColor2()
     {
         Debug.Log("1と3を暗くする");
-
         choiceAorX.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
-
         choiceTrigger.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
     }
 
     private void ChangeColor3()
     {
         Debug.Log("1と2を暗くする");
-
         choiceAorX.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
-
         choiceBorY.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
     }
-
 
     private void GetAorX()
     {
