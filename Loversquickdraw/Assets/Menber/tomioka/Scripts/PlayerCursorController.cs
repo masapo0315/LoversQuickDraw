@@ -41,7 +41,7 @@ public class PlayerCursorController : MonoBehaviour
         Select();
 
         //1Pの決定
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("エンター");
             miniGame2Manager.OnSelect1P();
