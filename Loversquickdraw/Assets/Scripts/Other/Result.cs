@@ -49,10 +49,13 @@ public class Result : MonoBehaviour {
 
     void GameSet()
     {
-        if(OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) || OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger) && gameSet == true)
+        if(gameSet == true)
         {
-            SceneManager.LoadScene("Scenario2");
-        }
+            if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) || OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
+            {
+                SceneManager.LoadScene("Scenario2");
+            }
+        }   
     }
 
     private void OnTriggerEnter(Collider col)
