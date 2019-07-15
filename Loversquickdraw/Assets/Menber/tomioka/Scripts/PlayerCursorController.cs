@@ -7,6 +7,9 @@ public class PlayerCursorController : MonoBehaviour
     [HideInInspector]public int RightMenu = 0;
     [HideInInspector]public int LeftMenu = 4;
 
+    //色を変えるための変数
+    [HideInInspector] public bool GetColor;
+
     [SerializeField]private GameObject Cursor;
     [SerializeField]private GameObject Cursor2;
 
@@ -44,6 +47,7 @@ public class PlayerCursorController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("エンター");
+            GetColor = true;
             miniGame2Manager.OnSelect1P();
         }
 
@@ -51,6 +55,7 @@ public class PlayerCursorController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("スペースキー");
+            GetColor = false;
             miniGame2Manager.OnSelect2P();
         }
     }
