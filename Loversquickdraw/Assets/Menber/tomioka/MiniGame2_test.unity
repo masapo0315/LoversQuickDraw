@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -8103,7 +8103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &914815665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15258,6 +15258,7 @@ GameObject:
   - component: {fileID: 1770000127}
   - component: {fileID: 1770000128}
   - component: {fileID: 1770000126}
+  - component: {fileID: 1770000129}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -15416,6 +15417,18 @@ MonoBehaviour:
   - {fileID: 1840082194}
   - {fileID: 136046761}
   miniGame2Manager: {fileID: 1770000126}
+--- !u!114 &1770000129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1770000125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd9bc2aba5e81b408647133207a969c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: 0
 --- !u!1 &1800498564
 GameObject:
   m_ObjectHideFlags: 0

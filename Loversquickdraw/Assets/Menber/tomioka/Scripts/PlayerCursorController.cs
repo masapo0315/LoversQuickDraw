@@ -41,8 +41,32 @@ public class PlayerCursorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //DebugSelect();
         Select();
+        //DebugInput();
+        PlayerInput();
+    }
+    private void PlayerInput()
+    {
+        //1Pの決定
+        if (OVRInput.GetDown(OVRInput.RawButton.A))
+        {
+            Debug.Log("エンター");
+            GetColor = true;
+            miniGame2Manager.OnSelect1P();
+        }
 
+        //2Pの決定
+        if (OVRInput.GetDown(OVRInput.RawButton.X))
+        {
+            Debug.Log("スペースキー");
+            GetColor = false;
+            miniGame2Manager.OnSelect2P();
+        }
+    }
+
+    private void DebugInput()
+    {
         //1Pの決定
         if (Input.GetKeyDown(KeyCode.Return))
         {
@@ -59,9 +83,117 @@ public class PlayerCursorController : MonoBehaviour
             miniGame2Manager.OnSelect2P();
         }
     }
-
+    
     //プレイヤーの操作
     private void Select()
+    {
+        //1Pの選択
+        //右を押すと右に移動
+        if (OVRInput.GetDown(OVRInput.RawButton.RThumbstickRight))
+        {
+            RightMenu++;
+            RightMenu %= 5;
+            Debug.Log("右は" + RightMenu);
+        }
+
+        //左を押すと左に移動
+        //4の次は0に移動
+        if (OVRInput.GetDown(OVRInput.RawButton.RThumbstickLeft))
+        {
+            if (RightMenu == 0)
+            {
+                RightMenu = 4;
+                Debug.Log("右は" + RightMenu);
+            }
+            else
+            {
+                RightMenu--;
+                RightMenu %= 5;
+                Debug.Log("右は" + RightMenu);
+            }
+        }
+
+        switch (RightMenu)
+        {
+            case 0:
+                Rtmp = tmp[0];
+                PositionChange();
+                break;
+
+            case 1:
+                Rtmp = tmp[1];
+                PositionChange();
+                break;
+
+            case 2:
+                Rtmp = tmp[2];
+                PositionChange();
+                break;
+
+            case 3:
+                Rtmp = tmp[3];
+                PositionChange();
+                break;
+
+            case 4:
+                Rtmp = tmp[4];
+                PositionChange();
+                break;
+        }
+
+        //2Pの選択
+        //Dを押すと右に移動
+        if (OVRInput.GetDown(OVRInput.RawButton.LThumbstickRight))
+        {
+            LeftMenu++;
+            LeftMenu %= 5;
+            Debug.Log("左は" + LeftMenu);
+        }
+
+        //Aを押すと左に移動
+        //4の次は0に移動
+        if (OVRInput.GetDown(OVRInput.RawButton.LThumbstickLeft))
+        {
+            if (LeftMenu == 0)
+            {
+                LeftMenu = 4;
+                Debug.Log("左は" + LeftMenu);
+            }
+            else
+            {
+                LeftMenu--;
+                LeftMenu %= 5;
+                Debug.Log("左は" + LeftMenu);
+            }
+        }
+
+        switch (LeftMenu)
+        {
+            case 0:
+                Ltmp = tmp[0];
+                PositionChange();
+                break;
+            case 1:
+                Ltmp = tmp[1];
+                PositionChange();
+                break;
+            case 2:
+                Ltmp = tmp[2];
+                PositionChange();
+                break;
+            case 3:
+                Ltmp = tmp[3];
+                PositionChange();
+                break;
+            case 4:
+                Ltmp = tmp[4];
+                PositionChange();
+                break;
+        }
+    }
+
+    //プレイヤーの操作
+    private void DebugSelect()
     {
         //1Pの選択
         //右を押すと右に移動
