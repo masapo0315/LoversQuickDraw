@@ -5,7 +5,7 @@ using UnityEngine;
 public class TestPlayer2Controler : MonoBehaviour {
 
     public Rigidbody rb;
-    float moveSpeed = 5.0f;
+    float moveSpeed;
     float moveForceMultipliter = 1.0f;
 
     float jumpPower = 10;
