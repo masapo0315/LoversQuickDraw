@@ -18,6 +18,9 @@ public class MenuController : MonoBehaviour
     private int MenuNumber = 0;
     private bool MenuOn = false;
 
+    private float GetDown = 3;
+    //private float GetNow;
+
     void Start()
     {
         MenuOffCommand();
@@ -34,11 +37,11 @@ public class MenuController : MonoBehaviour
         SceneCommand();
         MenuSelect();
         PushMenu();
+        LongPush();
 
         //コマンドを入れるとメニューが開く
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.Escape) && GetDown <= 0)
         {
-            Debug.Log("Can’t escape from my life 逃げ出せずに　輝く光を探して迷いながら戸惑いながら変わらない朝を壊して真夜中のrhythm止められない鼓動溺れるまま朝まで踊るよ何もかも捨てて消えていく想いは偽りの顔を覗かせて            怯えてた昨日踊り続ける今も見えない何かを求めてる苛立ち隠せず不機嫌な顔を一体誰に見せるの？ 教えて不条理なモラルに縛られたままもがき続けても意味の無い時間だけただ過ぎて行く何も変わらずにいつも描いてた憧れは遠いだけリセットしたい過去も捨てきれず求めてる理想襲いかかる現実苦悩の夜はまだ続く夜の光が照らしていく全てを嘲笑うように手のひらで転がされてるだけ誰も気付かずにいつか見た夢の中で羽ばたきはじめた翼は暗闇をさまよいながらどこかの逃げ道探してI can’t stop love’n you 押さえきれない溢れ出すこの想いを重ねても叶わぬ夢変わらない朝がまた来る           遅すぎた出会い早すぎた別れを誰かのせいにしたくなるもしも願いがただ一つ叶うならお願いあの時に戻らせて月の光に導かれるように夜に堕ちて行く果てしなく続く No Goal Endless Gameきっと逃げられないあの日見た夢の中で羽ばたきはじめた翼はいつかきっとたどり着ける自分だけの場所探してCan’t escape from my life逃げ出せずに輝く光を探して迷いながら戸惑いながら変わらない朝を壊してあの日見た夢の中で羽ばたきはじめた翼はいつかきっとたどり着ける自分だけの場所探してDon’t escape from my life逃げ出せずに輝く光を求めて迷いながら戸惑いながら新しい朝を迎えるCan’t escape from my life逃げ出せずにDon’t escape from my life逃げ出さずにCan’t escape from my life逃げ出せずに");
             MenuOnCommand();
         }
     }
@@ -141,6 +144,20 @@ public class MenuController : MonoBehaviour
                     SceneManager.LoadScene("MiniGame2_test");
                     break;
             }
+        }
+    }
+
+    private void LongPush()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            GetDown -= Time.deltaTime;
+            //Debug.Log(GetDown);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            GetDown = 3;
         }
     }
 }

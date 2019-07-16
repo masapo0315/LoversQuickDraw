@@ -212,6 +212,11 @@ Transform:
   m_Father: {fileID: 977499945}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &15939867 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224451566010000780, guid: 28670cdc7dd97b44398bed2b21f888a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 603980632}
 --- !u!1 &24362697
 GameObject:
   m_ObjectHideFlags: 0
@@ -6017,7 +6022,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 593416750}
---- !u!1001 &619230266
+--- !u!1001 &603980632
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -6113,11 +6118,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114352019417646460, guid: 28670cdc7dd97b44398bed2b21f888a7,
-        type: 2}
-      propertyPath: m_RaycastTarget
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28670cdc7dd97b44398bed2b21f888a7, type: 2}
@@ -8954,7 +8954,7 @@ RectTransform:
   - {fileID: 734685802}
   - {fileID: 2095180574}
   - {fileID: 1036895659}
-  - {fileID: 1063909529}
+  - {fileID: 15939867}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9938,11 +9938,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1046156089}
---- !u!224 &1063909529 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 224451566010000780, guid: 28670cdc7dd97b44398bed2b21f888a7,
-    type: 2}
-  m_PrefabInternal: {fileID: 619230266}
 --- !u!1 &1069106199
 GameObject:
   m_ObjectHideFlags: 0
