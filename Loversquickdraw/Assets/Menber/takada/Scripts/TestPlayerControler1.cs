@@ -59,13 +59,6 @@ public class TestPlayerControler1 : MonoBehaviour {
             _animator.SetBool("Jump", false);
             jump = false;
         }
-
-        if (col.gameObject.tag == "Obstacles")
-        {
-            moveSpeed = 0;
-            Destroy(col.gameObject);
-        }
-
     }
 
 

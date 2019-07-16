@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4986636932147696}
   - component: {fileID: 212807175793590122}
   - component: {fileID: 65886599222020598}
+  - component: {fileID: 114694763906473484}
   m_Layer: 0
   m_Name: mama bike
   m_TagString: Obstacles
@@ -53,6 +54,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.951464, y: 0.7966027, z: 3.5104551}
   m_Center: {x: 0.09283396, y: -0.8748654, z: -1.6552277}
+--- !u!114 &114694763906473484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1386902727257114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36101dbd678c9214c8eda672f569815f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212807175793590122
 SpriteRenderer:
   m_ObjectHideFlags: 1

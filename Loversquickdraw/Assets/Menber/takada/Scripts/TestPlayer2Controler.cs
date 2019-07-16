@@ -45,7 +45,7 @@ public class TestPlayer2Controler : MonoBehaviour {
         if (Input.GetButtonDown("Jump2") && jump == false)
         {
             _animator.SetBool("Jump", true);
-            rb.velocity = new Vector3(0, jumpPower, 0);
+            rb.velocity = new Vector3(3, jumpPower, 0);
             jump = true;
         }
 
@@ -58,13 +58,6 @@ public class TestPlayer2Controler : MonoBehaviour {
             _animator.SetBool("Jump", false);
             jump = false;
         }
-
-        if (col.gameObject.tag == "Obstacles")
-        {
-            moveSpeed = 0;
-            Destroy(col.gameObject);
-        }
-
     }
 
 
