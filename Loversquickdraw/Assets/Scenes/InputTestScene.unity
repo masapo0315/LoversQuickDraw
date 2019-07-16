@@ -630,10 +630,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1115853189 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 109308, guid: 126d619cf4daa52469682f85c1378b4a, type: 2}
-  m_PrefabInternal: {fileID: 516463851}
 --- !u!1 &1369615495
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,7 +638,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1369615497}
-  - component: {fileID: 1369615496}
   - component: {fileID: 1369615498}
   m_Layer: 0
   m_Name: InputCheck
@@ -651,21 +646,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1369615496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1369615495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5f6f2d498e963d4383f582f9451a279, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lcube: {fileID: 1115853189}
-  text: {fileID: 1001736569}
-  aaaa: {fileID: 543055561}
-  sheikuTime: 0.015
 --- !u!4 &1369615497
 Transform:
   m_ObjectHideFlags: 0
@@ -690,6 +670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd9bc2aba5e81b408647133207a969c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: 0
 --- !u!1 &1423365800
 GameObject:
   m_ObjectHideFlags: 0
