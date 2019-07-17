@@ -5,7 +5,7 @@ using UnityEngine;
 public class TestPlayer2Controler : MonoBehaviour {
 
     public Rigidbody rb;
-    float moveSpeed = 5.0f;
+    float moveSpeed;
     float moveForceMultipliter = 1.0f;
 
     float jumpPower = 10;
@@ -20,7 +20,6 @@ public class TestPlayer2Controler : MonoBehaviour {
     {
         StartCoroutine("StartDelay");
         rb = GetComponent<Rigidbody>();
-
     }
 
     // Update is called once per frame
@@ -41,21 +40,18 @@ public class TestPlayer2Controler : MonoBehaviour {
         _animator.SetBool("Run", true);
     }
 
-    void Jump()
+      void Jump()
     {
         if (Input.GetButtonDown("Jump2") && jump == false)
         {
-            Debug.Log("ジャンプなう");
-
-            _animator.SetBool("Run", false);
             _animator.SetBool("Jump", true);
-            rb.velocity = new Vector3(0,jumpPower,0);
+            rb.velocity = new Vector3(3, jumpPower, 0);
             jump = true;
         }
 
     }
 
-    private void OnCollisionStay(Collision col)
+    private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "ground")
         {
