@@ -13,7 +13,6 @@ public class TalkManager2 : MonoBehaviour
     private bool choice = false;
     string[] TEXTTAG_LIST = { "勝利者", "［敗北者］", "択プレイヤー" };
 
-    #region
 
     [SerializeField] private float fade;
     [SerializeField] private GameObject TextFrame;
@@ -21,14 +20,23 @@ public class TalkManager2 : MonoBehaviour
     [SerializeField] private GameObject NameTextmanager;
     [SerializeField] private GameObject CommentTextmanager;
     [SerializeField] private GameObject Sakura;
+    [SerializeField] private GameObject cursor;
+    [SerializeField] private GameObject cursor2;
 
     private void Start()
     {
         //string x = "プレイヤー１";
         //x = x.Replace("プレイヤー１", "name1");
         fadeInOut = Sakura.GetComponent<Image>().color.a;
+        Text Nametext = NameTextmanager.GetComponent<Text>();
+        Text Commenttext = CommentTextmanager.GetComponent<Text>();
+        Nametext.text = ReplaceTag(Text[0][1]);
+        Commenttext.text = ReplaceTag(Text[0][0]);
+        sakuraStart();
+        Talktext++;
     }
 
+    #region
     //コメントと話すキャラの名前の配列(会話文は25個)
     string[][] Text = new string[][]
     {
@@ -139,10 +147,9 @@ public class TalkManager2 : MonoBehaviour
             }
         }
         //debug();
-        //Inputkey();
+        Inputkey();
     }
-    /*
-    //キー入寮kｂ
+    //キー入力
     void Inputkey()
     {
 
@@ -159,6 +166,8 @@ public class TalkManager2 : MonoBehaviour
                 if (Talktext == 42)
                 {
                     TextFrame.SetActive(false);
+                    cursor.SetActive(true);
+                    cursor2.SetActive(true);
                     choice = true;
                     choiceManager2.SetActive();
                     return;
@@ -197,7 +206,7 @@ public class TalkManager2 : MonoBehaviour
         sakuraStart();
         Talktext++;
     }
-    */
+
     //debug
     #region
     //デバック
@@ -321,15 +330,15 @@ public class TalkManager2 : MonoBehaviour
         }
         else return "通ってないよ";
     }
-    /*
+
     private string Winner(string Player1, string Player2)
     {
-        if (Singlton.Instance.WinFlag[0] == 1)
+        if (Result.Player1Win ==  true && Result.Player2Win == false)
         {
             //1P勝利
             return Player1;
         }
-        else if (Singlton.Instance.WinFlag[0] == 2)
+        else if (Result.Player1Win == false && Result.Player2Win == true)
         {
             //2P勝利
             return Player2;
@@ -339,19 +348,19 @@ public class TalkManager2 : MonoBehaviour
 
     private string Loser(string Player1, string Player2)
     {
-        if (Singlton.Instance.WinFlag[0] == 1)
+        if (Result.Player1Win == true && Result.Player2Win == false)
         {
             //2p敗者
             return Player2;
         }
-        else if (Singlton.Instance.WinFlag[0] == 2)
+        else if (Result.Player1Win == false && Result.Player2Win == true)
         {
             //1P敗者
             return Player1;
         }
         else return "LoseError";
     }
-    
+
     string ReplaceTag(string _text)
     {
         string tmp = _text;
@@ -375,7 +384,7 @@ public class TalkManager2 : MonoBehaviour
         }
         return tmp;
     }
-    */
+
     public void LordMinigame()
     {
         if (Talktext == 78)
@@ -392,15 +401,15 @@ public class TalkManager2 : MonoBehaviour
             case 1:
                 Talktext = 42;
                 Debug.Log(choiceManager2.rootflag);
-                //road();
+                road();
                 break;
             case 2:
                 Talktext = 50;
-                //road();
+                road();
                 break;
             case 3:
                 Talktext = 57;
-                //road();
+                road();
                 break;
         }
     }
