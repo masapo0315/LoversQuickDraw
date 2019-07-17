@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour {
 
-    private void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2")
+        {
+            Destroy(other.gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update () {
-
-    }
 }

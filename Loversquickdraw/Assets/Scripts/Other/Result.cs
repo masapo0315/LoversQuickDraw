@@ -35,7 +35,8 @@ public class Result : MonoBehaviour {
         {
             images[i].enabled = false;
         }
-        
+
+        _animator.updateMode = AnimatorUpdateMode.UnscaledTime;
         
     }
 	
