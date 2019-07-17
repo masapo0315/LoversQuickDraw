@@ -8,7 +8,7 @@ public class TestPlayerControler1 : MonoBehaviour {
     float moveSpeed;
     float moveForceMultipliter = 1.0f;
 
-    float jumpPower = 20;
+    float jumpPower = 10;
     bool jump = false;
 
     [SerializeField]
@@ -46,7 +46,7 @@ public class TestPlayerControler1 : MonoBehaviour {
         if (Input.GetButtonDown("Jump") && jump == false)
         {
             _animator.SetBool("Jump", true);
-            rb.velocity = new Vector3(0, jumpPower, 0);
+            rb.velocity = new Vector3(3, jumpPower, 0);
             jump = true;
         }
 
@@ -59,7 +59,6 @@ public class TestPlayerControler1 : MonoBehaviour {
             _animator.SetBool("Jump", false);
             jump = false;
         }
-
     }
 
 

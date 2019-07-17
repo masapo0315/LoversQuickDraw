@@ -21,6 +21,8 @@ public class TalkManager2 : MonoBehaviour
     [SerializeField] private GameObject NameTextmanager;
     [SerializeField] private GameObject CommentTextmanager;
     [SerializeField] private GameObject Sakura;
+    [SerializeField] private GameObject cursor;
+    [SerializeField] private GameObject cursor2;
 
     private void Start()
     {
@@ -159,6 +161,8 @@ public class TalkManager2 : MonoBehaviour
                 if (Talktext == 42)
                 {
                     TextFrame.SetActive(false);
+                    cursor.SetActive(true);
+                    cursor2.SetActive(true);
                     choice = true;
                     choiceManager2.SetActive();
                     return;
