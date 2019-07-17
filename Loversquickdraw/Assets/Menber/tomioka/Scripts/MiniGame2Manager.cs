@@ -7,10 +7,19 @@ using UnityEngine.UI;
 public class MiniGame2Manager : MonoBehaviour
 {
     //問題の答えが入るテキスト(保健室、図書館、教室)
-    [SerializeField]private Text Place;
-    [SerializeField]private Text Karen_Hint;
+    [SerializeField] private Text Place1;
+    [SerializeField] private Text Place2;
+    [SerializeField] private Text Place3;
+    [SerializeField] private Text Place4;
+    [SerializeField] private Text Place0;
+    [SerializeField] private Text Karen_Hint;
     //
-    [SerializeField]private GameObject HintFrame;
+    [SerializeField] private GameObject HintFrame;
+    [SerializeField] private GameObject RuluImage;
+
+    [HideInInspector] public bool Win1P = true;
+
+    private bool RuleCheck1, RuleCheck2 = false;
 
     private string Hint = "この教室に来る前は\n本が沢山あるところにいて...";
     private string Karen;
@@ -19,19 +28,19 @@ public class MiniGame2Manager : MonoBehaviour
     //1Pと2Pがとった文字数
     private int Select1P, Select2P = 0;
 
-    [SerializeField]private PlayerCursorController playerCursorController;
+    [SerializeField] private PlayerCursorController playerCursorController;
 
     //[SerializeField]private Image BackGround;
 
     //1図書館・2保健室・3教室
-    [SerializeField]private List<Image> PlaceList = new List<Image>();
+    [SerializeField] private List<Image> PlaceList = new List<Image>();
     //
-    [SerializeField]private List<GameObject> buttonMenuList = new List<GameObject>();
+    [SerializeField] private List<GameObject> buttonMenuList = new List<GameObject>();
 
     //ミスした時の秒数　今後実装
     //private float TimeCount = 2;
     //
-    [SerializeField]private Button[] _buttons;
+    [SerializeField] private Button[] _buttons;
     //
     void Start()
     {
@@ -42,8 +51,73 @@ public class MiniGame2Manager : MonoBehaviour
     //
     private void ChangeText()
     {
-        Place.GetComponent<Text>();
-        Place.text = Karen;
+        Place1.GetComponent<Text>();
+        Place2.GetComponent<Text>();
+        Place3.GetComponent<Text>();
+        Place4.GetComponent<Text>();
+        Place0.GetComponent<Text>();
+
+        switch (Dankai % 5)
+        {
+            case 0:
+                Place0.text = Karen;
+                if (playerCursorController.GetColor == true)
+                {
+                    //1Pの色
+                    Place0.color = new Color(255f / 255f, 0f / 255f, 0f / 255f);
+                }
+                else
+                {
+                    //2Pの色
+                    Place0.color = new Color(0f / 255f, 0f / 255f, 255f / 255f);
+                }
+                break;
+            case 1:
+                Place1.text = Karen;
+                if (playerCursorController.GetColor == true)
+                {
+                    Place1.color = new Color(255f / 255f, 0f / 255f, 0f / 255f);
+                }
+                else
+                {
+                    Place1.color = new Color(0f / 255f, 0f / 255f, 255f / 255f);
+                }
+                break;
+            case 2:
+                Place2.text = Karen;
+                if (playerCursorController.GetColor == true)
+                {
+                    Place2.color = new Color(255f / 255f, 0f / 255f, 0f / 255f);
+                }
+                else
+                {
+                    Place2.color = new Color(0f / 255f, 0f / 255f, 255f / 255f);
+                }
+                break;
+            case 3:
+                Place3.text = Karen;
+                if (playerCursorController.GetColor == true)
+                {
+                    Place3.color = new Color(255f / 255f, 0f / 255f, 0f / 255f);
+                }
+                else
+                {
+                    Place3.color = new Color(0f / 255f, 0f / 255f, 255f / 255f);
+                }
+                break;
+            case 4:
+                Place4.text = Karen;
+                if (playerCursorController.GetColor == true)
+                {
+                    Place4.color = new Color(255f / 255f, 0f / 255f, 0f / 255f);
+                }
+                else
+                {
+                    Place4.color = new Color(0f / 255f, 0f / 255f, 255f / 255f);
+                }
+                break;
+
+        }
 
         Karen_Hint.GetComponent<Text>();
         Karen_Hint.text = Hint;
@@ -729,32 +803,32 @@ public class MiniGame2Manager : MonoBehaviour
     //
     public void ClickTrue()
     {
-        Debug.Log("押すまで来た");
+        //Debug.Log("押すまで来た");
         switch (Dankai)
         {
             case 1:
                 Debug.Log("1回目");
-                Karen += "と";
+                Karen = "と";
                 Destroy(buttonMenuList[0]);
                 break;
             case 2:
                 Debug.Log("2回目");
-                Karen += "し";
+                Karen = "し";
                 Destroy(buttonMenuList[1]);
                 break;
             case 3:
                 Debug.Log("3回目");
-                Karen += "ょ";
+                Karen = "ょ";
                 Destroy(buttonMenuList[2]);
                 break;
             case 4:
                 Debug.Log("4回目");
-                Karen += "か";
+                Karen = "か";
                 Destroy(buttonMenuList[3]);
                 break;
             case 5:
                 Debug.Log("5回目");
-                Karen += "ん";
+                Karen = "ん";
                 Destroy(buttonMenuList[4]);
                 //一度クリアにする関数
                 Destroy(PlaceList[0]);
@@ -765,27 +839,27 @@ public class MiniGame2Manager : MonoBehaviour
                 break;
             case 6:
                 Debug.Log("6回目");
-                Karen += "ほ";
+                Karen = "ほ";
                 Destroy(buttonMenuList[5]);
                 break;
             case 7:
                 Debug.Log("7回目");
-                Karen += "け";
+                Karen = "け";
                 Destroy(buttonMenuList[6]);
                 break;
             case 8:
                 Debug.Log("8回目");
-                Karen += "ん";
+                Karen = "ん";
                 Destroy(buttonMenuList[7]);
                 break;
             case 9:
                 Debug.Log("9回目");
-                Karen += "し";
+                Karen = "し";
                 Destroy(buttonMenuList[8]);
                 break;
             case 10:
                 Debug.Log("10回目");
-                Karen += "つ";
+                Karen = "つ";
                 Destroy(buttonMenuList[9]);
                 //一度クリアにする関数
                 Destroy(PlaceList[1]);
@@ -794,33 +868,34 @@ public class MiniGame2Manager : MonoBehaviour
                 break;
             case 11:
                 Debug.Log("11回目");
-                Karen += "き";
+                Karen = "き";
                 Destroy(buttonMenuList[10]);
                 break;
             case 12:
                 Debug.Log("12回目");
-                Karen += "ょ";
+                Karen = "ょ";
                 Destroy(buttonMenuList[11]);
                 break;
             case 13:
                 Debug.Log("13回目");
-                Karen += "う";
+                Karen = "う";
                 Destroy(buttonMenuList[12]);
                 break;
             case 14:
                 Debug.Log("14回目");
-                Karen += "し";
+                Karen = "し";
                 Destroy(buttonMenuList[13]);
                 break;
             case 15:
                 Debug.Log("15回目");
-                Karen += "つ";
+                Karen = "つ";
                 Destroy(buttonMenuList[14]);
                 Destroy(PlaceList[2]);
+                VictoryPlayer();
                 //BackGround.sprite = PlaceList[2];
-                Destroy(Place);
+                DestroyPlace();
                 Destroy(HintFrame);
-                Invoke("Scene", 2);
+                //Invoke("Scene", 2);
                 break;
         }
         ChangeText();
@@ -831,17 +906,70 @@ public class MiniGame2Manager : MonoBehaviour
     {
         //音鳴らす予定
     }
-    //
+
     private void ResetText()
     {
         Debug.Log("リセット");
-        Karen = "";
+        //Karen = "";
         Debug.Log(Karen);
         ChangeText();
     }
+
     //仮
     private void Scene()
     {
         SceneLoadManager.LoadScene("Title-iwasaki");
     }
+
+    private void DestroyPlace()
+    {
+        Destroy(Place1);
+        Destroy(Place2);
+        Destroy(Place3);
+        Destroy(Place4);
+        Destroy(Place0);
+    }
+
+    private void VictoryPlayer()
+    {
+        Debug.Log(Select1P);
+        Debug.Log(Select2P);
+
+        if (Select1P > Select2P)
+        {
+            Win1P = true;
+            Debug.Log("1Pの勝ち");
+        }
+        else
+        {
+            Win1P = false;
+            Debug.Log("2Pの勝ち");
+        }
+    }
+
+    private void Rule()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            RuleCheck1 = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            RuleCheck2 = true;
+        }
+
+        if (RuleCheck1 == true && RuleCheck2 == true)
+        {
+            RuluImage.SetActive(false);
+            //ReadyGO();
+        }
+    }
+
+    /*
+    private void ReadyGO()
+    {
+
+    }
+    */
 }

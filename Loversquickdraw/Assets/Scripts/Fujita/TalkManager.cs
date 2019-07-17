@@ -14,16 +14,18 @@ public class TalkManager : MonoBehaviour
 
     string[] TEXTTAG_LIST = { "択プレイヤー", "非選択Ｐ" };
 
+    //参照するものをインスペクター上に表示
     #region
-
     [SerializeField] private float fade;
     [SerializeField] private GameObject TextFrame;
     [SerializeField] private ChoiceManager ChoiceManager;
     [SerializeField] private GameObject NameTextmanager;
     [SerializeField] private GameObject CommentTextmanager;
     [SerializeField] private GameObject Sakura;
+    [SerializeField] private GameObject cursor;
+    [SerializeField] private GameObject cursor2;
 
-    
+
     private void Start()
     {
         //string x = "プレイヤー１";
@@ -31,6 +33,10 @@ public class TalkManager : MonoBehaviour
         fadeInOut = Sakura.GetComponent<Image>().color.a;
         Text Nametext = NameTextmanager.GetComponent<Text>();
         Text Commenttext = CommentTextmanager.GetComponent<Text>();
+        Nametext.text = ReplaceTag(Text[0][1]);
+        Commenttext.text = ReplaceTag(Text[0][0]);
+        sakuraStart();
+        Talktext++;
     }
 
     //コメントと話すキャラの名前の配列(会話文は25個)
@@ -112,10 +118,11 @@ public class TalkManager : MonoBehaviour
 
     private void TextMove()
     {
-        if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+        if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.Space))
         {
             if (!choice)
             {
+                //次に進める用の点滅終了
                 sakuraOut();
                 LordMinigame();
                 TextFrame.SetActive(true);
@@ -124,11 +131,14 @@ public class TalkManager : MonoBehaviour
                 if (Talktext == 25)
                 {
                     TextFrame.SetActive(false);
+                    cursor.SetActive(true);
+                    cursor2.SetActive(true);
                     choice = true;
                     ChoiceManager.SetActive();
                     return;
                 }
 
+                //選択時の分岐後共通のシナリオに飛ぶ
                 if (Talktext == 30 || Talktext == 39 || Talktext == 43)
                 {
                     Talktext = 43;
@@ -136,13 +146,14 @@ public class TalkManager : MonoBehaviour
 
                 Text Nametext = NameTextmanager.GetComponent<Text>();
                 Text Commenttext = CommentTextmanager.GetComponent<Text>();
-                name = 1;
+                name = 1;  //名前は[][0]と[][1]を交互にして名前を進める
                 Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
-                Nametext.text = ReplaceTag(Text[Talktext][name]);
-                name = 0;
-                Commenttext.text = ReplaceTag(Text[Talktext][name]);
+                Nametext.text = ReplaceTag(Text[Talktext][name]);  //ReplaceTagでプレイヤーの名前を選択(非選択)プレイヤー名にそれぞれ置き換えてる
+                name = 0; 
+                Commenttext.text = ReplaceTag(Text[Talktext][name]);  //テキスト上の選択(非選択)からそれぞれのプレイヤー名を置き換えてる
                 Debug.Log("Talk[" + Talktext + "][" + name + "]=" + Text[Talktext][name]);
 
+                //次に進める用の点滅開始
                 sakuraStart();
                 Talktext++;
             }
@@ -165,6 +176,7 @@ public class TalkManager : MonoBehaviour
     }
 
     //桜の点滅
+    #region
     private void sakuraStart()
     {
         //テキストが出終わったら点滅開始
@@ -204,7 +216,10 @@ public class TalkManager : MonoBehaviour
             }
         }
     }
+    #endregion
 
+    //選択したプレイヤー、非選択のプレイヤーをtrueとfalseで管理
+    #region
     private string JudgeChoice(string Player1, string Player2)
     {
         Debug.Log(ChoiceManager.firstsPlayer);
@@ -240,7 +255,10 @@ public class TalkManager : MonoBehaviour
         }
         else return "通ってない２";
     }
+    #endregion
 
+    //名前の置き換え関数
+    #region
     string ReplaceTag(string _text)
     {
         string tmp = _text;
@@ -261,7 +279,9 @@ public class TalkManager : MonoBehaviour
         }
         return tmp;
     }
+    #endregion
 
+    //ゲーム1のシーン読み込み
     public void LordMinigame()
     {
         if (Talktext == 45)
