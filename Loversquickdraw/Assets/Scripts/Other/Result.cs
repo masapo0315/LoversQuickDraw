@@ -12,8 +12,8 @@ public class Result : MonoBehaviour {
     public Image[] images;
 
     bool gameSet = false;
-    /*public static bool Player1Win;
-    public static bool Player2Win;*/
+    public static bool Player1Win;
+    public static bool Player2Win;
 
 
     int player1LoveMetar;
@@ -69,8 +69,8 @@ public class Result : MonoBehaviour {
             player1LoveMetar += 10;
             Time.timeScale = 0f;
 
-            //Debug.Log("1Pの勝利");
-            //Player1Win = true;
+            Debug.Log("1Pの勝利");
+            Player1Win = true;
 
             Singlton.Instance.WinFlag[0] = 1;
             gameSet = true;
@@ -85,8 +85,8 @@ public class Result : MonoBehaviour {
             player2LoveMetar += 10;
             Time.timeScale = 0f;
 
-            //Debug.Log("2Pの勝利");
-            //Player2Win = true;
+            Debug.Log("2Pの勝利");
+            Player2Win = true;
 
             Singlton.Instance.WinFlag[0] = 2;
             gameSet = true;
