@@ -4,127 +4,116 @@ using UnityEngine;
 
 public class ChoiceCursor : MonoBehaviour
 {
+    //ChoiceManagerから参照してきてもOK
+    [SerializeField] private GameObject ChoiceAorX;
+    [SerializeField] private GameObject ChoiceBorY;
+    [SerializeField] private GameObject ChoiceTrigger;
 
     [HideInInspector] public int RightMenu = 0;
-    [HideInInspector] public int LeftMenu = 2;
+    [HideInInspector] public int LeftMenu = 1;
 
     [SerializeField] private GameObject Cursor;
     [SerializeField] private GameObject Cursor2;
 
-    //カーソルの位置を決めるオブジェクト
-    [SerializeField] private GameObject[] menuNum = new GameObject[2];
-
-    private Vector3[] tmp = new Vector3[2];
-    //1Pと2Pのポジション
-    private Vector3 Rtmp, Ltmp;
+    //選択肢のポジション
+    private Vector3 Rtmp, Ltmp, Dtmp;
+ //   private Vector3[] tmp = new Vector3[2];
 
     // Use this for initialization
     void Start()
     {
-        for (int i = 0; i < tmp.Length; i++)
-        {
-            tmp[i] = menuNum[i].transform.position;
-        }
+        //それぞれに選択肢のポジションを入れる
+        Rtmp = ChoiceAorX.transform.position;
+        Ltmp = ChoiceBorY.transform.position;
+        Dtmp = ChoiceTrigger.transform.position;
+
+        Debug.Log(Rtmp);
+        Debug.Log(Ltmp);
+        Debug.Log(Dtmp);
+        //for (int i = 0; i < tmp.Length; i++)
+        //{
+        //    tmp[i] = menuNum[i].transform.position;
+        //}
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        CursorNumber();
+        Select();
     }
+
+
+    private void CursorNumber()
+    {
+        //←を押すと1Pを左の選択肢に
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            RightMenu = 0;
+        }
+        //→を押すと1Pを右の選択肢に
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            RightMenu = 1;
+        }
+        //↓を押すと1Pを下の選択肢に
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            RightMenu = 2;
+        }
+
+        //Aを押すと2Pを左の選択肢に
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            LeftMenu = 0;
+        }
+        //Dを押すと2Pを右の選択肢に
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            LeftMenu = 1;
+        }
+        //Sを押すと2Pを下の選択肢に
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            LeftMenu = 2;
+        }
+    }
+
+
+    /// <summary>
+    /// 上の関数で変わった番号に対応した場所にカーソルを変える
+    /// </summary>
     //プレイヤーの操作
     private void Select()
     {
         //1Pの選択
-        //右を押すと右に移動
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            RightMenu++;
-            RightMenu %= 5;
-            Debug.Log("右は" + RightMenu);
-        }
-
-        //左を押すと左に移動
-        //4の次は0に移動
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            if (RightMenu == 0)
-            {
-                RightMenu = 4;
-                Debug.Log("右は" + RightMenu);
-            }
-            else
-            {
-                RightMenu--;
-                RightMenu %= 5;
-                Debug.Log("右は" + RightMenu);
-            }
-        }
-
         switch (RightMenu)
         {
             case 0:
-                Rtmp = tmp[0];
-                PositionChange();
+                Cursor.transform.position = Rtmp;
                 break;
 
             case 1:
-                Rtmp = tmp[1];
-                PositionChange();
+                Cursor.transform.position = Ltmp;
                 break;
 
             case 2:
-                Rtmp = tmp[2];
-                PositionChange();
+                Cursor.transform.position = Dtmp;
                 break;
         }
 
         //2Pの選択
-        //Dを押すと右に移動
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            LeftMenu++;
-            LeftMenu %= 5;
-            Debug.Log("左は" + LeftMenu);
-        }
-
-        //Aを押すと左に移動
-        //4の次は0に移動
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            if (LeftMenu == 0)
-            {
-                LeftMenu = 4;
-                Debug.Log("左は" + LeftMenu);
-            }
-            else
-            {
-                LeftMenu--;
-                LeftMenu %= 5;
-                Debug.Log("左は" + LeftMenu);
-            }
-        }
-
         switch (LeftMenu)
         {
             case 0:
-                Ltmp = tmp[0];
-                PositionChange();
+                Cursor2.transform.position = Rtmp;
                 break;
             case 1:
-                Ltmp = tmp[1];
-                PositionChange();
+                Cursor2.transform.position = Ltmp;
                 break;
             case 2:
-                Ltmp = tmp[2];
-                PositionChange();
+                Cursor2.transform.position = Dtmp;
                 break;
         }
-    }
-
-    private void PositionChange()
-    {
-        Cursor.transform.position = Rtmp;
-        Cursor2.transform.position = Ltmp;
     }
 }
