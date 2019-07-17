@@ -13,7 +13,6 @@ public class TalkManager2 : MonoBehaviour
     private bool choice = false;
     string[] TEXTTAG_LIST = { "勝利者", "［敗北者］", "択プレイヤー" };
 
-    #region
 
     [SerializeField] private float fade;
     [SerializeField] private GameObject TextFrame;
@@ -29,8 +28,15 @@ public class TalkManager2 : MonoBehaviour
         //string x = "プレイヤー１";
         //x = x.Replace("プレイヤー１", "name1");
         fadeInOut = Sakura.GetComponent<Image>().color.a;
+        Text Nametext = NameTextmanager.GetComponent<Text>();
+        Text Commenttext = CommentTextmanager.GetComponent<Text>();
+        Nametext.text = ReplaceTag(Text[0][1]);
+        Commenttext.text = ReplaceTag(Text[0][0]);
+        sakuraStart();
+        Talktext++;
     }
 
+    #region
     //コメントと話すキャラの名前の配列(会話文は25個)
     string[][] Text = new string[][]
     {
@@ -143,7 +149,7 @@ public class TalkManager2 : MonoBehaviour
         //debug();
         Inputkey();
     }
-    //キー入寮kｂ
+    //キー入力
     void Inputkey()
     {
 
