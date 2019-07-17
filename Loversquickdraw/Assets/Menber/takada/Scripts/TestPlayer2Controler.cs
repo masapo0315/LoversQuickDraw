@@ -18,7 +18,7 @@ public class TestPlayer2Controler : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        StartCoroutine("StartDelay");
+        StartCoroutine("Delay");
         rb = GetComponent<Rigidbody>();
     }
 
@@ -58,17 +58,23 @@ public class TestPlayer2Controler : MonoBehaviour {
             _animator.SetBool("Jump", false);
             jump = false;
         }
+
+        if (col.gameObject.tag == "Obstacles" )
+        {
+            Destroy(col.gameObject);
+            StartCoroutine("Delay");
+        }
     }
 
 
     //遅延処理
-    private IEnumerator StartDelay()
+    private IEnumerator Delay()
     {
         moveSpeed = 0f;
 
         yield return new WaitForSeconds(2.0f);
 
-        moveSpeed = 20.0f;
+        moveSpeed = 15.0f;
 
         yield break;
     }

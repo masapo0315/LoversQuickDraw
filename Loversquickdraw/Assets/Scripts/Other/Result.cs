@@ -12,8 +12,8 @@ public class Result : MonoBehaviour {
     public Image[] images;
 
     bool gameSet = false;
-    /*public static bool Player1Win;
-    public static bool Player2Win;*/
+    public static bool Player1Win;
+    public static bool Player2Win;
 
 
     int player1LoveMetar;
@@ -49,7 +49,7 @@ public class Result : MonoBehaviour {
 
     void GameSet()
     {
-        if(OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) || OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger) && gameSet == true)
+        if((OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) || OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger)) && gameSet == true)
         {
             SceneManager.LoadScene("Scenario2");
         }
@@ -70,9 +70,9 @@ public class Result : MonoBehaviour {
             Time.timeScale = 0f;
 
             //Debug.Log("1Pの勝利");
-            //Player1Win = true;
+            Player1Win = true;
 
-            Singlton.Instance.WinFlag[0] = 1;
+            //Singlton.Instance.WinFlag[0] = 1;
             gameSet = true;
         }
         else if (col.gameObject.tag == "Player2")
@@ -86,9 +86,9 @@ public class Result : MonoBehaviour {
             Time.timeScale = 0f;
 
             //Debug.Log("2Pの勝利");
-            //Player2Win = true;
+            Player2Win = true;
 
-            Singlton.Instance.WinFlag[0] = 2;
+            //Singlton.Instance.WinFlag[0] = 2;
             gameSet = true;
         }
 

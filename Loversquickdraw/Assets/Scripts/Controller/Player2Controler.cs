@@ -31,7 +31,7 @@ public class Player2Controler : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        StartCoroutine("StartDelay");
+        StartCoroutine("Delay");
     }
 
     // Update is called once per frame
@@ -70,7 +70,7 @@ public class Player2Controler : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) && jump == false)
         {
             _animator.SetBool("Jump", true);
-            rb.velocity = new Vector3(0, jumpPower, 0);
+            rb.velocity = new Vector3(3, jumpPower, 0);
             jump = true;
         }
 
@@ -83,17 +83,21 @@ public class Player2Controler : MonoBehaviour
             _animator.SetBool("Jump", false);
             jump = false;
         }
-
+        if (col.gameObject.tag == "Obstacles")
+        {
+            Destroy(col.gameObject);
+            StartCoroutine("Delay");
+        }
     }
 
     //遅延処理
-    private IEnumerator StartDelay()
+    private IEnumerator Delay()
     {
         moveSpeed = 0f;
 
         yield return new WaitForSeconds(2.0f);
 
-        moveSpeed = 20.0f;
+        moveSpeed = 8.0f;
 
         yield break;
     }
