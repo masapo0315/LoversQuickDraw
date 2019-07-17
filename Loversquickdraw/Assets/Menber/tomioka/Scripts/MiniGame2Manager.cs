@@ -15,8 +15,11 @@ public class MiniGame2Manager : MonoBehaviour
     [SerializeField] private Text Karen_Hint;
     //
     [SerializeField] private GameObject HintFrame;
+    [SerializeField] private GameObject RuluImage;
 
+    [HideInInspector] public bool Win1P = true;
 
+    private bool RuleCheck1, RuleCheck2 = false;
 
     private string Hint = "この教室に来る前は\n本が沢山あるところにいて...";
     private string Karen;
@@ -82,7 +85,7 @@ public class MiniGame2Manager : MonoBehaviour
                 break;
             case 2:
                 Place2.text = Karen;
-                if(playerCursorController.GetColor == true)
+                if (playerCursorController.GetColor == true)
                 {
                     Place2.color = new Color(255f / 255f, 0f / 255f, 0f / 255f);
                 }
@@ -93,7 +96,7 @@ public class MiniGame2Manager : MonoBehaviour
                 break;
             case 3:
                 Place3.text = Karen;
-                if(playerCursorController.GetColor == true)
+                if (playerCursorController.GetColor == true)
                 {
                     Place3.color = new Color(255f / 255f, 0f / 255f, 0f / 255f);
                 }
@@ -800,7 +803,7 @@ public class MiniGame2Manager : MonoBehaviour
     //
     public void ClickTrue()
     {
-        Debug.Log("押すまで来た");
+        //Debug.Log("押すまで来た");
         switch (Dankai)
         {
             case 1:
@@ -888,10 +891,11 @@ public class MiniGame2Manager : MonoBehaviour
                 Karen = "つ";
                 Destroy(buttonMenuList[14]);
                 Destroy(PlaceList[2]);
+                VictoryPlayer();
                 //BackGround.sprite = PlaceList[2];
                 DestroyPlace();
                 Destroy(HintFrame);
-                Invoke("Scene", 2);
+                //Invoke("Scene", 2);
                 break;
         }
         ChangeText();
@@ -902,7 +906,7 @@ public class MiniGame2Manager : MonoBehaviour
     {
         //音鳴らす予定
     }
-    //
+
     private void ResetText()
     {
         Debug.Log("リセット");
@@ -910,6 +914,7 @@ public class MiniGame2Manager : MonoBehaviour
         Debug.Log(Karen);
         ChangeText();
     }
+
     //仮
     private void Scene()
     {
@@ -924,4 +929,47 @@ public class MiniGame2Manager : MonoBehaviour
         Destroy(Place4);
         Destroy(Place0);
     }
+
+    private void VictoryPlayer()
+    {
+        Debug.Log(Select1P);
+        Debug.Log(Select2P);
+
+        if (Select1P > Select2P)
+        {
+            Win1P = true;
+            Debug.Log("1Pの勝ち");
+        }
+        else
+        {
+            Win1P = false;
+            Debug.Log("2Pの勝ち");
+        }
+    }
+
+    private void Rule()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            RuleCheck1 = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            RuleCheck2 = true;
+        }
+
+        if (RuleCheck1 == true && RuleCheck2 == true)
+        {
+            RuluImage.SetActive(false);
+            //ReadyGO();
+        }
+    }
+
+    /*
+    private void ReadyGO()
+    {
+
+    }
+    */
 }
