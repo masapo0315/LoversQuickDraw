@@ -18,6 +18,7 @@ public class MenuController : MonoBehaviour
     private int MenuNumber = 0;
     private bool MenuOn = false;
 
+    //ボタン長おしの時間
     private float GetDown = 3;
     //private float GetNow;
 
