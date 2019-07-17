@@ -4876,7 +4876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Talktext: 0
   choiceAfterText: 1
-  fade: 0.035
+  fade: 0.02
   TextFrame: {fileID: 1965957114}
   ChoiceManager: {fileID: 840345693}
   NameTextmanager: {fileID: 469389191}
