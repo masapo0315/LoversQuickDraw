@@ -327,12 +327,12 @@ public class TalkManager2 : MonoBehaviour
 
     private string Winner(string Player1, string Player2)
     {
-        if (Singlton.Instance.WinFlag[0] == 1)
+        if (Result.Player1Win ==  true && Result.Player2Win == false)
         {
             //1P勝利
             return Player1;
         }
-        else if (Singlton.Instance.WinFlag[0] == 2)
+        else if (Result.Player1Win == false && Result.Player2Win == true)
         {
             //2P勝利
             return Player2;
@@ -342,12 +342,12 @@ public class TalkManager2 : MonoBehaviour
 
     private string Loser(string Player1, string Player2)
     {
-        if (Singlton.Instance.WinFlag[0] == 1)
+        if (Result.Player1Win == true && Result.Player2Win == false)
         {
             //2p敗者
             return Player2;
         }
-        else if (Singlton.Instance.WinFlag[0] == 2)
+        else if (Result.Player1Win == false && Result.Player2Win == true)
         {
             //1P敗者
             return Player1;
