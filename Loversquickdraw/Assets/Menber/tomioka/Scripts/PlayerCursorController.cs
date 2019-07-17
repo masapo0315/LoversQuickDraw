@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlayerCursorController : MonoBehaviour
 {
-    [HideInInspector]public int RightMenu = 0;
-    [HideInInspector]public int LeftMenu = 4;
+    [HideInInspector] public int RightMenu = 0;
+    [HideInInspector] public int LeftMenu = 4;
 
     //色を変えるための変数
     [HideInInspector] public bool GetColor;
 
-    [SerializeField]private GameObject Cursor;
-    [SerializeField]private GameObject Cursor2;
+    [SerializeField] public GameObject Cursor1;
+    [SerializeField] public GameObject Cursor2;
 
     //カーソルの位置を決めるオブジェクト
     [SerializeField] private GameObject[] menuNum = new GameObject[5];
@@ -20,22 +20,13 @@ public class PlayerCursorController : MonoBehaviour
     private Vector3[] tmp = new Vector3[5];
     //1Pと2Pのポジション
     private Vector3 Rtmp, Ltmp;
-    
+
     void Start()
     {
-        for(int i = 0; i < tmp.Length; i++)
+        for (int i = 0; i < tmp.Length; i++)
         {
             tmp[i] = menuNum[i].transform.position;
         }
-        //Rtmp;
-        //Ltmp;
-        /*
-        Debug.Log(tmp0);
-        Debug.Log(tmp1);
-        Debug.Log(tmp2);
-        Debug.Log(tmp3);
-        Debug.Log(tmp4);
-        */
     }
 
     // Update is called once per frame
@@ -44,7 +35,7 @@ public class PlayerCursorController : MonoBehaviour
         Select();
 
         //1Pの決定
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (miniGame2Manager.Ready1 == true && Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("エンター");
             GetColor = true;
@@ -52,7 +43,7 @@ public class PlayerCursorController : MonoBehaviour
         }
 
         //2Pの決定
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (miniGame2Manager.Ready2 == true && Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("スペースキー");
             GetColor = false;
@@ -65,7 +56,7 @@ public class PlayerCursorController : MonoBehaviour
     {
         //1Pの選択
         //右を押すと右に移動
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (miniGame2Manager.Ready1 == true && Input.GetKeyDown(KeyCode.RightArrow))
         {
             RightMenu++;
             RightMenu %= 5;
@@ -74,7 +65,7 @@ public class PlayerCursorController : MonoBehaviour
 
         //左を押すと左に移動
         //4の次は0に移動
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (miniGame2Manager.Ready1 == true && Input.GetKeyDown(KeyCode.LeftArrow))
         {
             if (RightMenu == 0)
             {
@@ -119,7 +110,7 @@ public class PlayerCursorController : MonoBehaviour
 
         //2Pの選択
         //Dを押すと右に移動
-        if (Input.GetKeyDown(KeyCode.D))
+        if (miniGame2Manager.Ready2 == true && Input.GetKeyDown(KeyCode.D))
         {
             LeftMenu++;
             LeftMenu %= 5;
@@ -128,7 +119,7 @@ public class PlayerCursorController : MonoBehaviour
 
         //Aを押すと左に移動
         //4の次は0に移動
-        if (Input.GetKeyDown(KeyCode.A))
+        if (miniGame2Manager.Ready2 == true && Input.GetKeyDown(KeyCode.A))
         {
             if (LeftMenu == 0)
             {
@@ -170,7 +161,7 @@ public class PlayerCursorController : MonoBehaviour
 
     private void PositionChange()
     {
-        Cursor.transform.position = Rtmp;
+        Cursor1.transform.position = Rtmp;
         Cursor2.transform.position = Ltmp;
     }
 }
