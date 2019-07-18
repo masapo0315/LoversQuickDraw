@@ -18,8 +18,7 @@ public class ChoiceCursor : MonoBehaviour
     //選択肢のポジション
     private Vector3 Rtmp, Ltmp, Dtmp;
  //   private Vector3[] tmp = new Vector3[2];
-
-    // Use this for initialization
+ 
     void Start()
     {
         //それぞれに選択肢のポジションを入れる
@@ -35,8 +34,7 @@ public class ChoiceCursor : MonoBehaviour
         //    tmp[i] = menuNum[i].transform.position;
         //}
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         CursorNumber();
@@ -112,8 +110,6 @@ public class ChoiceCursor : MonoBehaviour
             LeftMenu = 2;
         }
     }
-
-
     /// <summary>
     /// 上の関数で変わった番号に対応した場所にカーソルを変える
     /// </summary>

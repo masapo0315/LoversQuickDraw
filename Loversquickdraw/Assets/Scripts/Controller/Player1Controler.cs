@@ -17,7 +17,6 @@ public class Player1Controler : MonoBehaviour
 
     private int L_posGetCount = 0;
      
-
     [SerializeField] private Rigidbody rb;
     private float moveSpeed; //速度
 
@@ -26,23 +25,19 @@ public class Player1Controler : MonoBehaviour
     float jumpPower = 10f; //ジャンプ力
     bool jump = false;     //設置判定
 
-    [SerializeField]
-    Animator _animator;
-
-    // Use this for initialization
+    [SerializeField]private Animator _animator;
+    //
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
         StartCoroutine("Delay");
 	}
-	
-	// Update is called once per frame
+	//
 	void Update ()
     {
         _camera.transform.localRotation = Quaternion.identity;
         SpeedUp();
 	}
-
     // 加速処理
     void SpeedUp()
     {
@@ -64,7 +59,6 @@ public class Player1Controler : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
     }
-
     //ジャンプの処理
     void Jump()
     {
@@ -76,7 +70,7 @@ public class Player1Controler : MonoBehaviour
         }
 
     }
-
+    //
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "ground")
@@ -90,7 +84,6 @@ public class Player1Controler : MonoBehaviour
             StartCoroutine("Delay");
         }
     }
-
     //遅延処理
     private IEnumerator Delay()
     {

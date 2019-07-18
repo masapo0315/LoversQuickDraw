@@ -18,7 +18,7 @@ public class Result : MonoBehaviour
     private int player2LoveMetar;
 
     [SerializeField]private Animator _animator;
-    
+    //
     void Start ()
     {
         Time.timeScale = 1.0f;
@@ -32,12 +32,12 @@ public class Result : MonoBehaviour
         }
         _animator.updateMode = AnimatorUpdateMode.UnscaledTime;    
     }
-	
+	//
 	void Update ()
     {
         GameSet();
     }
-
+    //
     void GameSet()
     {
         if(gameSet == true)
@@ -48,7 +48,7 @@ public class Result : MonoBehaviour
             }
         }   
     }
-
+    //
     private void OnTriggerEnter(Collider col)
     {
         Debug.Log("オブジェクトが触れました");

@@ -21,25 +21,22 @@ public class Player2Controler : MonoBehaviour
 
     private Vector3 force;
 
-    float jumpPower = 20; //ジャンプ力
-    bool jump = false;     //設置判定
+    private float jumpPower = 20; //ジャンプ力
+    private bool jump = false;     //設置判定
 
-    [SerializeField]
-    Animator _animator;
+    [SerializeField]private Animator _animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         StartCoroutine("Delay");
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         _camera.transform.localRotation = Quaternion.identity;
         SpeedUp();
     }
-
     //加速処理
     private void SpeedUp()
     {
@@ -61,7 +58,6 @@ public class Player2Controler : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
     }
-
     //ジャンプの処理
     void Jump()
     {
@@ -73,7 +69,7 @@ public class Player2Controler : MonoBehaviour
         }
 
     }
-
+    //
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "ground")
@@ -87,7 +83,6 @@ public class Player2Controler : MonoBehaviour
             StartCoroutine("Delay");
         }
     }
-
     //遅延処理
     private IEnumerator Delay()
     {
