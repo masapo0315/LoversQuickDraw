@@ -5,27 +5,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Result : MonoBehaviour {
-
+public class Result : MonoBehaviour
+{
     //ゴールした時のリザルトを表示する
-
     public Image[] images;
 
     bool gameSet = false;
     /*public static bool Player1Win;
     public static bool Player2Win;*/
+    
+    private int player1LoveMetar;
+    private int player2LoveMetar;
 
-
-    int player1LoveMetar;
-    int player2LoveMetar;
-
-    [SerializeField]
-    Animator _animator;
-
-
-    // Use this for initialization
-    void Start () {
-
+    [SerializeField]private Animator _animator;
+    
+    void Start ()
+    {
         Time.timeScale = 1.0f;
 
         player1LoveMetar = LoveMetar.getPlayer1LoveMetar();
@@ -35,16 +30,12 @@ public class Result : MonoBehaviour {
         {
             images[i].enabled = false;
         }
-
-        _animator.updateMode = AnimatorUpdateMode.UnscaledTime;
-        
+        _animator.updateMode = AnimatorUpdateMode.UnscaledTime;    
     }
 	
-	// Update is called once per frame
-	void Update () {
-
+	void Update ()
+    {
         GameSet();
-
     }
 
     void GameSet()
@@ -94,6 +85,5 @@ public class Result : MonoBehaviour {
             Singlton.Instance.WinFlag[0] = 2;
             gameSet = true;
         }
-
     }
 }

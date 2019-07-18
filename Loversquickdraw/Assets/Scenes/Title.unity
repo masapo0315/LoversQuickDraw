@@ -432,7 +432,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Revision 06
+  m_Text: "\u03B2\u7248"
 --- !u!222 &595854006
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -520,7 +520,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd9bc2aba5e81b408647133207a969c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: 2
 --- !u!1 &1208797817
 GameObject:
   m_ObjectHideFlags: 0
