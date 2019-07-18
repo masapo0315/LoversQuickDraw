@@ -18,12 +18,14 @@ public class Player2Controler : MonoBehaviour
     private int R_posGetCount = 0;
 
     [SerializeField] private Rigidbody rb;
-    private float moveSpeed; //速度
+    [SerializeField] private float moveSpeed; //速度
 
     private Vector3 force;
 
-    float jumpPower = 20; //ジャンプ力
+    [SerializeField] private float jumpPower; //ジャンプ力
     bool jump = false;     //設置判定
+
+    bool stop;
 
     [SerializeField]
     Animator _animator;
@@ -39,7 +41,13 @@ public class Player2Controler : MonoBehaviour
     {
         _mainCamera.transform.localRotation = Quaternion.identity;
         _camera.transform.localRotation = Quaternion.identity;
-        SpeedUp();
+
+        if (stop == false)
+        {
+            SpeedUp();
+            Jump();
+        }
+
     }
 
     //加速処理
@@ -70,7 +78,7 @@ public class Player2Controler : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) && jump == false)
         {
             _animator.SetBool("Jump", true);
-            rb.velocity = new Vector3(3, jumpPower, 0);
+            rb.velocity = new Vector3(5, jumpPower, 0);
             jump = true;
         }
 
@@ -93,11 +101,11 @@ public class Player2Controler : MonoBehaviour
     //遅延処理
     private IEnumerator Delay()
     {
-        moveSpeed = 0f;
+        stop = true;
 
         yield return new WaitForSeconds(2.0f);
 
-        moveSpeed = 8.0f;
+        stop = false;
 
         yield break;
     }
