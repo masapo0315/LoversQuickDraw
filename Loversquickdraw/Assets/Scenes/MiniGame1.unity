@@ -136,8 +136,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 24609599}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 67.75, y: 0, z: 1}
-  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
+  m_LocalPosition: {x: 67.75, y: 3.8, z: 1}
+  m_LocalScale: {x: 1.7, y: 2.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1149164621}
   m_RootOrder: 1
@@ -405,8 +405,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 237744829}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 67.75, y: 0, z: 1}
-  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
+  m_LocalPosition: {x: 67.75, y: 2.1, z: 1}
+  m_LocalScale: {x: 1.7, y: 2.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1108578651}
   m_RootOrder: 1
@@ -510,8 +510,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 270322923}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 135, y: 0, z: 1}
-  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
+  m_LocalPosition: {x: 135, y: 2.1, z: 1}
+  m_LocalScale: {x: 1.7, y: 2.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1108578651}
   m_RootOrder: 2
@@ -583,8 +583,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 276644766}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
+  m_LocalPosition: {x: 0, y: 2.1, z: 1}
+  m_LocalScale: {x: 1.7, y: 2.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1108578651}
   m_RootOrder: 0
@@ -843,6 +843,8 @@ MonoBehaviour:
   Lcube: {fileID: 1934509149}
   L_shake: 0
   rb: {fileID: 404583207}
+  moveSpeed: 0
+  jumpPower: 0
   _animator: {fileID: 404583205}
 --- !u!95 &404583205
 Animator:
@@ -1017,6 +1019,8 @@ MonoBehaviour:
   Rcube: {fileID: 1096842369}
   R_shake: 0
   rb: {fileID: 483472371}
+  moveSpeed: 0
+  jumpPower: 0
   _animator: {fileID: 483472369}
 --- !u!95 &483472369
 Animator:
@@ -1229,11 +1233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36101dbd678c9214c8eda672f569815f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle:
-  - {fileID: 1386902727257114, guid: 1bb703c285100e046a50a0bb6d73b94f, type: 2}
-  - {fileID: 1072701746712164, guid: 9791d7a450b90cc4dbf38fa2c85075eb, type: 2}
-  - {fileID: 1779567281303820, guid: be892dabfe355ba41ba416c15b2ccccb, type: 2}
-  spawnPoint: {fileID: 521625484}
 --- !u!1 &537677402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,8 +1340,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 631803065}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 202.75, y: 0, z: 0.99999976}
-  m_LocalScale: {x: 1.6999999, y: 1.6999999, z: 1}
+  m_LocalPosition: {x: 202.75, y: 3.7999992, z: 0.99999976}
+  m_LocalScale: {x: 1.6999999, y: 2.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1149164621}
   m_RootOrder: 3
@@ -1414,8 +1413,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 634540299}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
+  m_LocalPosition: {x: 0, y: 3.7999992, z: 1}
+  m_LocalScale: {x: 1.7, y: 2.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1149164621}
   m_RootOrder: 0
@@ -1504,11 +1503,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36101dbd678c9214c8eda672f569815f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle:
-  - {fileID: 1386902727257114, guid: 1bb703c285100e046a50a0bb6d73b94f, type: 2}
-  - {fileID: 1072701746712164, guid: 9791d7a450b90cc4dbf38fa2c85075eb, type: 2}
-  - {fileID: 1779567281303820, guid: be892dabfe355ba41ba416c15b2ccccb, type: 2}
-  spawnPoint: {fileID: 645852571}
 --- !u!1 &769219083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,11 +1611,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36101dbd678c9214c8eda672f569815f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle:
-  - {fileID: 1386902727257114, guid: 1bb703c285100e046a50a0bb6d73b94f, type: 2}
-  - {fileID: 1072701746712164, guid: 9791d7a450b90cc4dbf38fa2c85075eb, type: 2}
-  - {fileID: 1779567281303820, guid: be892dabfe355ba41ba416c15b2ccccb, type: 2}
-  spawnPoint: {fileID: 804797879}
 --- !u!1 &808252158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,11 +1651,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36101dbd678c9214c8eda672f569815f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle:
-  - {fileID: 1386902727257114, guid: 1bb703c285100e046a50a0bb6d73b94f, type: 2}
-  - {fileID: 1072701746712164, guid: 9791d7a450b90cc4dbf38fa2c85075eb, type: 2}
-  - {fileID: 1779567281303820, guid: be892dabfe355ba41ba416c15b2ccccb, type: 2}
-  spawnPoint: {fileID: 808252158}
 --- !u!1001 &810499071
 Prefab:
   m_ObjectHideFlags: 0
@@ -1877,8 +1861,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1016976423}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 202.75, y: 0, z: 0.99999976}
-  m_LocalScale: {x: 1.6999999, y: 1.6999999, z: 1}
+  m_LocalPosition: {x: 202.75, y: 2.1, z: 0.99999976}
+  m_LocalScale: {x: 1.6999999, y: 2.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1108578651}
   m_RootOrder: 3
@@ -2251,11 +2235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36101dbd678c9214c8eda672f569815f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle:
-  - {fileID: 1386902727257114, guid: 1bb703c285100e046a50a0bb6d73b94f, type: 2}
-  - {fileID: 1072701746712164, guid: 9791d7a450b90cc4dbf38fa2c85075eb, type: 2}
-  - {fileID: 1779567281303820, guid: be892dabfe355ba41ba416c15b2ccccb, type: 2}
-  spawnPoint: {fileID: 1154646586}
 --- !u!1 &1189822376
 GameObject:
   m_ObjectHideFlags: 0
@@ -2539,11 +2518,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36101dbd678c9214c8eda672f569815f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle:
-  - {fileID: 1386902727257114, guid: 1bb703c285100e046a50a0bb6d73b94f, type: 2}
-  - {fileID: 1072701746712164, guid: 9791d7a450b90cc4dbf38fa2c85075eb, type: 2}
-  - {fileID: 1779567281303820, guid: be892dabfe355ba41ba416c15b2ccccb, type: 2}
-  spawnPoint: {fileID: 1259797682}
 --- !u!1 &1272855917
 GameObject:
   m_ObjectHideFlags: 0
@@ -2648,8 +2622,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1335363304}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 135, y: 0, z: 1}
-  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
+  m_LocalPosition: {x: 135, y: 3.7999992, z: 1}
+  m_LocalScale: {x: 1.7, y: 2.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1149164621}
   m_RootOrder: 2
@@ -2973,8 +2947,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1549732825}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 270.5, y: 0, z: 0.99999976}
-  m_LocalScale: {x: 1.6999999, y: 1.6999999, z: 1}
+  m_LocalPosition: {x: 270.5, y: 3.7999992, z: 0.99999976}
+  m_LocalScale: {x: 1.6999999, y: 2.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1149164621}
   m_RootOrder: 4
@@ -3431,11 +3405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36101dbd678c9214c8eda672f569815f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle:
-  - {fileID: 1386902727257114, guid: 1bb703c285100e046a50a0bb6d73b94f, type: 2}
-  - {fileID: 1072701746712164, guid: 9791d7a450b90cc4dbf38fa2c85075eb, type: 2}
-  - {fileID: 1779567281303820, guid: be892dabfe355ba41ba416c15b2ccccb, type: 2}
-  spawnPoint: {fileID: 1682053520}
 --- !u!1 &1686115751
 GameObject:
   m_ObjectHideFlags: 0
@@ -3595,8 +3564,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1812879566}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 270.5, y: 0, z: 0.99999976}
-  m_LocalScale: {x: 1.6999999, y: 1.6999999, z: 1}
+  m_LocalPosition: {x: 270.5, y: 2.1, z: 0.99999976}
+  m_LocalScale: {x: 1.6999999, y: 2.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1108578651}
   m_RootOrder: 4
@@ -4006,11 +3975,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36101dbd678c9214c8eda672f569815f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle:
-  - {fileID: 1386902727257114, guid: 1bb703c285100e046a50a0bb6d73b94f, type: 2}
-  - {fileID: 1072701746712164, guid: 9791d7a450b90cc4dbf38fa2c85075eb, type: 2}
-  - {fileID: 1779567281303820, guid: be892dabfe355ba41ba416c15b2ccccb, type: 2}
-  spawnPoint: {fileID: 2130332413}
 --- !u!1 &2137859373
 GameObject:
   m_ObjectHideFlags: 0
