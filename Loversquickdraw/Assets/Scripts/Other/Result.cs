@@ -11,8 +11,8 @@ public class Result : MonoBehaviour
     public Image[] images;
 
     bool gameSet = false;
-    /*public static bool Player1Win;
-    public static bool Player2Win;*/
+    public static bool Player1Win;
+    public static bool Player2Win;
     
     private int player1LoveMetar;
     private int player2LoveMetar;

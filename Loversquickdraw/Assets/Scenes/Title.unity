@@ -506,9 +506,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1047141123}
   - component: {fileID: 1047141124}
-  - component: {fileID: 1047141125}
-  - component: {fileID: 1047141127}
-  - component: {fileID: 1047141126}
   m_Layer: 0
   m_Name: SceneDirector
   m_TagString: Untagged
@@ -540,45 +537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597e180e1d6e23943b51619b7d3bd4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1047141125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1047141122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfd9bc2aba5e81b408647133207a969c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1047141126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1047141122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7508ca087b596845ba34577091846a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: 2
-  highPos: 0
-  lowPos: 0
---- !u!114 &1047141127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1047141122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7508ca087b596845ba34577091846a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: 1
-  highPos: 0
-  lowPos: 0
 --- !u!1 &1208797817
 GameObject:
   m_ObjectHideFlags: 0
