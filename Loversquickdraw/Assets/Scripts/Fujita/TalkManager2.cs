@@ -13,7 +13,9 @@ public class TalkManager2 : MonoBehaviour
     private bool choice = false;
     string[] TEXTTAG_LIST = { "勝利者", "［敗北者］", "択プレイヤー" };
 
-
+    [SerializeField] private List<Sprite> FaceList = new List<Sprite>();
+    [SerializeField] private GameObject Karen1; //最初のSetActive用
+    [SerializeField] private Image Karen;
     [SerializeField] private float fade;
     [SerializeField] private GameObject TextFrame;
     [SerializeField] private ChoiceManager2 choiceManager2;
@@ -62,7 +64,7 @@ public class TalkManager2 : MonoBehaviour
         new string[]{ "危うく俺の方がオチるところだった。\n本当に俺なんかが華恋をオトせるのか？", "勝利者"},
         new string[]{ "何にしても、一歩リードなのは\n間違いない。", "勝利者"},
         new string[]{ "［敗北者］に逆転なんて許さないよう、\n気を引き締めなければ！", "勝利者"},
-        new string[]{ "放課後。俺は偶然を装い一緒に帰るため\n扉の陰から華恋を見守っていた。", "プレイヤー１"},
+        new string[]{ "放課後。俺は偶然を装い一緒に帰るため\n扉の陰から華恋を見守っていた。", "プレイヤー１"},//ここから髪飾り
 
         new string[]{ "あれ？ここにもない……\nん～、どこいっちゃったんだろ……", "華恋"},
         new string[]{ "しかし、華恋はなかなか教室を出ない。\n何かを探しているような様子だ。", "プレイヤー１"},
@@ -161,6 +163,7 @@ public class TalkManager2 : MonoBehaviour
                 sakuraOut();
                 LordMinigame();
                 TextFrame.SetActive(true);
+                ChangeFace();
 
                 //会話数42個まで回したら選択肢を出してテキストフレームを消す
                 if (Talktext == 42)
@@ -171,6 +174,16 @@ public class TalkManager2 : MonoBehaviour
                     choice = true;
                     choiceManager2.SetActive();
                     return;
+                }
+
+                if (Talktext == 3 ||Talktext == 20)
+                {
+                    Karen1.SetActive(true);
+                    Debug.Log("Karen1true");
+                }
+                if(Talktext == 19)
+                {
+                    Karen1.SetActive(false);
                 }
 
                 if (Talktext == 50 || Talktext == 57 || Talktext == 71)
@@ -410,6 +423,42 @@ public class TalkManager2 : MonoBehaviour
             case 3:
                 Talktext = 57;
                 road();
+                break;
+        }
+    }
+
+    //表情変更用
+    public void ChangeFace()
+    {
+        switch (Talktext)
+        {
+            case 5:
+            case 8:
+            case 20:
+            case 30:
+            case 50:
+            case 68:
+                Karen.sprite = FaceList[0];
+                break;
+            case 25:
+            case 33:
+            case 42:
+            case 44:
+            case 55:
+                Karen.sprite = FaceList[1];
+                break;
+            case 3:
+            case 57:
+                Karen.sprite = FaceList[2];
+                break;
+            case 13:
+            case 16:
+            case 28:
+            case 38:
+            case 43:
+            case 47:
+            case 51:
+                Karen.sprite = FaceList[3];
                 break;
         }
     }
