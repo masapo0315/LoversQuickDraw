@@ -1,25 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-//岩崎
 public class SceneController : MonoBehaviour
 {
-    void Update ()
+    private bool once;
+	void Update ()
     {
-        if(OVRInput.GetDown(OVRInput.Button.One))
+        if (once == false)
         {
-            SceneManager.LoadScene("Scenario");
-            Debug.Log("Aボタン");
+            if (OVRInput.GetDown(OVRInput.Button.One) || Input.GetKeyDown(KeyCode.Space))
+            {
+                once = true;
+                SceneLoadManager.LoadScene("Scenario");
+            }
         }
-       // DebugInput();
-    }
-    private void DebugInput()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            SceneManager.LoadScene("Scenario");
-        }
-    }
+	}
 }
