@@ -9614,7 +9614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 032a0ba81822ff54fba3443cd58c699c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fade: 0.035
+  fade: 0.02
   TextFrame: {fileID: 986062094}
   choiceManager2: {fileID: 1802529712}
   NameTextmanager: {fileID: 1199103774}

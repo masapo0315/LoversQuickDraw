@@ -15,8 +15,14 @@ public class MiniGame2Manager : MonoBehaviour
     [SerializeField] private Text Karen_Hint;
     //
     [SerializeField] private GameObject HintFrame;
+    [SerializeField] private GameObject RuluImage;
+    [SerializeField] private GameObject PlaceFrame;
+    [SerializeField] SoundManager sound;
+    [HideInInspector] public bool Win1P = true;
 
-
+    private bool RuleCheck1, RuleCheck2 = false;
+    //ReadyGoまで操作できないように
+    [HideInInspector] public bool Ready1, Ready2 = false;
 
     private string Hint = "この教室に来る前は\n本が沢山あるところにいて...";
     private string Karen;
@@ -45,7 +51,15 @@ public class MiniGame2Manager : MonoBehaviour
         Karen_Hint.text = Hint;
         //BackGround.GetComponent<Image>();
     }
-    //
+
+    void Update()
+    {
+        //最初のルール説明βはなし
+        //
+        //RuleCheck();
+    }
+
+
     private void ChangeText()
     {
         Place1.GetComponent<Text>();
@@ -82,7 +96,7 @@ public class MiniGame2Manager : MonoBehaviour
                 break;
             case 2:
                 Place2.text = Karen;
-                if(playerCursorController.GetColor == true)
+                if (playerCursorController.GetColor == true)
                 {
                     Place2.color = new Color(255f / 255f, 0f / 255f, 0f / 255f);
                 }
@@ -93,7 +107,7 @@ public class MiniGame2Manager : MonoBehaviour
                 break;
             case 3:
                 Place3.text = Karen;
-                if(playerCursorController.GetColor == true)
+                if (playerCursorController.GetColor == true)
                 {
                     Place3.color = new Color(255f / 255f, 0f / 255f, 0f / 255f);
                 }
@@ -119,7 +133,8 @@ public class MiniGame2Manager : MonoBehaviour
         Karen_Hint.GetComponent<Text>();
         Karen_Hint.text = Hint;
     }
-    //
+
+    //1Pが選択した
     public void OnSelect1P()
     {
         Debug.Log("OnSelect1Pを通った");
@@ -458,7 +473,8 @@ public class MiniGame2Manager : MonoBehaviour
                 break;
         }
     }
-    //
+
+    //2Pが選択した
     public void OnSelect2P()
     {
         Debug.Log("OnSelect2Pを通った");
@@ -800,7 +816,8 @@ public class MiniGame2Manager : MonoBehaviour
     //
     public void ClickTrue()
     {
-        Debug.Log("押すまで来た");
+        sound.SESounds(0, 0.5f);
+        //Debug.Log("押すまで来た");
         switch (Dankai)
         {
             case 1:
@@ -827,12 +844,12 @@ public class MiniGame2Manager : MonoBehaviour
                 Debug.Log("5回目");
                 Karen = "ん";
                 Destroy(buttonMenuList[4]);
+
                 //一度クリアにする関数
                 Destroy(PlaceList[0]);
                 Destroy(buttonMenuList[1]);
-                ResetText();
+                Invoke("ResetText", 1);
                 Hint = "そのあとは体調悪い時に\n行くところに行って...";
-                //BackGround.sprite = PlaceList[0];
                 break;
             case 6:
                 Debug.Log("6回目");
@@ -858,9 +875,10 @@ public class MiniGame2Manager : MonoBehaviour
                 Debug.Log("10回目");
                 Karen = "つ";
                 Destroy(buttonMenuList[9]);
+
                 //一度クリアにする関数
                 Destroy(PlaceList[1]);
-                ResetText();
+                Invoke("ResetText", 1);
                 Hint = "それで2人に会った\n場所に来たんだよね";
                 break;
             case 11:
@@ -888,28 +906,61 @@ public class MiniGame2Manager : MonoBehaviour
                 Karen = "つ";
                 Destroy(buttonMenuList[14]);
                 Destroy(PlaceList[2]);
-                //BackGround.sprite = PlaceList[2];
-                DestroyPlace();
+                VictoryPlayer();
+                Invoke("DestroyPlace", 1);
                 Destroy(HintFrame);
-                Invoke("Scene", 2);
+                //Invoke("Scene", 2);
                 break;
         }
+        Text();
+    }
+    //
+
+    private void Text()
+    {
         ChangeText();
         Dankai++;
     }
-    //
+
+    public void false1P()
+    {
+        Debug.Log("1P失敗");
+        sound.SESounds(1, 0.5f);
+    }
+
+    public void false2P()
+    {
+        Debug.Log("2P失敗");
+        sound.SESounds(1, 0.5f);
+    }
+
     public void Clickfalse()
     {
         //音鳴らす予定
+        if (playerCursorController.GetColor == true)
+        {
+            false1P();
+        }
+        else if (playerCursorController.GetColor == false)
+        {
+            false2P();
+        }
     }
-    //
+
     private void ResetText()
     {
         Debug.Log("リセット");
-        //Karen = "";
+
+        Place0.text = "";
+        Place1.text = "";
+        Place2.text = "";
+        Place3.text = "";
+        Place4.text = "";
+
         Debug.Log(Karen);
-        ChangeText();
+        //ChangeText();
     }
+
     //仮
     private void Scene()
     {
@@ -923,5 +974,55 @@ public class MiniGame2Manager : MonoBehaviour
         Destroy(Place3);
         Destroy(Place4);
         Destroy(Place0);
+
+        Destroy(PlaceFrame);
+
+        playerCursorController.Cursor1.SetActive(false);
+        playerCursorController.Cursor2.SetActive(false);
     }
+
+    private void VictoryPlayer()
+    {
+        Debug.Log(Select1P);
+        Debug.Log(Select2P);
+
+        if (Select1P > Select2P)
+        {
+            Win1P = true;
+            Debug.Log("1Pの勝ち");
+        }
+        else
+        {
+            Win1P = false;
+            Debug.Log("2Pの勝ち");
+        }
+    }
+
+    private void RuleCheck()
+    {
+        //if (Input.GetKeyDown(KeyCode.Space))
+        if (OVRInput.GetDown(OVRInput.RawButton.A))
+        {
+            RuleCheck1 = true;
+        }
+
+        //if (Input.GetKeyDown(KeyCode.Return))
+        if (OVRInput.GetDown(OVRInput.RawButton.X))
+        {
+            RuleCheck2 = true;
+        }
+
+        if (RuleCheck1 == true && RuleCheck2 == true)
+        {
+            RuluImage.SetActive(false);
+            ReadyGO();
+        }
+    }
+
+    private void ReadyGO()
+    {
+        Ready1 = true;
+        Ready2 = true;
+    }
+
 }

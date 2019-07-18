@@ -41,7 +41,7 @@ public class MenuController : MonoBehaviour
         LongPush();
 
         //コマンドを入れるとメニューが開く
-        if (Input.GetKey(KeyCode.Escape) && GetDown <= 0)
+        if ((OVRInput.Get(OVRInput.RawButton.Start) || Input.GetKey(KeyCode.Escape)) && GetDown <= 0)
         {
             MenuOnCommand();
         }
@@ -61,14 +61,14 @@ public class MenuController : MonoBehaviour
 
     private void SceneCommand()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow)|| (OVRInput.GetDown(OVRInput.RawButton.LThumbstickDown))|| OVRInput.GetDown(OVRInput.RawButton.RThumbstickDown))
         {
             MenuNumber++;
             MenuNumber %= MaxMenuNumber;
             //Debug.Log(MenuNumber);
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || (OVRInput.GetDown(OVRInput.RawButton.LThumbstickUp)) || OVRInput.GetDown(OVRInput.RawButton.RThumbstickUp))
         {
             if (MenuNumber == 0)
             {
@@ -117,8 +117,9 @@ public class MenuController : MonoBehaviour
 
     private void PushMenu()
     {
-        if (MenuOn == true && Input.GetKeyDown(KeyCode.Space))
+        if (MenuOn == true && (Input.GetKeyDown(KeyCode.Space) || OVRInput.GetDown(OVRInput.RawButton.X) || OVRInput.GetDown(OVRInput.RawButton.A)))
         {
+
             //caseはMaxMenuNumber-1まで
             switch (MenuNumber)
             {
@@ -150,13 +151,13 @@ public class MenuController : MonoBehaviour
 
     private void LongPush()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.Escape) || OVRInput.Get(OVRInput.RawButton.Start))
         {
             GetDown -= Time.deltaTime;
             //Debug.Log(GetDown);
         }
 
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape) || OVRInput.GetUp(OVRInput.RawButton.Start))
         {
             GetDown = 3;
         }

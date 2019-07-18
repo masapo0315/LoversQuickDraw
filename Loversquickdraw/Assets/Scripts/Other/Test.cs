@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
+    public OVRInput.Controller controller;
     void Update()
     {
         //ボタン系
@@ -79,5 +80,8 @@ public class Test : MonoBehaviour
         {
             Debug.Log("右アナログスティックを右に傾けた");
         }
+        //
+        transform.localPosition = OVRInput.GetLocalControllerPosition(controller);
+        Debug.Log(transform.localPosition);
     }
 }
