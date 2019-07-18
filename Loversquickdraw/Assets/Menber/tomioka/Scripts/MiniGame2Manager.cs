@@ -17,7 +17,7 @@ public class MiniGame2Manager : MonoBehaviour
     [SerializeField] private GameObject HintFrame;
     [SerializeField] private GameObject RuluImage;
     [SerializeField] private GameObject PlaceFrame;
-    [SerializeField] SoundManager sound;
+    [SerializeField] private SoundManager sound;
     [HideInInspector] public bool Win1P = true;
 
     private bool RuleCheck1, RuleCheck2 = false;
@@ -32,14 +32,12 @@ public class MiniGame2Manager : MonoBehaviour
     private int Select1P, Select2P = 0;
 
     [SerializeField] private PlayerCursorController playerCursorController;
-
     //[SerializeField]private Image BackGround;
 
     //1図書館・2保健室・3教室
     [SerializeField] private List<Image> PlaceList = new List<Image>();
     //
     [SerializeField] private List<GameObject> buttonMenuList = new List<GameObject>();
-
     //ミスした時の秒数　今後実装
     //private float TimeCount = 2;
     //
@@ -58,7 +56,6 @@ public class MiniGame2Manager : MonoBehaviour
         //
         //RuleCheck();
     }
-
 
     private void ChangeText()
     {
@@ -133,7 +130,6 @@ public class MiniGame2Manager : MonoBehaviour
         Karen_Hint.GetComponent<Text>();
         Karen_Hint.text = Hint;
     }
-
     //1Pが選択した
     public void OnSelect1P()
     {
@@ -473,7 +469,6 @@ public class MiniGame2Manager : MonoBehaviour
                 break;
         }
     }
-
     //2Pが選択した
     public void OnSelect2P()
     {
@@ -915,7 +910,6 @@ public class MiniGame2Manager : MonoBehaviour
         Text();
     }
     //
-
     private void Text()
     {
         ChangeText();
@@ -960,11 +954,10 @@ public class MiniGame2Manager : MonoBehaviour
         Debug.Log(Karen);
         //ChangeText();
     }
-
     //仮
     private void Scene()
     {
-        SceneLoadManager.LoadScene("Title-iwasaki");
+        SceneLoadManager.LoadScene("Title");
     }
 
     private void DestroyPlace()
