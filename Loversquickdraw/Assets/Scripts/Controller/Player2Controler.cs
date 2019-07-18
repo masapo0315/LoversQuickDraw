@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Player2Controler : MonoBehaviour
 {
-    //2Pのコントローラー
     //Player2のカメラ固定よう
+    [SerializeField] private Camera _mainCamera;
     [SerializeField] private Camera _camera;
+    //　2Pのコントローラー
+
     //右コン
     [SerializeField] private GameObject Rcube;
     [SerializeField] private float R_shake;
@@ -15,26 +17,27 @@ public class Player2Controler : MonoBehaviour
 
     private int R_posGetCount = 0;
 
-    [SerializeField]private Rigidbody rb;
+    [SerializeField] private Rigidbody rb;
     private float moveSpeed; //速度
 
     private Vector3 force;
 
-    private float jumpPower = 20; //ジャンプ力
-    private bool jump = false;     //設置判定
+    float jumpPower = 20; //ジャンプ力
+    bool jump = false;     //設置判定
 
-    [SerializeField]private Animator _animator;
-
-    private Quaternion quaternion;
+    [SerializeField]
+    Animator _animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        StartCoroutine("StartDelay");
+        StartCoroutine("Delay");
     }
-    
+
+    // Update is called once per frame
     void Update()
     {
+        _mainCamera.transform.localRotation = Quaternion.identity;
         _camera.transform.localRotation = Quaternion.identity;
         SpeedUp();
     }
@@ -67,9 +70,10 @@ public class Player2Controler : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) && jump == false)
         {
             _animator.SetBool("Jump", true);
-            rb.velocity = new Vector3(0, jumpPower, 0);
+            rb.velocity = new Vector3(3, jumpPower, 0);
             jump = true;
         }
+
     }
 
     private void OnCollisionEnter(Collision col)
@@ -79,16 +83,21 @@ public class Player2Controler : MonoBehaviour
             _animator.SetBool("Jump", false);
             jump = false;
         }
+        if (col.gameObject.tag == "Obstacles")
+        {
+            Destroy(col.gameObject);
+            StartCoroutine("Delay");
+        }
     }
 
     //遅延処理
-    private IEnumerator StartDelay()
+    private IEnumerator Delay()
     {
         moveSpeed = 0f;
 
         yield return new WaitForSeconds(2.0f);
 
-        moveSpeed = 9.0f;
+        moveSpeed = 8.0f;
 
         yield break;
     }
