@@ -63,7 +63,7 @@ public class Test : MonoBehaviour
             Debug.Log("左アナログスティックを右に傾けた");
         }
         //右スティック系
-        if(OVRInput.GetDown(OVRInput.RawButton.RThumbstickUp))
+        if (OVRInput.GetDown(OVRInput.RawButton.RThumbstickUp))
         {
             Debug.Log("右アナログスティックを上に傾けた");
         }
