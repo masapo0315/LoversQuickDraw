@@ -35,7 +35,11 @@ public class PlayerCursorController : MonoBehaviour
         Select();
 
         //1Pの決定
-        if (miniGame2Manager.Ready1 == true && Input.GetKeyDown(KeyCode.Return))
+        //ルール説明有り版
+        //if (miniGame2Manager.Ready1 == true && Input.GetKeyDown(KeyCode.Return))
+
+        //ルール説明無し版
+        if (Input.GetKeyDown(KeyCode.Return) || OVRInput.GetDown(OVRInput.RawButton.A))
         {
             Debug.Log("エンター");
             GetColor = true;
@@ -43,9 +47,13 @@ public class PlayerCursorController : MonoBehaviour
         }
 
         //2Pの決定
-        if (miniGame2Manager.Ready2 == true && Input.GetKeyDown(KeyCode.Space))
+        //ルール説明有り版
+        //if (miniGame2Manager.Ready2 == true && Input.GetKeyDown(KeyCode.Space))
+
+        //ルール説明無し版
+        else if (Input.GetKeyDown(KeyCode.Space) || OVRInput.GetDown(OVRInput.RawButton.X))
         {
-            Debug.Log("スペースキー");
+           Debug.Log("スペースキー");
             GetColor = false;
             miniGame2Manager.OnSelect2P();
         }
@@ -56,7 +64,11 @@ public class PlayerCursorController : MonoBehaviour
     {
         //1Pの選択
         //右を押すと右に移動
-        if (miniGame2Manager.Ready1 == true && Input.GetKeyDown(KeyCode.RightArrow))
+        //ルール説明有り版
+        //if (miniGame2Manager.Ready1 == true && Input.GetKeyDown(KeyCode.RightArrow))
+
+        //ルール説明無し版
+        if (Input.GetKeyDown(KeyCode.RightArrow) || OVRInput.GetDown(OVRInput.RawButton.RThumbstickRight))
         {
             RightMenu++;
             RightMenu %= 5;
@@ -65,7 +77,11 @@ public class PlayerCursorController : MonoBehaviour
 
         //左を押すと左に移動
         //4の次は0に移動
-        if (miniGame2Manager.Ready1 == true && Input.GetKeyDown(KeyCode.LeftArrow))
+        //ルール説明有り版
+        //if (miniGame2Manager.Ready1 == true && Input.GetKeyDown(KeyCode.LeftArrow))
+
+        //ルール説明無し版
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || OVRInput.GetDown(OVRInput.RawButton.RThumbstickLeft))
         {
             if (RightMenu == 0)
             {
@@ -110,7 +126,11 @@ public class PlayerCursorController : MonoBehaviour
 
         //2Pの選択
         //Dを押すと右に移動
-        if (miniGame2Manager.Ready2 == true && Input.GetKeyDown(KeyCode.D))
+        //ルール説明有り版
+        //if (miniGame2Manager.Ready2 == true && Input.GetKeyDown(KeyCode.D))
+
+        //ルール説明無し版 
+        if (Input.GetKeyDown(KeyCode.D) || OVRInput.GetDown(OVRInput.RawButton.LThumbstickRight))
         {
             LeftMenu++;
             LeftMenu %= 5;
@@ -119,7 +139,11 @@ public class PlayerCursorController : MonoBehaviour
 
         //Aを押すと左に移動
         //4の次は0に移動
-        if (miniGame2Manager.Ready2 == true && Input.GetKeyDown(KeyCode.A))
+        //ルール説明有り版
+        //if (miniGame2Manager.Ready2 == true && Input.GetKeyDown(KeyCode.A))
+
+        //ルール説明無し版
+        if (Input.GetKeyDown(KeyCode.A) || OVRInput.GetDown(OVRInput.RawButton.LThumbstickLeft))
         {
             if (LeftMenu == 0)
             {

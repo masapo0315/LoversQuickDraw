@@ -17,7 +17,7 @@ public class MiniGame2Manager : MonoBehaviour
     [SerializeField] private GameObject HintFrame;
     [SerializeField] private GameObject RuluImage;
     [SerializeField] private GameObject PlaceFrame;
-
+    [SerializeField] SoundManager sound;
     [HideInInspector] public bool Win1P = true;
 
     private bool RuleCheck1, RuleCheck2 = false;
@@ -54,7 +54,9 @@ public class MiniGame2Manager : MonoBehaviour
 
     void Update()
     {
-        RuleCheck();
+        //最初のルール説明βはなし
+        //
+        //RuleCheck();
     }
 
 
@@ -814,6 +816,7 @@ public class MiniGame2Manager : MonoBehaviour
     //
     public void ClickTrue()
     {
+        sound.SESounds(0, 0.5f);
         //Debug.Log("押すまで来た");
         switch (Dankai)
         {
@@ -922,12 +925,13 @@ public class MiniGame2Manager : MonoBehaviour
     public void false1P()
     {
         Debug.Log("1P失敗");
-
+        sound.SESounds(1, 0.5f);
     }
 
     public void false2P()
     {
         Debug.Log("2P失敗");
+        sound.SESounds(1, 0.5f);
     }
 
     public void Clickfalse()
@@ -996,12 +1000,14 @@ public class MiniGame2Manager : MonoBehaviour
 
     private void RuleCheck()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown(KeyCode.Space))
+        if (OVRInput.GetDown(OVRInput.RawButton.A))
         {
             RuleCheck1 = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        //if (Input.GetKeyDown(KeyCode.Return))
+        if (OVRInput.GetDown(OVRInput.RawButton.X))
         {
             RuleCheck2 = true;
         }
