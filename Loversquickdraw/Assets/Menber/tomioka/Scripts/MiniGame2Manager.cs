@@ -922,6 +922,7 @@ public class MiniGame2Manager : MonoBehaviour
     public void false1P()
     {
         Debug.Log("1P失敗");
+
     }
 
     public void false2P()
