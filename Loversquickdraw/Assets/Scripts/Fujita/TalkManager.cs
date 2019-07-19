@@ -158,6 +158,11 @@ public class TalkManager : MonoBehaviour
                     Karen1.SetActive(true);
                     Debug.Log("Karen1true");
                 }
+                if (Talktext == 6)
+                {
+                    Karen1.SetActive(false);
+                    Debug.Log("Karen1true");
+                }
 
                 //選択時の分岐後共通のシナリオに飛ぶ
                 if (Talktext == 30 || Talktext == 39 || Talktext == 43)
@@ -365,10 +370,10 @@ public class TalkManager : MonoBehaviour
                 Player4.SetActive(true);
                 Player.sprite = PlayerList2[0];
                 break;
-            case 4:
-            case 28:
-                Karen.sprite = FaceList[1];
-                break;
+            //case 4:
+            //case 28:
+            //    Karen.sprite = FaceList[1];
+            //    break;
             case 19://両ｐ
             case 21://24まで両ｐ
                 Player3.SetActive(true);
