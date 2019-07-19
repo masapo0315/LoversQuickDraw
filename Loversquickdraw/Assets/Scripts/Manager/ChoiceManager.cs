@@ -136,6 +136,7 @@ public class ChoiceManager : MonoBehaviour
             talkManager.ChoiceRoot();
             Debug.Log("choice2-3");
         }
+        //Invoke("talkManager.Forced",2);
     }
 
     //カラーコードは〇〇/255, で表示

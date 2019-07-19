@@ -269,14 +269,14 @@ public class TalkManager : MonoBehaviour
         {
             //２pが選択した
             Debug.Log("2がNotjudgedChoiceを通った");
-            judgePlayer = 2;
+            //judgePlayer = 2;
             return Player1;
         }
         else if (ChoiceManager.stopChoice == true && ChoiceManager.firstsPlayer == false)
         {
             //１pが選択出来なかった
             Debug.Log("1がNotjudgedChoiceを通った");
-            judgePlayer = 1;
+            //judgePlayer = 1;
             return Player2;
         }
         else return "通ってない２";
@@ -355,11 +355,6 @@ public class TalkManager : MonoBehaviour
             case 43:
                 Player4.SetActive(false);
                 Player3.SetActive(true);
-                //if (Player3.activeSelf)
-                //{
-                //    Player4.SetActive(false);
-                //    Player.sprite = PlayerList2[0];
-                //}
                 Player.sprite = PlayerList[0];
                 break;
             case 7:
@@ -378,29 +373,25 @@ public class TalkManager : MonoBehaviour
             case 21://24まで両ｐ
                 Player3.SetActive(true);
                 Player4.SetActive(true);
-                //if (Player3.activeSelf)
-                //{
-                //    Player4.SetActive(true);
-                //}
-                //if (Player4.activeSelf)
-                //{
-                //    Player3.SetActive(true);
-                //}
                 break;
             case 25:
+            case 26:
             case 29:
+                Debug.Log("case25を通った");
             //case 32://非選択P
                 if(judgePlayer == 1)
                 {
+                    Debug.Log("11111111");
                     Player3.SetActive(true);
                     Player4.SetActive(false);
-                    Player.sprite = PlayerList[0];
+                    //Player.sprite = PlayerList[0];
                 }
                 else if (judgePlayer == 2)
                 {
+                    Debug.Log("2222222222");
                     Player3.SetActive(false);
                     Player4.SetActive(true);
-                    Player.sprite = PlayerList[0];
+                   // Player.sprite = PlayerList2[0];
                 }
                 break;
                 //case 18:
@@ -409,4 +400,19 @@ public class TalkManager : MonoBehaviour
         }
 
     }
+    //public void Forced()
+    //{
+    //    if (judgePlayer == 1)
+    //    {
+    //        Player3.SetActive(true);
+    //        Player4.SetActive(false);
+    //        //Player.sprite = PlayerList[0];
+    //    }
+    //    else if (judgePlayer == 2)
+    //    {
+    //        Player3.SetActive(false);
+    //        Player4.SetActive(true);
+    //        // Player.sprite = PlayerList2[0];
+    //    }
+    //}
 }
