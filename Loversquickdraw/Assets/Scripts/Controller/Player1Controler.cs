@@ -91,7 +91,7 @@ public class Player1Controler : MonoBehaviour
 
         yield return new WaitForSeconds(2.0f);
 
-        moveSpeed = 8.0f;
+        moveSpeed = 15.0f;
 
         yield break;
     }

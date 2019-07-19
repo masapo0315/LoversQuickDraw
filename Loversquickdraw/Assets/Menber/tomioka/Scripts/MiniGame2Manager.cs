@@ -904,7 +904,7 @@ public class MiniGame2Manager : MonoBehaviour
                 VictoryPlayer();
                 Invoke("DestroyPlace", 1);
                 Destroy(HintFrame);
-                //Invoke("Scene", 2);
+                Invoke("Scene", 2);
                 break;
         }
         Text();
