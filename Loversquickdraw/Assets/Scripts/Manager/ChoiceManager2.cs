@@ -49,15 +49,16 @@ public class ChoiceManager2 : MonoBehaviour
         //1Pが1を押した判定
         if (stopChoice == false && choiceCursor.RightMenu == 0 && OVRInput.GetDown(OVRInput.RawButton.A))
         {
-            Debug.Log("1Pが1を押した");
-            cursor2.SetActive(false);
-            ChangeColor1();
-            Invoke("GetAorX", invokeTime);
-            stopChoice = true;
-            firstsPlayer = true;
-            Invoke("DestroyAorX", invokeTime * 2);
-            rootflag = 1;
-            //SceneLoadManager.LoadScene("MiniGame2_test");
+            //Debug.Log("1Pが1を押した");
+            //cursor2.SetActive(false);
+            //ChangeColor1();
+            //Invoke("GetAorX", invokeTime);
+            //stopChoice = true;
+            //firstsPlayer = true;
+            //Invoke("DestroyAorX", invokeTime * 2);
+            //rootflag = 1;
+            ////SceneLoadManager.LoadScene("MiniGame2_test");
+            GetAorX();
             talkManager2.ChoiceRoot();
         }
 

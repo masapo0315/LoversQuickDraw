@@ -44,7 +44,7 @@ public class Result : MonoBehaviour
         {
             if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) || OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
             {
-                SceneManager.LoadScene("MiniGame2_test");
+                SceneManager.LoadScene("Scenario2");
             }
         }   
     }
