@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MiniGame2Manager : MonoBehaviour
 {
+    //korehairetu
     //問題の答えが入るテキスト(保健室、図書館、教室)
     [SerializeField] private Text Place1;
     [SerializeField] private Text Place2;
@@ -49,14 +50,7 @@ public class MiniGame2Manager : MonoBehaviour
         Karen_Hint.text = Hint;
         //BackGround.GetComponent<Image>();
     }
-
-    void Update()
-    {
-        //最初のルール説明βはなし
-        //
-        //RuleCheck();
-    }
-
+    
     private void ChangeText()
     {
         Place1.GetComponent<Text>();

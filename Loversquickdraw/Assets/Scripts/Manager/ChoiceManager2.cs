@@ -13,6 +13,7 @@ public class ChoiceManager2 : MonoBehaviour
     /// 一定時間後に選択肢を消す
     /// </summary>
 
+        //これもはいれつにしろ
     [SerializeField] private GameObject choiceAorX;
     [SerializeField] private GameObject choiceBorY;
     [SerializeField] private GameObject choiceTrigger;
