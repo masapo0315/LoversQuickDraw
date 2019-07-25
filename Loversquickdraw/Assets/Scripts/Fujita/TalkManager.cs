@@ -288,7 +288,8 @@ public class TalkManager : MonoBehaviour
     }
     #endregion
 
-    //名前の置き換え関数
+    //名前置き換え用
+    //("","")の中にある文字列が置き換える側で上のTEXTTAG_LISTで指定してる文字列が置き換えられる側
     #region
     string ReplaceTag(string _text)
     {
@@ -321,6 +322,7 @@ public class TalkManager : MonoBehaviour
         }
     }
 
+    //選んだ選択肢によってシナリオが変わる
     public void ChoiceRoot()
     {
         Debug.Log("ChoiceRootを通った");

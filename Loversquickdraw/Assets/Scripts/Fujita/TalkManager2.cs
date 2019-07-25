@@ -7,18 +7,20 @@ using UnityEngine.SceneManagement;
 public class TalkManager2 : MonoBehaviour
 {
 
+    private int player1LoveMeter, player2LoveMeter;//それぞれにポイント加算した変数を代入して
     private int Talktext = 0; //縦
     private new int name = 0; //横
     private float fadeInOut; //点滅用
     private bool choice = false;
     string[] TEXTTAG_LIST = { "勝利者", "［敗北者］", "択プレイヤー" };
 
-    [SerializeField] private List<Sprite> FaceList = new List<Sprite>();
-    [SerializeField] private GameObject Karen1; //最初のSetActive用
-    [SerializeField] private Image Karen;
+    [SerializeField] private int meterPoint;//加算するポイント
     [SerializeField] private float fade;
-    [SerializeField] private GameObject TextFrame;
+    [SerializeField] private List<Sprite> FaceList = new List<Sprite>();
     [SerializeField] private ChoiceManager2 choiceManager2;
+    [SerializeField] private Image Karen;
+    [SerializeField] private GameObject Karen1; //最初のSetActive用
+    [SerializeField] private GameObject TextFrame;
     [SerializeField] private GameObject NameTextmanager;
     [SerializeField] private GameObject CommentTextmanager;
     [SerializeField] private GameObject Sakura;
@@ -27,6 +29,8 @@ public class TalkManager2 : MonoBehaviour
 
     private void Start()
     {
+        player1LoveMeter = LoveMetar.getPlayer1LoveMetar();
+        player2LoveMeter = LoveMetar.getPlayer2LoveMetar();
         //string x = "プレイヤー１";
         //x = x.Replace("プレイヤー１", "name1");
         fadeInOut = Sakura.GetComponent<Image>().color.a;
@@ -186,6 +190,7 @@ public class TalkManager2 : MonoBehaviour
                     Karen1.SetActive(false);
                 }
 
+                //選択肢で分岐したシナリオの後の共通のシナリオ
                 if (Talktext == 50 || Talktext == 57 || Talktext == 71)
                 {
                     Talktext = 71;
@@ -262,7 +267,7 @@ public class TalkManager2 : MonoBehaviour
     //}
     #endregion //
 
-    //桜の点滅
+    //桜の点滅開始
     private void sakuraStart()
     {
         //テキストが出終わったら点滅開始
@@ -272,6 +277,7 @@ public class TalkManager2 : MonoBehaviour
         }
     }
 
+    //桜の点滅終了
     private void sakuraOut()
     {
         //前回の点滅の処理を止める
@@ -348,13 +354,13 @@ public class TalkManager2 : MonoBehaviour
     {
         if (Result.Player1Win ==  true && Result.Player2Win == false)
         {
-            //1P勝利
-            return Player1;
+            player1LoveMeter += meterPoint;
+            return Player1;//1P勝利
         }
         else if (Result.Player1Win == false && Result.Player2Win == true)
         {
-            //2P勝利
-            return Player2;
+            player2LoveMeter += meterPoint;
+            return Player2;//2P勝利
         }
         else return "WinError";
     }
@@ -374,6 +380,8 @@ public class TalkManager2 : MonoBehaviour
         else return "LoseError";
     }
 
+    //名前置き換え用
+    //("","")の中にある文字列が置き換える側で上のTEXTTAG_LISTで指定してる文字列が置き換えられる側
     string ReplaceTag(string _text)
     {
         string tmp = _text;
@@ -398,6 +406,7 @@ public class TalkManager2 : MonoBehaviour
         return tmp;
     }
 
+    //MiniGame2_test Sceneに移動
     public void LordMinigame()
     {
         if (Talktext == 78)
@@ -406,6 +415,7 @@ public class TalkManager2 : MonoBehaviour
         }
     }
 
+    //選んだ選択肢によってシナリオが変わる
     public void ChoiceRoot()
     {
         Debug.Log(choiceManager2.rootflag);

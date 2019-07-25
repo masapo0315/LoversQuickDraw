@@ -9480,6 +9480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 032a0ba81822ff54fba3443cd58c699c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meterPoint: 10
   FaceList:
   - {fileID: 21300000, guid: dc81e6f843aaf4a43ad16e03e637039b, type: 3}
   - {fileID: 21300000, guid: 8a0fd98860a34c9498dffcac58a9182c, type: 3}
