@@ -17,8 +17,14 @@ public class TalkManager : MonoBehaviour
 
     //参照するものをインスペクター上に表示
     [SerializeField] private List<Sprite> FaceList = new List<Sprite>();
+    [SerializeField] private List<Sprite> PlayerList = new List<Sprite>();
+    [SerializeField] private List<Sprite> PlayerList2 = new List<Sprite>();
     [SerializeField] private GameObject Karen1; //最初のSetActive用
+    [SerializeField] private GameObject Player3; //最初のSetActive用
+    [SerializeField] private GameObject Player4; //最初のSetActive用
     [SerializeField] private Image Karen;
+    [SerializeField] private Image Player;
+    [SerializeField] private Image Player2;
     [SerializeField] private float fade;
     [SerializeField] private GameObject TextFrame;
     [SerializeField] private ChoiceManager ChoiceManager;
@@ -27,7 +33,6 @@ public class TalkManager : MonoBehaviour
     [SerializeField] private GameObject Sakura;
     [SerializeField] private GameObject cursor;
     [SerializeField] private GameObject cursor2;
-
 
     private void Start()
     {
@@ -79,14 +84,14 @@ public class TalkManager : MonoBehaviour
         new string[]{ "あいつよりも前に出て華恋とぶつかる。\nそのために俺はーー！！","両プレイヤー"},
         //ここまでで25行 配列なら24
 
-        //選択１の場合(26)
+        //選択１の場合(26)25
         new string[]{ "一歩先んじた俺は、十字路で急ブレーキ、\n迷いなくインド人を右に！","択プレイヤー"},
         new string[]{ "思惑通り、角の向こうには華恋の頭が\n見え――ない！？", "択プレイヤー"},
         new string[]{ "スピードを出しすぎた……！", "択プレイヤー"},
         new string[]{ "あれ、択プレイヤーくん！？もー、また\n危ないことして―！気を付けてね～！？", "華恋"},
         new string[]{ "しかし、遠目に目が合ったのは俺。\n何はともあれ一歩リードだ。やったぜ。", "択プレイヤー"},
 
-        //選択２の場合(31)
+        //選択２の場合(31)30
         new string[]{ "一歩先んじた俺は、十字路で急ブレーキ、\n迷いなくインド人を右に！","択プレイヤー"},
         new string[]{ "遅れた非選択Ｐが遅れて曲がる！\nこれは勝ったも同然……！", "択プレイヤー"},
         new string[]{ "なあ、曲がり角逆じゃねえか！？", "非選択Ｐ"},
@@ -97,7 +102,7 @@ public class TalkManager : MonoBehaviour
         new string[]{ "うおおおお南無三ッ！！", "択プレイヤー"},
         new string[]{ "今度こそ急ブレーキ、１８０゜ターン！\nしかしこれで勝負は振出しに戻る…！", "択プレイヤー"},
         
-        //選択３の場合(40)
+        //選択３の場合(40)39
         new string[]{ "一歩先んじた俺は、急ブレーキを\nキャンセルして猛進！十字路を――","択プレイヤー"},
         new string[]{ "曲がり損ねたァァァ！！！", "択プレイヤー"},
         new string[]{ "ふはははバカめ！チキレンースやってる\n場合じゃないんだよ！！","非選択Ｐ"},
@@ -121,7 +126,7 @@ public class TalkManager : MonoBehaviour
         }
         TextMove();
     }
-
+    //
     private void TextMove()
     {
         if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.Space))
@@ -140,14 +145,21 @@ public class TalkManager : MonoBehaviour
                     TextFrame.SetActive(false);
                     cursor.SetActive(true);
                     cursor2.SetActive(true);
+                    Player3.SetActive(false);
+                    Player4.SetActive(false);
                     choice = true;
                     ChoiceManager.SetActive();
                     return;
                 }
 
-                if(Talktext == 0)
+                if(Talktext == 4)
                 {
                     Karen1.SetActive(true);
+                    Debug.Log("Karen1true");
+                }
+                if (Talktext == 6)
+                {
+                    Karen1.SetActive(false);
                     Debug.Log("Karen1true");
                 }
 
@@ -172,7 +184,7 @@ public class TalkManager : MonoBehaviour
             }
         }
     }
-
+    //
     private void road()
     {
         Text Nametext = NameTextmanager.GetComponent<Text>();
@@ -187,7 +199,6 @@ public class TalkManager : MonoBehaviour
         sakuraStart();
         Talktext++;
     }
-
     //桜の点滅
     #region
     private void sakuraStart()
@@ -230,7 +241,6 @@ public class TalkManager : MonoBehaviour
         }
     }
     #endregion
-
     //選択したプレイヤー、非選択のプレイヤーをtrueとfalseで管理
     #region
     private string JudgeChoice(string Player1, string Player2)
@@ -261,18 +271,19 @@ public class TalkManager : MonoBehaviour
         {
             //２pが選択した
             Debug.Log("2がNotjudgedChoiceを通った");
+            //judgePlayer = 2;
             return Player1;
         }
         else if (ChoiceManager.stopChoice == true && ChoiceManager.firstsPlayer == false)
         {
             //１pが選択出来なかった
             Debug.Log("1がNotjudgedChoiceを通った");
+            //judgePlayer = 1;
             return Player2;
         }
         else return "通ってない２";
     }
     #endregion
-
     //名前の置き換え関数
     #region
     string ReplaceTag(string _text)
@@ -296,7 +307,6 @@ public class TalkManager : MonoBehaviour
         return tmp;
     }
     #endregion
-
     //ゲーム1のシーン読み込み
     public void LordMinigame()
     {
@@ -305,7 +315,7 @@ public class TalkManager : MonoBehaviour
                 SceneManager.LoadScene("MiniGame1");
         }
     }
-
+    //
     public void ChoiceRoot()
     {
         Debug.Log("ChoiceRootを通った");
@@ -331,7 +341,6 @@ public class TalkManager : MonoBehaviour
                 break;
         }
     }
-
     //表情変更用
     public void ChangeFace()
     {
@@ -340,28 +349,48 @@ public class TalkManager : MonoBehaviour
             case 0:
             case 8:
             case 11:
-            case 17:
-            case 19:
-            case 24:
-                Karen.sprite = FaceList[6];
+            case 15://18まで
+            case 20:
+            case 43:
+                Player4.SetActive(false);
+                Player3.SetActive(true);
+                Player.sprite = PlayerList[0];
                 break;
             case 7:
             case 9:
-            case 13:
-            case 21:
-                Karen.sprite = FaceList[7];
+            case 14:
+            case 44:
+                Player3.SetActive(false);
+                Player4.SetActive(true);
+                Player.sprite = PlayerList2[0];
                 break;
-            case 4:
-                Karen.sprite = FaceList[0];
+            //case 4:
+            //case 28:
+            //    Karen.sprite = FaceList[1];
+            //    break;
+            case 19://両ｐ
+            case 21://24まで両ｐ
+                Player3.SetActive(true);
+                Player4.SetActive(true);
                 break;
-            case 1111:
+            case 25:
+            case 26:
+            case 29:
+                Debug.Log("case25を通った");
+            //case 32://非選択P
                 if(judgePlayer == 1)
                 {
-                   Karen.sprite = FaceList[6];
+                    Debug.Log("11111111");
+                    Player3.SetActive(true);
+                    Player4.SetActive(false);
+                    //Player.sprite = PlayerList[0];
                 }
                 else if (judgePlayer == 2)
                 {
-                    Karen.sprite = FaceList[7];
+                    Debug.Log("2222222222");
+                    Player3.SetActive(false);
+                    Player4.SetActive(true);
+                   // Player.sprite = PlayerList2[0];
                 }
                 break;
                 //case 18:
@@ -370,4 +399,19 @@ public class TalkManager : MonoBehaviour
         }
 
     }
+    //public void Forced()
+    //{
+    //    if (judgePlayer == 1)
+    //    {
+    //        Player3.SetActive(true);
+    //        Player4.SetActive(false);
+    //        //Player.sprite = PlayerList[0];
+    //    }
+    //    else if (judgePlayer == 2)
+    //    {
+    //        Player3.SetActive(false);
+    //        Player4.SetActive(true);
+    //        // Player.sprite = PlayerList2[0];
+    //    }
+    //}
 }

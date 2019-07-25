@@ -219,7 +219,6 @@ public class TalkManager2 : MonoBehaviour
         sakuraStart();
         Talktext++;
     }
-
     //debug
     #region
     //デバック
@@ -261,7 +260,6 @@ public class TalkManager2 : MonoBehaviour
     //    }
     //}
     #endregion //
-
     //桜の点滅
     private void sakuraStart()
     {
@@ -271,7 +269,7 @@ public class TalkManager2 : MonoBehaviour
             StartCoroutine("SakuraOut");
         }
     }
-
+    //
     private void sakuraOut()
     {
         //前回の点滅の処理を止める
@@ -280,7 +278,6 @@ public class TalkManager2 : MonoBehaviour
             StopCoroutine("SakuraOut");
         }
     }
-
     //透明度を1~0と0~1へと徐々に変更することにより点滅させる(fadein,fadeoutの要領)
     IEnumerator SakuraOut()
     {
@@ -302,8 +299,7 @@ public class TalkManager2 : MonoBehaviour
             }
         }
     }
-
-
+    //
     #region
     //string ReplaceTag(string _text)
     //{
@@ -326,7 +322,7 @@ public class TalkManager2 : MonoBehaviour
     //    return tmp;
     //}
     #endregion
-
+    //
     private string JudgedChoice(string Player1, string Player2)
     {
         if (choiceManager2.stopChoice == true && choiceManager2.firstsPlayer == true)
@@ -343,7 +339,7 @@ public class TalkManager2 : MonoBehaviour
         }
         else return "通ってないよ";
     }
-
+    //
     private string Winner(string Player1, string Player2)
     {
         if (Result.Player1Win ==  true && Result.Player2Win == false)
@@ -358,7 +354,7 @@ public class TalkManager2 : MonoBehaviour
         }
         else return "WinError";
     }
-
+    //
     private string Loser(string Player1, string Player2)
     {
         if (Result.Player1Win == true && Result.Player2Win == false)
@@ -373,7 +369,7 @@ public class TalkManager2 : MonoBehaviour
         }
         else return "LoseError";
     }
-
+    //
     string ReplaceTag(string _text)
     {
         string tmp = _text;
@@ -397,15 +393,15 @@ public class TalkManager2 : MonoBehaviour
         }
         return tmp;
     }
-
+    //
     public void LordMinigame()
     {
         if (Talktext == 78)
         {
-                SceneManager.LoadScene("MiniGame2_test");
+            SceneManager.LoadScene("MiniGame2_test");
         }
     }
-
+    //
     public void ChoiceRoot()
     {
         Debug.Log(choiceManager2.rootflag);
@@ -426,7 +422,6 @@ public class TalkManager2 : MonoBehaviour
                 break;
         }
     }
-
     //表情変更用
     public void ChangeFace()
     {

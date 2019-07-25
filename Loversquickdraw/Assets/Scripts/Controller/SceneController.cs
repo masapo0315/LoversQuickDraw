@@ -5,7 +5,11 @@ using UnityEngine;
 public class SceneController : MonoBehaviour
 {
     private bool once;
-	void Update ()
+    private void Start()
+    {
+        Cursor.visible = false;
+    }
+    void Update ()
     {
         if (once == false)
         {
