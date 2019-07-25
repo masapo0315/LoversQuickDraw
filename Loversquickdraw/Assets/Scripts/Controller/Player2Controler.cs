@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Player2Controler : MonoBehaviour
 {
-    //2Pのコントローラー
     //Player2のカメラ固定よう
     [SerializeField] private Camera _camera;
+    //　2Pのコントローラー
+
     //右コン
     [SerializeField] private GameObject Rcube;
     [SerializeField] private float R_shake;
@@ -15,7 +16,7 @@ public class Player2Controler : MonoBehaviour
 
     private int R_posGetCount = 0;
 
-    [SerializeField]private Rigidbody rb;
+    [SerializeField] private Rigidbody rb;
     private float moveSpeed; //速度
 
     private Vector3 force;
@@ -25,12 +26,10 @@ public class Player2Controler : MonoBehaviour
 
     [SerializeField]private Animator _animator;
 
-    private Quaternion quaternion;
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        StartCoroutine("StartDelay");
+        StartCoroutine("Delay");
     }
     
     void Update()
@@ -38,7 +37,6 @@ public class Player2Controler : MonoBehaviour
         _camera.transform.localRotation = Quaternion.identity;
         SpeedUp();
     }
-
     //加速処理
     private void SpeedUp()
     {
@@ -60,18 +58,18 @@ public class Player2Controler : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
     }
-
     //ジャンプの処理
     void Jump()
     {
         if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) && jump == false)
         {
             _animator.SetBool("Jump", true);
-            rb.velocity = new Vector3(0, jumpPower, 0);
+            rb.velocity = new Vector3(3, jumpPower, 0);
             jump = true;
         }
-    }
 
+    }
+    //
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "ground")
@@ -79,16 +77,20 @@ public class Player2Controler : MonoBehaviour
             _animator.SetBool("Jump", false);
             jump = false;
         }
+        if (col.gameObject.tag == "Obstacles")
+        {
+            Destroy(col.gameObject);
+            StartCoroutine("Delay");
+        }
     }
-
     //遅延処理
-    private IEnumerator StartDelay()
+    private IEnumerator Delay()
     {
         moveSpeed = 0f;
 
         yield return new WaitForSeconds(2.0f);
 
-        moveSpeed = 9.0f;
+        moveSpeed = 8.0f;
 
         yield break;
     }

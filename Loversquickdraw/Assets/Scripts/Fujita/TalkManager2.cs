@@ -13,22 +13,32 @@ public class TalkManager2 : MonoBehaviour
     private bool choice = false;
     string[] TEXTTAG_LIST = { "勝利者", "［敗北者］", "択プレイヤー" };
 
-    #region
-
+    [SerializeField] private List<Sprite> FaceList = new List<Sprite>();
+    [SerializeField] private GameObject Karen1; //最初のSetActive用
+    [SerializeField] private Image Karen;
     [SerializeField] private float fade;
     [SerializeField] private GameObject TextFrame;
     [SerializeField] private ChoiceManager2 choiceManager2;
     [SerializeField] private GameObject NameTextmanager;
     [SerializeField] private GameObject CommentTextmanager;
     [SerializeField] private GameObject Sakura;
+    [SerializeField] private GameObject cursor;
+    [SerializeField] private GameObject cursor2;
 
     private void Start()
     {
         //string x = "プレイヤー１";
         //x = x.Replace("プレイヤー１", "name1");
         fadeInOut = Sakura.GetComponent<Image>().color.a;
+        Text Nametext = NameTextmanager.GetComponent<Text>();
+        Text Commenttext = CommentTextmanager.GetComponent<Text>();
+        Nametext.text = ReplaceTag(Text[0][1]);
+        Commenttext.text = ReplaceTag(Text[0][0]);
+        sakuraStart();
+        Talktext++;
     }
 
+    #region
     //コメントと話すキャラの名前の配列(会話文は25個)
     string[][] Text = new string[][]
     {
@@ -54,7 +64,7 @@ public class TalkManager2 : MonoBehaviour
         new string[]{ "危うく俺の方がオチるところだった。\n本当に俺なんかが華恋をオトせるのか？", "勝利者"},
         new string[]{ "何にしても、一歩リードなのは\n間違いない。", "勝利者"},
         new string[]{ "［敗北者］に逆転なんて許さないよう、\n気を引き締めなければ！", "勝利者"},
-        new string[]{ "放課後。俺は偶然を装い一緒に帰るため\n扉の陰から華恋を見守っていた。", "プレイヤー１"},
+        new string[]{ "放課後。俺は偶然を装い一緒に帰るため\n扉の陰から華恋を見守っていた。", "プレイヤー１"},//ここから髪飾り
 
         new string[]{ "あれ？ここにもない……\nん～、どこいっちゃったんだろ……", "華恋"},
         new string[]{ "しかし、華恋はなかなか教室を出ない。\n何かを探しているような様子だ。", "プレイヤー１"},
@@ -139,10 +149,9 @@ public class TalkManager2 : MonoBehaviour
             }
         }
         //debug();
-        //Inputkey();
+        Inputkey();
     }
-    /*
-    //キー入寮kｂ
+    //キー入力
     void Inputkey()
     {
 
@@ -154,14 +163,27 @@ public class TalkManager2 : MonoBehaviour
                 sakuraOut();
                 LordMinigame();
                 TextFrame.SetActive(true);
+                ChangeFace();
 
                 //会話数42個まで回したら選択肢を出してテキストフレームを消す
                 if (Talktext == 42)
                 {
                     TextFrame.SetActive(false);
+                    cursor.SetActive(true);
+                    cursor2.SetActive(true);
                     choice = true;
                     choiceManager2.SetActive();
                     return;
+                }
+
+                if (Talktext == 3 ||Talktext == 20)
+                {
+                    Karen1.SetActive(true);
+                    Debug.Log("Karen1true");
+                }
+                if(Talktext == 19)
+                {
+                    Karen1.SetActive(false);
                 }
 
                 if (Talktext == 50 || Talktext == 57 || Talktext == 71)
@@ -197,7 +219,6 @@ public class TalkManager2 : MonoBehaviour
         sakuraStart();
         Talktext++;
     }
-    */
     //debug
     #region
     //デバック
@@ -239,7 +260,6 @@ public class TalkManager2 : MonoBehaviour
     //    }
     //}
     #endregion //
-
     //桜の点滅
     private void sakuraStart()
     {
@@ -249,7 +269,7 @@ public class TalkManager2 : MonoBehaviour
             StartCoroutine("SakuraOut");
         }
     }
-
+    //
     private void sakuraOut()
     {
         //前回の点滅の処理を止める
@@ -258,7 +278,6 @@ public class TalkManager2 : MonoBehaviour
             StopCoroutine("SakuraOut");
         }
     }
-
     //透明度を1~0と0~1へと徐々に変更することにより点滅させる(fadein,fadeoutの要領)
     IEnumerator SakuraOut()
     {
@@ -280,8 +299,7 @@ public class TalkManager2 : MonoBehaviour
             }
         }
     }
-
-
+    //
     #region
     //string ReplaceTag(string _text)
     //{
@@ -304,7 +322,7 @@ public class TalkManager2 : MonoBehaviour
     //    return tmp;
     //}
     #endregion
-
+    //
     private string JudgedChoice(string Player1, string Player2)
     {
         if (choiceManager2.stopChoice == true && choiceManager2.firstsPlayer == true)
@@ -321,37 +339,37 @@ public class TalkManager2 : MonoBehaviour
         }
         else return "通ってないよ";
     }
-    /*
+    //
     private string Winner(string Player1, string Player2)
     {
-        if (Singlton.Instance.WinFlag[0] == 1)
+        if (Result.Player1Win ==  true && Result.Player2Win == false)
         {
             //1P勝利
             return Player1;
         }
-        else if (Singlton.Instance.WinFlag[0] == 2)
+        else if (Result.Player1Win == false && Result.Player2Win == true)
         {
             //2P勝利
             return Player2;
         }
         else return "WinError";
     }
-
+    //
     private string Loser(string Player1, string Player2)
     {
-        if (Singlton.Instance.WinFlag[0] == 1)
+        if (Result.Player1Win == true && Result.Player2Win == false)
         {
             //2p敗者
             return Player2;
         }
-        else if (Singlton.Instance.WinFlag[0] == 2)
+        else if (Result.Player1Win == false && Result.Player2Win == true)
         {
             //1P敗者
             return Player1;
         }
         else return "LoseError";
     }
-    
+    //
     string ReplaceTag(string _text)
     {
         string tmp = _text;
@@ -375,15 +393,15 @@ public class TalkManager2 : MonoBehaviour
         }
         return tmp;
     }
-    */
+    //
     public void LordMinigame()
     {
         if (Talktext == 78)
         {
-                SceneManager.LoadScene("MiniGame2_test");
+            SceneManager.LoadScene("MiniGame2_test");
         }
     }
-
+    //
     public void ChoiceRoot()
     {
         Debug.Log(choiceManager2.rootflag);
@@ -392,15 +410,50 @@ public class TalkManager2 : MonoBehaviour
             case 1:
                 Talktext = 42;
                 Debug.Log(choiceManager2.rootflag);
-                //road();
+                road();
                 break;
             case 2:
                 Talktext = 50;
-                //road();
+                road();
                 break;
             case 3:
                 Talktext = 57;
-                //road();
+                road();
+                break;
+        }
+    }
+    //表情変更用
+    public void ChangeFace()
+    {
+        switch (Talktext)
+        {
+            case 5:
+            case 8:
+            case 20:
+            case 30:
+            case 50:
+            case 68:
+                Karen.sprite = FaceList[0];
+                break;
+            case 25:
+            case 33:
+            case 42:
+            case 44:
+            case 55:
+                Karen.sprite = FaceList[1];
+                break;
+            case 3:
+            case 57:
+                Karen.sprite = FaceList[2];
+                break;
+            case 13:
+            case 16:
+            case 28:
+            case 38:
+            case 43:
+            case 47:
+            case 51:
+                Karen.sprite = FaceList[3];
                 break;
         }
     }
