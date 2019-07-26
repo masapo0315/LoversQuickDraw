@@ -82,6 +82,6 @@ public class Test : MonoBehaviour
         }
         //
         transform.localPosition = OVRInput.GetLocalControllerPosition(controller);
-        Debug.Log(transform.localPosition);
+        //Debug.Log(transform.localPosition);
     }
 }
