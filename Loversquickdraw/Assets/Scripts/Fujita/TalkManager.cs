@@ -34,6 +34,7 @@ public class TalkManager : MonoBehaviour
     [SerializeField] private GameObject cursor;
     [SerializeField] private GameObject cursor2;
 
+
     private void Start()
     {
         //string x = "プレイヤー１";
@@ -126,7 +127,7 @@ public class TalkManager : MonoBehaviour
         }
         TextMove();
     }
-    //
+
     private void TextMove()
     {
         if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.Space))
@@ -184,7 +185,7 @@ public class TalkManager : MonoBehaviour
             }
         }
     }
-    //
+
     private void road()
     {
         Text Nametext = NameTextmanager.GetComponent<Text>();
@@ -199,6 +200,7 @@ public class TalkManager : MonoBehaviour
         sakuraStart();
         Talktext++;
     }
+
     //桜の点滅
     #region
     private void sakuraStart()
@@ -241,6 +243,7 @@ public class TalkManager : MonoBehaviour
         }
     }
     #endregion
+
     //選択したプレイヤー、非選択のプレイヤーをtrueとfalseで管理
     #region
     private string JudgeChoice(string Player1, string Player2)
@@ -284,7 +287,9 @@ public class TalkManager : MonoBehaviour
         else return "通ってない２";
     }
     #endregion
-    //名前の置き換え関数
+
+    //名前置き換え用
+    //("","")の中にある文字列が置き換える側で上のTEXTTAG_LISTで指定してる文字列が置き換えられる側
     #region
     string ReplaceTag(string _text)
     {
@@ -307,6 +312,7 @@ public class TalkManager : MonoBehaviour
         return tmp;
     }
     #endregion
+
     //ゲーム1のシーン読み込み
     public void LordMinigame()
     {
@@ -315,7 +321,8 @@ public class TalkManager : MonoBehaviour
                 SceneManager.LoadScene("MiniGame1");
         }
     }
-    //
+
+    //選んだ選択肢によってシナリオが変わる
     public void ChoiceRoot()
     {
         Debug.Log("ChoiceRootを通った");
@@ -341,6 +348,7 @@ public class TalkManager : MonoBehaviour
                 break;
         }
     }
+
     //表情変更用
     public void ChangeFace()
     {
