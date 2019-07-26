@@ -57,7 +57,7 @@ public class Player2Controler : MonoBehaviour
             R_posGetCount = R_posGetCount + 1;
         }
         R_defPos = Rcube.transform.position;
-        if (R_defPos.y >= R_initialPos.y + R_shake || R_defPos.y <= R_initialPos.y - R_shake)
+        if (R_defPos.y >= R_initialPos.y + R_shake || R_defPos.y <= R_initialPos.y - R_shake || Input.GetKey(KeyCode.D))
         {
             _animator.SetBool("Run", true);
             force = new Vector3(moveSpeed, 0.0f, 0.0f);

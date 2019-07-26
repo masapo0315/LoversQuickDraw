@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1057,11 +1057,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 44863939}
-  Lcube: {fileID: 1934509149}
-  L_shake: 0.02
+  controller: 3
+  highPos: 0
+  lowPos: 0
   rb: {fileID: 404583207}
-  moveSpeed: 0
-  jumpPower: 0
+  moveSpeed: 10
+  jumpPower: 5
   _animator: {fileID: 404583205}
 --- !u!95 &404583205
 Animator:
@@ -3951,7 +3952,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd9bc2aba5e81b408647133207a969c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: 0
 --- !u!114 &1652437648
 MonoBehaviour:
   m_ObjectHideFlags: 0
