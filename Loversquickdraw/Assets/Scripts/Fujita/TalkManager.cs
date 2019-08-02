@@ -12,6 +12,7 @@ public class TalkManager : MonoBehaviour
     public bool choiceAfterText = true; //選択後のシナリオ遷移
     private bool choice = false;
     private int judgePlayer = 0;
+    private int stringCount;
 
     string[] TEXTTAG_LIST = { "択プレイヤー", "非選択Ｐ" };
 
