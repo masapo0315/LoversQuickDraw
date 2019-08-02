@@ -21,6 +21,7 @@ public class Result : MonoBehaviour
     //
     void Start ()
     {
+        
         Time.timeScale = 1.0f;
 
         player1LoveMetar = LoveMetar.getPlayer1LoveMetar();
