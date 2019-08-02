@@ -8,16 +8,30 @@ using UnityEngine.SceneManagement;
 public class Result : MonoBehaviour
 {
     //ゴールした時のリザルトを表示する
+
+    //表示するUIの配列
     public Image[] images;
 
+    //勝敗に関係するフラグ
     bool gameSet = false;
     public static bool Player1Win;
     public static bool Player2Win;
     
+    //プレイヤーの好感度
     private int player1LoveMetar;
     private int player2LoveMetar;
 
-    [SerializeField]private Animator _animator;
+    //プレイヤー
+    [SerializeField] private Rigidbody player1;
+    [SerializeField] private Rigidbody player2;
+
+    //プレイヤーの速度
+    private float player1Speed;
+    private float player2Speed;
+
+    //ゴールにいるキャラのアニメーション
+    [SerializeField] private Animator _animator;
+    
     //
     void Start ()
     {
@@ -30,15 +44,22 @@ public class Result : MonoBehaviour
         {
             images[i].enabled = false;
         }
+
+        //アニメーションが時間の影響受けずに再生されるようにする
         _animator.updateMode = AnimatorUpdateMode.UnscaledTime;    
     }
+
+
+
 	//
 	void Update ()
     {
         GameSet();
+        SpeedCheck();
     }
-    //
-    void GameSet()
+
+    //ゲーム終了時に次のシナリオへ
+    private void GameSet()
     {
         if(gameSet == true)
         {
@@ -48,13 +69,25 @@ public class Result : MonoBehaviour
             }
         }   
     }
-    //
+    
+    //プレイヤーの速度を計測
+    private void SpeedCheck()
+    {
+        player1Speed = player1.velocity.magnitude;
+        Debug.Log(player1Speed);
+        player2Speed = player2.velocity.magnitude;
+
+    }
+
+    //どちらか先に触れたほうの好感度を上げる
     private void OnTriggerEnter(Collider col)
     {
         Debug.Log("オブジェクトが触れました");
 
         if (col.gameObject.tag == "Player1")
         {
+            
+
             _animator.SetBool("Goal", true);
 
             images[0].enabled = true;
