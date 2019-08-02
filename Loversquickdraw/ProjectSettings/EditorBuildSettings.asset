@@ -36,11 +36,5 @@ EditorBuildSettings:
     path: Assets/Scenes/test/takada/testMiniGame1.unity
     guid: e90506817f5eaff4ea46a5f7df9cfbec
   - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/TestChoice.unity
-    guid: 75927962b3d1cd741a645d9334b1288d
-  - enabled: 0
     path: Assets/Scenes/test/k-iwasaki/Title-iwasaki.unity
     guid: 4a1e267ea61172c41899f7bf75f557f0

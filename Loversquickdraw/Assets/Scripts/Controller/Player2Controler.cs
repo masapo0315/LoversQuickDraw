@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Player2Controler : MonoBehaviour
 {
-    //2Pのコントローラー
     //Player2のカメラ固定よう
     [SerializeField] private Camera _camera;
+    //　2Pのコントローラー
+
     //右コン
     [SerializeField] private GameObject Rcube;
     [SerializeField] private float R_shake;
@@ -15,28 +16,36 @@ public class Player2Controler : MonoBehaviour
 
     private int R_posGetCount = 0;
 
-    [SerializeField]private Rigidbody rb;
-    private float moveSpeed; //速度
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private float moveSpeed; //速度
 
     private Vector3 force;
 
-    private float jumpPower = 20; //ジャンプ力
-    private bool jump = false;     //設置判定
+    [SerializeField] private float jumpPower; //ジャンプ力
+    bool jump = false;     //設置判定
 
-    [SerializeField]private Animator _animator;
+    bool stop;
 
-    private Quaternion quaternion;
+    [SerializeField]
+    Animator _animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        StartCoroutine("StartDelay");
+        StartCoroutine("Delay");
     }
-    
+
+    // Update is called once per frame
     void Update()
     {
         _camera.transform.localRotation = Quaternion.identity;
-        SpeedUp();
+
+        if (stop == false)
+        {
+            SpeedUp();
+            Jump();
+        }
+
     }
 
     //加速処理
@@ -48,7 +57,7 @@ public class Player2Controler : MonoBehaviour
             R_posGetCount = R_posGetCount + 1;
         }
         R_defPos = Rcube.transform.position;
-        if (R_defPos.y >= R_initialPos.y + R_shake || R_defPos.y <= R_initialPos.y - R_shake)
+        if (R_defPos.y >= R_initialPos.y + R_shake || R_defPos.y <= R_initialPos.y - R_shake || Input.GetKey(KeyCode.D))
         {
             _animator.SetBool("Run", true);
             force = new Vector3(moveSpeed, 0.0f, 0.0f);
@@ -67,9 +76,10 @@ public class Player2Controler : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) && jump == false)
         {
             _animator.SetBool("Jump", true);
-            rb.velocity = new Vector3(0, jumpPower, 0);
+            rb.velocity = new Vector3(5, jumpPower, 0);
             jump = true;
         }
+
     }
 
     private void OnCollisionEnter(Collision col)
@@ -79,16 +89,21 @@ public class Player2Controler : MonoBehaviour
             _animator.SetBool("Jump", false);
             jump = false;
         }
+        if (col.gameObject.tag == "Obstacles")
+        {
+            Destroy(col.gameObject);
+            StartCoroutine("Delay");
+        }
     }
 
     //遅延処理
-    private IEnumerator StartDelay()
+    private IEnumerator Delay()
     {
-        moveSpeed = 0f;
+        stop = true;
 
         yield return new WaitForSeconds(2.0f);
 
-        moveSpeed = 9.0f;
+        stop = false;
 
         yield break;
     }

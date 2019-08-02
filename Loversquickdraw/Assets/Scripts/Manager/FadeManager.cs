@@ -19,7 +19,7 @@ public class FadeManager : MonoBehaviour
     }
     private void Update()
     { 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(OVRInput.GetDown(OVRInput.RawButton.A))
         {
             Fadeout();
         }

@@ -5,11 +5,13 @@ using UnityEngine;
 public class TestPlayer2Controler : MonoBehaviour {
 
     public Rigidbody rb;
-    float moveSpeed;
+    [SerializeField] float moveSpeed;
     float moveForceMultipliter = 1.0f;
 
-    float jumpPower = 10;
+    [SerializeField] float jumpPower;
     bool jump = false;
+
+    bool stop;
 
     [SerializeField]
     Animator _animator;
@@ -18,15 +20,18 @@ public class TestPlayer2Controler : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        StartCoroutine("StartDelay");
+        StartCoroutine("Delay");
         rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        SpeedUp();
-        Jump();
+        if (stop == false)
+        {
+            SpeedUp();
+            Jump();
+        }
     }
 
     void SpeedUp()
@@ -58,17 +63,23 @@ public class TestPlayer2Controler : MonoBehaviour {
             _animator.SetBool("Jump", false);
             jump = false;
         }
+
+        if (col.gameObject.tag == "Obstacles" )
+        {
+            Destroy(col.gameObject);
+            StartCoroutine("Delay");
+        }
     }
 
 
     //遅延処理
-    private IEnumerator StartDelay()
+    private IEnumerator Delay()
     {
-        moveSpeed = 0f;
+        stop = true;
 
         yield return new WaitForSeconds(2.0f);
 
-        moveSpeed = 20.0f;
+        stop = false;
 
         yield break;
     }
