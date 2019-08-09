@@ -5,48 +5,73 @@ using UnityEngine.VR;
 
 public class Player1Controler : MonoBehaviour
 {
-    //Player1のカメラ固定よう;
+    //Player1のカメラ固定よう
     [SerializeField] private Camera _camera;
     // 1Pのコントローラー
-
-    //左コン
-    [SerializeField] private GameObject Lcube;
-    [SerializeField] private float L_shake;
-    private Vector3 L_defPos;
-    private Vector3 L_initialPos;
-
-    private int L_posGetCount = 0;
-     
-    [SerializeField] private Rigidbody rb;
-    private float moveSpeed; //速度
-
-    private Vector3 force;
-
-    float jumpPower = 10f; //ジャンプ力
-    bool jump = false;     //設置判定
-
-    [SerializeField]private Animator _animator;
 
     //comtrollerのposとるのに必須(1Pの場合InspectorからR選択)
     public OVRInput.Controller controller;
     //最高点と最低点のPosを固定
     [SerializeField] private float highPos;
     [SerializeField] private float lowPos;
-    //
-    void Start ()
+
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private float moveSpeed; //速度
+
+    private Vector3 force;
+    Test test;
+
+    [SerializeField]
+    private float jumpPower; //ジャンプ力
+    bool jump = false;     //設地判定
+
+    bool stop;
+
+    [SerializeField]
+    Animator _animator;
+
+    // Use this for initialization
+    void Start()
     {
         rb = GetComponent<Rigidbody>();
         StartCoroutine("Delay");
-	}
-	//
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
+        //Debug.Log(test.vector3);
         _camera.transform.localRotation = Quaternion.identity;
-        //SpeedUp();
-        ConShake();
-	}
-    
-    void ConShake()
+
+        if (stop == false)
+        {
+            //Test();
+            Teast2();
+            //SpeedUp();
+            Jump();
+        }
+    }
+
+    // 加速処理
+    void SpeedUp()
+    {
+        _animator.SetBool("Run", true);
+        force = new Vector3(moveSpeed, 0.0f, 0.0f);
+        rb.AddForce(force);
+
+        _animator.SetBool("Run", false);
+        rb.velocity = Vector3.zero;
+
+    }
+    void Teast2()
+    {
+        transform.position = OVRInput.GetLocalControllerPosition(controller);
+
+        string posStr = transform.position.ToString("F2");
+        //Debug.Log(posStr);
+    }
+
+    void Test()
     {
         //controllerのposを常に更新する
         transform.position = OVRInput.GetLocalControllerPosition(controller);
@@ -55,28 +80,28 @@ public class Player1Controler : MonoBehaviour
         {
             //Vector3 vec3 = transform.position;
             float comPosY = highPos - transform.position.y;
-            if (comPosY <= 0.3f)
+            if (comPosY <= -0.3f)
             {
-                //加速度を早くする
                 _animator.SetBool("Run", true);
-                force = new Vector3(moveSpeed, 0.0f, 0.0f);
+                force = new Vector3(moveSpeed * 1.5f, 0.0f, 0.0f);
                 rb.AddForce(force);
+                //加速度を早くする
                 Debug.Log("差が小さいから早い");
             }
-            else if (comPosY >= 0.3f && 0.6f >= comPosY)
+            else if (comPosY >= -0.3f && -0.6f >= comPosY)
             {
-                //加速度を普通にする
                 _animator.SetBool("Run", true);
                 force = new Vector3(moveSpeed, 0.0f, 0.0f);
                 rb.AddForce(force);
+                //加速度を普通にする
                 Debug.Log("ふつう");
             }
-            else if (comPosY >= 0.6f && 1.0f >= comPosY)
+            else if (comPosY >= -0.6f && -1.0f >= comPosY)
             {
-                //加速度を少しゆっくりにする
                 _animator.SetBool("Run", true);
-                force = new Vector3(moveSpeed, 0.0f, 0.0f);
+                force = new Vector3(moveSpeed * 0.5f, 0.0f, 0.0f);
                 rb.AddForce(force);
+                //加速度を少しゆっくりにする
                 Debug.Log("差が広いからゆっくり");
             }
             else
@@ -84,35 +109,22 @@ public class Player1Controler : MonoBehaviour
                 _animator.SetBool("Run", false);
                 rb.velocity = Vector3.zero;
             }
+            Debug.Log(transform.position.y);
         }
+
     }
-    // 加速処理
-    //void SpeedUp()
-    //{
-    //    if (L_defPos.y >= L_initialPos.y + L_shake || L_defPos.y <= L_initialPos.y - L_shake)
-    //    {
-    //        _animator.SetBool("Run", true);
-    //        force = new Vector3(moveSpeed, 0.0f, 0.0f);
-    //        rb.AddForce(force);
-    //    }
-    //    else
-    //    {
-    //        _animator.SetBool("Run", false);
-    //        rb.velocity = Vector3.zero;
-    //    }
-    //}
     //ジャンプの処理
     void Jump()
     {
         if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger) && jump == false)
         {
             _animator.SetBool("Jump", true);
-            rb.velocity = new Vector3(3, jumpPower, 0);
+            rb.velocity = new Vector3(5, jumpPower, 0);
             jump = true;
         }
 
     }
-    //
+
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "ground")
@@ -126,14 +138,15 @@ public class Player1Controler : MonoBehaviour
             StartCoroutine("Delay");
         }
     }
+
     //遅延処理
     private IEnumerator Delay()
     {
-        moveSpeed = 0f;
+        stop = true;
 
         yield return new WaitForSeconds(2.0f);
 
-        moveSpeed = 15.0f;
+        stop = false;
 
         yield break;
     }

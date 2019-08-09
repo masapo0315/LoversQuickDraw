@@ -9,7 +9,7 @@ public class Player2Controler : MonoBehaviour
     //　2Pのコントローラー
 
     //右コン
-    [SerializeField] private GameObject Rcube;
+    //[SerializeField] private GameObject Rcube;
     [SerializeField] private float R_shake;
     private Vector3 R_defPos;
     private Vector3 R_initialPos;
@@ -17,26 +17,37 @@ public class Player2Controler : MonoBehaviour
     private int R_posGetCount = 0;
 
     [SerializeField] private Rigidbody rb;
-    private float moveSpeed; //速度
+    [SerializeField] private float moveSpeed; //速度
 
     private Vector3 force;
 
-    private float jumpPower = 20; //ジャンプ力
-    private bool jump = false;     //設置判定
+    [SerializeField] private float jumpPower; //ジャンプ力
+    bool jump = false;     //設置判定
 
-    [SerializeField]private Animator _animator;
+    bool stop;
+
+    [SerializeField]
+    Animator _animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         StartCoroutine("Delay");
     }
-    
+
+    // Update is called once per frame
     void Update()
     {
         _camera.transform.localRotation = Quaternion.identity;
-        SpeedUp();
+
+        if (stop == false)
+        {
+            SpeedUp();
+            Jump();
+        }
+
     }
+
     //加速処理
     private void SpeedUp()
     {
@@ -45,8 +56,8 @@ public class Player2Controler : MonoBehaviour
             R_initialPos.y = R_defPos.y;
             R_posGetCount = R_posGetCount + 1;
         }
-        R_defPos = Rcube.transform.position;
-        if (R_defPos.y >= R_initialPos.y + R_shake || R_defPos.y <= R_initialPos.y - R_shake)
+        //R_defPos = Rcube.transform.position;
+        if (R_defPos.y >= R_initialPos.y + R_shake || R_defPos.y <= R_initialPos.y - R_shake || Input.GetKey(KeyCode.D))
         {
             _animator.SetBool("Run", true);
             force = new Vector3(moveSpeed, 0.0f, 0.0f);
@@ -58,18 +69,19 @@ public class Player2Controler : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
     }
+
     //ジャンプの処理
     void Jump()
     {
         if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) && jump == false)
         {
             _animator.SetBool("Jump", true);
-            rb.velocity = new Vector3(3, jumpPower, 0);
+            rb.velocity = new Vector3(5, jumpPower, 0);
             jump = true;
         }
 
     }
-    //
+
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "ground")
@@ -83,14 +95,15 @@ public class Player2Controler : MonoBehaviour
             StartCoroutine("Delay");
         }
     }
+
     //遅延処理
     private IEnumerator Delay()
     {
-        moveSpeed = 0f;
+        stop = true;
 
         yield return new WaitForSeconds(2.0f);
 
-        moveSpeed = 8.0f;
+        stop = false;
 
         yield break;
     }
