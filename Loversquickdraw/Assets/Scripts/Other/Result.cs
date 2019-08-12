@@ -14,8 +14,8 @@ public class Result : MonoBehaviour
 
     //勝敗に関係するフラグ
     bool gameSet = false;
-    public static bool Player1Win;
-    public static bool Player2Win;
+    public static bool Player1WinFlag;
+    public static bool Player2WinFlag;
     
     //プレイヤーの好感度
     private int player1LoveMetar;
@@ -79,28 +79,47 @@ public class Result : MonoBehaviour
 
     }
 
+    void Player1Win()
+    {
+        //Debug.Log("1Pの勝利");
+        Player1WinFlag = true;
+
+        //Singlton.Instance.WinFlag[0] = 1;
+        gameSet = true;
+    }
+
+    void Player2Win()
+    {
+        //Debug.Log("2Pの勝利");
+        Player2WinFlag = true;
+
+        //Singlton.Instance.WinFlag[0] = 2;
+        gameSet = true;
+    }
+
     //どちらか先に触れたほうの好感度を上げる
     private void OnTriggerEnter(Collider col)
     {
         Debug.Log("オブジェクトが触れました");
 
         if (col.gameObject.tag == "Player1")
-        {
-            
-
+        { 
             _animator.SetBool("Goal", true);
 
             images[0].enabled = true;
             images[2].enabled = true;
-
-            player1LoveMetar += 10;
             Time.timeScale = 0f;
 
-            //Debug.Log("1Pの勝利");
-            Player1Win = true;
+            //ただし速度が速すぎた場合好感度が下がる
+            if(player1Speed > 9)
+            {
+                player1LoveMetar -= 10; 
+            } else {
+                player1LoveMetar += 10;
+            }
 
-            //Singlton.Instance.WinFlag[0] = 1;
-            gameSet = true;
+            Player1Win();
+
         }
         else if (col.gameObject.tag == "Player2")
         {
@@ -108,15 +127,16 @@ public class Result : MonoBehaviour
 
             images[1].enabled = true;
             images[3].enabled = true;
-
-            player2LoveMetar += 10;
             Time.timeScale = 0f;
 
-            //Debug.Log("2Pの勝利");
-            Player2Win = true;
+            if (player1Speed > 9)
+            {
+                player2LoveMetar -= 10;
+            } else {
+                player2LoveMetar += 10;
+            }
 
-            //Singlton.Instance.WinFlag[0] = 2;
-            gameSet = true;
+            Player2Win();
         }
     }
 }
