@@ -14,8 +14,8 @@ public class Result : MonoBehaviour
 
     //勝敗に関係するフラグ
     bool gameSet = false;
-    public static bool Player1WinFlag;
-    public static bool Player2WinFlag;
+    public static bool Player1Win;
+    public static bool Player2Win;
     
     //プレイヤーの好感度
     private int player1LoveMetar;
@@ -79,19 +79,19 @@ public class Result : MonoBehaviour
 
     }
 
-    void Player1Win()
+    void Player1WinCheck()
     {
         //Debug.Log("1Pの勝利");
-        Player1WinFlag = true;
+        Player1Win = true;
 
         //Singlton.Instance.WinFlag[0] = 1;
         gameSet = true;
     }
 
-    void Player2Win()
+    void Player2WinCheck()
     {
         //Debug.Log("2Pの勝利");
-        Player2WinFlag = true;
+        Player2Win = true;
 
         //Singlton.Instance.WinFlag[0] = 2;
         gameSet = true;
@@ -118,7 +118,7 @@ public class Result : MonoBehaviour
                 player1LoveMetar += 10;
             }
 
-            Player1Win();
+            Player1WinCheck();
 
         }
         else if (col.gameObject.tag == "Player2")
@@ -136,7 +136,7 @@ public class Result : MonoBehaviour
                 player2LoveMetar += 10;
             }
 
-            Player2Win();
+            Player2WinCheck();
         }
     }
 }
