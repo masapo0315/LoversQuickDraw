@@ -20,7 +20,7 @@ public class MenuController : MonoBehaviour
     private bool MenuOn = false;
 
     //ボタン長おしの時間
-    private float GetDown = 3;
+    private float GetDown = 1.5f;
     //private float GetNow;
 
     void Start()
@@ -51,14 +51,14 @@ public class MenuController : MonoBehaviour
     private void MenuOnCommand()
     {
         MenuWindow.SetActive(true);
-        //メニュー開いたときにゲームの一時停止
+        //メニュー開いたときにゲームの一時停止 岩s会
         MenuOn = true;
     }
 
     private void MenuOffCommand()
     {
         MenuWindow.SetActive(false);
-        //メニュー閉じたときにゲーム再開するようにして
+        //メニュー閉じたときにゲーム再開するようにして　岩s会
         MenuOn = false;
     }
 
