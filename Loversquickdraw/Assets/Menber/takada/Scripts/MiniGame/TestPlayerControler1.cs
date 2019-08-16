@@ -71,8 +71,16 @@ public class TestPlayerControler1 : MonoBehaviour {
             Destroy(col.gameObject);
             StartCoroutine("Delay"); 
         }
+
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Stopper")
+        {
+            stop = true;
+        }
+    }
 
     private IEnumerator Delay()
     {
