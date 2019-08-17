@@ -419,8 +419,9 @@ GameObject:
   - component: {fileID: 103858203}
   - component: {fileID: 103858205}
   - component: {fileID: 103858204}
+  - component: {fileID: 103858206}
   m_Layer: 5
-  m_Name: canvas
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -476,13 +477,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: aaaaaaaaaaaa
+  m_Text: 
 --- !u!222 &103858205
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 103858202}
+--- !u!114 &103858206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 103858202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ecb18721c491149a62373fe00e4671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputname: {fileID: 103858204}
 --- !u!1 &108993187
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,7 +609,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 133563668}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 103858206}
+        m_MethodName: OnAddString
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u304A"
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &133563668
@@ -1089,7 +1113,7 @@ GameObject:
   - component: {fileID: 219097207}
   - component: {fileID: 219097206}
   m_Layer: 5
-  m_Name: e
+  m_Name: ke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1867,7 +1891,7 @@ GameObject:
   - component: {fileID: 354409687}
   - component: {fileID: 354409686}
   m_Layer: 5
-  m_Name: i
+  m_Name: ki
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2041,7 +2065,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 357743900}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 103858206}
+        m_MethodName: OnAddString
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u3046"
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &357743900
@@ -2967,7 +3002,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 511767395}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 103858206}
+        m_MethodName: OnAddString
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u3044"
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &511767395
@@ -4003,7 +4049,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 696252097}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 103858206}
+        m_MethodName: OnAddString
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u3048"
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &696252097
@@ -4180,7 +4237,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u304A"
+  m_Text: "\u3053"
 --- !u!222 &736078467
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4717,7 +4774,7 @@ GameObject:
   - component: {fileID: 880869754}
   - component: {fileID: 880869753}
   m_Layer: 5
-  m_Name: u
+  m_Name: ku
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5199,7 +5256,7 @@ GameObject:
   - component: {fileID: 1028280015}
   - component: {fileID: 1028280014}
   m_Layer: 5
-  m_Name: o
+  m_Name: ko
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5948,7 +6005,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3048"
+  m_Text: "\u3051"
 --- !u!222 &1211349006
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7252,7 +7309,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3046"
+  m_Text: "\u304F"
 --- !u!222 &1532102914
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7511,7 +7568,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3042"
+  m_Text: "\u304B"
 --- !u!222 &1581333371
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7808,7 +7865,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3044"
+  m_Text: "\u304D"
 --- !u!222 &1629950991
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7938,7 +7995,7 @@ GameObject:
   - component: {fileID: 1660355457}
   - component: {fileID: 1660355456}
   m_Layer: 5
-  m_Name: a
+  m_Name: ka
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8281,7 +8338,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1672131593}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 103858206}
+        m_MethodName: OnAddString
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u3042"
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1672131593
