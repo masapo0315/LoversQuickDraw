@@ -406,21 +406,5 @@ public class TalkManager : MonoBehaviour
                 //    Karen.sprite = FaceList[2];
                 //    break;
         }
-
     }
-    //public void Forced()
-    //{
-    //    if (judgePlayer == 1)
-    //    {
-    //        Player3.SetActive(true);
-    //        Player4.SetActive(false);
-    //        //Player.sprite = PlayerList[0];
-    //    }
-    //    else if (judgePlayer == 2)
-    //    {
-    //        Player3.SetActive(false);
-    //        Player4.SetActive(true);
-    //        // Player.sprite = PlayerList2[0];
-    //    }
-    //}
 }

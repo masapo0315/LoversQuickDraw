@@ -18,9 +18,11 @@ public class TalkManager2 : MonoBehaviour
     [SerializeField] private int meterPoint;//加算するポイント
     [SerializeField] private float fade;
     [SerializeField] private List<Sprite> FaceList = new List<Sprite>();
+    [SerializeField] private List<Sprite> BackList = new List<Sprite>();
     [SerializeField] private Sprite Player1 = new Sprite();
     [SerializeField] private Sprite Player2 = new Sprite();
     [SerializeField] private ChoiceManager2 choiceManager2;
+    [SerializeField] private Image Back;
     [SerializeField] private Image Karen;
     [SerializeField] private Image player1;
     [SerializeField] private Image player2;
@@ -163,6 +165,7 @@ public class TalkManager2 : MonoBehaviour
         //debug();
         Inputkey();
     }
+
     //キー入力
     void Inputkey()
     {
@@ -196,6 +199,7 @@ public class TalkManager2 : MonoBehaviour
                 if(Talktext == 19)
                 {
                     Karen1.SetActive(false);
+                    Back.sprite = FaceList[1];
                 }
 
                 //選択肢で分岐したシナリオの後の共通のシナリオ
