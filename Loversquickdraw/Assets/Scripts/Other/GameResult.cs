@@ -15,19 +15,10 @@ public class GameResult : MonoBehaviour
         {
             winnerImages[i].enabled = false;
         }
+        _player1LoveMetar = LoveMetar.GetPlayer1LoveMetar();
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            _player1LoveMetar += 10;
-            Debug.Log("Space");
-        }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            _player1LoveMetar -= 10;
-            Debug.Log("Escape");
-        }
         if (LoveMetar.player1LoveMetar > LoveMetar.player2LoveMetar)
         {
             winnerImages[0].enabled = true;
