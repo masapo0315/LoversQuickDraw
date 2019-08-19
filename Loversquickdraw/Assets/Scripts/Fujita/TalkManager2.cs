@@ -29,8 +29,8 @@ public class TalkManager2 : MonoBehaviour
 
     private void Start()
     {
-        player1LoveMeter = LoveMetar.getPlayer1LoveMetar();
-        player2LoveMeter = LoveMetar.getPlayer2LoveMetar();
+        player1LoveMeter = LoveMetar.GetPlayer1LoveMetar();
+        player2LoveMeter = LoveMetar.GetPlayer2LoveMetar();
         //string x = "プレイヤー１";
         //x = x.Replace("プレイヤー１", "name1");
         fadeInOut = Sakura.GetComponent<Image>().color.a;

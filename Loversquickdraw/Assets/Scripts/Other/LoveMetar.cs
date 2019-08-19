@@ -9,11 +9,11 @@ public class LoveMetar : MonoBehaviour
     public static int player2LoveMetar; //２Pの好感度
     
     //getter
-    public static int getPlayer1LoveMetar()
+    public static int GetPlayer1LoveMetar()
     {
         return player1LoveMetar;
     }
-    public static int getPlayer2LoveMetar()
+    public static int GetPlayer2LoveMetar()
     {
         return player2LoveMetar;
     }

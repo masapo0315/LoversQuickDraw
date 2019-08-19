@@ -7,7 +7,7 @@ public class GameResult : MonoBehaviour
 {
     [SerializeField] private Image[] winnerImages;
 
-    private int player1LoveMetar;
+    private int _player1LoveMetar;
 
     private void Start()
     {
@@ -20,12 +20,12 @@ public class GameResult : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            player1LoveMetar += 10;
+            _player1LoveMetar += 10;
             Debug.Log("Space");
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            player1LoveMetar -= 10;
+            _player1LoveMetar -= 10;
             Debug.Log("Escape");
         }
         if (LoveMetar.player1LoveMetar > LoveMetar.player2LoveMetar)

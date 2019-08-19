@@ -12,8 +12,8 @@ public class GoalOver : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        player1LoveMetar = LoveMetar.getPlayer1LoveMetar();
-        player2LoveMetar = LoveMetar.getPlayer2LoveMetar();
+        player1LoveMetar = LoveMetar.GetPlayer1LoveMetar();
+        player2LoveMetar = LoveMetar.GetPlayer2LoveMetar();
 
     }
 
