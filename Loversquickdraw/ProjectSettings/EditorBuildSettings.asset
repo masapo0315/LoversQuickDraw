@@ -44,3 +44,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/test/k-iwasaki/Title-iwasaki.unity
     guid: 4a1e267ea61172c41899f7bf75f557f0
+  - enabled: 0
+    path: Assets/Scenes/InputName.unity
+    guid: 422578714bc8c3f46a7f804a104ea68a
