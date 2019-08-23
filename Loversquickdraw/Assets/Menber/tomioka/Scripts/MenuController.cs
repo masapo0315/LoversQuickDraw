@@ -21,11 +21,13 @@ public class MenuController : MonoBehaviour
 
     //ボタン長おしの時間
     private float GetDown = 1.5f;
+    private float ResetGetDown;
     //private float GetNow;
 
     void Start()
     {
         MenuOffCommand();
+        ResetGetDown = GetDown;
         for (int i = 0; i < tmp.Length; i++)
         {
             tmp[i] = menuNum[i].transform.position;
@@ -153,7 +155,7 @@ public class MenuController : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Escape) || OVRInput.GetUp(OVRInput.RawButton.Start))
         {
-            GetDown = 3;
+            GetDown = ResetGetDown;
         }
     }
 }

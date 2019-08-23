@@ -98,11 +98,5 @@ public class Test : MonoBehaviour
         {
             Debug.Log("右アナログスティックを右に傾けた");
         }
-<<<<<<< HEAD
-=======
-        //
-        transform.localPosition = OVRInput.GetLocalControllerPosition(controller);
-        //Debug.Log(transform.localPosition);
->>>>>>> origin/Tomioka_2
     }
 }
