@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class InputName : MonoBehaviour {
 
-    //名前入力
+    //名前入力に関係するScript
 
     [SerializeField]
     private Text inputname = null;
@@ -19,9 +19,9 @@ public class InputName : MonoBehaviour {
     } 
 
     //テキストの中の文字を削除
-    public void DestroyString(string deleteString)
+    public void DestroyString()
     {
-        
+        inputname.text.Remove(inputname.text.Length - 1);
     }
 
     //名前の決定
