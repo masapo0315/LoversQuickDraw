@@ -9,7 +9,6 @@ public class SceneController : MonoBehaviour
     private void Start()
     {
         Cursor.visible = false;
-        _player1 = LoveMetar.GetPlayer1LoveMetar();
     }
     void Update ()
     {
@@ -23,13 +22,14 @@ public class SceneController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            _player1 += 10;
+            LoveMetar.player1LoveMetar += 10;
             Debug.Log("z");
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
-            _player1 -= 10;
+            LoveMetar.player1LoveMetar -= 10;
             Debug.Log("x");
         }
+        Debug.Log(LoveMetar.player1LoveMetar);
     }
 }

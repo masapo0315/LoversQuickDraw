@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class TalkManager2 : MonoBehaviour
 {
-
-    private int player1LoveMeter, player2LoveMeter;//それぞれにポイント加算した変数を代入して
+    
     private int Talktext = 0; //縦
     private new int name = 0; //横
     private float fadeInOut; //点滅用
@@ -29,8 +28,6 @@ public class TalkManager2 : MonoBehaviour
 
     private void Start()
     {
-        player1LoveMeter = LoveMetar.GetPlayer1LoveMetar();
-        player2LoveMeter = LoveMetar.GetPlayer2LoveMetar();
         //string x = "プレイヤー１";
         //x = x.Replace("プレイヤー１", "name1");
         fadeInOut = Sakura.GetComponent<Image>().color.a;
@@ -354,12 +351,12 @@ public class TalkManager2 : MonoBehaviour
     {
         if (Result.Player1Win ==  true && Result.Player2Win == false)
         {
-            player1LoveMeter += meterPoint;
+            LoveMetar.player1LoveMetar += meterPoint;
             return Player1;//1P勝利
         }
         else if (Result.Player1Win == false && Result.Player2Win == true)
         {
-            player2LoveMeter += meterPoint;
+            LoveMetar.player2LoveMetar += meterPoint;
             return Player2;//2P勝利
         }
         else return "WinError";

@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class GameResult : MonoBehaviour
 {
+    //
     [SerializeField] private Image[] winnerImages;
 
-    private int _player1LoveMetar;
+    [HideInInspector] public bool _talkCheck = false;
 
     private void Start()
     {
@@ -15,23 +16,25 @@ public class GameResult : MonoBehaviour
         {
             winnerImages[i].enabled = false;
         }
-        _player1LoveMetar = LoveMetar.GetPlayer1LoveMetar();
     }
     private void Update()
     {
-        if (LoveMetar.player1LoveMetar > LoveMetar.player2LoveMetar)
+        if(_talkCheck == true)
         {
-            winnerImages[0].enabled = true;
-            Debug.Log("1PWin");
-        }
-        else if(LoveMetar.player2LoveMetar > LoveMetar.player1LoveMetar)
-        {
-            winnerImages[1].enabled = true;
-            Debug.Log("2PWin");
-        }
-        else if(LoveMetar.player1LoveMetar == LoveMetar.player2LoveMetar)
-        {
-            Debug.Log("引き分け");
+            if (LoveMetar.player1LoveMetar > LoveMetar.player2LoveMetar)
+            {
+                winnerImages[0].enabled = true;
+                Debug.Log("1PWin");
+            }
+            else if (LoveMetar.player2LoveMetar > LoveMetar.player1LoveMetar)
+            {
+                winnerImages[1].enabled = true;
+                Debug.Log("2PWin");
+            }
+            else if (LoveMetar.player1LoveMetar == LoveMetar.player2LoveMetar)
+            {
+                Debug.Log("引き分け");
+            }
         }
     }
 }
