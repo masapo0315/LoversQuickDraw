@@ -199,7 +199,6 @@ public class TalkManager2 : MonoBehaviour
                 if(Talktext == 19)
                 {
                     Karen1.SetActive(false);
-                    Back.sprite = FaceList[1];
                 }
 
                 //選択肢で分岐したシナリオの後の共通のシナリオ
@@ -483,6 +482,9 @@ public class TalkManager2 : MonoBehaviour
             case 47:
             case 51:
                 Karen.sprite = FaceList[4];
+                break;
+            case 19:
+                Back.sprite = FaceList[1];
                 break;
         }
         switch (Talktext)
