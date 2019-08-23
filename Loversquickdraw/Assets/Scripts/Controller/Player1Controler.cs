@@ -19,6 +19,7 @@ public class Player1Controler : MonoBehaviour
     [SerializeField] private float moveSpeed; //速度
 
     private Vector3 force;
+    Test test;
 
     [SerializeField]
     private float jumpPower; //ジャンプ力
@@ -39,11 +40,13 @@ public class Player1Controler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(test.vector3);
         _camera.transform.localRotation = Quaternion.identity;
 
         if (stop == false)
         {
-            Test();
+            //Test();
+            Teast2();
             //SpeedUp();
             Jump();
         }
@@ -59,6 +62,13 @@ public class Player1Controler : MonoBehaviour
         _animator.SetBool("Run", false);
         rb.velocity = Vector3.zero;
 
+    }
+    void Teast2()
+    {
+        transform.position = OVRInput.GetLocalControllerPosition(controller);
+
+        string posStr = transform.position.ToString("F2");
+        //Debug.Log(posStr);
     }
 
     void Test()

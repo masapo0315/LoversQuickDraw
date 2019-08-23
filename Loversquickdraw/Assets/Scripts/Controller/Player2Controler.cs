@@ -9,7 +9,7 @@ public class Player2Controler : MonoBehaviour
     //　2Pのコントローラー
 
     //右コン
-    [SerializeField] private GameObject Rcube;
+    //[SerializeField] private GameObject Rcube;
     [SerializeField] private float R_shake;
     private Vector3 R_defPos;
     private Vector3 R_initialPos;
@@ -56,7 +56,7 @@ public class Player2Controler : MonoBehaviour
             R_initialPos.y = R_defPos.y;
             R_posGetCount = R_posGetCount + 1;
         }
-        R_defPos = Rcube.transform.position;
+        //R_defPos = Rcube.transform.position;
         if (R_defPos.y >= R_initialPos.y + R_shake || R_defPos.y <= R_initialPos.y - R_shake || Input.GetKey(KeyCode.D))
         {
             _animator.SetBool("Run", true);
