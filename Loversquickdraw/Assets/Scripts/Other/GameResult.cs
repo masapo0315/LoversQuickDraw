@@ -8,6 +8,7 @@ public class GameResult : MonoBehaviour
     //
     [SerializeField] private Image[] winnerImages;
 
+    //　TalkManager作成後にResultSceneで会話が終わったときにこのboolをtrueにする
     [HideInInspector] public bool _talkCheck = false;
 
     private void Start()
