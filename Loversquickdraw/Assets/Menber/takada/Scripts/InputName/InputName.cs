@@ -14,6 +14,12 @@ public class InputName : MonoBehaviour {
 
     public static string Player1Name;
 
+    [SerializeField]
+    private GameObject Input;
+
+    [SerializeField]
+    private GameObject Confirmation;
+
     //テキストの中に文字を追加
     public void OnAddString(string inputString)
     {
@@ -35,6 +41,9 @@ public class InputName : MonoBehaviour {
     public void EnterName()
     {
         inputname.text = Player1Name;
+
+        Input.SetActive(false);
+        Confirmation.SetActive(true);
     }
 
 }
