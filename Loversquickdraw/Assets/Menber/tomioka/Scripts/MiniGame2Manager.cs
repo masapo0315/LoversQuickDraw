@@ -23,7 +23,8 @@ public class MiniGame2Manager : MonoBehaviour
 
     private bool RuleCheck1, RuleCheck2 = false;
     //ReadyGoまで操作できないように
-    [HideInInspector] public bool Ready1, Ready2 = false;
+    //[HideInInspector]
+    public bool Ready1, Ready2 = false;
 
     private string Hint = "この教室に来る前は\n本が沢山あるところにいて...";
     private string Karen;
@@ -48,9 +49,15 @@ public class MiniGame2Manager : MonoBehaviour
     {
         Karen_Hint.GetComponent<Text>();
         Karen_Hint.text = Hint;
+
         //BackGround.GetComponent<Image>();
     }
-    
+
+    void Update()
+    {
+        //RuleCheck();
+    }
+
     private void ChangeText()
     {
         Place1.GetComponent<Text>();
@@ -838,6 +845,8 @@ public class MiniGame2Manager : MonoBehaviour
                 Destroy(PlaceList[0]);
                 Destroy(buttonMenuList[1]);
                 Invoke("ResetText", 1);
+                TimeLag();
+                Invoke("ReadyGO", 1.0f);
                 Hint = "そのあとは体調悪い時に\n行くところに行って...";
                 break;
             case 6:
@@ -864,7 +873,8 @@ public class MiniGame2Manager : MonoBehaviour
                 Debug.Log("10回目");
                 Karen = "つ";
                 Destroy(buttonMenuList[9]);
-
+                TimeLag();
+                Invoke("ReadyGO", 1.0f);
                 //一度クリアにする関数
                 Destroy(PlaceList[1]);
                 Invoke("ResetText", 1);
@@ -899,6 +909,7 @@ public class MiniGame2Manager : MonoBehaviour
                 Invoke("DestroyPlace", 1);
                 Destroy(HintFrame);
                 Invoke("Scene", 2);
+                TimeLag();
                 break;
         }
         Text();
@@ -987,14 +998,14 @@ public class MiniGame2Manager : MonoBehaviour
 
     private void RuleCheck()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        if (OVRInput.GetDown(OVRInput.RawButton.A))
+        if (Input.GetKeyDown(KeyCode.Space))
+        //if (OVRInput.GetDown(OVRInput.RawButton.A))
         {
             RuleCheck1 = true;
         }
 
-        //if (Input.GetKeyDown(KeyCode.Return))
-        if (OVRInput.GetDown(OVRInput.RawButton.X))
+        if (Input.GetKeyDown(KeyCode.Return))
+        //if (OVRInput.GetDown(OVRInput.RawButton.X))
         {
             RuleCheck2 = true;
         }
@@ -1010,6 +1021,13 @@ public class MiniGame2Manager : MonoBehaviour
     {
         Ready1 = true;
         Ready2 = true;
+    }
+
+    private void TimeLag()
+    {
+        Ready1 = false;
+        Debug.Log("まれいたそ");
+        Ready2 = false;
     }
 
 }

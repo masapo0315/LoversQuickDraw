@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour
+public class SoundManager : SingletonMonoBehaviour<SoundManager>
 {
 
     [SerializeField] private AudioClip BGM_Once;

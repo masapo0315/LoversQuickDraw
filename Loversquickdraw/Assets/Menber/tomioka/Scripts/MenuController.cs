@@ -20,12 +20,14 @@ public class MenuController : MonoBehaviour
     private bool MenuOn = false;
 
     //ボタン長おしの時間
-    private float GetDown = 3;
+    private float GetDown = 1.5f;
+    private float ResetGetDown;
     //private float GetNow;
 
     void Start()
     {
         MenuOffCommand();
+        ResetGetDown = GetDown;
         for (int i = 0; i < tmp.Length; i++)
         {
             tmp[i] = menuNum[i].transform.position;
@@ -51,14 +53,14 @@ public class MenuController : MonoBehaviour
     private void MenuOnCommand()
     {
         MenuWindow.SetActive(true);
-        //メニュー開いたときにゲームの一時停止
+        //メニュー開いたときにゲームの一時停止 岩s会
         MenuOn = true;
     }
 
     private void MenuOffCommand()
     {
         MenuWindow.SetActive(false);
-        //メニュー閉じたときにゲーム再開するようにして
+        //メニュー閉じたときにゲーム再開するようにして　岩s会
         MenuOn = false;
     }
 
@@ -153,7 +155,7 @@ public class MenuController : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Escape) || OVRInput.GetUp(OVRInput.RawButton.Start))
         {
-            GetDown = 3;
+            GetDown = ResetGetDown;
         }
     }
 }

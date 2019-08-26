@@ -1058,10 +1058,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 44863939}
 <<<<<<< HEAD
-  controller: 0
-=======
   controller: 2
->>>>>>> origin/test
+=======
+  controller: 0
+>>>>>>> acfd1c106e3f52aa514e29702ae38ac8e75423ba
   highPos: 0
   lowPos: -1
   rb: {fileID: 404583207}
