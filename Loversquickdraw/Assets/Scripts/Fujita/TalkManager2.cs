@@ -6,19 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class TalkManager2 : MonoBehaviour
 {
-
+    
     private int Talktext = 0; //縦
     private new int name = 0; //横
     private float fadeInOut; //点滅用
     private bool choice = false;
     string[] TEXTTAG_LIST = { "勝利者", "［敗北者］", "択プレイヤー" };
 
-    [SerializeField] private List<Sprite> FaceList = new List<Sprite>();
-    [SerializeField] private GameObject Karen1; //最初のSetActive用
-    [SerializeField] private Image Karen;
+    [SerializeField] private int meterPoint;//加算するポイント
     [SerializeField] private float fade;
-    [SerializeField] private GameObject TextFrame;
+    [SerializeField] private List<Sprite> FaceList = new List<Sprite>();
     [SerializeField] private ChoiceManager2 choiceManager2;
+    [SerializeField] private Image Karen;
+    [SerializeField] private GameObject Karen1; //最初のSetActive用
+    [SerializeField] private GameObject TextFrame;
     [SerializeField] private GameObject NameTextmanager;
     [SerializeField] private GameObject CommentTextmanager;
     [SerializeField] private GameObject Sakura;
@@ -186,6 +187,7 @@ public class TalkManager2 : MonoBehaviour
                     Karen1.SetActive(false);
                 }
 
+                //選択肢で分岐したシナリオの後の共通のシナリオ
                 if (Talktext == 50 || Talktext == 57 || Talktext == 71)
                 {
                     Talktext = 71;
@@ -219,6 +221,7 @@ public class TalkManager2 : MonoBehaviour
         sakuraStart();
         Talktext++;
     }
+
     //debug
     #region
     //デバック
@@ -260,7 +263,8 @@ public class TalkManager2 : MonoBehaviour
     //    }
     //}
     #endregion //
-    //桜の点滅
+
+    //桜の点滅開始
     private void sakuraStart()
     {
         //テキストが出終わったら点滅開始
@@ -269,7 +273,8 @@ public class TalkManager2 : MonoBehaviour
             StartCoroutine("SakuraOut");
         }
     }
-    //
+
+    //桜の点滅終了
     private void sakuraOut()
     {
         //前回の点滅の処理を止める
@@ -278,6 +283,7 @@ public class TalkManager2 : MonoBehaviour
             StopCoroutine("SakuraOut");
         }
     }
+
     //透明度を1~0と0~1へと徐々に変更することにより点滅させる(fadein,fadeoutの要領)
     IEnumerator SakuraOut()
     {
@@ -299,7 +305,8 @@ public class TalkManager2 : MonoBehaviour
             }
         }
     }
-    //
+
+
     #region
     //string ReplaceTag(string _text)
     //{
@@ -322,7 +329,7 @@ public class TalkManager2 : MonoBehaviour
     //    return tmp;
     //}
     #endregion
-    //
+
     private string JudgedChoice(string Player1, string Player2)
     {
         if (choiceManager2.stopChoice == true && choiceManager2.firstsPlayer == true)
@@ -339,22 +346,22 @@ public class TalkManager2 : MonoBehaviour
         }
         else return "通ってないよ";
     }
-    //
+
     private string Winner(string Player1, string Player2)
     {
         if (Result.Player1Win ==  true && Result.Player2Win == false)
         {
-            //1P勝利
-            return Player1;
+            LoveMetar.player1LoveMetar += meterPoint;
+            return Player1;//1P勝利
         }
         else if (Result.Player1Win == false && Result.Player2Win == true)
         {
-            //2P勝利
-            return Player2;
+            LoveMetar.player2LoveMetar += meterPoint;
+            return Player2;//2P勝利
         }
         else return "WinError";
     }
-    //
+
     private string Loser(string Player1, string Player2)
     {
         if (Result.Player1Win == true && Result.Player2Win == false)
@@ -369,7 +376,9 @@ public class TalkManager2 : MonoBehaviour
         }
         else return "LoseError";
     }
-    //
+
+    //名前置き換え用
+    //("","")の中にある文字列が置き換える側で上のTEXTTAG_LISTで指定してる文字列が置き換えられる側
     string ReplaceTag(string _text)
     {
         string tmp = _text;
@@ -393,15 +402,17 @@ public class TalkManager2 : MonoBehaviour
         }
         return tmp;
     }
-    //
+
+    //MiniGame2_test Sceneに移動
     public void LordMinigame()
     {
         if (Talktext == 78)
         {
-            SceneManager.LoadScene("MiniGame2_test");
+                SceneManager.LoadScene("MiniGame2_test");
         }
     }
-    //
+
+    //選んだ選択肢によってシナリオが変わる
     public void ChoiceRoot()
     {
         Debug.Log(choiceManager2.rootflag);
@@ -422,6 +433,7 @@ public class TalkManager2 : MonoBehaviour
                 break;
         }
     }
+
     //表情変更用
     public void ChangeFace()
     {

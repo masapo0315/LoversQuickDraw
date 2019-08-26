@@ -4,13 +4,31 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    public OVRInput.Controller controller;
+    //public OVRInput.Controller controller;
+    //public Vector3 vector3;
+    public AudioClip audio;
+    OVRHapticsClip hapticsClip;
+    void TestPos()
+    {
+    //    transform.localPosition = OVRInput.GetLocalControllerPosition(controller);
+      //  Debug.Log(transform.localPosition);
+        //vector3 = OVRInput.GetLocalControllerPosition(controller);
+        //Debug.Log(vector3);
+    }
+
+    private void Start()
+    {
+        hapticsClip = new OVRHapticsClip(audio);
+    }
+
     void Update()
     {
+        TestPos();
         //ボタン系
         if (OVRInput.GetDown(OVRInput.RawButton.A))
         {
             Debug.Log("Aボタンを押した");
+            OVRHaptics.RightChannel.Mix(hapticsClip);
         }
         if (OVRInput.GetDown(OVRInput.RawButton.B))
         {
@@ -80,8 +98,5 @@ public class Test : MonoBehaviour
         {
             Debug.Log("右アナログスティックを右に傾けた");
         }
-        //
-        transform.localPosition = OVRInput.GetLocalControllerPosition(controller);
-        Debug.Log(transform.localPosition);
     }
 }

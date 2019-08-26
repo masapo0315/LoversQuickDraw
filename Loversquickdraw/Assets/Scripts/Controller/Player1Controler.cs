@@ -9,19 +9,17 @@ public class Player1Controler : MonoBehaviour
     [SerializeField] private Camera _camera;
     // 1Pのコントローラー
 
-    //左コン
-    [SerializeField] private GameObject Lcube;
-    [SerializeField] private float L_shake;
-    private Vector3 L_defPos;
-    private Vector3 L_initialPos;
-
-    private int L_posGetCount = 0;
-     
+    //comtrollerのposとるのに必須(1Pの場合InspectorからR選択)
+    public OVRInput.Controller controller;
+    //最高点と最低点のPosを固定
+    [SerializeField] private float highPos;
+    [SerializeField] private float lowPos;
 
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float moveSpeed; //速度
 
     private Vector3 force;
+    Test test;
 
     [SerializeField]
     private float jumpPower; //ジャンプ力
@@ -33,20 +31,23 @@ public class Player1Controler : MonoBehaviour
     Animator _animator;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         rb = GetComponent<Rigidbody>();
         StartCoroutine("Delay");
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
+        //Debug.Log(test.vector3);
         _camera.transform.localRotation = Quaternion.identity;
 
         if (stop == false)
         {
-            SpeedUp();
+            //Test();
+            Teast2();
+            //SpeedUp();
             Jump();
         }
     }
@@ -54,25 +55,64 @@ public class Player1Controler : MonoBehaviour
     // 加速処理
     void SpeedUp()
     {
-        if (L_posGetCount <= 5)
-        {
-            L_initialPos.y = L_defPos.y;
-            L_posGetCount = L_posGetCount + 1;
-        }
-        L_defPos = Lcube.transform.position;
-        if (L_defPos.y >= L_initialPos.y + L_shake || L_defPos.y <= L_initialPos.y - L_shake)
-        {
-            _animator.SetBool("Run", true);
-            force = new Vector3(moveSpeed, 0.0f, 0.0f);
-            rb.AddForce(force);
-        }
-        else
-        {
-            _animator.SetBool("Run", false);
-            rb.velocity = Vector3.zero;
-        }
+        _animator.SetBool("Run", true);
+        force = new Vector3(moveSpeed, 0.0f, 0.0f);
+        rb.AddForce(force);
+
+        _animator.SetBool("Run", false);
+        rb.velocity = Vector3.zero;
+
+    }
+    void Teast2()
+    {
+        transform.position = OVRInput.GetLocalControllerPosition(controller);
+
+        string posStr = transform.position.ToString("F2");
+        //Debug.Log(posStr);
     }
 
+    void Test()
+    {
+        //controllerのposを常に更新する
+        transform.position = OVRInput.GetLocalControllerPosition(controller);
+        //最高点と今のposを比べる
+        if (transform.position.y < highPos)
+        {
+            //Vector3 vec3 = transform.position;
+            float comPosY = highPos - transform.position.y;
+            if (comPosY <= -0.3f)
+            {
+                _animator.SetBool("Run", true);
+                force = new Vector3(moveSpeed * 1.5f, 0.0f, 0.0f);
+                rb.AddForce(force);
+                //加速度を早くする
+                Debug.Log("差が小さいから早い");
+            }
+            else if (comPosY >= -0.3f && -0.6f >= comPosY)
+            {
+                _animator.SetBool("Run", true);
+                force = new Vector3(moveSpeed, 0.0f, 0.0f);
+                rb.AddForce(force);
+                //加速度を普通にする
+                Debug.Log("ふつう");
+            }
+            else if (comPosY >= -0.6f && -1.0f >= comPosY)
+            {
+                _animator.SetBool("Run", true);
+                force = new Vector3(moveSpeed * 0.5f, 0.0f, 0.0f);
+                rb.AddForce(force);
+                //加速度を少しゆっくりにする
+                Debug.Log("差が広いからゆっくり");
+            }
+            else
+            {
+                _animator.SetBool("Run", false);
+                rb.velocity = Vector3.zero;
+            }
+            Debug.Log(transform.position.y);
+        }
+
+    }
     //ジャンプの処理
     void Jump()
     {
