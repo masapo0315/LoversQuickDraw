@@ -9,8 +9,8 @@ public class ChoiceCursor : MonoBehaviour
     [SerializeField] private GameObject ChoiceBorY;
     [SerializeField] private GameObject ChoiceTrigger;
 
-    [HideInInspector] public int RightMenu = 0;
-    [HideInInspector] public int LeftMenu = 1;
+     public int RightMenu = 2;
+     public int LeftMenu = 2;
 
     [SerializeField] private GameObject Cursor;
     [SerializeField] private GameObject Cursor2;

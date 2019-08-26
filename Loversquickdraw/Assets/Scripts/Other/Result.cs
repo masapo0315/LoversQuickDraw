@@ -31,6 +31,7 @@ public class Result : MonoBehaviour
     //
     void Start ()
     {
+        
         Time.timeScale = 1.0f;
         
         for (int i = 0; i <= images.Length - 1; i++)

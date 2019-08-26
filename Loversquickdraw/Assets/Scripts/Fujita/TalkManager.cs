@@ -12,6 +12,7 @@ public class TalkManager : MonoBehaviour
     public bool choiceAfterText = true; //選択後のシナリオ遷移
     private bool choice = false;
     private int judgePlayer = 0;
+    private int stringCount;
 
     string[] TEXTTAG_LIST = { "択プレイヤー", "非選択Ｐ" };
 
@@ -405,21 +406,5 @@ public class TalkManager : MonoBehaviour
                 //    Karen.sprite = FaceList[2];
                 //    break;
         }
-
     }
-    //public void Forced()
-    //{
-    //    if (judgePlayer == 1)
-    //    {
-    //        Player3.SetActive(true);
-    //        Player4.SetActive(false);
-    //        //Player.sprite = PlayerList[0];
-    //    }
-    //    else if (judgePlayer == 2)
-    //    {
-    //        Player3.SetActive(false);
-    //        Player4.SetActive(true);
-    //        // Player.sprite = PlayerList2[0];
-    //    }
-    //}
 }
