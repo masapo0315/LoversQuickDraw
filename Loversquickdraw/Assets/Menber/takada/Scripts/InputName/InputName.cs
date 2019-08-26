@@ -11,6 +11,12 @@ public class InputName : MonoBehaviour {
     [SerializeField]
     private Text inputname = null;
 
+    [SerializeField]
+    private Text nomalText;
+
+    [SerializeField]
+    private Text errorText;
+
     //文字数
     private int nameCount;
 
@@ -30,7 +36,10 @@ public class InputName : MonoBehaviour {
         {
             inputname.text += inputString;
             nameCount += 1;
+            nomalText.gameObject.SetActive(true);
+            errorText.gameObject.SetActive(false);
         }
+
     }
 
     //テキストの中の文字を削除
@@ -47,10 +56,22 @@ public class InputName : MonoBehaviour {
     //名前の決定
     public void EnterName()
     {
-        inputname.text = Player1Name;
+        //名前が入力されていなかったら決定できないようにする
+        if(nameCount != 0)
+        {
+            inputname.text = Player1Name;
 
-        Input.SetActive(false);
-        Confirmation.SetActive(true);
+            Input.SetActive(false);
+            Confirmation.SetActive(true);
+
+
+        } else {
+
+            nomalText.gameObject.SetActive(false);
+            errorText.gameObject.SetActive(true);
+
+        }
+
     }
 
 }
