@@ -59,7 +59,7 @@ public class InputName : MonoBehaviour {
         //名前が入力されていなかったら決定できないようにする
         if(nameCount != 0)
         {
-            inputname.text = Player1Name;
+            Player1Name = inputname.text;
 
             Input.SetActive(false);
             Confirmation.SetActive(true);
