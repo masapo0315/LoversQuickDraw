@@ -12,24 +12,24 @@ public class ChoiceManager : MonoBehaviour
     /// 一定時間後に選択肢を消す
     /// </summary>
 
-    [SerializeField]private GameObject choiceAorX;
-    [SerializeField]private GameObject choiceBorY;
-    [SerializeField]private GameObject choiceTrigger;
-    [SerializeField]private GameObject FrameText;
-    [SerializeField]private GameObject cursor;
-    [SerializeField]private GameObject cursor2;
+    [SerializeField] private GameObject choiceAorX;
+    [SerializeField] private GameObject choiceBorY;
+    [SerializeField] private GameObject choiceTrigger;
+    [SerializeField] private GameObject FrameText;
+    [SerializeField] private GameObject cursor;
+    [SerializeField] private GameObject cursor2;
     [HideInInspector] public int rootflag;
 
     private bool destroyFlag = false;
 
     //基準は2.5秒
     [SerializeField] private float invokeTime = 2.5f;
-    [SerializeField]private TalkManager talkManager;
-    [SerializeField]private ChoiceCursor choiceCursor;
+    [SerializeField] private TalkManager talkManager;
+    [SerializeField] private ChoiceCursor choiceCursor;
 
-    [HideInInspector]public bool stopChoice = false;
+    [HideInInspector] public bool stopChoice = false;
     //trueの場合は1Pの勝ち、falseの場合は2Pの勝ち
-    [HideInInspector]public bool firstsPlayer = false;
+    [HideInInspector] public bool firstsPlayer = false;
 
     private void Start()
     {
@@ -54,7 +54,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
-            talkManager.ChoiceRoot();
+            //talkManager.ChoiceRoot();
             Debug.Log("choice1-1");
         }
 
@@ -69,7 +69,6 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
-            talkManager.ChoiceRoot();
             Debug.Log("choice2-1");
         }
 
@@ -84,7 +83,6 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
-            talkManager.ChoiceRoot();
             Debug.Log("choice1-2");
         }
 
@@ -99,7 +97,6 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
-            talkManager.ChoiceRoot();
             Debug.Log("choice2-2");
         }
 
@@ -114,7 +111,6 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
-            talkManager.ChoiceRoot();
             Debug.Log("choice1-3");
         }
 
@@ -129,7 +125,6 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
-            talkManager.ChoiceRoot();
             Debug.Log("choice2-3");
         }
     }
@@ -151,7 +146,6 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
-            talkManager.ChoiceRoot();
             Debug.Log("choice1-1");
         }
 
@@ -166,7 +160,6 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
-            talkManager.ChoiceRoot();
             Debug.Log("choice2-1");
         }
 
@@ -181,7 +174,6 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
-            talkManager.ChoiceRoot();
             Debug.Log("choice1-2");
         }
 
@@ -196,7 +188,6 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
-            talkManager.ChoiceRoot();
             Debug.Log("choice2-2");
         }
 
@@ -211,7 +202,6 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
-            talkManager.ChoiceRoot();
             Debug.Log("choice1-3");
         }
 
@@ -226,7 +216,6 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
-            talkManager.ChoiceRoot();
             Debug.Log("choice2-3");
         }
         //Invoke("talkManager.Forced",2);
