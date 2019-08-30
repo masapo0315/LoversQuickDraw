@@ -154,6 +154,7 @@ public class TalkManager2 : MonoBehaviour
         if (choice == true)
         {
             choiceManager2.PushButton();
+            choiceManager2.DebugPushButton();
             if (choiceManager2.getdestroyFlag())
             {
                 choice = false;
@@ -419,7 +420,7 @@ public class TalkManager2 : MonoBehaviour
     {
         if (Talktext == 78)
         {
-                SceneManager.LoadScene("MiniGame2_test");
+                SceneManager.LoadScene("MiniGame2");
         }
     }
 

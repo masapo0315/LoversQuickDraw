@@ -14,10 +14,11 @@ public class SceneController : MonoBehaviour
     {
         if (once == false)
         {
+            Debug.LogWarning(OVRInput.GetDown(OVRInput.Button.One));
             if (OVRInput.GetDown(OVRInput.Button.One) || Input.GetKeyDown(KeyCode.Space))
             {
                 once = true;
-                SceneLoadManager.LoadScene("Result");
+                SceneLoadManager.LoadScene("Scenario");
             }
         }
     }

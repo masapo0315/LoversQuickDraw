@@ -38,9 +38,7 @@ public class Result : MonoBehaviour
         
         Time.timeScale = 1.0f;
 
-        player1LoveMetar = LoveMetar.getPlayer1LoveMetar();
-        player2LoveMetar = LoveMetar.getPlayer2LoveMetar();
-
+        
         for (int i = 0; i <= images.Length - 1; i++)
         {
             images[i].enabled = false;

@@ -121,6 +121,7 @@ public class TalkManager : MonoBehaviour
         if (choice == true)
         {
             ChoiceManager.PushButton();
+            ChoiceManager.DebugPushButton();
             if (ChoiceManager.getdestroyFlag())
             {
                 choice = false;
