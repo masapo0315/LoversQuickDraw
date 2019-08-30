@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class EnterName : MonoBehaviour {
+public class NameEnterVR : MonoBehaviour
+{
 
     //名前を決定するときに使う
 
@@ -20,7 +21,7 @@ public class EnterName : MonoBehaviour {
     private void Update()
     {
         //入力した名前をテキストに反映
-        enterName.text = InputName.Player1Name;
+        enterName.text = InputNameVR.Player1name;
     }
 
     //名前を決定

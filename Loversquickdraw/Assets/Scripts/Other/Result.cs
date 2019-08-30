@@ -13,10 +13,14 @@ public class Result : MonoBehaviour
     public Image[] images;
 
     //勝敗に関係するフラグ
-    bool gameSet = false;
-    public static bool Player1Win, Player2Win;
-    //public static bool Player2Win;
+    public static bool gameSet = false;
+    public static bool Player1Win;
+    public static bool Player2Win;
     
+    //プレイヤーの好感度
+    private int player1LoveMetar;
+    private int player2LoveMetar;
+
     //プレイヤー
     [SerializeField] private Rigidbody player1;
     [SerializeField] private Rigidbody player2;
@@ -31,9 +35,11 @@ public class Result : MonoBehaviour
     //
     void Start ()
     {
-        
         Time.timeScale = 1.0f;
-        
+
+        player1LoveMetar = LoveMetar.getPlayer1LoveMetar();
+        player2LoveMetar = LoveMetar.getPlayer2LoveMetar();
+
         for (int i = 0; i <= images.Length - 1; i++)
         {
             images[i].enabled = false;
@@ -42,7 +48,9 @@ public class Result : MonoBehaviour
         //アニメーションが時間の影響受けずに再生されるようにする
         _animator.updateMode = AnimatorUpdateMode.UnscaledTime;    
     }
-    
+
+
+
 	//
 	void Update ()
     {
@@ -105,9 +113,9 @@ public class Result : MonoBehaviour
             //ただし速度が速すぎた場合好感度が下がる
             if(player1Speed > 9)
             {
-                LoveMetar.player1LoveMetar -= 10; 
+                player1LoveMetar -= 10; 
             } else {
-                LoveMetar.player1LoveMetar += 10;
+                player1LoveMetar += 10;
             }
 
             Player1WinCheck();
@@ -123,9 +131,9 @@ public class Result : MonoBehaviour
 
             if (player1Speed > 9)
             {
-                LoveMetar.player2LoveMetar -= 10;
+                player2LoveMetar -= 10;
             } else {
-                LoveMetar.player2LoveMetar += 10;
+                player2LoveMetar += 10;
             }
 
             Player2WinCheck();
