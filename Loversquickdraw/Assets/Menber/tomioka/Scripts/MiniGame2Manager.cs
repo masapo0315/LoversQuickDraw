@@ -142,7 +142,7 @@ public class MiniGame2Manager : MonoBehaviour
         {
             case 1:
                 Debug.Log("1を通った");
-                switch (playerCursorController.RightMenu)
+                switch (playerCursorController.Player1Menu)
                 {
                     case 0:
                         _buttons[0].Select();
@@ -164,7 +164,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 2:
-                switch (playerCursorController.RightMenu)
+                switch (playerCursorController.Player1Menu)
                 {
                     case 0:
                         _buttons[5].Select();
@@ -186,7 +186,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 3:
-                switch (playerCursorController.RightMenu)
+                switch (playerCursorController.Player1Menu)
                 {
                     case 0:
                         _buttons[10].Select();
@@ -208,7 +208,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 4:
-                switch (playerCursorController.RightMenu)
+                switch (playerCursorController.Player1Menu)
                 {
                     case 0:
                         _buttons[15].Select();
@@ -230,7 +230,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 5:
-                switch (playerCursorController.RightMenu)
+                switch (playerCursorController.Player1Menu)
                 {
                     case 0:
                         _buttons[20].Select();
@@ -252,7 +252,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 6:
-                switch (playerCursorController.RightMenu)
+                switch (playerCursorController.Player1Menu)
                 {
                     case 0:
                         _buttons[25].Select();
@@ -274,7 +274,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 7:
-                switch (playerCursorController.RightMenu)
+                switch (playerCursorController.Player1Menu)
                 {
                     case 0:
                         _buttons[30].Select();
@@ -296,7 +296,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 8:
-                switch (playerCursorController.RightMenu)
+                switch (playerCursorController.Player1Menu)
                 {
                     case 0:
                         _buttons[35].Select();
@@ -318,7 +318,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 9:
-                switch (playerCursorController.RightMenu)
+                switch (playerCursorController.Player1Menu)
                 {
                     case 0:
                         _buttons[40].Select();
@@ -340,7 +340,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 10:
-                switch (playerCursorController.RightMenu)
+                switch (playerCursorController.Player1Menu)
                 {
                     case 0:
                         _buttons[45].Select();
@@ -362,7 +362,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 11:
-                switch (playerCursorController.RightMenu)
+                switch (playerCursorController.Player1Menu)
                 {
                     case 0:
                         _buttons[50].Select();
@@ -384,7 +384,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 12:
-                switch (playerCursorController.RightMenu)
+                switch (playerCursorController.Player1Menu)
                 {
                     case 0:
                         _buttons[55].Select();
@@ -406,7 +406,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 13:
-                switch (playerCursorController.RightMenu)
+                switch (playerCursorController.Player1Menu)
                 {
                     case 0:
                         _buttons[60].Select();
@@ -428,7 +428,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 14:
-                switch (playerCursorController.RightMenu)
+                switch (playerCursorController.Player1Menu)
                 {
                     case 0:
                         _buttons[65].Select();
@@ -450,7 +450,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 15:
-                switch (playerCursorController.RightMenu)
+                switch (playerCursorController.Player1Menu)
                 {
                     case 0:
                         _buttons[70].Select();
@@ -481,7 +481,7 @@ public class MiniGame2Manager : MonoBehaviour
         {
             case 1:
                 Debug.Log("1を通った");
-                switch (playerCursorController.LeftMenu)
+                switch (playerCursorController.Player2Menu)
                 {
                     case 0:
                         _buttons[0].Select();
@@ -503,7 +503,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 2:
-                switch (playerCursorController.LeftMenu)
+                switch (playerCursorController.Player2Menu)
                 {
                     case 0:
                         _buttons[5].Select();
@@ -525,7 +525,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 3:
-                switch (playerCursorController.LeftMenu)
+                switch (playerCursorController.Player2Menu)
                 {
                     case 0:
                         _buttons[10].Select();
@@ -547,7 +547,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 4:
-                switch (playerCursorController.LeftMenu)
+                switch (playerCursorController.Player2Menu)
                 {
                     case 0:
                         _buttons[15].Select();
@@ -569,7 +569,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 5:
-                switch (playerCursorController.LeftMenu)
+                switch (playerCursorController.Player2Menu)
                 {
                     case 0:
                         _buttons[20].Select();
@@ -591,7 +591,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 6:
-                switch (playerCursorController.LeftMenu)
+                switch (playerCursorController.Player2Menu)
                 {
                     case 0:
                         _buttons[25].Select();
@@ -613,7 +613,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 7:
-                switch (playerCursorController.LeftMenu)
+                switch (playerCursorController.Player2Menu)
                 {
                     case 0:
                         _buttons[30].Select();
@@ -635,7 +635,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 8:
-                switch (playerCursorController.LeftMenu)
+                switch (playerCursorController.Player2Menu)
                 {
                     case 0:
                         _buttons[35].Select();
@@ -657,7 +657,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 9:
-                switch (playerCursorController.LeftMenu)
+                switch (playerCursorController.Player2Menu)
                 {
                     case 0:
                         _buttons[40].Select();
@@ -679,7 +679,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 10:
-                switch (playerCursorController.LeftMenu)
+                switch (playerCursorController.Player2Menu)
                 {
                     case 0:
                         _buttons[45].Select();
@@ -701,7 +701,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 11:
-                switch (playerCursorController.LeftMenu)
+                switch (playerCursorController.Player2Menu)
                 {
                     case 0:
                         _buttons[50].Select();
@@ -723,7 +723,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 12:
-                switch (playerCursorController.LeftMenu)
+                switch (playerCursorController.Player2Menu)
                 {
                     case 0:
                         _buttons[55].Select();
@@ -745,7 +745,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 13:
-                switch (playerCursorController.LeftMenu)
+                switch (playerCursorController.Player2Menu)
                 {
                     case 0:
                         _buttons[60].Select();
@@ -767,7 +767,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 14:
-                switch (playerCursorController.LeftMenu)
+                switch (playerCursorController.Player2Menu)
                 {
                     case 0:
                         _buttons[65].Select();
@@ -789,7 +789,7 @@ public class MiniGame2Manager : MonoBehaviour
                 }
                 break;
             case 15:
-                switch (playerCursorController.LeftMenu)
+                switch (playerCursorController.Player2Menu)
                 {
                     case 0:
                         _buttons[70].Select();
