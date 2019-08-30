@@ -23,7 +23,10 @@ public class MiniGame2Manager : MonoBehaviour
 
     private bool RuleCheck1, RuleCheck2 = false;
     //ReadyGoまで操作できないように
-    [HideInInspector] public bool Ready1, Ready2 = false;
+    //[HideInInspector]
+    public bool Ready1, Ready2 = false;
+
+    private bool _fill = false;
 
     private string Hint = "この教室に来る前は\n本が沢山あるところにいて...";
     private string Karen;
@@ -48,9 +51,16 @@ public class MiniGame2Manager : MonoBehaviour
     {
         Karen_Hint.GetComponent<Text>();
         Karen_Hint.text = Hint;
+
         //BackGround.GetComponent<Image>();
     }
-    
+
+    void Update()
+    {
+        //RuleCheck();
+        ImageFill();
+    }
+
     private void ChangeText()
     {
         Place1.GetComponent<Text>();
@@ -835,9 +845,13 @@ public class MiniGame2Manager : MonoBehaviour
                 Destroy(buttonMenuList[4]);
 
                 //一度クリアにする関数
-                Destroy(PlaceList[0]);
+                //Destroy(PlaceList[0]);
+                _fill = true;
+                //PlaceList[0].fillAmount -= Time.deltaTime;
                 Destroy(buttonMenuList[1]);
                 Invoke("ResetText", 1);
+                TimeLag();
+                Invoke("ReadyGO", 1.0f);
                 Hint = "そのあとは体調悪い時に\n行くところに行って...";
                 break;
             case 6:
@@ -864,9 +878,11 @@ public class MiniGame2Manager : MonoBehaviour
                 Debug.Log("10回目");
                 Karen = "つ";
                 Destroy(buttonMenuList[9]);
-
+                
                 //一度クリアにする関数
-                Destroy(PlaceList[1]);
+                _fill = true;
+                TimeLag();
+                Invoke("ReadyGO", 1.0f);
                 Invoke("ResetText", 1);
                 Hint = "それで2人に会った\n場所に来たんだよね";
                 break;
@@ -894,11 +910,13 @@ public class MiniGame2Manager : MonoBehaviour
                 Debug.Log("15回目");
                 Karen = "つ";
                 Destroy(buttonMenuList[14]);
-                Destroy(PlaceList[2]);
+
+                _fill = true;
                 VictoryPlayer();
                 Invoke("DestroyPlace", 1);
                 Destroy(HintFrame);
                 Invoke("Scene", 2);
+                TimeLag();
                 break;
         }
         Text();
@@ -922,9 +940,9 @@ public class MiniGame2Manager : MonoBehaviour
         sound.SESounds(1, 0.5f);
     }
 
+    /*
     public void Clickfalse()
     {
-        //音鳴らす予定
         if (playerCursorController.GetColor == true)
         {
             false1P();
@@ -934,6 +952,7 @@ public class MiniGame2Manager : MonoBehaviour
             false2P();
         }
     }
+    */
 
     private void ResetText()
     {
@@ -947,6 +966,7 @@ public class MiniGame2Manager : MonoBehaviour
 
         Debug.Log(Karen);
         //ChangeText();
+        //_fill = false;
     }
     //仮
     private void Scene()
@@ -987,14 +1007,14 @@ public class MiniGame2Manager : MonoBehaviour
 
     private void RuleCheck()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        if (OVRInput.GetDown(OVRInput.RawButton.A))
+        if (Input.GetKeyDown(KeyCode.Space))
+        //if (OVRInput.GetDown(OVRInput.RawButton.A))
         {
             RuleCheck1 = true;
         }
 
-        //if (Input.GetKeyDown(KeyCode.Return))
-        if (OVRInput.GetDown(OVRInput.RawButton.X))
+        if (Input.GetKeyDown(KeyCode.Return))
+        //if (OVRInput.GetDown(OVRInput.RawButton.X))
         {
             RuleCheck2 = true;
         }
@@ -1010,6 +1030,31 @@ public class MiniGame2Manager : MonoBehaviour
     {
         Ready1 = true;
         Ready2 = true;
+    }
+
+    private void TimeLag()
+    {
+        Ready1 = false;
+        Debug.Log("まれいたそ");
+        Ready2 = false;
+    }
+
+    private void ImageFill()
+    {switch (Dankai)
+        {
+            case 6:
+                PlaceList[0].fillAmount -= Time.deltaTime;
+                break;
+
+            case 11:
+                PlaceList[1].fillAmount -= Time.deltaTime;
+                break;
+
+            case 16:
+                PlaceList[2].fillAmount -= Time.deltaTime;
+                break;
+        }
+        
     }
 
 }

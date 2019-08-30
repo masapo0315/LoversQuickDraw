@@ -9,11 +9,6 @@ public class ComtrollerPosTEst : MonoBehaviour
     //最高点と最低点のPosを固定
     [SerializeField] private float highPos;
     [SerializeField] private float lowPos;
-    
-    void Update()
-    {
-        Test();
-    }
     void Test()
     {
         //controllerのposを常に更新する
