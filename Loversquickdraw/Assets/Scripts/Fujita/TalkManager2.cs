@@ -419,7 +419,7 @@ public class TalkManager2 : MonoBehaviour
     {
         if (Talktext == 78)
         {
-                SceneManager.LoadScene("MiniGame2_test");
+                SceneManager.LoadScene("MiniGame2");
         }
     }
 
