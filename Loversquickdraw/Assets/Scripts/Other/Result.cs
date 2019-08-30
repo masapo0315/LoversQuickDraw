@@ -13,7 +13,7 @@ public class Result : MonoBehaviour
     public Image[] images;
 
     //勝敗に関係するフラグ
-    bool gameSet = false;
+    public static bool gameSet = false;
     public static bool Player1Win;
     public static bool Player2Win;
     
