@@ -2,51 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestPlayerControler1 : MonoBehaviour {
+public class TestPlayer2Controler : MonoBehaviour {
 
     public Rigidbody rb;
-    float moveSpeed;
+    [SerializeField] float moveSpeed;
     float moveForceMultipliter = 1.0f;
 
-    float jumpPower = 15;
+    [SerializeField] float jumpPower;
     bool jump = false;
+
+    bool stop;
 
     [SerializeField]
     Animator _animator;
 
 
-	// Use this for initialization
-	void Start () {
-
-        rb = GetComponent<Rigidbody>();
+    // Use this for initialization
+    void Start()
+    {
         StartCoroutine("Delay");
-
+        rb = GetComponent<Rigidbody>();
     }
-	
-	// Update is called once per frame
-	void Update () {
 
-        SpeedUp();
-        Jump();
-	}
+    // Update is called once per frame
+    void Update()
+    {
+        if (stop == false)
+        {
+            SpeedUp();
+            Jump();
+        }
+    }
 
     void SpeedUp()
     {
         Vector3 moveVector = Vector3.zero;
-        float horizontalInput = Input.GetAxis("Horizontal");
+        float horizontalInput = Input.GetAxis("Horizontal2");
         moveVector.x = moveSpeed * horizontalInput;
-        
+
         rb.AddForce(moveForceMultipliter * (moveVector - rb.velocity));
 
         _animator.SetBool("Run", true);
     }
 
-    void Jump()
+      void Jump()
     {
-        if (Input.GetButtonDown("Jump") && jump == false)
+        if (Input.GetButtonDown("Jump2") && jump == false)
         {
             _animator.SetBool("Jump", true);
-            rb.velocity = new Vector3(5, jumpPower, 0);
+            rb.velocity = new Vector3(3, jumpPower, 0);
             jump = true;
         }
 
@@ -60,21 +64,32 @@ public class TestPlayerControler1 : MonoBehaviour {
             jump = false;
         }
 
-        if (col.gameObject.tag == "Obstacles")
+        if (col.gameObject.tag == "Obstacles" )
         {
             Destroy(col.gameObject);
-            StartCoroutine("Delay"); 
+            StartCoroutine("Delay");
+        }
+
+   
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Stopper")
+        {
+            stop = true;
         }
     }
 
 
+    //遅延処理
     private IEnumerator Delay()
     {
-        moveSpeed = 0f;
+        stop = true;
 
         yield return new WaitForSeconds(2.0f);
 
-        moveSpeed = 15.0f;
+        stop = false;
 
         yield break;
     }
