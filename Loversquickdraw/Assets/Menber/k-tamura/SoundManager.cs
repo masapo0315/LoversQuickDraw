@@ -64,28 +64,28 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     /// </summary>
     /// <param name="Soundnum">SEData配列番号</param>
     /// <param name="SoundVol">SE音量設定 float0-1</param>
-    public void SESounds(int Soundnum, float SoundVol)
+    public static void SESounds(int Soundnum, float SoundVol)
     {
-        played = false;
-        if (SEData[Soundnum] != null)
+        Instance.played = false;
+        if (Instance.SEData[Soundnum] != null)
         {
 
-            for (int i = 1; i <= AudioSources.Length - 1; i++)
+            for (int i = 1; i <= Instance.AudioSources.Length - 1; i++)
             {
-                if (!AudioSources[i].isPlaying)
+                if (!Instance.AudioSources[i].isPlaying)
                 {
                     // AudioSources[i].loop = false;
                     // AudioSources[i].clip = SEData[Soundnum];
                     // AudioSources[i].volume = SoundVol;
-                    AudioSources[i].PlayOneShot(SEData[Soundnum], SoundVol);
-                    played = true;
+                    Instance.AudioSources[i].PlayOneShot(Instance.SEData[Soundnum], SoundVol);
+                    Instance.played = true;
                     break;
                 }
             }
 
-            if (played == false)
+            if (Instance.played == false)
             {
-                Debug.LogError("サウンドが再生されませんでした。" + " AudioSource不足\n" + "再生されなかったSE:" + Soundnum + " " + SEData[Soundnum].name);
+                Debug.LogError("サウンドが再生されませんでした。" + " AudioSource不足\n" + "再生されなかったSE:" + Soundnum + " " + Instance.SEData[Soundnum].name);
                 Debug.LogWarning("再度実行します。");
                 SESounds(Soundnum, SoundVol);
             }
@@ -97,14 +97,14 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     /// </summary>
     /// <param name="Soundnum">SEData配列番号</param>
     /// <param name="SoundVol">SE音量設定 float0-1</param>
-    public void SinarioSounds(int Soundnum, float SoundVol)
+    public static void SinarioSounds(int Soundnum, float SoundVol)
     {
-        if (SEData[Soundnum] != null)
+        if (Instance.SEData[Soundnum] != null)
         {
-            AudioSources[1].Stop();
-            AudioSources[1].clip = SEData[Soundnum];
-            AudioSources[1].volume = SoundVol;
-            AudioSources[1].PlayOneShot(SEData[Soundnum], SoundVol);
+            Instance.AudioSources[1].Stop();
+            Instance.AudioSources[1].clip = Instance.SEData[Soundnum];
+            Instance.AudioSources[1].volume = SoundVol;
+            Instance.AudioSources[1].PlayOneShot(Instance.SEData[Soundnum], SoundVol);
         }
         else Debug.LogError("サウンドが再生されませんでした。" + "SEData配列の" + Soundnum + "番がありません。");
     }
