@@ -16,7 +16,7 @@ public class SceneController : MonoBehaviour
             if (OVRInput.GetDown(OVRInput.Button.One) || Input.GetKeyDown(KeyCode.Space))
             {
                 once = true;
-                SceneLoadManager.LoadScene("InputPlayer1Name");
+                SceneLoadManager.LoadScene("Scenario");
             }
         }
 	}

@@ -319,7 +319,7 @@ public class TalkManager : MonoBehaviour
     {
         if (Talktext == 45)
         {
-                SceneManager.LoadScene("MiniGame1");
+                SceneManager.LoadScene("Scenario2");
         }
     }
 

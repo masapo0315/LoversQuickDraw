@@ -73,9 +73,9 @@ public class Result : MonoBehaviour
     //プレイヤーの速度を計測
     private void SpeedCheck()
     {
-        player1Speed = player1.velocity.magnitude;
+        //player1Speed = player1.velocity.magnitude;
         Debug.Log(player1Speed);
-        player2Speed = player2.velocity.magnitude;
+        //player2Speed = player2.velocity.magnitude;
 
     }
 
