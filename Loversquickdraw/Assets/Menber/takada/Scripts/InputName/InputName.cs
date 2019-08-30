@@ -30,7 +30,7 @@ public class InputName : MonoBehaviour {
     [SerializeField]
     private GameObject Confirmation;
 
-    public static string getPlayer1Name()
+    public static string GetPlayer1Name()
     {
         return Player1Name;
     }
