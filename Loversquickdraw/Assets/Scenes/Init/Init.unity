@@ -242,4 +242,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a1471952fb5442f295bde8edfe1a29c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneLoad: Title
+  SceneLoad: Titles
