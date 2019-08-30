@@ -5,6 +5,7 @@ using UnityEngine;
 public class SceneController : MonoBehaviour
 {
     private bool once;
+
     private void Start()
     {
         Cursor.visible = false;
@@ -16,8 +17,8 @@ public class SceneController : MonoBehaviour
             if (OVRInput.GetDown(OVRInput.Button.One) || Input.GetKeyDown(KeyCode.Space))
             {
                 once = true;
-                SceneLoadManager.LoadScene("InputPlayer1Name");
+                SceneLoadManager.LoadScene("Result");
             }
         }
-	}
+    }
 }
