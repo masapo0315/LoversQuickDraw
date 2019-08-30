@@ -12427,6 +12427,7 @@ GameObject:
   - component: {fileID: 1623787318}
   - component: {fileID: 1623787317}
   - component: {fileID: 1623787322}
+  - component: {fileID: 1623787320}
   m_Layer: 5
   m_Name: Delete
   m_TagString: Untagged
@@ -12538,6 +12539,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1623787315}
+--- !u!114 &1623787320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1623787315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc1df161cdc2904cabd8f6611084186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputname: {fileID: 103858204}
 --- !u!65 &1623787322
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13197,9 +13210,8 @@ GameObject:
   - component: {fileID: 1672131594}
   - component: {fileID: 1672131593}
   - component: {fileID: 1672131592}
-  - component: {fileID: 1672131595}
-  - component: {fileID: 1672131597}
   - component: {fileID: 1672131596}
+  - component: {fileID: 1672131595}
   m_Layer: 5
   m_Name: a
   m_TagString: Untagged
@@ -13331,25 +13343,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1672131590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 043d11eab13107a47884bd5d0e424205, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  str: "\u3042"
-  gameobject: {fileID: 1672131590}
---- !u!114 &1672131597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1672131590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86ecb18721c491149a62373fe00e4671, type: 3}
+  m_Script: {fileID: 11500000, guid: cacb4f56bfae2104594147b1074be63b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inputname: {fileID: 103858204}
+  inputString: "\u3042"
   nomalText: {fileID: 170597734}
   errorText: {fileID: 451573091}
+  nameCount: 0
   input: {fileID: 1109718147}
   Confirmation: {fileID: 621928751}
 --- !u!1 &1683518086
