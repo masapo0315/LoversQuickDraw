@@ -7,20 +7,25 @@ using UnityEngine.EventSystems;
 
 public class DestryNameVR : MonoBehaviour {
 
-    private InputNameVR inputNameVR;
+    //入力した文字を削除
+
+    public InputNameVR inputNameVR;
 
     [SerializeField]
-    private Text inputname;
+    private Text inputName;
 
     int namecount;
 
 	// Use this for initialization
 	void Start () {
 
-        inputname = inputNameVR.inputname;
-        namecount = inputNameVR.nameCount;
-
+        inputName = inputNameVR.inputname;
 	}
+
+    private void Update()
+    {
+        namecount = inputNameVR.nameCount;
+    }
 
     private void OnTriggerEnter(Collider col)
     {
@@ -37,13 +42,17 @@ public class DestryNameVR : MonoBehaviour {
     {
         if (_col.gameObject.tag == "Icon" && Input.GetButton("submit"))
         {
+            Debug.Log(namecount);
             //文字が入っていなければ何もしない
-            if (namecount == 0) { return; }
+            if (namecount <= 0) { return; }
+            else
+            {
+                string text = inputName.text.Substring(0, inputName.text.Length - 1);
+                inputName.text = text;
+                Debug.LogWarning(namecount);
+                namecount -= 1;
 
-            string text = inputname.text.Substring(0, inputname.text.Length - 1);
-            inputname.text = text;
-            namecount -= 1;
-
+            }
         }
     }
 }

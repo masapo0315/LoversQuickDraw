@@ -30,9 +30,9 @@ public class InputName : MonoBehaviour {
     [SerializeField]
     private GameObject Confirmation;
 
-    private void Start()
+    public static string getPlayer1Name()
     {
-
+        return Player1Name;
     }
 
     //テキストの中に文字を追加
@@ -40,7 +40,7 @@ public class InputName : MonoBehaviour {
     {
 
         //１０文字以上入力できないようにする
-        if (nameCount < 10){
+        if (nameCount < 6){
 
              inputname.text += inputString;
              nameCount += 1;
@@ -56,12 +56,13 @@ public class InputName : MonoBehaviour {
     public void DestroyString()
     {
         //文字が入っていなければ何もしない
-        if (nameCount == 0) { return; }  
-
-        string text = inputname.text.Substring(0, inputname.text.Length - 1);
-        inputname.text = text;
-        nameCount -= 1;
-        
+        if (nameCount <= 0) { return; }
+        else
+        {
+            string text = inputname.text.Substring(0, inputname.text.Length - 1);
+            inputname.text = text;
+            nameCount -= 1;
+        }
     }
 
     

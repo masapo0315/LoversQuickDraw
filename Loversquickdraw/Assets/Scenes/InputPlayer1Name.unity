@@ -10606,6 +10606,7 @@ GameObject:
   - component: {fileID: 1382757519}
   - component: {fileID: 1382757518}
   - component: {fileID: 1382757523}
+  - component: {fileID: 1382757521}
   m_Layer: 5
   m_Name: Enter
   m_TagString: Untagged
@@ -10717,6 +10718,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1382757516}
+--- !u!114 &1382757521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1382757516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb629a503ce2d6a48afc89ad688031ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputNameVR: {fileID: 1672131596}
+  inputName: {fileID: 103858204}
+  input: {fileID: 1109718147}
+  confirmation: {fileID: 621928751}
+  nomalText: {fileID: 170597734}
+  errorText: {fileID: 451573091}
 --- !u!65 &1382757523
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12550,7 +12568,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc1df161cdc2904cabd8f6611084186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputname: {fileID: 103858204}
+  inputNameVR: {fileID: 1672131596}
+  inputName: {fileID: 103858204}
 --- !u!65 &1623787322
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15155,6 +15174,7 @@ GameObject:
   - component: {fileID: 1987098281}
   - component: {fileID: 1987098284}
   - component: {fileID: 1987098285}
+  - component: {fileID: 1987098286}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -15229,9 +15249,23 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1987098280}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9a7a04ab88962547a1a2d8f5fe54ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enterName: {fileID: 1919979879}
+  input: {fileID: 1109718147}
+  Confirmation: {fileID: 621928751}
+--- !u!114 &1987098286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1987098280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f036abe1758ef9498771718d12e659d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enterName: {fileID: 1919979879}

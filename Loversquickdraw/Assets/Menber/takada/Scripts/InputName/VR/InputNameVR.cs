@@ -23,15 +23,13 @@ public class InputNameVR : MonoBehaviour
     private Text errorText;
 
     //文字数
-    public int nameCount;
+    public  int nameCount;
 
     public static string Player1name;
 
-    [SerializeField]
-    private GameObject input;
+    public GameObject input;
+    public GameObject Confirmation;
 
-    [SerializeField]
-    private GameObject Confirmation;
 
     private void OnTriggerEnter(Collider col)
     {
@@ -48,13 +46,12 @@ public class InputNameVR : MonoBehaviour
     {
         if(_col.gameObject.tag == "Icon" && Input.GetButton("submit"))
         {
-            //１０文字以上入力できないようにする
-            if (nameCount < 10)
+            //6文字以上入力できないようにする
+            if (nameCount < 6)
             {
-
                 inputname.text += inputString;
                 nameCount += 1;
-                Debug.Log(nameCount);
+                //Debug.Log(nameCount);
                 nomalText.gameObject.SetActive(true);
                 errorText.gameObject.SetActive(false);
 
