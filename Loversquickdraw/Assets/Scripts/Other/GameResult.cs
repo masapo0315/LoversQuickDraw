@@ -10,13 +10,13 @@ public class GameResult : MonoBehaviour
 
     [HideInInspector] public bool _talkCheck = false;
 
-    private void Start()
-    {
-        for(int i = 0; i < winnerImages.Length; i++)
-        {
-            winnerImages[i].enabled = false;
-        }
-    }
+    //private void Start()
+    //{
+    //    for(int i = 0; i < winnerImages.Length; i++)
+    //    {
+    //        winnerImages[i].enabled = false;
+    //    }
+    //}
     private void Update()
     {
         if(_talkCheck == true)
