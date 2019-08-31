@@ -11,6 +11,8 @@ public class Player1Controler : MonoBehaviour
 
     //comtrollerのposとるのに必須(1Pの場合InspectorからR選択)
     public OVRInput.Controller controller;
+    public GameObject R_Con;
+
     //最高点と最低点のPosを固定
     [SerializeField] private float highPos;
     [SerializeField] private float lowPos;
@@ -42,12 +44,12 @@ public class Player1Controler : MonoBehaviour
     {
         //Debug.Log(test.vector3);
         _camera.transform.localRotation = Quaternion.identity;
-
+        _camera.transform.localPosition = Vector3.zero;
         if (stop == false)
         {
-            //Test();
-            Teast2();
-            //SpeedUp();
+            Test();
+            //Teast2();
+            SpeedUp();
             Jump();
         }
     }
