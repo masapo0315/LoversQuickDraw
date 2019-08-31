@@ -27,15 +27,64 @@ public class ChoiceManager : MonoBehaviour
     [SerializeField] private TalkManager talkManager;
     [SerializeField] private ChoiceCursor choiceCursor;
 
+    //trueで選択できる
     [HideInInspector] public bool stopChoice = false;
+    
     //trueの場合は1Pの勝ち、falseの場合は2Pの勝ち
     [HideInInspector] public bool firstsPlayer = false;
+
+    #region 勝ち負け判定
+    public void OnePlayerOne()
+    {
+        if(firstsPlayer == true)
+        {
+            rootflag = 1;
+        }
+    }
+    public void OnePlayerTwo()
+    {
+        if (firstsPlayer == true)
+        {
+            rootflag = 2;
+        }
+    }
+    public void OnePlayerThree()
+    {
+        if (firstsPlayer == true)
+        {
+            rootflag = 3;
+        }
+    }
+    public void TwoPlayerOne()
+    {
+        if (firstsPlayer == false)
+        {
+            rootflag = 1;
+        }
+    }
+    public void TwoPlayerTwo()
+    {
+        if (firstsPlayer == false)
+        {
+            rootflag = 2;
+        }
+    }
+    public void TwoPlayerThree()
+    {
+        if (firstsPlayer == false)
+        {
+            rootflag = 3;
+        }
+    }
 
     private void Start()
     {
         cursor.SetActive(false);
         cursor2.SetActive(false);
     }
+    #endregion
+
+    #region 1Pが1を押した判定
     public void PushButton()
     {
         /// <summary>
@@ -43,7 +92,6 @@ public class ChoiceManager : MonoBehaviour
         /// それ以降ボタンを消し入力を断つ
         /// </summary>
 
-        //1Pが1を押した判定
         if (stopChoice == false && choiceCursor.RightMenu == 0 && OVRInput.GetDown(OVRInput.RawButton.A))
         {
             Debug.Log("1Pが1を押した");
@@ -54,9 +102,10 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
-            //talkManager.ChoiceRoot();
+            //talkManager.ChoiceRoot(firstsPlayer,1);
             Debug.Log("choice1-1");
         }
+
 
         //2Pが1を押した判定
         if (stopChoice == false && choiceCursor.LeftMenu == 0 && OVRInput.GetDown(OVRInput.RawButton.X))
@@ -69,6 +118,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
+            //talkManager.ChoiceRoot(firstsPlayer, 4);
             Debug.Log("choice2-1");
         }
 
@@ -83,6 +133,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
+            //talkManager.ChoiceRoot(firstsPlayer, 2);
             Debug.Log("choice1-2");
         }
 
@@ -97,6 +148,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
+            //talkManager.ChoiceRoot(firstsPlayer, 5);
             Debug.Log("choice2-2");
         }
 
@@ -111,6 +163,7 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = true;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
+            //talkManager.ChoiceRoot(firstsPlayer, 3);
             Debug.Log("choice1-3");
         }
 
@@ -125,9 +178,12 @@ public class ChoiceManager : MonoBehaviour
             firstsPlayer = false;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
+            //talkManager.ChoiceRoot(firstsPlayer, 6);
             Debug.Log("choice2-3");
         }
     }
+    #endregion 1Pが1を押した判定
+
     public void DebugPushButton()
     {
         /// <summary>
@@ -239,7 +295,8 @@ public class ChoiceManager : MonoBehaviour
         choiceAorX.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
         choiceBorY.GetComponent<Image>().color = new Color(120 / 255f, 120 / 255f, 120 / 255f);
     }
-    //
+
+    #region 押したボタン以外のボタンを消す
     private void GetAorX()
     {
         Destroy(choiceBorY);
@@ -258,7 +315,8 @@ public class ChoiceManager : MonoBehaviour
         Destroy(choiceBorY);
         Debug.Log("Choise3を通った");
     }
-    //
+    #endregion
+
     public bool getStopchoice()
     {
         return stopChoice;
@@ -267,7 +325,8 @@ public class ChoiceManager : MonoBehaviour
     {
         return destroyFlag;
     }
-    //
+
+    #region ボタンを消す
     private void DestroyAorX()
     {
         Destroy(choiceAorX);
@@ -292,7 +351,8 @@ public class ChoiceManager : MonoBehaviour
         cursor.SetActive(false);
         cursor2.SetActive(false);
     }
-    //
+    #endregion
+
     public void SetActive()
     {
         choiceAorX.SetActive(true);

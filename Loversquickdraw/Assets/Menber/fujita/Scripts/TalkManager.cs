@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using System.Linq;
 using UnityEngine.SceneManagement;
 
 public class TalkManager : MonoBehaviour
@@ -26,12 +27,18 @@ public class TalkManager : MonoBehaviour
     [SerializeField]
     private Text _text;
 
+    [SerializeField]
+    private ChoiceControl _choiceControl;
+    private string[] msgs2 = { "#select", "1", "2", "3" };
+    private bool _isSelectMessege = false;
+
     private List<string> _loadTextData = new List<string>();
     private int _nowTextLine = 0;
     private bool _isLoadEnd = false;
     private bool _isWait = false;
     private bool _isMessageDisp = false;
     private bool _isCharacterText = false;
+    //private bool 
 
     [SerializeField]
     private float _dispSpeed = 1.0f;
@@ -72,14 +79,14 @@ public class TalkManager : MonoBehaviour
     //左クリックしたとき名前とコメントの表示、Debug.logは配列番号とそれに対して画面表示する文字を確認
     void Update()
     {
-        if (choice == true)
-        {
-            ChoiceManager.PushButton();
-            if (ChoiceManager.getdestroyFlag())
-            {
-                choice = false;
-            }
-        }
+        //if (choice == true)
+        //{
+        //    ChoiceManager.PushButton();
+        //    if (ChoiceManager.getdestroyFlag())
+        //    {
+        //        choice = false;
+        //    }
+        //}
         TextMove();
 
         if (_isLoadEnd)
@@ -121,8 +128,7 @@ public class TalkManager : MonoBehaviour
         }
     }
 
-    //桜の点滅
-    #region
+    #region 桜のstart,stop,fadeのspeed
     private void sakuraStart()
     {
         //テキストが出終わったら点滅開始
@@ -162,7 +168,7 @@ public class TalkManager : MonoBehaviour
             }
         }
     }
-    #endregion
+    #endregion 桜の点滅
 
     //選択したプレイヤー、非選択のプレイヤーをtrueとfalseで管理
     #region
@@ -245,27 +251,55 @@ public class TalkManager : MonoBehaviour
         }
         else if (msgs[0].Equals("#Karenface"))
         {
-            //顔を変える6種類
-            Karen.sprite = FaceList[0];
+            //顔を変える(種類)
+            if (int.Parse(msgs[1]) > -1 && int.Parse(msgs[1]) < FaceList.Count)
+            {
+
+                Karen.sprite = FaceList[int.Parse(msgs[1])];
+                Karen1.SetActive(true);
+            }
+            else if (int.Parse(msgs[1]) == -1)
+            {
+                Karen1.SetActive(false);
+                Karen.sprite = null;
+            }
+            else Debug.LogError(msgs[0] + " " + msgs[1] + "処理できません");
         }
         else if (msgs[0].Equals("#1pface"))
         {
-            //#1pface,-1の時SetActiveをfalseにする
-            Player.sprite = PlayerList[0];
+            if (int.Parse(msgs[1]) > -1 && int.Parse(msgs[1]) < PlayerList.Count)
+            {
+                Player.sprite = PlayerList[int.Parse(msgs[1])];
+                Player3.SetActive(true);
+            }
+            else if (int.Parse(msgs[1]) == -1)
+            {
+                Player3.SetActive(false);
+                Player.sprite = null;
+            }
+            else Debug.LogError(msgs[0] + " " + msgs[1] + "処理できません");
         }
-        //else if (msgs[0].Equals("#1pface2"))
-        //{
-        //    Player3.SetActive(false);
-        //}
+
         else if (msgs[0].Equals("#2pface"))
         {
-            Player2.sprite = PlayerList2[0];
+            if (int.Parse(msgs[1]) > -1 && int.Parse(msgs[1]) < PlayerList2.Count)
+            {
+                Player2.sprite = PlayerList2[int.Parse(msgs[1])];
+                Player4.SetActive(true);
+            }
+            else if (int.Parse(msgs[1]) == -1)
+            {
+                Player4.SetActive(false);
+                Player2.sprite = null;
+            }
         }
+        else if (_isSelectMessege)
+            return;
         else if (msgs[0].Equals("#sentaku"))
-        {
-            //#sentaku,1#sentaku,2#sentaku,3
-            //に応じて会話文を変える
-        }
+            Choice2Word(msgs);
+        //    //#sentaku,1#sentaku,2#sentaku,3
+        //    会話文を変える
+        //}
         else if (msgs[0].Equals("#kyoutu"))
         {
             //#sentaku,1#sentaku,2#sentaku,3
@@ -275,7 +309,8 @@ public class TalkManager : MonoBehaviour
         {
             _isLoadEnd = false;
         }
-
+        else if (msgs[0].Equals("//"))
+            return;
         else
         {
             Debug.LogError(msgs[0] + "コマンドがないです");
@@ -283,9 +318,27 @@ public class TalkManager : MonoBehaviour
         _nowTextLine++;
     }
 
+    private void Choice2Word(string[] msgs)
+    {
+        //メッセージ表示
+        var selMsgs = msgs.Where(x => x.IndexOf("#") < 0).ToArray();
+        _choiceControl.SetSelectMessage(selMsgs, SelectCallback);
+
+        _isSelectMessege = true;
+    }
+    private void SelectCallback(int selectNum)
+    {
+        _isSelectMessege = false;
+        msgs2[0] = "#end";
+    }
+    /// <summary>
+    /// 選択を判定する
+    /// </summary>
+    
     private void LoadFile(string filename)
     {
-        using (var str = new StreamReader(filename, System.Text.Encoding.Default))
+
+        using (var str = new StreamReader(filename, System.Text.Encoding.UTF8))
         {
             var msg = "";
             while ((msg = str.ReadLine()) != null)
