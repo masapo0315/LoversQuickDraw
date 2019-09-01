@@ -27,6 +27,7 @@ public class TalkManager : MonoBehaviour
     [SerializeField]
     private Text _text;
 
+    //選択関連
     [SerializeField]
     private ChoiceControl _choiceControl;
     private string[] msgs2 = { "#select", "1", "2", "3" };
@@ -40,6 +41,7 @@ public class TalkManager : MonoBehaviour
     private bool _isCharacterText = false;
     //private bool 
 
+    //一文字ずつ表示+速度
     [SerializeField]
     private float _dispSpeed = 1.0f;
     private float _timer = 0;
@@ -310,7 +312,7 @@ public class TalkManager : MonoBehaviour
             _isLoadEnd = false;
         }
         else if (msgs[0].Equals("//"))
-            return;
+            Debug.Log("comment");
         else
         {
             Debug.LogError(msgs[0] + "コマンドがないです");
