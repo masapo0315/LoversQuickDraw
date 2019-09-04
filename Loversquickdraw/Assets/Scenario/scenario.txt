@@ -133,32 +133,32 @@
 
 //,ここから：選択１
 
-#sentaku1,
+#label,1
 #name,択プレイヤー
 #message,一歩先んじた俺は、十字路で急ブレーキ、,迷いなく左へ舵を切る！
 #keywait,
 
-//,#sentaku1,
+//,#sentaku,1,
 #name,択プレイヤー
 #message,思惑通り、角の向こうには華恋の頭が,見え――ない！？
 #keywait,
 
-//,#sentaku1,
+//,#sentaku,1,
 #name,択プレイヤー
 #message,スピードを出しすぎた……！
 #keywait,
 
-//,#sentaku1,
+//,#sentaku,1,
 #name,択プレイヤー
 #message,勢いよく飛び出した目に映った華恋の顔,顔ははるか遠く。
 #keywait,
 
-//,#sentaku1,
+//,#sentaku,1,
 #name,択プレイヤー
 #message,続く［非択Ｐ］も同じ状況に見舞われた。
 #keywait,
 
-//,#sentaku1,
+//,#sentaku,1,
 #Karenface,0
 #Voicenum,
 #name,華恋
@@ -172,47 +172,47 @@
 
 
 //,ここから：選択２
-#sentaku2,
+#label,2
 #name,択プレイヤー
 #message,一歩先んじた俺は、十字路で急ブレーキ、,迷いなくインド人を右に！
 #keywait,
-//,#sentaku2,
+//,#sentaku,2,
 #name,択プレイヤー
 #message,遅れた［非択Ｐ］が遅れて曲がる！,これは勝ったも同然……！
 #keywait,
-//,#sentaku2,
+//,#sentaku,2,
 #name,非選択Ｐ
 #message,なあ、曲がり角逆じゃねえか！？
-//,#sentaku2,
+//,#sentaku,2,
 #keywait,
 #name,択プレイヤー
 #message,はあ！？
-//,#sentaku2,
+//,#sentaku,2,
 #keywait,
 #name,択プレイヤー
 #message,走りながら、道順を思い出す――
 #keywait,
-//,#sentaku2,
+//,#sentaku,2,
 #name,回想
 #message,華恋はこの先の角を左に曲がった通りを,必ず通って登校する……。
 #keywait,
-//,#sentaku2,
+//,#sentaku,2,
 #name,回想
 #message,左に曲がった通りを……,通りを……（エコー）
 #keywait,
-//,#sentaku2,
+//,#sentaku,2,
 #name,択プレイヤー
 #message,あ“あ”―――っ！！？
 #keywait,
-//,#sentaku2,
+//,#sentaku,2,
 #name,択プレイヤー
 #message,確かにというか、既に目の前の道は,住宅街の行き止まり！アブナイ！
 #keywait,
-//,#sentaku2,
+//,#sentaku,2,
 #name,択プレイヤー
 #message,うおおおお南無三ッ！！
 #keywait,
-//,#sentaku2,
+//,#sentaku,2,
 #name,択プレイヤー
 #message,今度こそ急ブレーキ、１８０゜ターン！,しかしこれで勝負は振出しに戻る…！
 #keywait,
@@ -221,19 +221,19 @@
 
 //,ここから：選択３
 
-#sentaku3,
+#label,3
 #name,択プレイヤー
 #message,一歩先んじた俺は、急ブレーキを,キャンセルして猛進！十字路を――
 #keywait,
-//,#sentaku3,
+//,#sentaku,3,
 #name,択プレイヤー
 #message,曲がり損ねたァァァ！！！
 #keywait,
-//,#sentaku3,
+//,#sentaku,3,
 #name,非選択プレイヤー
 #message,ふはははバカめ！チキレンースやってる,場合じゃないんだよ！！
 #keywait,
-//,#sentaku3,
+//,#sentaku,3,
 #name,択プレイヤー
 #message,［非択Ｐ］は後ろの角に消えてゆく…！,逆に出遅れてしまった！
 #keywait,

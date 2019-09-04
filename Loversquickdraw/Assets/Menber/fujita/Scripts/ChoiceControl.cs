@@ -5,8 +5,10 @@ using UnityEngine;
 public class ChoiceControl : MonoBehaviour {
 
     [SerializeField]
-    private ChoiceFunctionControl[] _fusenControl;
+    private ChoiceFunctionControl[] _fusenControl = new ChoiceFunctionControl[3];
     private System.Action<int> _callback;
+    [SerializeField]
+    private ChoiceManager _choiceManager;
 
     private int _selectnum = 0;
 
@@ -15,28 +17,25 @@ public class ChoiceControl : MonoBehaviour {
         _callback = callback;
         for (int i = 0; i < 3; i++)
         {
-            _fusenControl[i].SetText(msgs[i]);
+            _fusenControl[i].SetText(msgs[i+1]);
             _fusenControl[i].gameObject.SetActive(true);
         }
         //3択の指を表示してせんたくする　
+        //_choiceManager.SetSelectCallback(SelectCallback);
     }
 
-    //三択の処理が決定したら呼び出す
 
-    void Update()
-    {
-        // 三択が決定されたら呼ばれる
-        // 三択の番号を取得　_selectNum = ***;
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (_callback != null)
-            {
-                _callback(_selectnum);
-                for (int i = 0; i < 3; i++)
-                {
-                    _fusenControl[i].gameObject.SetActive(false);
-                }
-            }
-        }
-    }
+    //private void SelectCallback(int playerType, int selNum)
+    //{
+    //    _selectnum = selNum;
+    //    if (_callback != null)
+    //    {
+    //        _callback(_selectnum);
+    //        for (int i = 0; i < 3; i++)
+    //        {
+    //            _fusenControl[i].gameObject.SetActive(false);
+    //        }
+    //    }
+    //}
+
 }

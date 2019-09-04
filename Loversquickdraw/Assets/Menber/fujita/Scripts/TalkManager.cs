@@ -26,11 +26,13 @@ public class TalkManager : MonoBehaviour
     private string ScenarioDataName;
     [SerializeField]
     private Text _text;
+    [SerializeField]
+    private int SoundNum = 0;
 
     //選択関連
     [SerializeField]
     private ChoiceControl _choiceControl;
-    private string[] msgs2 = { "#select", "1", "2", "3" };
+    private string[] msgs = { "#select", "1", "2", "3" };
     private bool _isSelectMessege = false;
 
     private List<string> _loadTextData = new List<string>();
@@ -65,6 +67,7 @@ public class TalkManager : MonoBehaviour
     [SerializeField] private GameObject Sakura;
     [SerializeField] private GameObject cursor;
     [SerializeField] private GameObject cursor2;
+    [SerializeField] private Image _sakura;
 
 
     private void Start()
@@ -74,7 +77,7 @@ public class TalkManager : MonoBehaviour
         LoadFile(Application.dataPath + "/Scenario/" + ScenarioDataName + ".txt");
         //string x = "プレイヤー１";
         //x = x.Replace("プレイヤー１", "name1");
-        sakuraStart();
+        StartCoroutine("SakuraOut");
     }
 
 
@@ -110,6 +113,7 @@ public class TalkManager : MonoBehaviour
             }
             else if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.Space))
             {
+                StopCoroutine("SakuraOut");
                 _isWait = false;
             }
         }
@@ -121,33 +125,14 @@ public class TalkManager : MonoBehaviour
             if (!choice)
             {
                 //次に進める用の点滅終了
-                sakuraOut();
                 TextFrame.SetActive(true);
 
                 //次に進める用の点滅開始
-                sakuraStart();
             }
         }
     }
 
-    #region 桜のstart,stop,fadeのspeed
-    private void sakuraStart()
-    {
-        //テキストが出終わったら点滅開始
-        for (int i = 0; i < 45; i++)
-        {
-            StartCoroutine("SakuraOut");
-        }
-    }
-
-    private void sakuraOut()
-    {
-        //前回の点滅の処理を止める
-        for (int i = 0; i < 45; i++)
-        {
-            StopCoroutine("SakuraOut");
-        }
-    }
+    #region 桜の動き
 
     //透明度を1~0と0~1へと徐々に変更することにより点滅させる(fadein,fadeoutの要領)
     IEnumerator SakuraOut()
@@ -155,17 +140,19 @@ public class TalkManager : MonoBehaviour
         while (true)
         {
             //fadein
-            while (fadeInOut <= 1)
+            while (Sakura.GetComponent<Image>().color.a < 1)
             {
-                Sakura.GetComponent<Image>().color += new Color(0, 0, 0, fade);
+                Sakura.GetComponent<Image>().color +=new Color(0,0,0,fade);
                 fadeInOut += fade;
+                Debug.Log("<1 "+Sakura.GetComponent<Image>().color.a);
                 yield return null;
             }
             //fadeout
-            while (fadeInOut >= 0)
+            while (Sakura.GetComponent<Image>().color.a > 0)
             {
                 Sakura.GetComponent<Image>().color -= new Color(0, 0, 0, fade);
                 fadeInOut -= fade;
+                Debug.Log(">0"+Sakura.GetComponent<Image>().color.a);
                 yield return null;
             }
         }
@@ -219,6 +206,7 @@ public class TalkManager : MonoBehaviour
     private void ScenarioAction()
     {
         string[] msgs = _loadTextData[_nowTextLine].Split(',');
+        msgs[0] = msgs[0].ToLower();
         if (msgs[0].Equals("#name"))
         {
             _name.text = msgs[1];
@@ -235,23 +223,24 @@ public class TalkManager : MonoBehaviour
         }
         else if (msgs[0].Equals("#keywait"))
         {
+            StartCoroutine("SakuraOut");
             TextMove();
             _isWait = true;
         }
-        else if (msgs[0].Equals("#BGMStart"))
+        else if (msgs[0].Equals("#bgmstart"))
         {
             // SoundManager.Instance.
         }
-        else if (msgs[0].Equals("#BGMStop"))
+        else if (msgs[0].Equals("#bgmstop"))
         {
             // SoundManager.Instance.
         }
-        else if (msgs[0].Equals("#Voicenum"))
+        else if (msgs[0].Equals("#voicenum"))
         {
-            SoundManager.Instance.SinarioSounds(0, 1);
-            // SoundManager.Instantiate.
+            SoundManager.Instance.SinarioSounds(SoundNum, 1);
+            SoundNum++;
         }
-        else if (msgs[0].Equals("#Karenface"))
+        else if (msgs[0].Equals("#karenface"))
         {
             //顔を変える(種類)
             if (int.Parse(msgs[1]) > -1 && int.Parse(msgs[1]) < FaceList.Count)
@@ -298,10 +287,11 @@ public class TalkManager : MonoBehaviour
         else if (_isSelectMessege)
             return;
         else if (msgs[0].Equals("#sentaku"))
+        {
             Choice2Word(msgs);
+        }
         //    //#sentaku,1#sentaku,2#sentaku,3
         //    会話文を変える
-        //}
         else if (msgs[0].Equals("#kyoutu"))
         {
             //#sentaku,1#sentaku,2#sentaku,3
@@ -325,26 +315,46 @@ public class TalkManager : MonoBehaviour
         //メッセージ表示
         var selMsgs = msgs.Where(x => x.IndexOf("#") < 0).ToArray();
         _choiceControl.SetSelectMessage(selMsgs, SelectCallback);
-
         _isSelectMessege = true;
     }
     private void SelectCallback(int selectNum)
     {
         _isSelectMessege = false;
-        msgs2[0] = "#end";
+        Debug.Log("select Num = " + selectNum);
+        _nowTextLine = SearchLabel(selectNum);
     }
+
+    private int SearchLabel(int selectNum)
+    {
+        var nowLine = _nowTextLine;
+        while (nowLine < _loadTextData.Count)
+        {
+            var msgs = _loadTextData[nowLine].Split(',');
+            if (msgs[0].Equals("#label"))
+            {
+                var num = int.Parse(msgs[1]);
+                if (num == selectNum)
+                    return nowLine + 1;
+            }
+            nowLine++;
+        }
+        return 0;
+    }
+
     /// <summary>
     /// 選択を判定する
     /// </summary>
     
     private void LoadFile(string filename)
     {
-
         using (var str = new StreamReader(filename, System.Text.Encoding.UTF8))
         {
             var msg = "";
             while ((msg = str.ReadLine()) != null)
             {
+                //txtが空白ならその行をとばす
+                if (string.IsNullOrEmpty(msg))
+                    continue;
                 _loadTextData.Add(msg);
             }
         }

@@ -10344,6 +10344,7 @@ MonoBehaviour:
   - {fileID: 1358779204}
   - {fileID: 390847643}
   - {fileID: 1006015927}
+  _choiceManager: {fileID: 840345693}
 --- !u!1 &1913485608
 GameObject:
   m_ObjectHideFlags: 0
