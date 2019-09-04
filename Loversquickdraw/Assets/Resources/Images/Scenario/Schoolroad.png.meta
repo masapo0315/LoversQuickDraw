@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 0005ff5dee479cf43a0b14d85919dd03
+=======
+guid: ed91bf3bdc6502148abf7e6c7c25aa17
+>>>>>>> origin/Fujita2
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -30,7 +34,11 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: -1
+<<<<<<< HEAD
     aniso: -1
+=======
+    aniso: 1
+>>>>>>> origin/Fujita2
     mipBias: -1
     wrapU: 1
     wrapV: 1
