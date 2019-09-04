@@ -23,12 +23,10 @@ public class Test : MonoBehaviour
 
     void Update()
     {
-        TestPos();
         //ボタン系
         if (OVRInput.GetDown(OVRInput.RawButton.A))
         {
             Debug.Log("Aボタンを押した");
-            OVRHaptics.RightChannel.Mix(hapticsClip);
         }
         if (OVRInput.GetDown(OVRInput.RawButton.B))
         {
