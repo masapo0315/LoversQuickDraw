@@ -29,21 +29,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Result.unity
     guid: 6fd775c13a7d0074a84125f9be3bf276
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/InputTestScene.unity
     guid: 16c087f7a33ac3b479d0dd417c32c55c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/test/takada/testMiniGame1.unity
     guid: e90506817f5eaff4ea46a5f7df9cfbec
   - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
     path: Assets/Scenes/test/k-iwasaki/Title-iwasaki.unity
     guid: 4a1e267ea61172c41899f7bf75f557f0
-  - enabled: 1
-    path: Assets/Scenes/InputPlayer1Name.unity
-    guid: 422578714bc8c3f46a7f804a104ea68a

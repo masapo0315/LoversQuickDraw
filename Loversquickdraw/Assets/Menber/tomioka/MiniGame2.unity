@@ -8400,7 +8400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &914815665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13907,7 +13907,7 @@ Prefab:
     - target: {fileID: 224980158422226758, guid: 9c99a415d01d6164da6f0550ba44afb7,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -300
+      value: -1489.72
       objectReference: {fileID: 0}
     - target: {fileID: 224980158422226758, guid: 9c99a415d01d6164da6f0550ba44afb7,
         type: 2}
@@ -13947,7 +13947,7 @@ Prefab:
     - target: {fileID: 224980158422226758, guid: 9c99a415d01d6164da6f0550ba44afb7,
         type: 2}
       propertyPath: m_Pivot.x
-      value: 0.3
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 224980158422226758, guid: 9c99a415d01d6164da6f0550ba44afb7,
         type: 2}
@@ -14474,7 +14474,7 @@ Prefab:
     - target: {fileID: 224547258051384640, guid: 69441ab10f7eddb4a83fff4027d4465c,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 300
+      value: 1554.72
       objectReference: {fileID: 0}
     - target: {fileID: 224547258051384640, guid: 69441ab10f7eddb4a83fff4027d4465c,
         type: 2}
@@ -14514,7 +14514,7 @@ Prefab:
     - target: {fileID: 224547258051384640, guid: 69441ab10f7eddb4a83fff4027d4465c,
         type: 2}
       propertyPath: m_Pivot.x
-      value: 0.7
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 224547258051384640, guid: 69441ab10f7eddb4a83fff4027d4465c,
         type: 2}
@@ -15833,8 +15833,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479c35fd113024f40b291e18f4e4a88f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RightMenu: 0
-  LeftMenu: 4
+  Player1Menu: 4
+  Player2Menu: 0
   GetColor: 0
   Cursor1: {fileID: 592651056}
   Cursor2: {fileID: 425908596}

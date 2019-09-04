@@ -482,7 +482,7 @@ public class TalkManager2 : MonoBehaviour
                 Karen.sprite = FaceList[4];
                 break;
             case 19:
-                Back.sprite = FaceList[1];
+                //Back.sprite = FaceList[1];
                 break;
         }
         switch (Talktext)
