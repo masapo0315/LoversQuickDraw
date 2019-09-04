@@ -25,7 +25,7 @@ public class MiniGame2Manager : MonoBehaviour
     private bool RuleAfter = false;
     private bool SwitchJudg = false;
     private bool RuleCheck1, RuleCheck2 = false;
-    [HideInInspector]
+    //[HideInInspector]
     public bool Ready1, Ready2 = false;
 
     private bool _fill = false;
@@ -42,8 +42,9 @@ public class MiniGame2Manager : MonoBehaviour
     //1図書館・2保健室・3教室
     [SerializeField] private List<Image> PlaceList = new List<Image>();
     [SerializeField] private List<GameObject> buttonMenuList = new List<GameObject>();
+
     //ミスした時の秒数　今後実装
-    //private float TimeCount = 2;
+    private float PenaltyTime = 2.0f;
 
     void Start()
     {
@@ -143,25 +144,24 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player1Menu)
                 {
                     case 0:
+                        false1P();
                         break;
-
                     case 1:
-
+                        false1P();
                         break;
-
                     case 2:
                         Debug.Log("1回目");
+                        True();
                         Karen = "と";
                         Destroy(buttonMenuList[0]);
                         SwitchJudg = true;
                         Select1P++;
                         break;
-
                     case 3:
-
+                        false1P();
                         break;
-
                     case 4:
+                        false1P();
                         break;
                 }
                 break;
@@ -170,23 +170,20 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player1Menu)
                 {
                     case 0:
-
+                        false1P();
                         break;
-
                     case 1:
-
+                        false1P();
                         break;
-
                     case 2:
-
+                        false1P();
                         break;
-
                     case 3:
-
+                        false1P();
                         break;
-
                     case 4:
                         Debug.Log("2回目");
+                        True();
                         Karen = "し";
                         Destroy(buttonMenuList[1]);
                         SwitchJudg = true;
@@ -200,25 +197,23 @@ public class MiniGame2Manager : MonoBehaviour
                 {
                     case 0:
                         Debug.Log("3回目");
+                        True();
                         Karen = "ょ";
                         Destroy(buttonMenuList[2]);
                         SwitchJudg = true;
                         Select1P++;
                         break;
-
                     case 1:
-
+                        false1P();
                         break;
-
                     case 2:
-
+                        false1P();
                         break;
-
                     case 3:
-
+                        false1P();
                         break;
-
                     case 4:
+                        false1P();
                         break;
                 }
                 break;
@@ -227,26 +222,24 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player1Menu)
                 {
                     case 0:
-
+                        false1P();
                         break;
-
                     case 1:
                         Debug.Log("4回目");
+                        True();
                         Karen = "か";
                         Destroy(buttonMenuList[3]);
                         SwitchJudg = true;
                         Select1P++;
                         break;
-
                     case 2:
-
+                        false1P();
                         break;
-
                     case 3:
-
+                        false1P();
                         break;
-
                     case 4:
+                        false1P();
                         break;
                 }
                 break;
@@ -255,23 +248,20 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player1Menu)
                 {
                     case 0:
-
+                        false1P();
                         break;
-
                     case 1:
-
+                        false1P();
                         break;
-
                     case 2:
-
+                        false1P();
                         break;
-
                     case 3:
-
+                        false1P();
                         break;
-
                     case 4:
                         Debug.Log("5回目");
+                        True();
                         Karen = "ん";
                         Destroy(buttonMenuList[4]);
                         SwitchJudg = true;
@@ -292,26 +282,24 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player1Menu)
                 {
                     case 0:
-
+                        false1P();
                         break;
-
                     case 1:
                         Debug.Log("6回目");
+                        True();
                         Karen = "ほ";
                         Destroy(buttonMenuList[5]);
                         SwitchJudg = true;
                         Select1P++;
                         break;
-
                     case 2:
-
+                        false1P();
                         break;
-
                     case 3:
-
+                        false1P();
                         break;
-
                     case 4:
+                        false1P();
                         break;
                 }
                 break;
@@ -320,23 +308,20 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player1Menu)
                 {
                     case 0:
-
+                        false1P();
                         break;
-
                     case 1:
-
+                        false1P();
                         break;
-
                     case 2:
-
+                        false1P();
                         break;
-
                     case 3:
-
+                        false1P();
                         break;
-
                     case 4:
                         Debug.Log("7回目");
+                        True();
                         Karen = "け";
                         Destroy(buttonMenuList[6]);
                         SwitchJudg = true;
@@ -349,26 +334,24 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player1Menu)
                 {
                     case 0:
-
+                        false1P();
                         break;
-
                     case 1:
-
+                        false1P();
                         break;
-
                     case 2:
-
+                        false1P();
                         break;
-
                     case 3:
                         Debug.Log("8回目");
+                        True();
                         Karen = "ん";
                         Destroy(buttonMenuList[7]);
                         SwitchJudg = true;
                         Select1P++;
                         break;
-
                     case 4:
+                        false1P();
                         break;
                 }
                 break;
@@ -378,25 +361,23 @@ public class MiniGame2Manager : MonoBehaviour
                 {
                     case 0:
                         Debug.Log("9回目");
+                        True();
                         Karen = "し";
                         Destroy(buttonMenuList[8]);
                         SwitchJudg = true;
                         Select1P++;
                         break;
-
                     case 1:
-
+                        false1P();
                         break;
-
                     case 2:
-
+                        false1P();
                         break;
-
                     case 3:
-
+                        false1P();
                         break;
-
                     case 4:
+                        false1P();
                         break;
                 }
                 break;
@@ -405,15 +386,14 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player1Menu)
                 {
                     case 0:
-
+                        false1P();
                         break;
-
                     case 1:
-
+                        false1P();
                         break;
-
                     case 2:
                         Debug.Log("10回目");
+                        True();
                         Karen = "つ";
                         Destroy(buttonMenuList[9]);
                         SwitchJudg = true;
@@ -426,12 +406,11 @@ public class MiniGame2Manager : MonoBehaviour
                         Invoke("ResetText", 1);
                         Hint = "それで2人に会った\n場所に来たんだよね";
                         break;
-
                     case 3:
-
+                        false1P();
                         break;
-
                     case 4:
+                        false1P();
                         break;
                 }
                 break;
@@ -440,26 +419,24 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player1Menu)
                 {
                     case 0:
-
+                        false1P();
                         break;
-
                     case 1:
-
+                        false1P();
                         break;
-
                     case 2:
-
+                        false1P();
                         break;
-
                     case 3:
                         Debug.Log("11回目");
+                        True();
                         Karen = "き";
                         Destroy(buttonMenuList[10]);
                         SwitchJudg = true;
                         Select1P++;
                         break;
-
                     case 4:
+                        false1P();
                         break;
                 }
                 break;
@@ -469,25 +446,23 @@ public class MiniGame2Manager : MonoBehaviour
                 {
                     case 0:
                         Debug.Log("12回目");
+                        True();
                         Karen = "ょ";
                         Destroy(buttonMenuList[11]);
                         SwitchJudg = true;
                         Select1P++;
                         break;
-
                     case 1:
-
+                        false1P();
                         break;
-
                     case 2:
-
+                        false1P();
                         break;
-
                     case 3:
-
+                        false1P();
                         break;
-
                     case 4:
+                        false1P();
                         break;
                 }
                 break;
@@ -496,23 +471,20 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player1Menu)
                 {
                     case 0:
-
+                        false1P();
                         break;
-
                     case 1:
-
+                        false1P();
                         break;
-
                     case 2:
-
+                        false1P();
                         break;
-
                     case 3:
-
+                        false1P();
                         break;
-
                     case 4:
                         Debug.Log("13回目");
+                        True();
                         Karen = "う";
                         Destroy(buttonMenuList[12]);
                         SwitchJudg = true;
@@ -525,27 +497,24 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player1Menu)
                 {
                     case 0:
-
+                        false1P();
                         break;
-
                     case 1:
-
+                        false1P();
                         break;
-
                     case 2:
-
+                        false1P();
                         break;
-
                     case 3:
                         Debug.Log("14回目");
+                        True();
                         Karen = "し";
                         Destroy(buttonMenuList[13]);
                         SwitchJudg = true;
                         Select1P++;
                         break;
-
                     case 4:
-
+                        false1P();
                         break;
                 }
                 break;
@@ -554,11 +523,11 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player1Menu)
                 {
                     case 0:
-
+                        false1P();
                         break;
-
                     case 1:
                         Debug.Log("15回目");
+                        True();
                         Karen = "つ";
                         Destroy(buttonMenuList[14]);
                         SwitchJudg = true;
@@ -572,14 +541,13 @@ public class MiniGame2Manager : MonoBehaviour
                         TimeLag();
                         break;
                     case 2:
-
+                        false1P();
                         break;
-
                     case 3:
-
+                        false1P();
                         break;
-
                     case 4:
+                        false1P();
                         break;
                 }
                 break;
@@ -595,25 +563,24 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player2Menu)
                 {
                     case 0:
+                        false2P();
                         break;
-
                     case 1:
-
+                        false2P();
                         break;
-
                     case 2:
                         Debug.Log("1回目");
+                        True();
                         Karen = "と";
                         Destroy(buttonMenuList[0]);
                         SwitchJudg = true;
                         Select2P++;
                         break;
-
                     case 3:
-
+                        false2P();
                         break;
-
                     case 4:
+                        false2P();
                         break;
                 }
                 break;
@@ -622,23 +589,20 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player2Menu)
                 {
                     case 0:
-
+                        false2P();
                         break;
-
                     case 1:
-
+                        false2P();
                         break;
-
                     case 2:
-
+                        false2P();
                         break;
-
                     case 3:
-
+                        false2P();
                         break;
-
                     case 4:
                         Debug.Log("2回目");
+                        True();
                         Karen = "し";
                         Destroy(buttonMenuList[1]);
                         SwitchJudg = true;
@@ -652,25 +616,23 @@ public class MiniGame2Manager : MonoBehaviour
                 {
                     case 0:
                         Debug.Log("3回目");
+                        True();
                         Karen = "ょ";
                         Destroy(buttonMenuList[2]);
                         SwitchJudg = true;
                         Select2P++;
                         break;
-
                     case 1:
-
+                        false2P();
                         break;
-
                     case 2:
-
+                        false2P();
                         break;
-
                     case 3:
-
+                        false2P();
                         break;
-
                     case 4:
+                        false2P();
                         break;
                 }
                 break;
@@ -679,26 +641,24 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player2Menu)
                 {
                     case 0:
-
+                        false2P();
                         break;
-
                     case 1:
                         Debug.Log("4回目");
+                        True();
                         Karen = "か";
                         Destroy(buttonMenuList[3]);
                         SwitchJudg = true;
                         Select2P++;
                         break;
-
                     case 2:
-
+                        false2P();
                         break;
-
                     case 3:
-
+                        false2P();
                         break;
-
                     case 4:
+                        false2P();
                         break;
                 }
                 break;
@@ -707,23 +667,20 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player2Menu)
                 {
                     case 0:
-
+                        false2P();
                         break;
-
                     case 1:
-
+                        false2P();
                         break;
-
                     case 2:
-
+                        false2P();
                         break;
-
                     case 3:
-
+                        false2P();
                         break;
-
                     case 4:
                         Debug.Log("5回目");
+                        True();
                         Karen = "ん";
                         Destroy(buttonMenuList[4]);
                         SwitchJudg = true;
@@ -748,26 +705,24 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player2Menu)
                 {
                     case 0:
-
+                        false2P();
                         break;
-
                     case 1:
                         Debug.Log("6回目");
+                        True();
                         Karen = "ほ";
                         Destroy(buttonMenuList[5]);
                         SwitchJudg = true;
                         Select2P++;
                         break;
-
                     case 2:
-
+                        false2P();
                         break;
-
                     case 3:
-
+                        false2P();
                         break;
-
                     case 4:
+                        false2P();
                         break;
                 }
                 break;
@@ -776,23 +731,20 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player2Menu)
                 {
                     case 0:
-
+                        false2P();
                         break;
-
                     case 1:
-
+                        false2P();
                         break;
-
                     case 2:
-
+                        false2P();
                         break;
-
                     case 3:
-
+                        false2P();
                         break;
-
                     case 4:
                         Debug.Log("7回目");
+                        True();
                         Karen = "け";
                         Destroy(buttonMenuList[6]);
                         SwitchJudg = true;
@@ -805,26 +757,24 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player2Menu)
                 {
                     case 0:
-
+                        false2P();
                         break;
-
                     case 1:
-
+                        false2P();
                         break;
-
                     case 2:
-
+                        false2P();
                         break;
-
                     case 3:
                         Debug.Log("8回目");
+                        True();
                         Karen = "ん";
                         Destroy(buttonMenuList[7]);
                         SwitchJudg = true;
                         Select2P++;
                         break;
-
                     case 4:
+                        false2P();
                         break;
                 }
                 break;
@@ -834,25 +784,23 @@ public class MiniGame2Manager : MonoBehaviour
                 {
                     case 0:
                         Debug.Log("9回目");
+                        True();
                         Karen = "し";
                         Destroy(buttonMenuList[8]);
                         SwitchJudg = true;
                         Select2P++;
                         break;
-
                     case 1:
-
+                        false2P();
                         break;
-
                     case 2:
-
+                        false2P();
                         break;
-
                     case 3:
-
+                        false2P();
                         break;
-
                     case 4:
+                        false2P();
                         break;
                 }
                 break;
@@ -861,15 +809,14 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player2Menu)
                 {
                     case 0:
-
+                        false2P();
                         break;
-
                     case 1:
-
+                        false2P();
                         break;
-
                     case 2:
                         Debug.Log("10回目");
+                        True();
                         Karen = "つ";
                         Destroy(buttonMenuList[9]);
                         SwitchJudg = true;
@@ -882,12 +829,11 @@ public class MiniGame2Manager : MonoBehaviour
                         Invoke("ResetText", 1);
                         Hint = "それで2人に会った\n場所に来たんだよね";
                         break;
-
                     case 3:
-
+                        false2P();
                         break;
-
                     case 4:
+                        false2P();
                         break;
                 }
                 break;
@@ -896,26 +842,24 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player2Menu)
                 {
                     case 0:
-
+                        false2P();
                         break;
-
                     case 1:
-
+                        false2P();
                         break;
-
                     case 2:
-
+                        false2P();
                         break;
-
                     case 3:
                         Debug.Log("11回目");
+                        True();
                         Karen = "き";
                         Destroy(buttonMenuList[10]);
                         SwitchJudg = true;
                         Select2P++;
                         break;
-
                     case 4:
+                        false2P();
                         break;
                 }
                 break;
@@ -925,25 +869,23 @@ public class MiniGame2Manager : MonoBehaviour
                 {
                     case 0:
                         Debug.Log("12回目");
+                        True();
                         Karen = "ょ";
                         Destroy(buttonMenuList[11]);
                         SwitchJudg = true;
                         Select2P++;
                         break;
-
                     case 1:
-
+                        false2P();
                         break;
-
                     case 2:
-
+                        false2P();
                         break;
-
                     case 3:
-
+                        false2P();
                         break;
-
                     case 4:
+                        false2P();
                         break;
                 }
                 break;
@@ -952,23 +894,20 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player2Menu)
                 {
                     case 0:
-
+                        false2P();
                         break;
-
                     case 1:
-
+                        false2P();
                         break;
-
                     case 2:
-
+                        false2P();
                         break;
-
                     case 3:
-
+                        false2P();
                         break;
-
                     case 4:
                         Debug.Log("13回目");
+                        True();
                         Karen = "う";
                         Destroy(buttonMenuList[12]);
                         SwitchJudg = true;
@@ -981,27 +920,24 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player2Menu)
                 {
                     case 0:
-
+                        false2P();
                         break;
-
                     case 1:
-
+                        false2P();
                         break;
-
                     case 2:
-
+                        false2P();
                         break;
-
                     case 3:
                         Debug.Log("14回目");
+                        True();
                         Karen = "し";
                         Destroy(buttonMenuList[13]);
                         SwitchJudg = true;
                         Select2P++;
                         break;
-
                     case 4:
-
+                        false2P();
                         break;
                 }
                 break;
@@ -1010,11 +946,11 @@ public class MiniGame2Manager : MonoBehaviour
                 switch (playerCursorController.Player2Menu)
                 {
                     case 0:
-
+                        false2P();
                         break;
-
                     case 1:
                         Debug.Log("15回目");
+                        True();
                         Karen = "つ";
                         Destroy(buttonMenuList[14]);
                         SwitchJudg = true;
@@ -1028,14 +964,13 @@ public class MiniGame2Manager : MonoBehaviour
                         TimeLag();
                         break;
                     case 2:
-
+                        false2P();
                         break;
-
                     case 3:
-
+                        false2P();
                         break;
-
                     case 4:
+                        false2P();
                         break;
                 }
                 break;
@@ -1053,16 +988,33 @@ public class MiniGame2Manager : MonoBehaviour
         }
     }
 
-    public void false1P()
+    private void True()
     {
-        Debug.Log("1P失敗");
-        sound.SESounds(1, 0.5f);
+        sound.SESounds(0, 0.5f);
     }
 
-    public void false2P()
+    private void false1P()
     {
-        Debug.Log("2P失敗");
-        sound.SESounds(1, 0.5f);
+        if (RuleAfter == true)
+        {
+            Penalty1P();
+            Debug.Log("1P失敗");
+            sound.SESounds(1, 0.5f);
+            Invoke("PenaltyEnd1P", PenaltyTime);
+            Debug.Log("1Pペナルティ");
+        }
+    }
+
+    private void false2P()
+    {
+        if (RuleAfter == true)
+        {
+            Penalty2P();
+            Debug.Log("2P失敗");
+            sound.SESounds(1, 0.5f);
+            Invoke("PenaltyEnd2P", PenaltyTime);
+            Debug.Log("2Pペナルティ");
+        }
     }
 
     private void ResetText()
@@ -1144,13 +1096,21 @@ public class MiniGame2Manager : MonoBehaviour
     private void Penalty1P()
     {
         Ready1 = false;
-
     }
 
     private void Penalty2P()
     {
         Ready2 = false;
+    }
 
+    private void PenaltyEnd1P()
+    {
+        Ready1 = true;
+    }
+
+    private void PenaltyEnd2P()
+    {
+        Ready2 = true;
     }
 
     private void ImageFill()
