@@ -1001,7 +1001,6 @@ public class MiniGame2Manager : MonoBehaviour
             Debug.Log("1P失敗");
             sound.SESounds(1, 0.5f);
             Invoke("PenaltyEnd1P", PenaltyTime);
-            Debug.Log("1Pペナルティ");
         }
     }
 
@@ -1013,7 +1012,6 @@ public class MiniGame2Manager : MonoBehaviour
             Debug.Log("2P失敗");
             sound.SESounds(1, 0.5f);
             Invoke("PenaltyEnd2P", PenaltyTime);
-            Debug.Log("2Pペナルティ");
         }
     }
 
