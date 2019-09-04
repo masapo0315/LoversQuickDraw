@@ -9,9 +9,10 @@ public class Player1Controler : MonoBehaviour
     [SerializeField] private Camera _camera;
     // 1Pのコントローラー
 
+    [SerializeField] GameObject player1;
+
     //comtrollerのposとるのに必須(1Pの場合InspectorからR選択)
     public OVRInput.Controller controller;
-    public GameObject R_Con;
 
     //最高点と最低点のPosを固定
     [SerializeField] private float highPos;
@@ -48,10 +49,10 @@ public class Player1Controler : MonoBehaviour
         if (stop == false)
         {
             Test();
-            //Teast2();
             SpeedUp();
             Jump();
         }
+        Debug.Log(stop);
     }
 
     // 加速処理
@@ -111,7 +112,7 @@ public class Player1Controler : MonoBehaviour
                 _animator.SetBool("Run", false);
                 rb.velocity = Vector3.zero;
             }
-            Debug.Log(transform.position.y);
+            //Debug.Log(transform.position.y);
         }
 
     }

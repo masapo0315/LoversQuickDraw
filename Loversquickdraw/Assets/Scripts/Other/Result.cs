@@ -55,7 +55,7 @@ public class Result : MonoBehaviour
 	void Update ()
     {
         GameSet();
-        SpeedCheck();
+       // SpeedCheck();
     }
 
     //ゲーム終了時に次のシナリオへ
@@ -74,7 +74,7 @@ public class Result : MonoBehaviour
     private void SpeedCheck()
     {
         //player1Speed = player1.velocity.magnitude;
-        Debug.Log(player1Speed);
+        //Debug.Log(player1Speed);
         //player2Speed = player2.velocity.magnitude;
 
     }
