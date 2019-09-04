@@ -39,11 +39,11 @@ public class PlayerCursorController : MonoBehaviour
         //if (miniGame2Manager.Ready1 == true && (Input.GetKeyDown(KeyCode.Return) || OVRInput.GetDown(OVRInput.RawButton.A)))
 
         //ルール説明無し版
-        if (Input.GetKeyDown(KeyCode.Return) || OVRInput.GetDown(OVRInput.RawButton.A))
+        if (Input.GetKeyDown(KeyCode.Keypad0) || OVRInput.GetDown(OVRInput.RawButton.A))
         {
-            Debug.Log("エンター");
+            //Debug.Log("エンター");
             GetColor = true;
-            miniGame2Manager.OnSelect1P();
+            miniGame2Manager.SelectSwitch();
         }
 
         //2Pの決定
@@ -51,11 +51,11 @@ public class PlayerCursorController : MonoBehaviour
         //if (miniGame2Manager.Ready2 == true &&(Input.GetKeyDown(KeyCode.Space) || OVRInput.GetDown(OVRInput.RawButton.X)))
 
         //ルール説明無し版
-        if (Input.GetKeyDown(KeyCode.Space) || OVRInput.GetDown(OVRInput.RawButton.X))
+        if (Input.GetKeyDown(KeyCode.S) || OVRInput.GetDown(OVRInput.RawButton.X))
         {
-           Debug.Log("スペースキー");
+            //Debug.Log("スペースキー");
             GetColor = false;
-            miniGame2Manager.OnSelect2P();
+            miniGame2Manager.SelectSwitch2P();
         }
     }
 
@@ -72,7 +72,7 @@ public class PlayerCursorController : MonoBehaviour
         {
             Player1Menu++;
             Player1Menu %= 5;
-            Debug.Log("右は" + Player1Menu);
+            //Debug.Log("右は" + Player1Menu);
         }
 
         //左を押すと左に移動
@@ -86,13 +86,13 @@ public class PlayerCursorController : MonoBehaviour
             if (Player1Menu == 0)
             {
                 Player1Menu = 4;
-                Debug.Log("右は" + Player1Menu);
+                //Debug.Log("右は" + Player1Menu);
             }
             else
             {
                 Player1Menu--;
                 Player1Menu %= 5;
-                Debug.Log("右は" + Player1Menu);
+                //Debug.Log("右は" + Player1Menu);
             }
         }
 
@@ -134,7 +134,7 @@ public class PlayerCursorController : MonoBehaviour
         {
             Player2Menu++;
             Player2Menu %= 5;
-            Debug.Log("左は" + Player2Menu);
+            //Debug.Log("左は" + Player2Menu);
         }
 
         //Aを押すと左に移動
@@ -148,13 +148,13 @@ public class PlayerCursorController : MonoBehaviour
             if (Player2Menu == 0)
             {
                 Player2Menu = 4;
-                Debug.Log("左は" + Player2Menu);
+                //Debug.Log("左は" + Player2Menu);
             }
             else
             {
                 Player2Menu--;
                 Player2Menu %= 5;
-                Debug.Log("左は" + Player2Menu);
+                //Debug.Log("左は" + Player2Menu);
             }
         }
 
