@@ -19,13 +19,13 @@ public class MiniGame2Manager : MonoBehaviour
     [SerializeField] private GameObject RuluImage;
     [SerializeField] private GameObject PlaceFrame;
     [SerializeField] private SoundManager sound;
+
+
     [HideInInspector] public bool Win1P = true;
-
+    private bool RuleAfter = false;
     private bool SwitchJudg = false;
-
     private bool RuleCheck1, RuleCheck2 = false;
-    //ReadyGoまで操作できないように
-    //[HideInInspector]
+    [HideInInspector]
     public bool Ready1, Ready2 = false;
 
     private bool _fill = false;
@@ -53,7 +53,11 @@ public class MiniGame2Manager : MonoBehaviour
 
     void Update()
     {
-        //RuleCheck();
+        if (RuleAfter == false)
+        {
+            RuleCheck();
+        }
+
         ImageFill();
     }
 
@@ -729,7 +733,11 @@ public class MiniGame2Manager : MonoBehaviour
                         _fill = true;
                         Destroy(buttonMenuList[1]);
                         Invoke("ResetText", 1);
-                        TimeLag();
+                        Ready1 = false;
+                        Ready2 = false;
+                        Debug.Log(Ready1);
+                        Debug.Log(Ready2);
+                        //TimeLag();
                         Invoke("ReadyGO", 1.0f);
                         Hint = "そのあとは体調悪い時に\n行くところに行って...";
                         break;
@@ -1117,6 +1125,7 @@ public class MiniGame2Manager : MonoBehaviour
         {
             RuluImage.SetActive(false);
             ReadyGO();
+            RuleAfter = true;
         }
     }
 
@@ -1128,8 +1137,20 @@ public class MiniGame2Manager : MonoBehaviour
 
     private void TimeLag()
     {
+        Penalty1P();
+        Penalty2P();
+    }
+
+    private void Penalty1P()
+    {
         Ready1 = false;
+
+    }
+
+    private void Penalty2P()
+    {
         Ready2 = false;
+
     }
 
     private void ImageFill()

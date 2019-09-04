@@ -29,17 +29,12 @@ public class PlayerCursorController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         Select();
 
         //1Pの決定
-        //ルール説明有り版
-        //if (miniGame2Manager.Ready1 == true && (Input.GetKeyDown(KeyCode.Return) || OVRInput.GetDown(OVRInput.RawButton.A)))
-
-        //ルール説明無し版
-        if (Input.GetKeyDown(KeyCode.Keypad0) || OVRInput.GetDown(OVRInput.RawButton.A))
+        if (miniGame2Manager.Ready1 == true && (Input.GetKeyDown(KeyCode.Return) || OVRInput.GetDown(OVRInput.RawButton.A)))
         {
             //Debug.Log("エンター");
             GetColor = true;
@@ -47,11 +42,7 @@ public class PlayerCursorController : MonoBehaviour
         }
 
         //2Pの決定
-        //ルール説明有り版
-        //if (miniGame2Manager.Ready2 == true &&(Input.GetKeyDown(KeyCode.Space) || OVRInput.GetDown(OVRInput.RawButton.X)))
-
-        //ルール説明無し版
-        if (Input.GetKeyDown(KeyCode.S) || OVRInput.GetDown(OVRInput.RawButton.X))
+        if (miniGame2Manager.Ready2 == true && (Input.GetKeyDown(KeyCode.Space) || OVRInput.GetDown(OVRInput.RawButton.X)))
         {
             //Debug.Log("スペースキー");
             GetColor = false;
@@ -64,11 +55,7 @@ public class PlayerCursorController : MonoBehaviour
     {
         //1Pの選択
         //右を押すと右に移動
-        //ルール説明有り版
-        //if (miniGame2Manager.Ready1 == true &&(Input.GetKeyDown(KeyCode.RightArrow) || OVRInput.GetDown(OVRInput.RawButton.RThumbstickRight)))
-
-        //ルール説明無し版
-        if (Input.GetKeyDown(KeyCode.RightArrow) || OVRInput.GetDown(OVRInput.RawButton.RThumbstickRight))
+        if (miniGame2Manager.Ready1 == true && (Input.GetKeyDown(KeyCode.RightArrow) || OVRInput.GetDown(OVRInput.RawButton.RThumbstickRight)))
         {
             Player1Menu++;
             Player1Menu %= 5;
@@ -77,11 +64,7 @@ public class PlayerCursorController : MonoBehaviour
 
         //左を押すと左に移動
         //4の次は0に移動
-        //ルール説明有り版
-        //if (miniGame2Manager.Ready1 == true && (Input.GetKeyDown(KeyCode.LeftArrow) || OVRInput.GetDown(OVRInput.RawButton.RThumbstickLeft)))
-
-        //ルール説明無し版
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || OVRInput.GetDown(OVRInput.RawButton.RThumbstickLeft))
+        if (miniGame2Manager.Ready1 == true && (Input.GetKeyDown(KeyCode.LeftArrow) || OVRInput.GetDown(OVRInput.RawButton.RThumbstickLeft)))
         {
             if (Player1Menu == 0)
             {
@@ -126,11 +109,7 @@ public class PlayerCursorController : MonoBehaviour
 
         //2Pの選択
         //Dを押すと右に移動
-        //ルール説明有り版
-        //if (miniGame2Manager.Ready2 == true &&(Input.GetKeyDown(KeyCode.D) || OVRInput.GetDown(OVRInput.RawButton.LThumbstickRight)))
-
-        //ルール説明無し版 
-        if (Input.GetKeyDown(KeyCode.D) || OVRInput.GetDown(OVRInput.RawButton.LThumbstickRight))
+        if (miniGame2Manager.Ready2 == true && (Input.GetKeyDown(KeyCode.D) || OVRInput.GetDown(OVRInput.RawButton.LThumbstickRight)))
         {
             Player2Menu++;
             Player2Menu %= 5;
@@ -139,11 +118,7 @@ public class PlayerCursorController : MonoBehaviour
 
         //Aを押すと左に移動
         //4の次は0に移動
-        //ルール説明有り版
-        //if (miniGame2Manager.Ready2 == true &&(Input.GetKeyDown(KeyCode.A) || OVRInput.GetDown(OVRInput.RawButton.LThumbstickLeft)))
-
-        //ルール説明無し版
-        if (Input.GetKeyDown(KeyCode.A) || OVRInput.GetDown(OVRInput.RawButton.LThumbstickLeft))
+        if (miniGame2Manager.Ready2 == true && (Input.GetKeyDown(KeyCode.A) || OVRInput.GetDown(OVRInput.RawButton.LThumbstickLeft)))
         {
             if (Player2Menu == 0)
             {
