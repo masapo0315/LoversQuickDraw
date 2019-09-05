@@ -8392,7 +8392,6 @@ GameObject:
   - component: {fileID: 914815669}
   - component: {fileID: 914815668}
   - component: {fileID: 914815667}
-  - component: {fileID: 914815666}
   - component: {fileID: 914815665}
   m_Layer: 0
   m_Name: Camera
@@ -8413,13 +8412,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 914815668}
---- !u!81 &914815666
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 914815664}
-  m_Enabled: 1
 --- !u!124 &914815667
 Behaviour:
   m_ObjectHideFlags: 0
@@ -8454,7 +8446,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1

@@ -38,7 +38,7 @@ public class PlayerCursorController : MonoBehaviour
         {
             //Debug.Log("エンター");
             GetColor = true;
-            miniGame2Manager.SelectSwitch();
+            miniGame2Manager.SelectSwitch1P();
         }
 
         //2Pの決定
