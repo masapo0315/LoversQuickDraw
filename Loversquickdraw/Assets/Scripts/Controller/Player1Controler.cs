@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VR;
+using UnityEngine.UI;
 
 public class Player1Controler : MonoBehaviour
 {
     //Player1のカメラ固定よう
     [SerializeField] private Camera _camera;
     // 1Pのコントローラー
+    [SerializeField] Text te;
 
     [SerializeField] GameObject player1;
 
@@ -36,7 +38,7 @@ public class Player1Controler : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = player1.GetComponent<Rigidbody>();
         StartCoroutine("Delay");
     }
 
@@ -48,88 +50,65 @@ public class Player1Controler : MonoBehaviour
         _camera.transform.localPosition = Vector3.zero;
         if (stop == false)
         {
-            Test();
-            SpeedUp();
+            Player1Move();
             Jump();
         }
-        Debug.Log(stop);
     }
 
     // 加速処理
-    void SpeedUp()
+    void SpeedUp(float num)
     {
-        _animator.SetBool("Run", true);
-        force = new Vector3(moveSpeed, 0.0f, 0.0f);
+        _animator.SetBool("Run", false);
+        force = new Vector3(num, 0.0f, 0.0f);
         rb.AddForce(force);
 
-        _animator.SetBool("Run", false);
-        rb.velocity = Vector3.zero;
-
-    }
-    void Teast2()
-    {
-        transform.position = OVRInput.GetLocalControllerPosition(controller);
-
-        string posStr = transform.position.ToString("F2");
-        //Debug.Log(posStr);
     }
 
-    void Test()
+    void Player1Move()
     {
         //controllerのposを常に更新する
         transform.position = OVRInput.GetLocalControllerPosition(controller);
-        //最高点と今のposを比べる
-        if (transform.position.y < highPos)
+        if (transform.position.y > -0.4f)
         {
-            //Vector3 vec3 = transform.position;
-            float comPosY = highPos - transform.position.y;
-            if (comPosY <= -0.3f)
-            {
-                _animator.SetBool("Run", true);
-                force = new Vector3(moveSpeed * 1.5f, 0.0f, 0.0f);
-                rb.AddForce(force);
-                //加速度を早くする
-                Debug.Log("差が小さいから早い");
-            }
-            else if (comPosY >= -0.3f && -0.6f >= comPosY)
-            {
-                _animator.SetBool("Run", true);
-                force = new Vector3(moveSpeed, 0.0f, 0.0f);
-                rb.AddForce(force);
-                //加速度を普通にする
-                Debug.Log("ふつう");
-            }
-            else if (comPosY >= -0.6f && -1.0f >= comPosY)
-            {
-                _animator.SetBool("Run", true);
-                force = new Vector3(moveSpeed * 0.5f, 0.0f, 0.0f);
-                rb.AddForce(force);
-                //加速度を少しゆっくりにする
-                Debug.Log("差が広いからゆっくり");
-            }
-            else
-            {
-                _animator.SetBool("Run", false);
-                rb.velocity = Vector3.zero;
-            }
-            //Debug.Log(transform.position.y);
+            SpeedUp(20f);
         }
-
+        if (transform.position.y < -0.6f)
+        {
+            SpeedUp(20f);
+        }
+        if (transform.position.y >= 0f || transform.position.y <= -1)
+        {
+            _animator.SetBool("Run", true);
+            rb.velocity = Vector3.zero;
+        }
+        te.text = transform.position.y.ToString();
     }
     //ジャンプの処理
     void Jump()
     {
-        if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger) && jump == false)
+        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) && jump == false)
         {
             _animator.SetBool("Jump", true);
             rb.velocity = new Vector3(5, jumpPower, 0);
             jump = true;
         }
-
     }
-
+    //
     private void OnCollisionEnter(Collision col)
     {
+        switch(col.gameObject.tag)
+        {
+            case "ground":
+                _animator.SetBool("Jump", false);
+                jump = false;
+                break;
+            case "Obstacles":
+                Destroy(col.gameObject);
+                StartCoroutine("Delay");
+                break;
+        }
+        //switchで動いたら消す
+        /*
         if (col.gameObject.tag == "ground")
         {
             _animator.SetBool("Jump", false);
@@ -139,9 +118,8 @@ public class Player1Controler : MonoBehaviour
         {
             Destroy(col.gameObject);
             StartCoroutine("Delay");
-        }
+        }*/
     }
-
     //遅延処理
     private IEnumerator Delay()
     {
