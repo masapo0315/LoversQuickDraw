@@ -7,7 +7,9 @@ using UnityEngine.EventSystems;
 
 public class DestryNameVR : MonoBehaviour {
 
-    //入力した文字を削除
+    /// <summary>
+    /// 入力した文字を削除
+    /// </summary>
 
     public InputNameVR inputNameVR;
 
@@ -16,7 +18,7 @@ public class DestryNameVR : MonoBehaviour {
 
     int namecount;
 
-	// Use this for initialization
+
 	void Start () {
 
         inputName = inputNameVR.inputname;
@@ -43,6 +45,7 @@ public class DestryNameVR : MonoBehaviour {
         if (_col.gameObject.tag == "Icon" && Input.GetButton("submit"))
         {
             Debug.Log(namecount);
+
             //文字が入っていなければ何もしない
             if (namecount <= 0) { return; }
             else
