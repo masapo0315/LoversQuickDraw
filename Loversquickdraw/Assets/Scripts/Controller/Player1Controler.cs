@@ -13,9 +13,9 @@ public class Player1Controler : MonoBehaviour
     // 1Pのコントローラー
     [SerializeField] private GameObject player1;
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private Animator _animator;
     [SerializeField] private float moveSpeed; //速度
     [SerializeField] private float jumpPower; //ジャンプ力
-    [SerializeField] private Animator _animator;
 
     private Vector3 force;
 

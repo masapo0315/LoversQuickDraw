@@ -13,13 +13,13 @@ public class Player2Controler : MonoBehaviour
     //2Pコントローラー
     [SerializeField] private GameObject player2;
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private Animator _animator;
     [SerializeField] private float moveSpeed; //速度
     [SerializeField] private float jumpPower; //ジャンプ力
-    [SerializeField] private Animator _animator;
 
     private Vector3 force;
 
-    bool jump = false;     //設置判定
+    private bool jump = false;     //設置判定
     private bool stop;
     
     void Start()
