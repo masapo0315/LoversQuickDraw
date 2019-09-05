@@ -4641,7 +4641,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1600, y: 900}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &430297227
 MonoBehaviour:
@@ -4662,7 +4662,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 5331aa2836556064d859b89205a5688a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13912,7 +13912,7 @@ Prefab:
     - target: {fileID: 224980158422226758, guid: 9c99a415d01d6164da6f0550ba44afb7,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 323.8007
+      value: 323.80072
       objectReference: {fileID: 0}
     - target: {fileID: 224980158422226758, guid: 9c99a415d01d6164da6f0550ba44afb7,
         type: 2}
@@ -13953,41 +13953,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 224980158422226758, guid: 9c99a415d01d6164da6f0550ba44afb7,
-        type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224980158422226758, guid: 9c99a415d01d6164da6f0550ba44afb7,
-        type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224980158422226758, guid: 9c99a415d01d6164da6f0550ba44afb7,
-        type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224790976287329170, guid: 9c99a415d01d6164da6f0550ba44afb7,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 14.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224790976287329170, guid: 9c99a415d01d6164da6f0550ba44afb7,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 345.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 224790976287329170, guid: 9c99a415d01d6164da6f0550ba44afb7,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 288.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 224790976287329170, guid: 9c99a415d01d6164da6f0550ba44afb7,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9c99a415d01d6164da6f0550ba44afb7, type: 2}
@@ -15709,8 +15674,8 @@ MonoBehaviour:
   PlaceFrame: {fileID: 1971620282}
   sound: {fileID: 1770000130}
   Win1P: 1
-  Ready1: 1
-  Ready2: 1
+  Ready1: 0
+  Ready2: 0
   playerCursorController: {fileID: 1770000128}
   PlaceList:
   - {fileID: 479429884}
@@ -15732,82 +15697,6 @@ MonoBehaviour:
   - {fileID: 1727632405}
   - {fileID: 1126546457}
   - {fileID: 1868513717}
-  _buttons:
-  - {fileID: 1847341817}
-  - {fileID: 190776501}
-  - {fileID: 448391215}
-  - {fileID: 437478678}
-  - {fileID: 298778391}
-  - {fileID: 895496341}
-  - {fileID: 202450308}
-  - {fileID: 1462591228}
-  - {fileID: 429480525}
-  - {fileID: 878662840}
-  - {fileID: 119000050}
-  - {fileID: 352839497}
-  - {fileID: 976154021}
-  - {fileID: 107021601}
-  - {fileID: 940369744}
-  - {fileID: 1660302805}
-  - {fileID: 1766375112}
-  - {fileID: 764873804}
-  - {fileID: 332227131}
-  - {fileID: 56304491}
-  - {fileID: 1125096129}
-  - {fileID: 403509784}
-  - {fileID: 349908363}
-  - {fileID: 702774925}
-  - {fileID: 959233554}
-  - {fileID: 1069106201}
-  - {fileID: 1208131010}
-  - {fileID: 1523519806}
-  - {fileID: 1139725745}
-  - {fileID: 1486250447}
-  - {fileID: 1906365988}
-  - {fileID: 1939738384}
-  - {fileID: 1703172794}
-  - {fileID: 981497942}
-  - {fileID: 1036002661}
-  - {fileID: 315518277}
-  - {fileID: 1705552122}
-  - {fileID: 1533726576}
-  - {fileID: 1245627900}
-  - {fileID: 337685695}
-  - {fileID: 676225716}
-  - {fileID: 52930696}
-  - {fileID: 529758066}
-  - {fileID: 853112998}
-  - {fileID: 1723967560}
-  - {fileID: 1236371198}
-  - {fileID: 385674343}
-  - {fileID: 1210773085}
-  - {fileID: 423314787}
-  - {fileID: 2066070605}
-  - {fileID: 625833967}
-  - {fileID: 887989072}
-  - {fileID: 456449300}
-  - {fileID: 1732980701}
-  - {fileID: 779407844}
-  - {fileID: 210533868}
-  - {fileID: 27090830}
-  - {fileID: 1001578967}
-  - {fileID: 453387933}
-  - {fileID: 1598102458}
-  - {fileID: 1591460271}
-  - {fileID: 1046156091}
-  - {fileID: 221073077}
-  - {fileID: 191513213}
-  - {fileID: 1649599138}
-  - {fileID: 1408929219}
-  - {fileID: 985252878}
-  - {fileID: 317474589}
-  - {fileID: 1977782890}
-  - {fileID: 2092718490}
-  - {fileID: 24362699}
-  - {fileID: 270158269}
-  - {fileID: 1358578734}
-  - {fileID: 1855707908}
-  - {fileID: 993106520}
 --- !u!4 &1770000127
 Transform:
   m_ObjectHideFlags: 0

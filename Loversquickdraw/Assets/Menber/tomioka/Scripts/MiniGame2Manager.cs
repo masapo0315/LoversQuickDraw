@@ -14,15 +14,17 @@ public class MiniGame2Manager : MonoBehaviour
     [SerializeField] private Text Place4;
     [SerializeField] private Text Place0;
     [SerializeField] private Text Karen_Hint;
-    //
+
     [SerializeField] private GameObject HintFrame;
     [SerializeField] private GameObject RuluImage;
     [SerializeField] private GameObject PlaceFrame;
     [SerializeField] private SoundManager sound;
-    [HideInInspector] public bool Win1P = true;
 
+
+    [HideInInspector] public bool Win1P = true;
+    private bool RuleAfter = false;
+    private bool SwitchJudg = false;
     private bool RuleCheck1, RuleCheck2 = false;
-    //ReadyGoまで操作できないように
     //[HideInInspector]
     public bool Ready1, Ready2 = false;
 
@@ -36,28 +38,27 @@ public class MiniGame2Manager : MonoBehaviour
     private int Select1P, Select2P = 0;
 
     [SerializeField] private PlayerCursorController playerCursorController;
-    //[SerializeField]private Image BackGround;
 
     //1図書館・2保健室・3教室
     [SerializeField] private List<Image> PlaceList = new List<Image>();
-    //
     [SerializeField] private List<GameObject> buttonMenuList = new List<GameObject>();
+
     //ミスした時の秒数　今後実装
-    //private float TimeCount = 2;
-    //
-    [SerializeField] private Button[] _buttons;
-    //
+    private float PenaltyTime = 2.0f;
+
     void Start()
     {
         Karen_Hint.GetComponent<Text>();
         Karen_Hint.text = Hint;
-
-        //BackGround.GetComponent<Image>();
     }
 
     void Update()
     {
-        //RuleCheck();
+        if (RuleAfter == false)
+        {
+            RuleCheck();
+        }
+
         ImageFill();
     }
 
@@ -134,841 +135,897 @@ public class MiniGame2Manager : MonoBehaviour
         Karen_Hint.GetComponent<Text>();
         Karen_Hint.text = Hint;
     }
-    //1Pが選択した
-    public void OnSelect1P()
-    {
-        Debug.Log("OnSelect1Pを通った");
-        switch (Dankai)
-        {
-            case 1:
-                Debug.Log("1を通った");
-                switch (playerCursorController.Player1Menu)
-                {
-                    case 0:
-                        _buttons[0].Select();
-                        break;
-                    case 1:
-                        _buttons[1].Select();
-                        break;
-                    case 2:
-                        _buttons[2].Select();
-                        Select1P++;
-                        Debug.Log(Select1P);
-                        break;
-                    case 3:
-                        _buttons[3].Select();
-                        break;
-                    case 4:
-                        _buttons[4].Select();
-                        break;
-                }
-                break;
-            case 2:
-                switch (playerCursorController.Player1Menu)
-                {
-                    case 0:
-                        _buttons[5].Select();
-                        break;
-                    case 1:
-                        _buttons[6].Select();
-                        break;
-                    case 2:
-                        _buttons[7].Select();
-                        break;
-                    case 3:
-                        _buttons[8].Select();
-                        break;
-                    case 4:
-                        _buttons[9].Select();
-                        Select1P++;
-                        Debug.Log(Select1P);
-                        break;
-                }
-                break;
-            case 3:
-                switch (playerCursorController.Player1Menu)
-                {
-                    case 0:
-                        _buttons[10].Select();
-                        Select1P++;
-                        Debug.Log(Select1P);
-                        break;
-                    case 1:
-                        _buttons[11].Select();
-                        break;
-                    case 2:
-                        _buttons[12].Select();
-                        break;
-                    case 3:
-                        _buttons[13].Select();
-                        break;
-                    case 4:
-                        _buttons[14].Select();
-                        break;
-                }
-                break;
-            case 4:
-                switch (playerCursorController.Player1Menu)
-                {
-                    case 0:
-                        _buttons[15].Select();
-                        break;
-                    case 1:
-                        _buttons[16].Select();
-                        Select1P++;
-                        Debug.Log(Select1P);
-                        break;
-                    case 2:
-                        _buttons[17].Select();
-                        break;
-                    case 3:
-                        _buttons[18].Select();
-                        break;
-                    case 4:
-                        _buttons[19].Select();
-                        break;
-                }
-                break;
-            case 5:
-                switch (playerCursorController.Player1Menu)
-                {
-                    case 0:
-                        _buttons[20].Select();
-                        break;
-                    case 1:
-                        _buttons[21].Select();
-                        break;
-                    case 2:
-                        _buttons[22].Select();
-                        break;
-                    case 3:
-                        _buttons[23].Select();
-                        break;
-                    case 4:
-                        _buttons[24].Select();
-                        Select1P++;
-                        Debug.Log(Select1P);
-                        break;
-                }
-                break;
-            case 6:
-                switch (playerCursorController.Player1Menu)
-                {
-                    case 0:
-                        _buttons[25].Select();
-                        break;
-                    case 1:
-                        _buttons[26].Select();
-                        Select1P++;
-                        Debug.Log(Select1P);
-                        break;
-                    case 2:
-                        _buttons[27].Select();
-                        break;
-                    case 3:
-                        _buttons[28].Select();
-                        break;
-                    case 4:
-                        _buttons[29].Select();
-                        break;
-                }
-                break;
-            case 7:
-                switch (playerCursorController.Player1Menu)
-                {
-                    case 0:
-                        _buttons[30].Select();
-                        break;
-                    case 1:
-                        _buttons[31].Select();
-                        break;
-                    case 2:
-                        _buttons[32].Select();
-                        break;
-                    case 3:
-                        _buttons[33].Select();
-                        break;
-                    case 4:
-                        _buttons[34].Select();
-                        Select1P++;
-                        Debug.Log(Select1P);
-                        break;
-                }
-                break;
-            case 8:
-                switch (playerCursorController.Player1Menu)
-                {
-                    case 0:
-                        _buttons[35].Select();
-                        break;
-                    case 1:
-                        _buttons[36].Select();
-                        break;
-                    case 2:
-                        _buttons[37].Select();
-                        break;
-                    case 3:
-                        _buttons[38].Select();
-                        Select1P++;
-                        Debug.Log(Select1P);
-                        break;
-                    case 4:
-                        _buttons[39].Select();
-                        break;
-                }
-                break;
-            case 9:
-                switch (playerCursorController.Player1Menu)
-                {
-                    case 0:
-                        _buttons[40].Select();
-                        Select1P++;
-                        Debug.Log(Select1P);
-                        break;
-                    case 1:
-                        _buttons[41].Select();
-                        break;
-                    case 2:
-                        _buttons[42].Select();
-                        break;
-                    case 3:
-                        _buttons[43].Select();
-                        break;
-                    case 4:
-                        _buttons[44].Select();
-                        break;
-                }
-                break;
-            case 10:
-                switch (playerCursorController.Player1Menu)
-                {
-                    case 0:
-                        _buttons[45].Select();
-                        break;
-                    case 1:
-                        _buttons[46].Select();
-                        break;
-                    case 2:
-                        _buttons[47].Select();
-                        Select1P++;
-                        Debug.Log(Select1P);
-                        break;
-                    case 3:
-                        _buttons[48].Select();
-                        break;
-                    case 4:
-                        _buttons[49].Select();
-                        break;
-                }
-                break;
-            case 11:
-                switch (playerCursorController.Player1Menu)
-                {
-                    case 0:
-                        _buttons[50].Select();
-                        break;
-                    case 1:
-                        _buttons[51].Select();
-                        break;
-                    case 2:
-                        _buttons[52].Select();
-                        Select1P++;
-                        Debug.Log(Select1P);
-                        break;
-                    case 3:
-                        _buttons[53].Select();
-                        break;
-                    case 4:
-                        _buttons[54].Select();
-                        break;
-                }
-                break;
-            case 12:
-                switch (playerCursorController.Player1Menu)
-                {
-                    case 0:
-                        _buttons[55].Select();
-                        Select1P++;
-                        Debug.Log(Select1P);
-                        break;
-                    case 1:
-                        _buttons[56].Select();
-                        break;
-                    case 2:
-                        _buttons[57].Select();
-                        break;
-                    case 3:
-                        _buttons[58].Select();
-                        break;
-                    case 4:
-                        _buttons[59].Select();
-                        break;
-                }
-                break;
-            case 13:
-                switch (playerCursorController.Player1Menu)
-                {
-                    case 0:
-                        _buttons[60].Select();
-                        break;
-                    case 1:
-                        _buttons[61].Select();
-                        break;
-                    case 2:
-                        _buttons[62].Select();
-                        break;
-                    case 3:
-                        _buttons[63].Select();
-                        break;
-                    case 4:
-                        _buttons[64].Select();
-                        Select1P++;
-                        Debug.Log(Select1P);
-                        break;
-                }
-                break;
-            case 14:
-                switch (playerCursorController.Player1Menu)
-                {
-                    case 0:
-                        _buttons[65].Select();
-                        break;
-                    case 1:
-                        _buttons[66].Select();
-                        break;
-                    case 2:
-                        _buttons[67].Select();
-                        break;
-                    case 3:
-                        _buttons[68].Select();
-                        Select1P++;
-                        Debug.Log(Select1P);
-                        break;
-                    case 4:
-                        _buttons[69].Select();
-                        break;
-                }
-                break;
-            case 15:
-                switch (playerCursorController.Player1Menu)
-                {
-                    case 0:
-                        _buttons[70].Select();
-                        break;
-                    case 1:
-                        _buttons[71].Select();
-                        Select1P++;
-                        Debug.Log(Select1P);
-                        break;
-                    case 2:
-                        _buttons[72].Select();
-                        break;
-                    case 3:
-                        _buttons[73].Select();
-                        break;
-                    case 4:
-                        _buttons[74].Select();
-                        break;
-                }
-                break;
-        }
-    }
-    //2Pが選択した
-    public void OnSelect2P()
-    {
-        Debug.Log("OnSelect2Pを通った");
-        switch (Dankai)
-        {
-            case 1:
-                Debug.Log("1を通った");
-                switch (playerCursorController.Player2Menu)
-                {
-                    case 0:
-                        _buttons[0].Select();
-                        break;
-                    case 1:
-                        _buttons[1].Select();
-                        break;
-                    case 2:
-                        _buttons[2].Select();
-                        Select2P++;
-                        Debug.Log(Select2P);
-                        break;
-                    case 3:
-                        _buttons[3].Select();
-                        break;
-                    case 4:
-                        _buttons[4].Select();
-                        break;
-                }
-                break;
-            case 2:
-                switch (playerCursorController.Player2Menu)
-                {
-                    case 0:
-                        _buttons[5].Select();
-                        break;
-                    case 1:
-                        _buttons[6].Select();
-                        break;
-                    case 2:
-                        _buttons[7].Select();
-                        break;
-                    case 3:
-                        _buttons[8].Select();
-                        break;
-                    case 4:
-                        _buttons[9].Select();
-                        Select2P++;
-                        Debug.Log(Select2P);
-                        break;
-                }
-                break;
-            case 3:
-                switch (playerCursorController.Player2Menu)
-                {
-                    case 0:
-                        _buttons[10].Select();
-                        Select2P++;
-                        Debug.Log(Select2P);
-                        break;
-                    case 1:
-                        _buttons[11].Select();
-                        break;
-                    case 2:
-                        _buttons[12].Select();
-                        break;
-                    case 3:
-                        _buttons[13].Select();
-                        break;
-                    case 4:
-                        _buttons[14].Select();
-                        break;
-                }
-                break;
-            case 4:
-                switch (playerCursorController.Player2Menu)
-                {
-                    case 0:
-                        _buttons[15].Select();
-                        break;
-                    case 1:
-                        _buttons[16].Select();
-                        Select2P++;
-                        Debug.Log(Select2P);
-                        break;
-                    case 2:
-                        _buttons[17].Select();
-                        break;
-                    case 3:
-                        _buttons[18].Select();
-                        break;
-                    case 4:
-                        _buttons[19].Select();
-                        break;
-                }
-                break;
-            case 5:
-                switch (playerCursorController.Player2Menu)
-                {
-                    case 0:
-                        _buttons[20].Select();
-                        break;
-                    case 1:
-                        _buttons[21].Select();
-                        break;
-                    case 2:
-                        _buttons[22].Select();
-                        break;
-                    case 3:
-                        _buttons[23].Select();
-                        break;
-                    case 4:
-                        _buttons[24].Select();
-                        Select2P++;
-                        Debug.Log(Select2P);
-                        break;
-                }
-                break;
-            case 6:
-                switch (playerCursorController.Player2Menu)
-                {
-                    case 0:
-                        _buttons[25].Select();
-                        break;
-                    case 1:
-                        _buttons[26].Select();
-                        Select2P++;
-                        Debug.Log(Select2P);
-                        break;
-                    case 2:
-                        _buttons[27].Select();
-                        break;
-                    case 3:
-                        _buttons[28].Select();
-                        break;
-                    case 4:
-                        _buttons[29].Select();
-                        break;
-                }
-                break;
-            case 7:
-                switch (playerCursorController.Player2Menu)
-                {
-                    case 0:
-                        _buttons[30].Select();
-                        break;
-                    case 1:
-                        _buttons[31].Select();
-                        break;
-                    case 2:
-                        _buttons[32].Select();
-                        break;
-                    case 3:
-                        _buttons[33].Select();
-                        break;
-                    case 4:
-                        _buttons[34].Select();
-                        Select2P++;
-                        Debug.Log(Select2P);
-                        break;
-                }
-                break;
-            case 8:
-                switch (playerCursorController.Player2Menu)
-                {
-                    case 0:
-                        _buttons[35].Select();
-                        break;
-                    case 1:
-                        _buttons[36].Select();
-                        break;
-                    case 2:
-                        _buttons[37].Select();
-                        break;
-                    case 3:
-                        _buttons[38].Select();
-                        Select2P++;
-                        Debug.Log(Select2P);
-                        break;
-                    case 4:
-                        _buttons[39].Select();
-                        break;
-                }
-                break;
-            case 9:
-                switch (playerCursorController.Player2Menu)
-                {
-                    case 0:
-                        _buttons[40].Select();
-                        Select2P++;
-                        Debug.Log(Select2P);
-                        break;
-                    case 1:
-                        _buttons[41].Select();
-                        break;
-                    case 2:
-                        _buttons[42].Select();
-                        break;
-                    case 3:
-                        _buttons[43].Select();
-                        break;
-                    case 4:
-                        _buttons[44].Select();
-                        break;
-                }
-                break;
-            case 10:
-                switch (playerCursorController.Player2Menu)
-                {
-                    case 0:
-                        _buttons[45].Select();
-                        break;
-                    case 1:
-                        _buttons[46].Select();
-                        break;
-                    case 2:
-                        _buttons[47].Select();
-                        Select2P++;
-                        Debug.Log(Select2P);
-                        break;
-                    case 3:
-                        _buttons[48].Select();
-                        break;
-                    case 4:
-                        _buttons[49].Select();
-                        break;
-                }
-                break;
-            case 11:
-                switch (playerCursorController.Player2Menu)
-                {
-                    case 0:
-                        _buttons[50].Select();
-                        break;
-                    case 1:
-                        _buttons[51].Select();
-                        break;
-                    case 2:
-                        _buttons[52].Select();
-                        Select2P++;
-                        Debug.Log(Select2P);
-                        break;
-                    case 3:
-                        _buttons[53].Select();
-                        break;
-                    case 4:
-                        _buttons[54].Select();
-                        break;
-                }
-                break;
-            case 12:
-                switch (playerCursorController.Player2Menu)
-                {
-                    case 0:
-                        _buttons[55].Select();
-                        Select2P++;
-                        Debug.Log(Select2P);
-                        break;
-                    case 1:
-                        _buttons[56].Select();
-                        break;
-                    case 2:
-                        _buttons[57].Select();
-                        break;
-                    case 3:
-                        _buttons[58].Select();
-                        break;
-                    case 4:
-                        _buttons[59].Select();
-                        break;
-                }
-                break;
-            case 13:
-                switch (playerCursorController.Player2Menu)
-                {
-                    case 0:
-                        _buttons[60].Select();
-                        break;
-                    case 1:
-                        _buttons[61].Select();
-                        break;
-                    case 2:
-                        _buttons[62].Select();
-                        break;
-                    case 3:
-                        _buttons[63].Select();
-                        break;
-                    case 4:
-                        _buttons[64].Select();
-                        Select2P++;
-                        Debug.Log(Select2P);
-                        break;
-                }
-                break;
-            case 14:
-                switch (playerCursorController.Player2Menu)
-                {
-                    case 0:
-                        _buttons[65].Select();
-                        break;
-                    case 1:
-                        _buttons[66].Select();
-                        break;
-                    case 2:
-                        _buttons[67].Select();
-                        break;
-                    case 3:
-                        _buttons[68].Select();
-                        Select2P++;
-                        Debug.Log(Select2P);
-                        break;
-                    case 4:
-                        _buttons[69].Select();
-                        break;
-                }
-                break;
-            case 15:
-                switch (playerCursorController.Player2Menu)
-                {
-                    case 0:
-                        _buttons[70].Select();
-                        break;
-                    case 1:
-                        _buttons[71].Select();
-                        Select2P++;
-                        Debug.Log(Select2P);
-                        break;
-                    case 2:
-                        _buttons[72].Select();
-                        break;
-                    case 3:
-                        _buttons[73].Select();
-                        break;
-                    case 4:
-                        _buttons[74].Select();
-                        break;
-                }
-                break;
-        }
-    }
-    //
-    public void ClickTrue()
-    {
-        sound.SESounds(0, 0.5f);
-        //Debug.Log("押すまで来た");
-        switch (Dankai)
-        {
-            case 1:
-                Debug.Log("1回目");
-                Karen = "と";
-                Destroy(buttonMenuList[0]);
-                break;
-            case 2:
-                Debug.Log("2回目");
-                Karen = "し";
-                Destroy(buttonMenuList[1]);
-                break;
-            case 3:
-                Debug.Log("3回目");
-                Karen = "ょ";
-                Destroy(buttonMenuList[2]);
-                break;
-            case 4:
-                Debug.Log("4回目");
-                Karen = "か";
-                Destroy(buttonMenuList[3]);
-                break;
-            case 5:
-                Debug.Log("5回目");
-                Karen = "ん";
-                Destroy(buttonMenuList[4]);
 
-                //一度クリアにする関数
-                //Destroy(PlaceList[0]);
-                _fill = true;
-                //PlaceList[0].fillAmount -= Time.deltaTime;
-                Destroy(buttonMenuList[1]);
-                Invoke("ResetText", 1);
-                TimeLag();
-                Invoke("ReadyGO", 1.0f);
-                Hint = "そのあとは体調悪い時に\n行くところに行って...";
+    public void SelectSwitch()
+    {
+        switch (Dankai)
+        {
+            case 1:
+                switch (playerCursorController.Player1Menu)
+                {
+                    case 0:
+                        false1P();
+                        break;
+                    case 1:
+                        false1P();
+                        break;
+                    case 2:
+                        Debug.Log("1回目");
+                        True();
+                        Karen = "と";
+                        Destroy(buttonMenuList[0]);
+                        SwitchJudg = true;
+                        Select1P++;
+                        break;
+                    case 3:
+                        false1P();
+                        break;
+                    case 4:
+                        false1P();
+                        break;
+                }
                 break;
-            case 6:
-                Debug.Log("6回目");
-                Karen = "ほ";
-                Destroy(buttonMenuList[5]);
-                break;
-            case 7:
-                Debug.Log("7回目");
-                Karen = "け";
-                Destroy(buttonMenuList[6]);
-                break;
-            case 8:
-                Debug.Log("8回目");
-                Karen = "ん";
-                Destroy(buttonMenuList[7]);
-                break;
-            case 9:
-                Debug.Log("9回目");
-                Karen = "し";
-                Destroy(buttonMenuList[8]);
-                break;
-            case 10:
-                Debug.Log("10回目");
-                Karen = "つ";
-                Destroy(buttonMenuList[9]);
-                
-                //一度クリアにする関数
-                _fill = true;
-                TimeLag();
-                Invoke("ReadyGO", 1.0f);
-                Invoke("ResetText", 1);
-                Hint = "それで2人に会った\n場所に来たんだよね";
-                break;
-            case 11:
-                Debug.Log("11回目");
-                Karen = "き";
-                Destroy(buttonMenuList[10]);
-                break;
-            case 12:
-                Debug.Log("12回目");
-                Karen = "ょ";
-                Destroy(buttonMenuList[11]);
-                break;
-            case 13:
-                Debug.Log("13回目");
-                Karen = "う";
-                Destroy(buttonMenuList[12]);
-                break;
-            case 14:
-                Debug.Log("14回目");
-                Karen = "し";
-                Destroy(buttonMenuList[13]);
-                break;
-            case 15:
-                Debug.Log("15回目");
-                Karen = "つ";
-                Destroy(buttonMenuList[14]);
 
-                _fill = true;
-                VictoryPlayer();
-                Invoke("DestroyPlace", 1);
-                Destroy(HintFrame);
-                Invoke("Scene", 2);
-                TimeLag();
+            case 2:
+                switch (playerCursorController.Player1Menu)
+                {
+                    case 0:
+                        false1P();
+                        break;
+                    case 1:
+                        false1P();
+                        break;
+                    case 2:
+                        false1P();
+                        break;
+                    case 3:
+                        false1P();
+                        break;
+                    case 4:
+                        Debug.Log("2回目");
+                        True();
+                        Karen = "し";
+                        Destroy(buttonMenuList[1]);
+                        SwitchJudg = true;
+                        Select1P++;
+                        break;
+                }
+                break;
+
+            case 3:
+                switch (playerCursorController.Player1Menu)
+                {
+                    case 0:
+                        Debug.Log("3回目");
+                        True();
+                        Karen = "ょ";
+                        Destroy(buttonMenuList[2]);
+                        SwitchJudg = true;
+                        Select1P++;
+                        break;
+                    case 1:
+                        false1P();
+                        break;
+                    case 2:
+                        false1P();
+                        break;
+                    case 3:
+                        false1P();
+                        break;
+                    case 4:
+                        false1P();
+                        break;
+                }
+                break;
+
+            case 4:
+                switch (playerCursorController.Player1Menu)
+                {
+                    case 0:
+                        false1P();
+                        break;
+                    case 1:
+                        Debug.Log("4回目");
+                        True();
+                        Karen = "か";
+                        Destroy(buttonMenuList[3]);
+                        SwitchJudg = true;
+                        Select1P++;
+                        break;
+                    case 2:
+                        false1P();
+                        break;
+                    case 3:
+                        false1P();
+                        break;
+                    case 4:
+                        false1P();
+                        break;
+                }
+                break;
+
+            case 5:
+                switch (playerCursorController.Player1Menu)
+                {
+                    case 0:
+                        false1P();
+                        break;
+                    case 1:
+                        false1P();
+                        break;
+                    case 2:
+                        false1P();
+                        break;
+                    case 3:
+                        false1P();
+                        break;
+                    case 4:
+                        Debug.Log("5回目");
+                        True();
+                        Karen = "ん";
+                        Destroy(buttonMenuList[4]);
+                        SwitchJudg = true;
+                        Select1P++;
+
+                        //一度クリアにする関数
+                        _fill = true;
+                        Destroy(buttonMenuList[1]);
+                        Invoke("ResetText", 1);
+                        TimeLag();
+                        Invoke("ReadyGO", 1.0f);
+                        Hint = "そのあとは体調悪い時に\n行くところに行って...";
+                        break;
+                }
+                break;
+
+            case 6:
+                switch (playerCursorController.Player1Menu)
+                {
+                    case 0:
+                        false1P();
+                        break;
+                    case 1:
+                        Debug.Log("6回目");
+                        True();
+                        Karen = "ほ";
+                        Destroy(buttonMenuList[5]);
+                        SwitchJudg = true;
+                        Select1P++;
+                        break;
+                    case 2:
+                        false1P();
+                        break;
+                    case 3:
+                        false1P();
+                        break;
+                    case 4:
+                        false1P();
+                        break;
+                }
+                break;
+
+            case 7:
+                switch (playerCursorController.Player1Menu)
+                {
+                    case 0:
+                        false1P();
+                        break;
+                    case 1:
+                        false1P();
+                        break;
+                    case 2:
+                        false1P();
+                        break;
+                    case 3:
+                        false1P();
+                        break;
+                    case 4:
+                        Debug.Log("7回目");
+                        True();
+                        Karen = "け";
+                        Destroy(buttonMenuList[6]);
+                        SwitchJudg = true;
+                        Select1P++;
+                        break;
+                }
+                break;
+
+            case 8:
+                switch (playerCursorController.Player1Menu)
+                {
+                    case 0:
+                        false1P();
+                        break;
+                    case 1:
+                        false1P();
+                        break;
+                    case 2:
+                        false1P();
+                        break;
+                    case 3:
+                        Debug.Log("8回目");
+                        True();
+                        Karen = "ん";
+                        Destroy(buttonMenuList[7]);
+                        SwitchJudg = true;
+                        Select1P++;
+                        break;
+                    case 4:
+                        false1P();
+                        break;
+                }
+                break;
+
+            case 9:
+                switch (playerCursorController.Player1Menu)
+                {
+                    case 0:
+                        Debug.Log("9回目");
+                        True();
+                        Karen = "し";
+                        Destroy(buttonMenuList[8]);
+                        SwitchJudg = true;
+                        Select1P++;
+                        break;
+                    case 1:
+                        false1P();
+                        break;
+                    case 2:
+                        false1P();
+                        break;
+                    case 3:
+                        false1P();
+                        break;
+                    case 4:
+                        false1P();
+                        break;
+                }
+                break;
+
+            case 10:
+                switch (playerCursorController.Player1Menu)
+                {
+                    case 0:
+                        false1P();
+                        break;
+                    case 1:
+                        false1P();
+                        break;
+                    case 2:
+                        Debug.Log("10回目");
+                        True();
+                        Karen = "つ";
+                        Destroy(buttonMenuList[9]);
+                        SwitchJudg = true;
+                        Select1P++;
+
+                        //一度クリアにする関数
+                        _fill = true;
+                        TimeLag();
+                        Invoke("ReadyGO", 1.0f);
+                        Invoke("ResetText", 1);
+                        Hint = "それで2人に会った\n場所に来たんだよね";
+                        break;
+                    case 3:
+                        false1P();
+                        break;
+                    case 4:
+                        false1P();
+                        break;
+                }
+                break;
+
+            case 11:
+                switch (playerCursorController.Player1Menu)
+                {
+                    case 0:
+                        false1P();
+                        break;
+                    case 1:
+                        false1P();
+                        break;
+                    case 2:
+                        false1P();
+                        break;
+                    case 3:
+                        Debug.Log("11回目");
+                        True();
+                        Karen = "き";
+                        Destroy(buttonMenuList[10]);
+                        SwitchJudg = true;
+                        Select1P++;
+                        break;
+                    case 4:
+                        false1P();
+                        break;
+                }
+                break;
+
+            case 12:
+                switch (playerCursorController.Player1Menu)
+                {
+                    case 0:
+                        Debug.Log("12回目");
+                        True();
+                        Karen = "ょ";
+                        Destroy(buttonMenuList[11]);
+                        SwitchJudg = true;
+                        Select1P++;
+                        break;
+                    case 1:
+                        false1P();
+                        break;
+                    case 2:
+                        false1P();
+                        break;
+                    case 3:
+                        false1P();
+                        break;
+                    case 4:
+                        false1P();
+                        break;
+                }
+                break;
+
+            case 13:
+                switch (playerCursorController.Player1Menu)
+                {
+                    case 0:
+                        false1P();
+                        break;
+                    case 1:
+                        false1P();
+                        break;
+                    case 2:
+                        false1P();
+                        break;
+                    case 3:
+                        false1P();
+                        break;
+                    case 4:
+                        Debug.Log("13回目");
+                        True();
+                        Karen = "う";
+                        Destroy(buttonMenuList[12]);
+                        SwitchJudg = true;
+                        Select1P++;
+                        break;
+                }
+                break;
+
+            case 14:
+                switch (playerCursorController.Player1Menu)
+                {
+                    case 0:
+                        false1P();
+                        break;
+                    case 1:
+                        false1P();
+                        break;
+                    case 2:
+                        false1P();
+                        break;
+                    case 3:
+                        Debug.Log("14回目");
+                        True();
+                        Karen = "し";
+                        Destroy(buttonMenuList[13]);
+                        SwitchJudg = true;
+                        Select1P++;
+                        break;
+                    case 4:
+                        false1P();
+                        break;
+                }
+                break;
+
+            case 15:
+                switch (playerCursorController.Player1Menu)
+                {
+                    case 0:
+                        false1P();
+                        break;
+                    case 1:
+                        Debug.Log("15回目");
+                        True();
+                        Karen = "つ";
+                        Destroy(buttonMenuList[14]);
+                        SwitchJudg = true;
+                        Select1P++;
+
+                        _fill = true;
+                        VictoryPlayer();
+                        Invoke("DestroyPlace", 1);
+                        Destroy(HintFrame);
+                        Invoke("Scene", 2);
+                        TimeLag();
+                        break;
+                    case 2:
+                        false1P();
+                        break;
+                    case 3:
+                        false1P();
+                        break;
+                    case 4:
+                        false1P();
+                        break;
+                }
                 break;
         }
         Text();
     }
-    //
+
+    public void SelectSwitch2P()
+    {
+        switch (Dankai)
+        {
+            case 1:
+                switch (playerCursorController.Player2Menu)
+                {
+                    case 0:
+                        false2P();
+                        break;
+                    case 1:
+                        false2P();
+                        break;
+                    case 2:
+                        Debug.Log("1回目");
+                        True();
+                        Karen = "と";
+                        Destroy(buttonMenuList[0]);
+                        SwitchJudg = true;
+                        Select2P++;
+                        break;
+                    case 3:
+                        false2P();
+                        break;
+                    case 4:
+                        false2P();
+                        break;
+                }
+                break;
+
+            case 2:
+                switch (playerCursorController.Player2Menu)
+                {
+                    case 0:
+                        false2P();
+                        break;
+                    case 1:
+                        false2P();
+                        break;
+                    case 2:
+                        false2P();
+                        break;
+                    case 3:
+                        false2P();
+                        break;
+                    case 4:
+                        Debug.Log("2回目");
+                        True();
+                        Karen = "し";
+                        Destroy(buttonMenuList[1]);
+                        SwitchJudg = true;
+                        Select2P++;
+                        break;
+                }
+                break;
+
+            case 3:
+                switch (playerCursorController.Player2Menu)
+                {
+                    case 0:
+                        Debug.Log("3回目");
+                        True();
+                        Karen = "ょ";
+                        Destroy(buttonMenuList[2]);
+                        SwitchJudg = true;
+                        Select2P++;
+                        break;
+                    case 1:
+                        false2P();
+                        break;
+                    case 2:
+                        false2P();
+                        break;
+                    case 3:
+                        false2P();
+                        break;
+                    case 4:
+                        false2P();
+                        break;
+                }
+                break;
+
+            case 4:
+                switch (playerCursorController.Player2Menu)
+                {
+                    case 0:
+                        false2P();
+                        break;
+                    case 1:
+                        Debug.Log("4回目");
+                        True();
+                        Karen = "か";
+                        Destroy(buttonMenuList[3]);
+                        SwitchJudg = true;
+                        Select2P++;
+                        break;
+                    case 2:
+                        false2P();
+                        break;
+                    case 3:
+                        false2P();
+                        break;
+                    case 4:
+                        false2P();
+                        break;
+                }
+                break;
+
+            case 5:
+                switch (playerCursorController.Player2Menu)
+                {
+                    case 0:
+                        false2P();
+                        break;
+                    case 1:
+                        false2P();
+                        break;
+                    case 2:
+                        false2P();
+                        break;
+                    case 3:
+                        false2P();
+                        break;
+                    case 4:
+                        Debug.Log("5回目");
+                        True();
+                        Karen = "ん";
+                        Destroy(buttonMenuList[4]);
+                        SwitchJudg = true;
+                        Select2P++;
+
+                        //一度クリアにする関数
+                        _fill = true;
+                        Destroy(buttonMenuList[1]);
+                        Invoke("ResetText", 1);
+                        Ready1 = false;
+                        Ready2 = false;
+                        Debug.Log(Ready1);
+                        Debug.Log(Ready2);
+                        //TimeLag();
+                        Invoke("ReadyGO", 1.0f);
+                        Hint = "そのあとは体調悪い時に\n行くところに行って...";
+                        break;
+                }
+                break;
+
+            case 6:
+                switch (playerCursorController.Player2Menu)
+                {
+                    case 0:
+                        false2P();
+                        break;
+                    case 1:
+                        Debug.Log("6回目");
+                        True();
+                        Karen = "ほ";
+                        Destroy(buttonMenuList[5]);
+                        SwitchJudg = true;
+                        Select2P++;
+                        break;
+                    case 2:
+                        false2P();
+                        break;
+                    case 3:
+                        false2P();
+                        break;
+                    case 4:
+                        false2P();
+                        break;
+                }
+                break;
+
+            case 7:
+                switch (playerCursorController.Player2Menu)
+                {
+                    case 0:
+                        false2P();
+                        break;
+                    case 1:
+                        false2P();
+                        break;
+                    case 2:
+                        false2P();
+                        break;
+                    case 3:
+                        false2P();
+                        break;
+                    case 4:
+                        Debug.Log("7回目");
+                        True();
+                        Karen = "け";
+                        Destroy(buttonMenuList[6]);
+                        SwitchJudg = true;
+                        Select2P++;
+                        break;
+                }
+                break;
+
+            case 8:
+                switch (playerCursorController.Player2Menu)
+                {
+                    case 0:
+                        false2P();
+                        break;
+                    case 1:
+                        false2P();
+                        break;
+                    case 2:
+                        false2P();
+                        break;
+                    case 3:
+                        Debug.Log("8回目");
+                        True();
+                        Karen = "ん";
+                        Destroy(buttonMenuList[7]);
+                        SwitchJudg = true;
+                        Select2P++;
+                        break;
+                    case 4:
+                        false2P();
+                        break;
+                }
+                break;
+
+            case 9:
+                switch (playerCursorController.Player2Menu)
+                {
+                    case 0:
+                        Debug.Log("9回目");
+                        True();
+                        Karen = "し";
+                        Destroy(buttonMenuList[8]);
+                        SwitchJudg = true;
+                        Select2P++;
+                        break;
+                    case 1:
+                        false2P();
+                        break;
+                    case 2:
+                        false2P();
+                        break;
+                    case 3:
+                        false2P();
+                        break;
+                    case 4:
+                        false2P();
+                        break;
+                }
+                break;
+
+            case 10:
+                switch (playerCursorController.Player2Menu)
+                {
+                    case 0:
+                        false2P();
+                        break;
+                    case 1:
+                        false2P();
+                        break;
+                    case 2:
+                        Debug.Log("10回目");
+                        True();
+                        Karen = "つ";
+                        Destroy(buttonMenuList[9]);
+                        SwitchJudg = true;
+                        Select2P++;
+
+                        //一度クリアにする関数
+                        _fill = true;
+                        TimeLag();
+                        Invoke("ReadyGO", 1.0f);
+                        Invoke("ResetText", 1);
+                        Hint = "それで2人に会った\n場所に来たんだよね";
+                        break;
+                    case 3:
+                        false2P();
+                        break;
+                    case 4:
+                        false2P();
+                        break;
+                }
+                break;
+
+            case 11:
+                switch (playerCursorController.Player2Menu)
+                {
+                    case 0:
+                        false2P();
+                        break;
+                    case 1:
+                        false2P();
+                        break;
+                    case 2:
+                        false2P();
+                        break;
+                    case 3:
+                        Debug.Log("11回目");
+                        True();
+                        Karen = "き";
+                        Destroy(buttonMenuList[10]);
+                        SwitchJudg = true;
+                        Select2P++;
+                        break;
+                    case 4:
+                        false2P();
+                        break;
+                }
+                break;
+
+            case 12:
+                switch (playerCursorController.Player2Menu)
+                {
+                    case 0:
+                        Debug.Log("12回目");
+                        True();
+                        Karen = "ょ";
+                        Destroy(buttonMenuList[11]);
+                        SwitchJudg = true;
+                        Select2P++;
+                        break;
+                    case 1:
+                        false2P();
+                        break;
+                    case 2:
+                        false2P();
+                        break;
+                    case 3:
+                        false2P();
+                        break;
+                    case 4:
+                        false2P();
+                        break;
+                }
+                break;
+
+            case 13:
+                switch (playerCursorController.Player2Menu)
+                {
+                    case 0:
+                        false2P();
+                        break;
+                    case 1:
+                        false2P();
+                        break;
+                    case 2:
+                        false2P();
+                        break;
+                    case 3:
+                        false2P();
+                        break;
+                    case 4:
+                        Debug.Log("13回目");
+                        True();
+                        Karen = "う";
+                        Destroy(buttonMenuList[12]);
+                        SwitchJudg = true;
+                        Select2P++;
+                        break;
+                }
+                break;
+
+            case 14:
+                switch (playerCursorController.Player2Menu)
+                {
+                    case 0:
+                        false2P();
+                        break;
+                    case 1:
+                        false2P();
+                        break;
+                    case 2:
+                        false2P();
+                        break;
+                    case 3:
+                        Debug.Log("14回目");
+                        True();
+                        Karen = "し";
+                        Destroy(buttonMenuList[13]);
+                        SwitchJudg = true;
+                        Select2P++;
+                        break;
+                    case 4:
+                        false2P();
+                        break;
+                }
+                break;
+
+            case 15:
+                switch (playerCursorController.Player2Menu)
+                {
+                    case 0:
+                        false2P();
+                        break;
+                    case 1:
+                        Debug.Log("15回目");
+                        True();
+                        Karen = "つ";
+                        Destroy(buttonMenuList[14]);
+                        SwitchJudg = true;
+                        Select2P++;
+
+                        _fill = true;
+                        VictoryPlayer();
+                        Invoke("DestroyPlace", 1);
+                        Destroy(HintFrame);
+                        Invoke("Scene", 2);
+                        TimeLag();
+                        break;
+                    case 2:
+                        false2P();
+                        break;
+                    case 3:
+                        false2P();
+                        break;
+                    case 4:
+                        false2P();
+                        break;
+                }
+                break;
+        }
+        Text();
+    }
+
     private void Text()
     {
         ChangeText();
-        Dankai++;
-    }
-
-    public void false1P()
-    {
-        Debug.Log("1P失敗");
-        sound.SESounds(1, 0.5f);
-    }
-
-    public void false2P()
-    {
-        Debug.Log("2P失敗");
-        sound.SESounds(1, 0.5f);
-    }
-
-    /*
-    public void Clickfalse()
-    {
-        if (playerCursorController.GetColor == true)
+        if (SwitchJudg == true)
         {
-            false1P();
-        }
-        else if (playerCursorController.GetColor == false)
-        {
-            false2P();
+            Dankai++;
+            SwitchJudg = false;
         }
     }
-    */
+
+    private void True()
+    {
+        sound.SESounds(0, 0.5f);
+    }
+
+    private void false1P()
+    {
+        if (RuleAfter == true)
+        {
+            Penalty1P();
+            Debug.Log("1P失敗");
+            sound.SESounds(1, 0.5f);
+            Invoke("PenaltyEnd1P", PenaltyTime);
+        }
+    }
+
+    private void false2P()
+    {
+        if (RuleAfter == true)
+        {
+            Penalty2P();
+            Debug.Log("2P失敗");
+            sound.SESounds(1, 0.5f);
+            Invoke("PenaltyEnd2P", PenaltyTime);
+        }
+    }
 
     private void ResetText()
     {
         Debug.Log("リセット");
-
         Place0.text = "";
         Place1.text = "";
         Place2.text = "";
         Place3.text = "";
         Place4.text = "";
-
         Debug.Log(Karen);
-        //ChangeText();
-        //_fill = false;
     }
-    //仮
+
     private void Scene()
     {
         SceneLoadManager.LoadScene("Title");
@@ -981,9 +1038,7 @@ public class MiniGame2Manager : MonoBehaviour
         Destroy(Place3);
         Destroy(Place4);
         Destroy(Place0);
-
         Destroy(PlaceFrame);
-
         playerCursorController.Cursor1.SetActive(false);
         playerCursorController.Cursor2.SetActive(false);
     }
@@ -992,7 +1047,6 @@ public class MiniGame2Manager : MonoBehaviour
     {
         Debug.Log(Select1P);
         Debug.Log(Select2P);
-
         if (Select1P > Select2P)
         {
             Win1P = true;
@@ -1007,14 +1061,12 @@ public class MiniGame2Manager : MonoBehaviour
 
     private void RuleCheck()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        //if (OVRInput.GetDown(OVRInput.RawButton.A))
+        if (Input.GetKeyDown(KeyCode.Space) || OVRInput.GetDown(OVRInput.RawButton.A))
         {
             RuleCheck1 = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
-        //if (OVRInput.GetDown(OVRInput.RawButton.X))
+        if (Input.GetKeyDown(KeyCode.Return) || OVRInput.GetDown(OVRInput.RawButton.X))
         {
             RuleCheck2 = true;
         }
@@ -1023,6 +1075,7 @@ public class MiniGame2Manager : MonoBehaviour
         {
             RuluImage.SetActive(false);
             ReadyGO();
+            RuleAfter = true;
         }
     }
 
@@ -1034,27 +1087,43 @@ public class MiniGame2Manager : MonoBehaviour
 
     private void TimeLag()
     {
+        Penalty1P();
+        Penalty2P();
+    }
+
+    private void Penalty1P()
+    {
         Ready1 = false;
-        Debug.Log("まれいたそ");
+    }
+
+    private void Penalty2P()
+    {
         Ready2 = false;
     }
 
+    private void PenaltyEnd1P()
+    {
+        Ready1 = true;
+    }
+
+    private void PenaltyEnd2P()
+    {
+        Ready2 = true;
+    }
+
     private void ImageFill()
-    {switch (Dankai)
+    {
+        switch (Dankai)
         {
             case 6:
                 PlaceList[0].fillAmount -= Time.deltaTime;
                 break;
-
             case 11:
                 PlaceList[1].fillAmount -= Time.deltaTime;
                 break;
-
             case 16:
                 PlaceList[2].fillAmount -= Time.deltaTime;
                 break;
         }
-        
     }
-
 }
