@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,19 +6,25 @@ using UnityEngine.SceneManagement;
 
 public class TalkManager2 : MonoBehaviour
 {
-
-    private int player1LoveMeter, player2LoveMeter;//それぞれにポイント加算した変数を代入して
+    
     private int Talktext = 0; //縦
     private new int name = 0; //横
     private float fadeInOut; //点滅用
     private bool choice = false;
     string[] TEXTTAG_LIST = { "勝利者", "［敗北者］", "択プレイヤー" };
 
+
     [SerializeField] private int meterPoint;//加算するポイント
     [SerializeField] private float fade;
     [SerializeField] private List<Sprite> FaceList = new List<Sprite>();
+    [SerializeField] private List<Sprite> BackList = new List<Sprite>();
+    [SerializeField] private Sprite Player1 = new Sprite();
+    [SerializeField] private Sprite Player2 = new Sprite();
     [SerializeField] private ChoiceManager2 choiceManager2;
+    [SerializeField] private Image Back;
     [SerializeField] private Image Karen;
+    [SerializeField] private Image player1;
+    [SerializeField] private Image player2;
     [SerializeField] private GameObject Karen1; //最初のSetActive用
     [SerializeField] private GameObject TextFrame;
     [SerializeField] private GameObject NameTextmanager;
@@ -29,8 +35,8 @@ public class TalkManager2 : MonoBehaviour
 
     private void Start()
     {
-        player1LoveMeter = LoveMetar.getPlayer1LoveMetar();
-        player2LoveMeter = LoveMetar.getPlayer2LoveMetar();
+        player1.GetComponent<CanvasGroup>().alpha = 0;
+        player2.GetComponent<CanvasGroup>().alpha = 0;
         //string x = "プレイヤー１";
         //x = x.Replace("プレイヤー１", "name1");
         fadeInOut = Sakura.GetComponent<Image>().color.a;
@@ -70,6 +76,7 @@ public class TalkManager2 : MonoBehaviour
         new string[]{ "［敗北者］に逆転なんて許さないよう、\n気を引き締めなければ！", "勝利者"},
         new string[]{ "放課後。俺は偶然を装い一緒に帰るため\n扉の陰から華恋を見守っていた。", "プレイヤー１"},//ここから髪飾り
 
+        //ここから髪飾りなし
         new string[]{ "あれ？ここにもない……\nん～、どこいっちゃったんだろ……", "華恋"},
         new string[]{ "しかし、華恋はなかなか教室を出ない。\n何かを探しているような様子だ。", "プレイヤー１"},
         new string[]{ "掛けられたバッグには、彼女の\n好きなキャラのグッズが揺れている。", "プレイヤー１"},
@@ -147,6 +154,7 @@ public class TalkManager2 : MonoBehaviour
         if (choice == true)
         {
             choiceManager2.PushButton();
+            choiceManager2.DebugPushButton();
             if (choiceManager2.getdestroyFlag())
             {
                 choice = false;
@@ -155,6 +163,7 @@ public class TalkManager2 : MonoBehaviour
         //debug();
         Inputkey();
     }
+
     //キー入力
     void Inputkey()
     {
@@ -354,12 +363,12 @@ public class TalkManager2 : MonoBehaviour
     {
         if (Result.Player1Win ==  true && Result.Player2Win == false)
         {
-            player1LoveMeter += meterPoint;
+            LoveMetar.player1LoveMetar += meterPoint;
             return Player1;//1P勝利
         }
         else if (Result.Player1Win == false && Result.Player2Win == true)
         {
-            player2LoveMeter += meterPoint;
+            LoveMetar.player2LoveMetar += meterPoint;
             return Player2;//2P勝利
         }
         else return "WinError";
@@ -411,7 +420,7 @@ public class TalkManager2 : MonoBehaviour
     {
         if (Talktext == 78)
         {
-                SceneManager.LoadScene("MiniGame2_test");
+                SceneManager.LoadScene("MiniGame2");
         }
     }
 
@@ -443,18 +452,18 @@ public class TalkManager2 : MonoBehaviour
         switch (Talktext)
         {
             case 5:
-            case 8:
-            case 20:
-            case 30:
-            case 50:
-            case 68:
+                //case 8: 
                 Karen.sprite = FaceList[0];
                 break;
-            case 25:
-            case 33:
+            case 20:
+            //case 25:
+            case 30:
+            //case 33:
             case 42:
             case 44:
+            case 50:
             case 55:
+            case 68:
                 Karen.sprite = FaceList[1];
                 break;
             case 3:
@@ -463,12 +472,40 @@ public class TalkManager2 : MonoBehaviour
                 break;
             case 13:
             case 16:
+                Karen.sprite = FaceList[3];
+                break;
             case 28:
             case 38:
             case 43:
             case 47:
             case 51:
-                Karen.sprite = FaceList[3];
+                Karen.sprite = FaceList[4];
+                break;
+            case 19:
+                //Back.sprite = FaceList[1];
+                break;
+        }
+        switch (Talktext)
+        {
+            case 19:
+            case 21:
+            case 26:
+            case 35:
+            case 71:
+                player1.GetComponent<CanvasGroup>().alpha = 1;
+                player2.GetComponent<CanvasGroup>().alpha = 0;
+                break;
+            case 24:
+            case 32:
+            case 74:
+            case 75:
+                player1.GetComponent<CanvasGroup>().alpha = 0;
+                player2.GetComponent<CanvasGroup>().alpha = 1;
+                break;
+            case 36:
+            case 76:
+                player1.GetComponent<CanvasGroup>().alpha = 1;
+                player2.GetComponent<CanvasGroup>().alpha = 1;
                 break;
         }
     }

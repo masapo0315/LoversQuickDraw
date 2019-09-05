@@ -26,7 +26,7 @@ public class EnterName : MonoBehaviour {
     //名前を決定
     public void Enter()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("Scenario");
     }
 
     //名前を決定しない

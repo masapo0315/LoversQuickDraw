@@ -9,6 +9,10 @@ TagManager:
   - Obstacles
   - ground
   - Stopper
+  - InputString
+  - DestroyString
+  - EnterString
+  - Icon
   layers:
   - Default
   - TransparentFX

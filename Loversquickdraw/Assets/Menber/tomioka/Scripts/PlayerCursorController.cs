@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerCursorController : MonoBehaviour
 {
-    [HideInInspector] public int RightMenu = 0;
-    [HideInInspector] public int LeftMenu = 4;
+    public int Player1Menu = 4;
+    public int Player2Menu = 0;
 
     //色を変えるための変数
     [HideInInspector] public bool GetColor;
@@ -36,7 +36,7 @@ public class PlayerCursorController : MonoBehaviour
 
         //1Pの決定
         //ルール説明有り版
-        //if (miniGame2Manager.Ready1 == true && Input.GetKeyDown(KeyCode.Return))
+        //if (miniGame2Manager.Ready1 == true && (Input.GetKeyDown(KeyCode.Return) || OVRInput.GetDown(OVRInput.RawButton.A)))
 
         //ルール説明無し版
         if (Input.GetKeyDown(KeyCode.Return) || OVRInput.GetDown(OVRInput.RawButton.A))
@@ -48,10 +48,10 @@ public class PlayerCursorController : MonoBehaviour
 
         //2Pの決定
         //ルール説明有り版
-        //if (miniGame2Manager.Ready2 == true && Input.GetKeyDown(KeyCode.Space))
+        //if (miniGame2Manager.Ready2 == true &&(Input.GetKeyDown(KeyCode.Space) || OVRInput.GetDown(OVRInput.RawButton.X)))
 
         //ルール説明無し版
-        else if (Input.GetKeyDown(KeyCode.Space) || OVRInput.GetDown(OVRInput.RawButton.X))
+        if (Input.GetKeyDown(KeyCode.Space) || OVRInput.GetDown(OVRInput.RawButton.X))
         {
            Debug.Log("スペースキー");
             GetColor = false;
@@ -65,38 +65,38 @@ public class PlayerCursorController : MonoBehaviour
         //1Pの選択
         //右を押すと右に移動
         //ルール説明有り版
-        //if (miniGame2Manager.Ready1 == true && Input.GetKeyDown(KeyCode.RightArrow))
+        //if (miniGame2Manager.Ready1 == true &&(Input.GetKeyDown(KeyCode.RightArrow) || OVRInput.GetDown(OVRInput.RawButton.RThumbstickRight)))
 
         //ルール説明無し版
         if (Input.GetKeyDown(KeyCode.RightArrow) || OVRInput.GetDown(OVRInput.RawButton.RThumbstickRight))
         {
-            RightMenu++;
-            RightMenu %= 5;
-            Debug.Log("右は" + RightMenu);
+            Player1Menu++;
+            Player1Menu %= 5;
+            Debug.Log("右は" + Player1Menu);
         }
 
         //左を押すと左に移動
         //4の次は0に移動
         //ルール説明有り版
-        //if (miniGame2Manager.Ready1 == true && Input.GetKeyDown(KeyCode.LeftArrow))
+        //if (miniGame2Manager.Ready1 == true && (Input.GetKeyDown(KeyCode.LeftArrow) || OVRInput.GetDown(OVRInput.RawButton.RThumbstickLeft)))
 
         //ルール説明無し版
         if (Input.GetKeyDown(KeyCode.LeftArrow) || OVRInput.GetDown(OVRInput.RawButton.RThumbstickLeft))
         {
-            if (RightMenu == 0)
+            if (Player1Menu == 0)
             {
-                RightMenu = 4;
-                Debug.Log("右は" + RightMenu);
+                Player1Menu = 4;
+                Debug.Log("右は" + Player1Menu);
             }
             else
             {
-                RightMenu--;
-                RightMenu %= 5;
-                Debug.Log("右は" + RightMenu);
+                Player1Menu--;
+                Player1Menu %= 5;
+                Debug.Log("右は" + Player1Menu);
             }
         }
 
-        switch (RightMenu)
+        switch (Player1Menu)
         {
             case 0:
                 Rtmp = tmp[0];
@@ -127,38 +127,38 @@ public class PlayerCursorController : MonoBehaviour
         //2Pの選択
         //Dを押すと右に移動
         //ルール説明有り版
-        //if (miniGame2Manager.Ready2 == true && Input.GetKeyDown(KeyCode.D))
+        //if (miniGame2Manager.Ready2 == true &&(Input.GetKeyDown(KeyCode.D) || OVRInput.GetDown(OVRInput.RawButton.LThumbstickRight)))
 
         //ルール説明無し版 
         if (Input.GetKeyDown(KeyCode.D) || OVRInput.GetDown(OVRInput.RawButton.LThumbstickRight))
         {
-            LeftMenu++;
-            LeftMenu %= 5;
-            Debug.Log("左は" + LeftMenu);
+            Player2Menu++;
+            Player2Menu %= 5;
+            Debug.Log("左は" + Player2Menu);
         }
 
         //Aを押すと左に移動
         //4の次は0に移動
         //ルール説明有り版
-        //if (miniGame2Manager.Ready2 == true && Input.GetKeyDown(KeyCode.A))
+        //if (miniGame2Manager.Ready2 == true &&(Input.GetKeyDown(KeyCode.A) || OVRInput.GetDown(OVRInput.RawButton.LThumbstickLeft)))
 
         //ルール説明無し版
         if (Input.GetKeyDown(KeyCode.A) || OVRInput.GetDown(OVRInput.RawButton.LThumbstickLeft))
         {
-            if (LeftMenu == 0)
+            if (Player2Menu == 0)
             {
-                LeftMenu = 4;
-                Debug.Log("左は" + LeftMenu);
+                Player2Menu = 4;
+                Debug.Log("左は" + Player2Menu);
             }
             else
             {
-                LeftMenu--;
-                LeftMenu %= 5;
-                Debug.Log("左は" + LeftMenu);
+                Player2Menu--;
+                Player2Menu %= 5;
+                Debug.Log("左は" + Player2Menu);
             }
         }
 
-        switch (LeftMenu)
+        switch (Player2Menu)
         {
             case 0:
                 Ltmp = tmp[0];

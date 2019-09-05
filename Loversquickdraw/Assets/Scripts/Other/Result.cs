@@ -13,7 +13,7 @@ public class Result : MonoBehaviour
     public Image[] images;
 
     //勝敗に関係するフラグ
-    bool gameSet = false;
+    public static bool gameSet = false;
     public static bool Player1Win;
     public static bool Player2Win;
     
@@ -35,11 +35,10 @@ public class Result : MonoBehaviour
     //
     void Start ()
     {
-        
         Time.timeScale = 1.0f;
 
-        player1LoveMetar = LoveMetar.getPlayer1LoveMetar();
-        player2LoveMetar = LoveMetar.getPlayer2LoveMetar();
+        //player1LoveMetar = LoveMetar.getPlayer1LoveMetar();
+        //player2LoveMetar = LoveMetar.getPlayer2LoveMetar();
 
         for (int i = 0; i <= images.Length - 1; i++)
         {
@@ -74,9 +73,9 @@ public class Result : MonoBehaviour
     //プレイヤーの速度を計測
     private void SpeedCheck()
     {
-        player1Speed = player1.velocity.magnitude;
+        //player1Speed = player1.velocity.magnitude;
         Debug.Log(player1Speed);
-        player2Speed = player2.velocity.magnitude;
+        //player2Speed = player2.velocity.magnitude;
 
     }
 

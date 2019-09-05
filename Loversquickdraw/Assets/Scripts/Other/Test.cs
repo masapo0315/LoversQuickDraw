@@ -6,7 +6,7 @@ public class Test : MonoBehaviour
 {
     //public OVRInput.Controller controller;
     //public Vector3 vector3;
-    public AudioClip audio;
+    //public AudioClip audio;
     OVRHapticsClip hapticsClip;
     void TestPos()
     {
@@ -18,17 +18,15 @@ public class Test : MonoBehaviour
 
     private void Start()
     {
-        hapticsClip = new OVRHapticsClip(audio);
+        //hapticsClip = new OVRHapticsClip(audio);
     }
 
     void Update()
     {
-        TestPos();
         //ボタン系
         if (OVRInput.GetDown(OVRInput.RawButton.A))
         {
             Debug.Log("Aボタンを押した");
-            OVRHaptics.RightChannel.Mix(hapticsClip);
         }
         if (OVRInput.GetDown(OVRInput.RawButton.B))
         {

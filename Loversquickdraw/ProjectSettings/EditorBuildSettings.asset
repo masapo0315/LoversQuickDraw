@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Fujita/Scenario2.unity
     guid: ccc3d32ef41c7b54f825b170476ad6e0
   - enabled: 1
-    path: Assets/Menber/tomioka/MiniGame2_test.unity
+    path: Assets/Menber/tomioka/MiniGame2.unity
     guid: cb7d5d6acf6b0094a9791131c36a0d91
   - enabled: 1
     path: Assets/Scenes/Result.unity
