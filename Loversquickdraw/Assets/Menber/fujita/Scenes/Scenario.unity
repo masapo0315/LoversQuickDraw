@@ -5699,8 +5699,9 @@ MonoBehaviour:
   _message: {fileID: 869735168}
   ScenarioDataName: scenario
   _text: {fileID: 869735168}
+  SoundNum: 0
   _choiceControl: {fileID: 1909772963}
-  _dispSpeed: 1
+  _ScenarioSkip: 0
   FaceList:
   - {fileID: 21300000, guid: dc81e6f843aaf4a43ad16e03e637039b, type: 3}
   - {fileID: 21300000, guid: 8a0fd98860a34c9498dffcac58a9182c, type: 3}
@@ -5719,9 +5720,10 @@ MonoBehaviour:
   Player: {fileID: 544720690}
   Player2: {fileID: 504910717}
   fade: 0.02
-  TextFrame: {fileID: 1965957114}
-  ChoiceManager: {fileID: 840345693}
   Sakura: {fileID: 1936188185}
+  _sakura: {fileID: 1936188187}
+  ChoiceManager: {fileID: 840345693}
+  TextFrame: {fileID: 1965957114}
   cursor: {fileID: 134711058}
   cursor2: {fileID: 194714215}
 --- !u!114 &840345693
@@ -5967,7 +5969,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ed91bf3bdc6502148abf7e6c7c25aa17, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0005ff5dee479cf43a0b14d85919dd03, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
