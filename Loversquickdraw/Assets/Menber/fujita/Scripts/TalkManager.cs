@@ -72,12 +72,16 @@ public class TalkManager : MonoBehaviour
     [SerializeField] public GameObject TextFrame;
     [SerializeField] private GameObject cursor;
     [SerializeField] private GameObject cursor2;
-   
+    private void Awake()
+    {
+        //_isSeEnd = false;
+    }
     private void Start()
     {
         _nowTextLine = 0;
         _isLoadEnd = false;
-        LoadFile(Application.dataPath + "/Scenario/" + ScenarioDataName + ".txt");
+        //_isSeEnd = false;
+        LoadFile(Application.dataPath + "/Scenario/ScLov" + ScenarioDataName + ".txt");
         //string x = "プレイヤー１";
         //x = x.Replace("プレイヤー１", "name1");
         StartCoroutine("SakuraOut");
@@ -304,7 +308,7 @@ public class TalkManager : MonoBehaviour
         }
         else if (msgs[0].Equals("#sentaku"))
         {
-         
+            // _ScenarioSkip = false;
         }
         else if (msgs[0].Equals("#kyoutu"))
         {
@@ -314,6 +318,8 @@ public class TalkManager : MonoBehaviour
         }
         else if (msgs[0].Equals("#end"))
         {
+            //PlayerPlrefsについて
+            //_isSeEnd = true;
             _isLoadEnd = false;
             return;
         }
