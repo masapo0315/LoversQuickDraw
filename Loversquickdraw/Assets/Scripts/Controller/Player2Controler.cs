@@ -4,72 +4,67 @@ using UnityEngine;
 
 public class Player2Controler : MonoBehaviour
 {
+    //comtrollerのposとるのに必須(1Pの場合InspectorからL選択)
+    public OVRInput.Controller _controller;
+
     //Player2のカメラ固定よう
     [SerializeField] private Camera _camera;
-    //　2Pのコントローラー
 
-    //右コン
-    //[SerializeField] private GameObject Rcube;
-    [SerializeField] private float R_shake;
-    private Vector3 R_defPos;
-    private Vector3 R_initialPos;
-
-    private int R_posGetCount = 0;
-
+    //2Pコントローラー
+    [SerializeField] private GameObject player2;
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private Animator _animator;
     [SerializeField] private float moveSpeed; //速度
+    [SerializeField] private float jumpPower; //ジャンプ力
 
     private Vector3 force;
 
-    [SerializeField] private float jumpPower; //ジャンプ力
-    bool jump = false;     //設置判定
-
-    bool stop;
-
-    [SerializeField]
-    Animator _animator;
-
+    private bool jump = false;     //設置判定
+    private bool stop;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         StartCoroutine("Delay");
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         _camera.transform.localRotation = Quaternion.identity;
-
+        _camera.transform.localPosition = Vector3.zero;
         if (stop == false)
         {
-            SpeedUp();
+            Player2Move();
             Jump();
         }
-
     }
-
     //加速処理
-    private void SpeedUp()
+    private void SpeedUp(float num)
     {
-        if (R_posGetCount <= 5)
+        _animator.SetBool("Run", false);
+        force = new Vector3(num, 0f, 0f);
+        rb.AddForce(force);
+    }
+    //プレイヤー2の移動
+    void Player2Move()
+    {
+        //controllerのposを常に更新する
+        transform.position = OVRInput.GetLocalControllerPosition(_controller);
+        //controllerのPosが一定の範囲内ならを分岐で
+        if (transform.position.y > -0.4f)
         {
-            R_initialPos.y = R_defPos.y;
-            R_posGetCount = R_posGetCount + 1;
+            SpeedUp(moveSpeed);
         }
-        //R_defPos = Rcube.transform.position;
-        if (R_defPos.y >= R_initialPos.y + R_shake || R_defPos.y <= R_initialPos.y - R_shake || Input.GetKey(KeyCode.D))
+        if (transform.position.y < -0.6f)
+        {
+            SpeedUp(moveSpeed);
+        }
+        if (transform.position.y >= 0f || transform.position.y <= -1)
         {
             _animator.SetBool("Run", true);
-            force = new Vector3(moveSpeed, 0.0f, 0.0f);
-            rb.AddForce(force);
-        }
-        else
-        {
-            _animator.SetBool("Run", false);
             rb.velocity = Vector3.zero;
         }
     }
-
     //ジャンプの処理
     void Jump()
     {
@@ -79,11 +74,22 @@ public class Player2Controler : MonoBehaviour
             rb.velocity = new Vector3(5, jumpPower, 0);
             jump = true;
         }
-
     }
-
+    //ジャンプ時のコリジョン判定
     private void OnCollisionEnter(Collision col)
     {
+        switch (col.gameObject.tag)
+        {
+            case "ground":
+                _animator.SetBool("Jump", false);
+                jump = false;
+                break;
+            case "Obstacles":
+                Destroy(col.gameObject);
+                StartCoroutine("Delay");
+                break;
+        }
+        /*
         if (col.gameObject.tag == "ground")
         {
             _animator.SetBool("Jump", false);
@@ -93,18 +99,15 @@ public class Player2Controler : MonoBehaviour
         {
             Destroy(col.gameObject);
             StartCoroutine("Delay");
-        }
+        }*/
     }
-
     //遅延処理
     private IEnumerator Delay()
     {
         stop = true;
-
         yield return new WaitForSeconds(2.0f);
 
         stop = false;
-
         yield break;
     }
 }

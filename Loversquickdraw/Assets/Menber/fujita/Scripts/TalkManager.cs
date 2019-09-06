@@ -16,8 +16,7 @@ public class TalkManager : MonoBehaviour
     private int judgePlayer = 0;
     private int stringCount;
 
-    //テキスト関連
-    [Header("テキスト")]
+    [Header("テキスト関連")]
     [SerializeField]
     private Text _name;
     [SerializeField]
@@ -40,11 +39,9 @@ public class TalkManager : MonoBehaviour
     private bool _isLoadEnd = false;
     private bool _isWait = false;
     private bool _isMessageDisp = false;
-    private bool _isCharacterText = false;
-    //private bool 
+    private bool _isCharacterText = false; 
 
     //一文字ずつ表示+速度
-    [SerializeField]
     private float _dispSpeed = 1.0f;
     private float _timer = 0;
     private int _stringCount = 0;
@@ -56,23 +53,26 @@ public class TalkManager : MonoBehaviour
     [SerializeField] private List<Sprite> FaceList = new List<Sprite>();
     [SerializeField] private List<Sprite> PlayerList = new List<Sprite>();
     [SerializeField] private List<Sprite> PlayerList2 = new List<Sprite>();
+
+    [Header("1p2pとプレイヤーの表示")]
     [SerializeField] private GameObject Karen1; //最初のSetActive用
     [SerializeField] private GameObject Player3; //最初のSetActive用
     [SerializeField] private GameObject Player4; //最初のSetActive用
     [SerializeField] private Image Karen;
     [SerializeField] private Image Player;
     [SerializeField] private Image Player2;
+
+    [Header("桜まとめ")]
     [SerializeField] private float fade;
-    [SerializeField] private GameObject TextFrame;
-    [SerializeField] private ChoiceManager ChoiceManager;
-    //[SerializeField] private GameObject NameTextmanager;
-    //[SerializeField] private GameObject CommentTextmanager;
     [SerializeField] private GameObject Sakura;
-    [SerializeField] private GameObject cursor;
-    [SerializeField] private GameObject cursor2;
     [SerializeField] private Image _sakura;
 
-
+    [Header("選択まとめ")]
+    [SerializeField] private ChoiceManager ChoiceManager;
+    [SerializeField] private GameObject TextFrame;
+    [SerializeField] private GameObject cursor;
+    [SerializeField] private GameObject cursor2;
+   
     private void Start()
     {
         _nowTextLine = 0;
@@ -82,7 +82,6 @@ public class TalkManager : MonoBehaviour
         //x = x.Replace("プレイヤー１", "name1");
         StartCoroutine("SakuraOut");
     }
-
 
     //左クリックしたとき名前とコメントの表示、Debug.logは配列番号とそれに対して画面表示する文字を確認
     void Update()
@@ -121,16 +120,14 @@ public class TalkManager : MonoBehaviour
             }
         }
     }
+
     private void TextMove()
     {
         if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.Space))
         {
             if (!choice)
             {
-                //次に進める用の点滅終了
                 TextFrame.SetActive(true);
-
-                //次に進める用の点滅開始
             }
         }
     }
@@ -210,7 +207,8 @@ public class TalkManager : MonoBehaviour
     {
         string[] msgs = _loadTextData[_nowTextLine].Split(',');
         msgs[0] = msgs[0].ToLower();
-        if (_ScenarioSkip)
+
+        if (!_ScenarioSkip)
         {
             if (msgs[0].Equals("#name"))
             {
@@ -226,9 +224,15 @@ public class TalkManager : MonoBehaviour
                     _message.text = msgs[2];
                 }
             }
+            else if (msgs[0].Equals("gayzou"))
+            {
+                //たむの作ったfade呼び出し
+                //cs.kansu();
+            }
             else if (msgs[0].Equals("#keywait"))
             {
                 StartCoroutine("SakuraOut");
+                StopCoroutine("TextDispCoroutine");
                 TextMove();
                 _isWait = true;
             }
@@ -275,7 +279,6 @@ public class TalkManager : MonoBehaviour
                 }
                 else Debug.LogError(msgs[0] + " " + msgs[1] + "処理できません");
             }
-
             else if (msgs[0].Equals("#2pface"))
             {
                 if (int.Parse(msgs[1]) > -1 && int.Parse(msgs[1]) < PlayerList2.Count)
@@ -289,17 +292,22 @@ public class TalkManager : MonoBehaviour
                     Player2.sprite = null;
                 }
             }
-            //else if (_isSelectMessege)
-            //    return;
+            else if (_isSelectMessege)
+                return;
             //else if (msgs[0].Equals("#sentaku"))
-            //    if (int.Parse(msgs[1] != 選択した番号))
-            //        _ScenarioSkip = false;
-            //    Choice2Word(msgs);
-            
-            //    //#sentaku,1#sentaku,2#sentaku,3
-            //    会話文を変える
+            //{
+                 
+            //}
+
+            //会話文を1,2,3のいずれかに変える
+            else if (msgs[0].Equals("#label"))
+            {
+                if (int.Parse(msgs[1]) != ChoiceManager.rootflag)
+                    _ScenarioSkip = true;
+                Choice2Word(msgs);       
+            }
         }
-        else if (msgs[0].Equals("#kyoutu"))
+        else if (msgs[0].Equals("#kyoutuu"))
         {
             _ScenarioSkip = false;
             //#sentaku,1#sentaku,2#sentaku,3
@@ -321,7 +329,7 @@ public class TalkManager : MonoBehaviour
     private void Choice2Word(string[] msgs)
     {
         //メッセージ表示
-        var selMsgs = msgs.Where(x => x.IndexOf("#") < 0).ToArray();
+        var selMsgs = msgs.Where(x => x.IndexOf("#") < 0).ToArray();//"#"を除いた配列３つ
         _choiceControl.SetSelectMessage(selMsgs, SelectCallback);
         _isSelectMessege = true;
     }
@@ -331,14 +339,18 @@ public class TalkManager : MonoBehaviour
         Debug.Log("select Num = " + selectNum);
         _nowTextLine = SearchLabel(selectNum);
     }
-
+    /// <summary>
+    /// 選択肢の番号
+    /// </summary>
+    /// <param name="selectNum">選択した番号</param>
+    /// <returns></returns>
     private int SearchLabel(int selectNum)
     {
         var nowLine = _nowTextLine;
         while (nowLine < _loadTextData.Count)
         {
             var msgs = _loadTextData[nowLine].Split(',');
-            if (msgs[0].Equals("#label"))
+            if (msgs[0].Equals("#sentaku"))
             {
                 var num = int.Parse(msgs[1]);
                 if (num == selectNum)
@@ -351,8 +363,7 @@ public class TalkManager : MonoBehaviour
 
     /// <summary>
     /// 選択を判定する
-    /// </summary>
-    
+    /// </summary> 
     private void LoadFile(string filename)
     {
         using (var str = new StreamReader(filename, System.Text.Encoding.UTF8))

@@ -17,25 +17,23 @@ public class ChoiceControl : MonoBehaviour {
         _callback = callback;
         for (int i = 0; i < 3; i++)
         {
-            _fusenControl[i].SetText(msgs[i+1]);
+            _fusenControl[i].SetText(msgs[i]);
             _fusenControl[i].gameObject.SetActive(true);
         }
         //3択の指を表示してせんたくする　
-        //_choiceManager.SetSelectCallback(SelectCallback);
+        _choiceManager.SetSelectCallback(SelectCallback);
     }
 
-
-    //private void SelectCallback(int playerType, int selNum)
-    //{
-    //    _selectnum = selNum;
-    //    if (_callback != null)
-    //    {
-    //        _callback(_selectnum);
-    //        for (int i = 0; i < 3; i++)
-    //        {
-    //            _fusenControl[i].gameObject.SetActive(false);
-    //        }
-    //    }
-    //}
-
+    private void SelectCallback(int playerType, int selNum)
+    {
+        _selectnum = selNum;
+        if (_callback != null)
+        {
+            _callback(_selectnum);
+            for (int i = 0; i < 3; i++)
+            {
+                _fusenControl[i].gameObject.SetActive(false);
+            }
+        }
+    }
 }
