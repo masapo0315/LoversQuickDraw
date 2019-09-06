@@ -22,7 +22,7 @@ public class SceneController : MonoBehaviour
                 once = true;
                 SceneLoadManager.LoadScene("Scenario");
             }
-            else if(time>=waittime)
+            else if (time >= waittime)
             {
                 once = true;
                 SceneLoadManager.LoadScene("PVScene");

@@ -292,7 +292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &705571315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,7 +376,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 945682547}
-  - component: {fileID: 945682546}
   - component: {fileID: 945682548}
   m_Layer: 0
   m_Name: ResultController
@@ -385,18 +384,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &945682546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 945682545}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfd9bc2aba5e81b408647133207a969c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audio: {fileID: 0}
 --- !u!4 &945682547
 Transform:
   m_ObjectHideFlags: 0
@@ -424,6 +411,7 @@ MonoBehaviour:
   winnerImages:
   - {fileID: 1993789919}
   - {fileID: 1922337573}
+  _talkCheck: 0
 --- !u!1 &967024468
 GameObject:
   m_ObjectHideFlags: 0
