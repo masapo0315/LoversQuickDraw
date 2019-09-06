@@ -15655,25 +15655,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d51815929a67d94d8d490ed9efb13bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Place1: {fileID: 344300424}
-  Place2: {fileID: 1818504515}
-  Place3: {fileID: 1532273959}
-  Place4: {fileID: 1557981119}
-  Place0: {fileID: 734685803}
-  Karen_Hint: {fileID: 166682979}
-  HintFrame: {fileID: 1761330821}
-  RuluImage: {fileID: 430297225}
-  PlaceFrame: {fileID: 1971620282}
+  _place1: {fileID: 344300424}
+  _place2: {fileID: 1818504515}
+  _place3: {fileID: 1532273959}
+  _place4: {fileID: 1557981119}
+  _place0: {fileID: 734685803}
+  _karenHint: {fileID: 166682979}
+  _hintFrame: {fileID: 1761330821}
+  _ruluImage: {fileID: 430297225}
+  _placeFrame: {fileID: 1971620282}
   sound: {fileID: 1770000130}
-  Win1P: 1
-  Ready1: 0
-  Ready2: 0
+  _win1P: 1
+  _ready1: 0
+  _ready2: 0
+  _lovePoint: 5
   playerCursorController: {fileID: 1770000128}
-  PlaceList:
+  _placeList:
   - {fileID: 479429884}
   - {fileID: 1626611330}
   - {fileID: 1620995554}
-  buttonMenuList:
+  _buttonMenuList:
   - {fileID: 2036019809}
   - {fileID: 1836848414}
   - {fileID: 1316322271}
@@ -15714,12 +15715,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479c35fd113024f40b291e18f4e4a88f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1Menu: 4
-  Player2Menu: 0
-  GetColor: 0
-  Cursor1: {fileID: 592651056}
-  Cursor2: {fileID: 425908596}
-  menuNum:
+  _player1Menu: 4
+  _player2Menu: 0
+  _getColor: 0
+  _cursor1: {fileID: 592651056}
+  _cursor2: {fileID: 425908596}
+  _MenuNum:
   - {fileID: 275748870}
   - {fileID: 1206288115}
   - {fileID: 1022008214}
