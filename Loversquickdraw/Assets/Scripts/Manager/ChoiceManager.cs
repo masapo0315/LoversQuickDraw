@@ -16,8 +16,8 @@ public class ChoiceManager : MonoBehaviour
     [SerializeField] private GameObject choiceBorY;
     [SerializeField] private GameObject choiceTrigger;
     [SerializeField] private GameObject FrameText;
-    [SerializeField] private GameObject cursor;
-    [SerializeField] private GameObject cursor2;
+    public GameObject cursor;
+    public GameObject cursor2;
     [HideInInspector] public int rootflag;
 
     private bool destroyFlag = false;
@@ -29,7 +29,7 @@ public class ChoiceManager : MonoBehaviour
 
     //trueで選択できる
     [HideInInspector] public bool stopChoice = false;
-    
+
     //trueの場合は1Pの勝ち、falseの場合は2Pの勝ち
     [HideInInspector] public bool firstsPlayer = false;
 
@@ -43,7 +43,7 @@ public class ChoiceManager : MonoBehaviour
     #region 勝ち負け判定
     public void OnePlayerOne()
     {
-        if(firstsPlayer == true)
+        if (firstsPlayer == true)
         {
             rootflag = 1;
         }
@@ -94,6 +94,7 @@ public class ChoiceManager : MonoBehaviour
     #region 1Pが1を押した判定
     public void PushButton()
     {
+
         /// <summary>
         /// ボタンを押し選択肢を選んだら
         /// それ以降ボタンを消し入力を断つ
@@ -202,9 +203,15 @@ public class ChoiceManager : MonoBehaviour
         }
     }
     #endregion 1Pが1を押した判定
+    private void Update()
+    {
+        DebugPushButton();
+    }
 
     public void DebugPushButton()
     {
+        Debug.Log("選べ！");
+        Debug.Log(stopChoice);
         /// <summary>
         /// ボタンを押し選択肢を選んだら
         /// それ以降ボタンを消し入力を断つ
@@ -222,6 +229,8 @@ public class ChoiceManager : MonoBehaviour
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
             Debug.Log("choice1-1");
+            if (_callback != null)
+                _callback(0, 1);
         }
 
         //2Pが1を押した判定
@@ -236,6 +245,8 @@ public class ChoiceManager : MonoBehaviour
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
             Debug.Log("choice2-1");
+            if (_callback != null)
+                _callback(1, 1);
         }
 
         //1Pが2を押した判定
@@ -250,6 +261,8 @@ public class ChoiceManager : MonoBehaviour
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
             Debug.Log("choice1-2");
+            if (_callback != null)
+                _callback(0, 2);
         }
 
         //2Pが2を押した判定
@@ -264,6 +277,8 @@ public class ChoiceManager : MonoBehaviour
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
             Debug.Log("choice2-2");
+            if (_callback != null)
+                _callback(1, 2);
         }
 
         //1Pが3を押した判定
@@ -278,6 +293,8 @@ public class ChoiceManager : MonoBehaviour
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
             Debug.Log("choice1-3");
+            if (_callback != null)
+                _callback(0, 3);
         }
 
         //2Pが3を押した判定
@@ -292,6 +309,8 @@ public class ChoiceManager : MonoBehaviour
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
             Debug.Log("choice2-3");
+            if (_callback != null)
+                _callback(1, 3);
         }
         //Invoke("talkManager.Forced",2);
     }
