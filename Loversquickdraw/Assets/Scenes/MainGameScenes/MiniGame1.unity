@@ -1922,7 +1922,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1988960595}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &751223816
 MonoBehaviour:
@@ -1936,7 +1936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: 2
-  _camera: {fileID: 44863939}
+  _camera: {fileID: 874411628}
   player1: {fileID: 404583203}
   rb: {fileID: 404583207}
   _animator: {fileID: 404583205}
@@ -2335,7 +2335,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1988960595}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!114 &874411625
 MonoBehaviour:
@@ -2426,7 +2426,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1189822377}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &920002277
 MonoBehaviour:
@@ -2440,7 +2440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: 1
-  _camera: {fileID: 1624017421}
+  _camera: {fileID: 1272855922}
   player2: {fileID: 483472367}
   rb: {fileID: 483472371}
   _animator: {fileID: 483472369}
@@ -2868,8 +2868,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -1.8450089, z: 1.5774798}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 920002276}
   - {fileID: 1272855918}
+  - {fileID: 920002276}
   - {fileID: 1624017417}
   - {fileID: 483472373}
   - {fileID: 1149164621}
@@ -3165,7 +3165,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1189822377}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1272855919
 MonoBehaviour:
@@ -3978,7 +3978,7 @@ GameObject:
   - component: {fileID: 1652437645}
   - component: {fileID: 1652437648}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: MiniGame1SoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4475,8 +4475,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -1.8450089, z: 1.5774798}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 751223815}
   - {fileID: 874411624}
+  - {fileID: 751223815}
   - {fileID: 44863935}
   - {fileID: 404583209}
   - {fileID: 1108578651}

@@ -48,16 +48,19 @@ public class Player1Controler : MonoBehaviour
     //プレイヤー1の移動
     void Player1Move()
     {
+        bool moveFlag = false;
         //controllerのposを常に更新する
         transform.position = OVRInput.GetLocalControllerPosition(controller);
         //controllerのPosが一定の範囲内ならを分岐で
-        if (transform.position.y > -0.4f)
+        if (moveFlag = false && transform.position.y > -0.4f)
         {
             SpeedUp(moveSpeed);
+            moveFlag = true;
         }
-        if (transform.position.y < -0.6f)
+        if (moveFlag = true && transform.position.y < -0.6f)
         {
             SpeedUp(moveSpeed);
+            moveFlag = false;
         }
         if (transform.position.y >= 0f || transform.position.y <= -1)
         {
