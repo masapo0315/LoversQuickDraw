@@ -37,5 +37,4 @@ public class NameEnterVR : MonoBehaviour
         input.SetActive(true);
     }
 
-
 }

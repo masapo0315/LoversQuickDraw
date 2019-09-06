@@ -36,5 +36,4 @@ public class EnterName : MonoBehaviour {
         input.SetActive(true);
     }
 
-
 }
