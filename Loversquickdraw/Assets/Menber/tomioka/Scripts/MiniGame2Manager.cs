@@ -16,17 +16,20 @@ public class MiniGame2Manager : MonoBehaviour
     [SerializeField] private GameObject _hintFrame;
     [SerializeField] private GameObject _ruluImage;
     [SerializeField] private GameObject _placeFrame;
-    [SerializeField] private SoundManager sound;
+    [SerializeField] private GameObject _readyImage;
+    [SerializeField] private GameObject _goImage;
 
+    [SerializeField] private PlayerCursorController playerCursorController;
+    [SerializeField] private SoundManager sound;
 
     [HideInInspector] public bool _win1P = true;
     private bool _ruleAfter = false;
     private bool _switchJudg = false;
     private bool _ruleCheck1, _ruleCheck2 = false;
+    private bool _fill = false;
+
     //[HideInInspector]
     public bool _ready1, _ready2 = false;
-
-    private bool _fill = false;
 
     private string _hint = "この教室に来る前は\n本が沢山あるところにいて...";
     private string _karen;
@@ -34,19 +37,20 @@ public class MiniGame2Manager : MonoBehaviour
 
     //1Pと2Pがとった文字数
     private int _select1P, _select2P = 0;
-    [SerializeField]private int _lovePoint = 5;
 
-    [SerializeField] private PlayerCursorController playerCursorController;
+    //ミスした時の秒数　今後実装
+    private float _penaltyTime = 2.0f;
+
+    [SerializeField] private int _lovePoint = 5;
 
     //1図書館・2保健室・3教室
     [SerializeField] private List<Image> _placeList = new List<Image>();
     [SerializeField] private List<GameObject> _buttonMenuList = new List<GameObject>();
 
-    //ミスした時の秒数　今後実装
-    private float _penaltyTime = 2.0f;
-
     void Start()
     {
+        _readyImage.SetActive(false);
+        _goImage.SetActive(false);
         _karenHint.GetComponent<Text>();
         _karenHint.text = _hint;
     }
@@ -872,6 +876,7 @@ public class MiniGame2Manager : MonoBehaviour
 
     private void Scene()
     {
+        //告白パートに飛ぶ
         SceneLoadManager.LoadScene("Title");
     }
 
@@ -920,8 +925,10 @@ public class MiniGame2Manager : MonoBehaviour
         if (_ruleCheck1 == true && _ruleCheck2 == true)
         {
             _ruluImage.SetActive(false);
-            ReadyGO();
             _ruleAfter = true;
+            SetReady();
+            Invoke("SetGo", 2.0f);
+            Invoke("ImageOff", 4.0f);
         }
     }
 
@@ -971,5 +978,23 @@ public class MiniGame2Manager : MonoBehaviour
                 _placeList[2].fillAmount -= Time.deltaTime;
                 break;
         }
+    }
+
+    private void SetReady()
+    {
+        Debug.Log("今何秒？");
+        _readyImage.SetActive(true);
+    }
+
+    private void SetGo()
+    {
+        _readyImage.SetActive(false);
+        _goImage.SetActive(true);
+    }
+
+    private void ImageOff()
+    {
+        _goImage.SetActive(false);
+        ReadyGO();
     }
 }

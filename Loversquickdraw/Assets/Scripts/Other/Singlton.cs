@@ -18,5 +18,9 @@ public class Singlton : MonoBehaviour
     }
     //配列[0]がミニゲーム１配列[1]がミニゲーム2の勝利判定
     public int[] WinFlag = new int[2] {0, 0};
+
+    public int Player1LoveMeter;
+    public int Player2LoveMeter;
+
     
 }
