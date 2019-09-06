@@ -9,11 +9,15 @@ public class SpriteManager : SingletonMonoBehaviour<SpriteManager> {
     [SerializeField] GameObject imageComponent;
     [Header("FadeTime")]
     [SerializeField] float fadeTime=2f;
-    Color _color=Color.white;
+    Color _color;
     static bool isFading;
     float fadeAlpha = 0;
     IEnumerator fadeOut;
     IEnumerator fadeIn;
+    private void Start()
+    {
+        _color = Vector4.one;
+    }
     private void Update()
     {
         if (isFading)
@@ -49,7 +53,7 @@ public class SpriteManager : SingletonMonoBehaviour<SpriteManager> {
         float time = 0;
         while (time <= interval)
         {
-            fadeAlpha = Mathf.Lerp(1f, 0f, time / interval);
+            fadeAlpha = Mathf.Lerp(0f, 1f, time / interval);
             time += Time.unscaledDeltaTime;
             yield return 0;
         }
@@ -68,7 +72,7 @@ public class SpriteManager : SingletonMonoBehaviour<SpriteManager> {
         float time = 0;
         while (time <= interval)
         {
-            fadeAlpha = Mathf.Lerp(0f, 1f, time / interval);
+            fadeAlpha = Mathf.Lerp(1f, 0f, time / interval);
             time += Time.unscaledDeltaTime;
             yield return 0;
         }
