@@ -47,7 +47,7 @@ public class TalkManager : MonoBehaviour
     private int _stringCount = 0;
 
     [Header("debug")]
-    [SerializeField] bool _ScenarioSkip;
+    [SerializeField] public bool _ScenarioSkip;
 
     //参照するものをインスペクター上に表示
     [SerializeField] private List<Sprite> FaceList = new List<Sprite>();
@@ -69,7 +69,7 @@ public class TalkManager : MonoBehaviour
 
     [Header("選択まとめ")]
     [SerializeField] private ChoiceManager ChoiceManager;
-    [SerializeField] private GameObject TextFrame;
+    [SerializeField] public GameObject TextFrame;
     [SerializeField] private GameObject cursor;
     [SerializeField] private GameObject cursor2;
    
@@ -88,7 +88,9 @@ public class TalkManager : MonoBehaviour
     {
         //if (choice == true)
         //{
+
         //    ChoiceManager.PushButton();
+        //    ChoiceManager.DebugPushButton();
         //    if (ChoiceManager.getdestroyFlag())
         //    {
         //        choice = false;
@@ -100,7 +102,7 @@ public class TalkManager : MonoBehaviour
         {
             if (_isMessageDisp)
             {
-                if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.Space))
+                if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.M))
                 {
                     _isMessageDisp = false;
                     _stringCount = 1;
@@ -113,7 +115,7 @@ public class TalkManager : MonoBehaviour
             {
                 ScenarioAction();
             }
-            else if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.Space))
+            else if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.M))
             {
                 StopCoroutine("SakuraOut");
                 _isWait = false;
@@ -123,7 +125,7 @@ public class TalkManager : MonoBehaviour
 
     private void TextMove()
     {
-        if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.Space))
+        if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.M))
         {
             if (!choice)
             {
@@ -139,20 +141,18 @@ public class TalkManager : MonoBehaviour
     {
         while (true)
         {
-            //fadein
+            //フェードイン
             while (Sakura.GetComponent<Image>().color.a < 1)
             {
                 Sakura.GetComponent<Image>().color +=new Color(0,0,0,fade);
                 fadeInOut += fade;
-                Debug.Log("<1 "+Sakura.GetComponent<Image>().color.a);
                 yield return null;
             }
-            //fadeout
+            //フェードアウト
             while (Sakura.GetComponent<Image>().color.a > 0)
             {
                 Sakura.GetComponent<Image>().color -= new Color(0, 0, 0, fade);
                 fadeInOut -= fade;
-                Debug.Log(">0"+Sakura.GetComponent<Image>().color.a);
                 yield return null;
             }
         }
@@ -207,115 +207,115 @@ public class TalkManager : MonoBehaviour
     {
         string[] msgs = _loadTextData[_nowTextLine].Split(',');
         msgs[0] = msgs[0].ToLower();
-
-        if (!_ScenarioSkip)
+        if (_ScenarioSkip)
+            return;
+        if (msgs[0].Equals("#name"))
         {
-            if (msgs[0].Equals("#name"))
+            _name.text = msgs[1];
+        }
+        else if (msgs[0].Equals("#message"))
+        {
+            _isMessageDisp = true;
+            _message.text = msgs[1];
+            _isMessageDisp = false;
+            if (msgs.Length >= 3)
             {
-                _name.text = msgs[1];
-            }
-            else if (msgs[0].Equals("#message"))
-            {
-                _isMessageDisp = true;
-                _message.text = msgs[1];
-                _isMessageDisp = false;
-                if (msgs.Length >= 3)
-                {
-                    _message.text = msgs[2];
-                }
-            }
-            else if (msgs[0].Equals("gayzou"))
-            {
-                //たむの作ったfade呼び出し
-                //cs.kansu();
-            }
-            else if (msgs[0].Equals("#keywait"))
-            {
-                StartCoroutine("SakuraOut");
-                StopCoroutine("TextDispCoroutine");
-                TextMove();
-                _isWait = true;
-            }
-            else if (msgs[0].Equals("#bgmstart"))
-            {
-                // SoundManager.Instance.
-            }
-            else if (msgs[0].Equals("#bgmstop"))
-            {
-                // SoundManager.Instance.
-            }
-            else if (msgs[0].Equals("#voicenum"))
-            {
-                SoundManager.Instance.SinarioSounds(SoundNum, 1);
-                SoundNum++;
-            }
-            else if (msgs[0].Equals("#karenface"))
-            {
-                //顔を変える(種類)
-                if (int.Parse(msgs[1]) > -1 && int.Parse(msgs[1]) < FaceList.Count)
-                {
-
-                    Karen.sprite = FaceList[int.Parse(msgs[1])];
-                    Karen1.SetActive(true);
-                }
-                else if (int.Parse(msgs[1]) == -1)
-                {
-                    Karen1.SetActive(false);
-                    Karen.sprite = null;
-                }
-                else Debug.LogError(msgs[0] + " " + msgs[1] + "処理できません");
-            }
-            else if (msgs[0].Equals("#1pface"))
-            {
-                if (int.Parse(msgs[1]) > -1 && int.Parse(msgs[1]) < PlayerList.Count)
-                {
-                    Player.sprite = PlayerList[int.Parse(msgs[1])];
-                    Player3.SetActive(true);
-                }
-                else if (int.Parse(msgs[1]) == -1)
-                {
-                    Player3.SetActive(false);
-                    Player.sprite = null;
-                }
-                else Debug.LogError(msgs[0] + " " + msgs[1] + "処理できません");
-            }
-            else if (msgs[0].Equals("#2pface"))
-            {
-                if (int.Parse(msgs[1]) > -1 && int.Parse(msgs[1]) < PlayerList2.Count)
-                {
-                    Player2.sprite = PlayerList2[int.Parse(msgs[1])];
-                    Player4.SetActive(true);
-                }
-                else if (int.Parse(msgs[1]) == -1)
-                {
-                    Player4.SetActive(false);
-                    Player2.sprite = null;
-                }
-            }
-            else if (_isSelectMessege)
-                return;
-            //else if (msgs[0].Equals("#sentaku"))
-            //{
-                 
-            //}
-
-            //会話文を1,2,3のいずれかに変える
-            else if (msgs[0].Equals("#label"))
-            {
-                if (int.Parse(msgs[1]) != ChoiceManager.rootflag)
-                    _ScenarioSkip = true;
-                Choice2Word(msgs);       
+                _message.text = msgs[2];
             }
         }
-        else if (msgs[0].Equals("#kyoutuu"))
+        else if (msgs[0].Equals("#gayzou"))
         {
-            _ScenarioSkip = false;
+            //fade呼び出し
+            //cs.kansu();
+        }
+        else if (msgs[0].Equals("#keywait"))
+        {
+            StartCoroutine("SakuraOut");
+            StopCoroutine("TextDispCoroutine");
+            TextMove();
+            _isWait = true;
+        }
+        else if (msgs[0].Equals("#bgmstart"))
+        {
+            // SoundManager.Instance.
+        }
+        else if (msgs[0].Equals("#bgmstop"))
+        {
+            // SoundManager.Instance.
+        }
+        else if (msgs[0].Equals("#voicenum"))
+        {
+            SoundManager.Instance.SinarioSounds(SoundNum, 1);
+            SoundNum++;
+        }
+        else if (msgs[0].Equals("#karenface"))
+        {
+            //顔を変える(種類)
+            if (int.Parse(msgs[1]) > -1 && int.Parse(msgs[1]) < FaceList.Count)
+            {
+
+                Karen.sprite = FaceList[int.Parse(msgs[1])];
+                Karen1.SetActive(true);
+            }
+            else if (int.Parse(msgs[1]) == -1)
+            {
+                Karen1.SetActive(false);
+                Karen.sprite = null;
+            }
+            else Debug.LogError(msgs[0] + " " + msgs[1] + "処理できません");
+        }
+        else if (msgs[0].Equals("#1pface"))
+        {
+            if (int.Parse(msgs[1]) > -1 && int.Parse(msgs[1]) < PlayerList.Count)
+            {
+                Player.sprite = PlayerList[int.Parse(msgs[1])];
+                Player3.SetActive(true);
+            }
+            else if (int.Parse(msgs[1]) == -1)
+            {
+                Player3.SetActive(false);
+                Player.sprite = null;
+            }
+            else Debug.LogError(msgs[0] + " " + msgs[1] + "処理できません");
+        }
+        else if (msgs[0].Equals("#2pface"))
+        {
+            if (int.Parse(msgs[1]) > -1 && int.Parse(msgs[1]) < PlayerList2.Count)
+            {
+                Player2.sprite = PlayerList2[int.Parse(msgs[1])];
+                Player4.SetActive(true);
+            }
+            else if (int.Parse(msgs[1]) == -1)
+            {
+                Player4.SetActive(false);
+                Player2.sprite = null;
+            }
+        }
+        else if (_isSelectMessege)
+            return;
+
+        //会話文を1,2,3のいずれかに変える
+        else if (msgs[0].Equals("#label"))
+        {
+            TextFrame.SetActive(false);
+            Choice2Word(msgs);
+            if (int.Parse(msgs[1]) != ChoiceManager.rootflag)//一致してないときに
+                _ScenarioSkip = true;
+        }
+        else if (msgs[0].Equals("#sentaku"))
+        {
+         
+        }
+        else if (msgs[0].Equals("#kyoutu"))
+        {
+           // _ScenarioSkip = false;
             //#sentaku,1#sentaku,2#sentaku,3
             //いずれかが終わったら共通の会話文にする
         }
         else if (msgs[0].Equals("#end"))
         {
             _isLoadEnd = false;
+            return;
         }
         else if (msgs[0].Equals("//"))
             Debug.Log("comment");
