@@ -828,9 +828,9 @@ public class MiniGame2Manager : MonoBehaviour
 
     private void Text()
     {
-        ChangeText();
         if (_switchJudg == true)
         {
+            ChangeText();
             _dankai++;
             _switchJudg = false;
         }
@@ -982,7 +982,6 @@ public class MiniGame2Manager : MonoBehaviour
 
     private void SetReady()
     {
-        Debug.Log("今何秒？");
         _readyImage.SetActive(true);
     }
 
