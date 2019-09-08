@@ -28,7 +28,8 @@ public class ChoiceManager : MonoBehaviour
     [SerializeField] private ChoiceCursor choiceCursor;
 
     //trueで選択できる
-    [HideInInspector] public bool stopChoice = false;
+    [HideInInspector]
+    public bool stopChoice = true;
 
     //trueの場合は1Pの勝ち、falseの場合は2Pの勝ち
     [HideInInspector] public bool firstsPlayer = false;
@@ -90,6 +91,14 @@ public class ChoiceManager : MonoBehaviour
         cursor2.SetActive(false);
     }
     #endregion
+    public int FirstPlayer()
+    {
+        if (firstsPlayer)
+            return 0;
+        else
+            return 1;
+        //return firstsPlayer ? 0 : 1;
+    }
 
     #region 1Pが1を押した判定
     public void PushButton()
@@ -210,8 +219,6 @@ public class ChoiceManager : MonoBehaviour
 
     public void DebugPushButton()
     {
-        Debug.Log("選べ！");
-        Debug.Log(stopChoice);
         /// <summary>
         /// ボタンを押し選択肢を選んだら
         /// それ以降ボタンを消し入力を断つ
@@ -225,7 +232,7 @@ public class ChoiceManager : MonoBehaviour
             ChangeColor1();
             Invoke("GetAorX", invokeTime);
             stopChoice = true;
-            firstsPlayer = true;
+            talkManager.ActiveNumber = 0;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
             Debug.Log("choice1-1");
@@ -241,7 +248,7 @@ public class ChoiceManager : MonoBehaviour
             ChangeColor1();
             Invoke("GetAorX", invokeTime);
             stopChoice = true;
-            firstsPlayer = false;
+            talkManager.ActiveNumber = 1;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
             Debug.Log("choice2-1");
@@ -257,7 +264,7 @@ public class ChoiceManager : MonoBehaviour
             ChangeColor2();
             Invoke("GetBorY", invokeTime);
             stopChoice = true;
-            firstsPlayer = true;
+            talkManager.ActiveNumber = 0;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
             Debug.Log("choice1-2");
@@ -273,7 +280,7 @@ public class ChoiceManager : MonoBehaviour
             ChangeColor2();
             Invoke("GetBorY", invokeTime);
             stopChoice = true;
-            firstsPlayer = false;
+            talkManager.ActiveNumber = 1;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
             Debug.Log("choice2-2");
@@ -289,7 +296,7 @@ public class ChoiceManager : MonoBehaviour
             ChangeColor3();
             Invoke("GetTrigger", invokeTime);
             stopChoice = true;
-            firstsPlayer = true;
+            talkManager.ActiveNumber = 0;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
             Debug.Log("choice1-3");
@@ -305,7 +312,7 @@ public class ChoiceManager : MonoBehaviour
             ChangeColor3();
             Invoke("GetTrigger", invokeTime);
             stopChoice = true;
-            firstsPlayer = false;
+            talkManager.ActiveNumber = 1;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
             Debug.Log("choice2-3");
@@ -372,6 +379,7 @@ public class ChoiceManager : MonoBehaviour
         destroyFlag = true;
         cursor.SetActive(false);
         cursor2.SetActive(false);
+        talkManager.TextFrame.SetActive(true);
     }
     private void DestroyBorY()
     {
@@ -380,6 +388,7 @@ public class ChoiceManager : MonoBehaviour
         destroyFlag = true;
         cursor.SetActive(false);
         cursor2.SetActive(false);
+        talkManager.TextFrame.SetActive(true);
     }
     private void DestroyTrigger()
     {
@@ -388,6 +397,7 @@ public class ChoiceManager : MonoBehaviour
         destroyFlag = true;
         cursor.SetActive(false);
         cursor2.SetActive(false);
+        talkManager.TextFrame.SetActive(true);
     }
     #endregion
 

@@ -25,12 +25,15 @@ public class ChoiceControl : MonoBehaviour {
             _fusenControl[i].gameObject.SetActive(true);
         }
         Debug.Log("ここまで来た");
-        _choiceManager.stopChoice = false;
+        Debug.Log(_choiceManager.stopChoice);
+        //_choiceManager.stopChoice = false;
         _choiceManager.cursor.SetActive(true);
         _choiceManager.cursor2.SetActive(true);
         _choiceCursor.DebugCursorNumber();
         //_choiceCursor.CursorNumber();
         //3択の指を表示してせんたくする
+        Debug.Log("？？？？？");
+        _choiceManager.stopChoice = false;
         _choiceManager.DebugPushButton();
         //_choiceManager.PushButton();
         _choiceManager.SetSelectCallback(SelectCallback);
@@ -42,11 +45,17 @@ public class ChoiceControl : MonoBehaviour {
         if (_callback != null)
         {
             _callback(_selectnum);
-            for (int i = 0; i < 3; i++)
-            {
-                _fusenControl[i].gameObject.SetActive(false);
-            }
         }
         _talkManager._ScenarioSkip = false;
     }
+
+
+    private void Test()
+    {
+        //for (int i = 0; i < 3; i++)
+        //{
+        //    _fusenControl[i].gameObject.SetActive(false);
+        //}
+    }
+
 }
