@@ -22,9 +22,9 @@ public class TalkManager : MonoBehaviour
     [SerializeField]
     private Text _message;
     [SerializeField]
-    private string ScenarioDataName;
+    private Text _message2;
     [SerializeField]
-    private Text _text;
+    private string ScenarioDataName;
     [SerializeField]
     private int SoundNum = 0;
 
@@ -38,11 +38,14 @@ public class TalkManager : MonoBehaviour
     private int _nowTextLine = 0;
     private bool _isLoadEnd = false;
     private bool _isWait = false;
-    private bool _isMessageDisp = false;
-    private bool _isCharacterText = false; 
+    // private bool _isMessageDisp = false;
+    private bool _isCharacterText = false;
 
-    //一文字ずつ表示+速度
-    private float _dispSpeed = 1.0f;
+    [Header("一文字ずつ表示+速度")]
+    //[SerializeField]
+    //private Text _text;
+    [SerializeField]
+    private float _dispSpeed;
     private float _timer = 0;
     private int _stringCount = 0;
 
@@ -72,12 +75,28 @@ public class TalkManager : MonoBehaviour
     [SerializeField] public GameObject TextFrame;
     [SerializeField] private GameObject cursor;
     [SerializeField] private GameObject cursor2;
-   
+
+    //名前置き換え
+    int activeNumber;
+    public int ActiveNumber { set { activeNumber = value; } }
+
+    public bool _isSeEnd;
+    string[] nameRepTbl = { "まさし", "ひろき" };
+
+    private void Awake()
+    {
+        
+        //_isSeEnd = false;
+    }
     private void Start()
     {
+        PlayerPrefs.SetString("ScenarioNum", "-1");
         _nowTextLine = 0;
         _isLoadEnd = false;
-        LoadFile(Application.dataPath + "/Scenario/" + ScenarioDataName + ".txt");
+        //_isSeEnd = false;
+        //LoadFile(Application.dataPath + "/Scenario/" + ScenarioDataName + ".txt");
+        var _ScenarioNum = PlayerPrefs.GetString("ScenarioNum");
+        LoadFile(Application.dataPath + "/Scenario/ScLov" + _ScenarioNum + ".txt");
         //string x = "プレイヤー１";
         //x = x.Replace("プレイヤー１", "name1");
         StartCoroutine("SakuraOut");
@@ -86,36 +105,25 @@ public class TalkManager : MonoBehaviour
     //左クリックしたとき名前とコメントの表示、Debug.logは配列番号とそれに対して画面表示する文字を確認
     void Update()
     {
-        //if (choice == true)
+        //if (Input.GetKeyDown(KeyCode.G))
         //{
-
-        //    ChoiceManager.PushButton();
-        //    ChoiceManager.DebugPushButton();
-        //    if (ChoiceManager.getdestroyFlag())
-        //    {
-        //        choice = false;
-        //    }
+        //    SceneManager.LoadScene("MiniGame2");
         //}
-        TextMove();
-
+        //TextMove();
         if (_isLoadEnd)
         {
-            if (_isMessageDisp)
-            {
-                if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.M))
-                {
-                    _isMessageDisp = false;
-                    _stringCount = 1;
-                    _timer = 0;
-                    _text.text = _message.text.Substring(0, _stringCount);
-                    StartCoroutine(TextDispCoroutine());
-                }
-            }
-            else if (!_isWait)
+            //if (_isMessageDisp)
+            //{
+            //    if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.M))
+            //    {
+            //        _isMessageDisp = false;
+            //    }
+            //}
+            if (!_isWait)
             {
                 ScenarioAction();
             }
-            else if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.M))
+            else if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.M))
             {
                 StopCoroutine("SakuraOut");
                 _isWait = false;
@@ -123,16 +131,20 @@ public class TalkManager : MonoBehaviour
         }
     }
 
-    private void TextMove()
-    {
-        if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.M))
-        {
-            if (!choice)
-            {
-                TextFrame.SetActive(true);
-            }
-        }
-    }
+    //private void TextMove()
+    //{
+    //    if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.M))
+    //    {
+    //        //_stringCount = 1;
+    //        //_timer = 0;
+    //        //_message.text = msgs[1].Substring(0, _stringCount);
+    //        //TextDispCoroutine();
+    //        if (!choice)
+    //        {
+    //            //TextFrame.SetActive(true);
+    //        }
+    //    }
+    //}
 
     #region 桜の動き
 
@@ -144,7 +156,7 @@ public class TalkManager : MonoBehaviour
             //フェードイン
             while (Sakura.GetComponent<Image>().color.a < 1)
             {
-                Sakura.GetComponent<Image>().color +=new Color(0,0,0,fade);
+                Sakura.GetComponent<Image>().color += new Color(0, 0, 0, fade);
                 fadeInOut += fade;
                 yield return null;
             }
@@ -207,20 +219,47 @@ public class TalkManager : MonoBehaviour
     {
         string[] msgs = _loadTextData[_nowTextLine].Split(',');
         msgs[0] = msgs[0].ToLower();
-        if (_ScenarioSkip)
-            return;
-        if (msgs[0].Equals("#name"))
+        if (msgs[0].Equals("#kyoutu"))
         {
+            _ScenarioSkip = false;
+            Debug.Log(_ScenarioSkip);
+            //#sentaku,1#sentaku,2#sentaku,3
+            //いずれかが終わったら共通の会話文にする
+        }
+        else if (_ScenarioSkip)
+            return;
+        else if (msgs[0].Equals("#name"))
+        {
+            msgs[1] = msgs[1].Replace("プレイヤー１", nameRepTbl[0]);
+            msgs[1] = msgs[1].Replace("プレイヤー２", nameRepTbl[1]);
+            msgs[1] = msgs[1].Replace("択プレイヤー", nameRepTbl[activeNumber]);
+            msgs[1] = msgs[1].Replace("非プレイヤー", nameRepTbl[activeNumber]);
+            msgs[1] = msgs[1].Replace("非選択Ｐ", nameRepTbl[activeNumber]);
             _name.text = msgs[1];
         }
         else if (msgs[0].Equals("#message"))
         {
-            _isMessageDisp = true;
-            _message.text = msgs[1];
-            _isMessageDisp = false;
-            if (msgs.Length >= 3)
+
+            msgs[1] = msgs[1].Replace("[択　Ｐ]", nameRepTbl[activeNumber]);
+            msgs[1] = msgs[1].Replace("[非択Ｐ]", nameRepTbl[1 - activeNumber]);
+            if (msgs.Length > 2)
             {
-                _message.text = msgs[2];
+                msgs[2] = msgs[2].Replace("[択　Ｐ]", nameRepTbl[activeNumber]);
+                msgs[2] = msgs[2].Replace("[非択Ｐ]", nameRepTbl[activeNumber]);
+            }
+
+            //_isMessageDisp = true;
+            //_message.text = msgs[1];
+            //_isMessageDisp = false;
+            if (msgs.Length == 2)
+            {
+                _message.text = msgs[1];
+                _message2.text = null;
+            }
+            else if (msgs.Length == 3)
+            {
+                _message.text = msgs[1];
+                _message2.text = msgs[2];
             }
         }
         else if (msgs[0].Equals("#gayzou"))
@@ -232,7 +271,7 @@ public class TalkManager : MonoBehaviour
         {
             StartCoroutine("SakuraOut");
             StopCoroutine("TextDispCoroutine");
-            TextMove();
+            //TextMove();
             _isWait = true;
         }
         else if (msgs[0].Equals("#bgmstart"))
@@ -266,12 +305,12 @@ public class TalkManager : MonoBehaviour
         }
         else if (msgs[0].Equals("#1pface"))
         {
-            if (int.Parse(msgs[1]) > -1 && int.Parse(msgs[1]) < PlayerList.Count)
+            if (int.Parse(msgs[1]) > -1 && int.Parse(msgs[1]) < PlayerList.Count || ChoiceManager.firstsPlayer == true)
             {
                 Player.sprite = PlayerList[int.Parse(msgs[1])];
                 Player3.SetActive(true);
             }
-            else if (int.Parse(msgs[1]) == -1)
+            else if (int.Parse(msgs[1]) == -1 || ChoiceManager.firstsPlayer == true)
             {
                 Player3.SetActive(false);
                 Player.sprite = null;
@@ -293,27 +332,27 @@ public class TalkManager : MonoBehaviour
         }
         else if (_isSelectMessege)
             return;
-
         //会話文を1,2,3のいずれかに変える
         else if (msgs[0].Equals("#label"))
         {
             TextFrame.SetActive(false);
             Choice2Word(msgs);
-            if (int.Parse(msgs[1]) != ChoiceManager.rootflag)//一致してないときに
-                _ScenarioSkip = true;
+            //if (int.Parse(msgs[1]) != ChoiceManager.rootflag)//一致してないときに
+            _ScenarioSkip = true;
         }
         else if (msgs[0].Equals("#sentaku"))
         {
-         
+            Debug.LogWarning(_ScenarioSkip);
+            if (int.Parse(msgs[1]) != ChoiceManager.rootflag)//一致してないときに
+            _ScenarioSkip = true;
+            Debug.LogError(_ScenarioSkip);
+            Debug.Log(msgs[0] + msgs[1]);
         }
-        else if (msgs[0].Equals("#kyoutu"))
-        {
-           // _ScenarioSkip = false;
-            //#sentaku,1#sentaku,2#sentaku,3
-            //いずれかが終わったら共通の会話文にする
-        }
+        
         else if (msgs[0].Equals("#end"))
         {
+            //PlayerPlrefsについて
+            //_isSeEnd = true;
             _isLoadEnd = false;
             return;
         }
@@ -360,7 +399,6 @@ public class TalkManager : MonoBehaviour
         }
         return 0;
     }
-
     /// <summary>
     /// 選択を判定する
     /// </summary> 
@@ -384,14 +422,15 @@ public class TalkManager : MonoBehaviour
     #region
     IEnumerator TextDispCoroutine()
     {
-        while (_stringCount < _message.text.Length)
+        while (_stringCount < msgs[1].Length)
         {
             _timer += Time.deltaTime;
             if (_timer >= _dispSpeed)
             {
                 _timer = 0;
                 _stringCount++;
-                _text.text = _message.text.Substring(0, _stringCount);
+                _message.text = msgs[1].Substring(0, _stringCount);
+                Debug.Log(_stringCount);
             }
             yield return null;
         }
