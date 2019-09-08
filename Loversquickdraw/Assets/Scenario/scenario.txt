@@ -40,7 +40,7 @@
 #keywait,
 
 #1pface,-1
-#2pface,0
+#2pface,1
 #name,プレイヤー２
 #message,いや、俺の方が好きなんだが？？
 #keywait,
@@ -124,7 +124,7 @@
 
 #1pface,-1
 #2pface,-1
-#label,左に曲がる,右に曲がる,真っ直ぐ進む
+#label,左に曲がる,右に曲がる,真っ直ぐ
 
 
 //#name,択プレイヤー
@@ -182,7 +182,7 @@
 #message,遅れた［非択Ｐ］が遅れて曲がる！,これは勝ったも同然……！
 #keywait,
 //,#sentaku,2,
-#name,非選択Ｐ
+#name,非プレイヤー
 #message,なあ、曲がり角逆じゃねえか！？
 //,#sentaku,2,
 #keywait,
@@ -231,7 +231,7 @@
 #message,曲がり損ねたァァァ！！！
 #keywait,
 //,#sentaku,3,
-#name,非選択プレイヤー
+#name,非プレイヤー
 #message,ふはははバカめ！チキレンースやってる,場合じゃないんだよ！！
 #keywait,
 //,#sentaku,3,

@@ -26,9 +26,10 @@ public class ChoiceCursor : MonoBehaviour
         Ltmp = ChoiceBorY.transform.position;
         Dtmp = ChoiceTrigger.transform.position;
 
-        Debug.Log(Rtmp);
-        Debug.Log(Ltmp);
-        Debug.Log(Dtmp);
+        //Debug.Log(Rtmp);
+        //Debug.Log(Ltmp);
+        //Debug.Log(Dtmp);
+
         //for (int i = 0; i < tmp.Length; i++)
         //{
         //    tmp[i] = menuNum[i].transform.position;

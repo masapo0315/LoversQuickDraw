@@ -1994,6 +1994,80 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &328224838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 328224839}
+  - component: {fileID: 328224841}
+  - component: {fileID: 328224840}
+  m_Layer: 5
+  m_Name: Commenttext2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &328224839
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 328224838}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1965957115}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -24.369995, y: -98.399994}
+  m_SizeDelta: {x: 1148.8, y: 69.65}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &328224840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 328224838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 60
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 60
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: comment
+--- !u!222 &328224841
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 328224838}
 --- !u!1 &329597802
 GameObject:
   m_ObjectHideFlags: 0
@@ -5701,10 +5775,11 @@ MonoBehaviour:
   choiceAfterText: 1
   _name: {fileID: 469389193}
   _message: {fileID: 869735168}
-  ScenarioDataName: scenario
-  _text: {fileID: 869735168}
+  _message2: {fileID: 328224840}
+  ScenarioDataName: Sctest
   SoundNum: 0
   _choiceControl: {fileID: 1909772963}
+  _dispSpeed: 1
   _ScenarioSkip: 0
   FaceList:
   - {fileID: 21300000, guid: dc81e6f843aaf4a43ad16e03e637039b, type: 3}
@@ -5730,6 +5805,7 @@ MonoBehaviour:
   TextFrame: {fileID: 1965957114}
   cursor: {fileID: 134711058}
   cursor2: {fileID: 194714215}
+  _isSeEnd: 0
 --- !u!114 &840345693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5751,7 +5827,7 @@ MonoBehaviour:
   invokeTime: 1
   talkManager: {fileID: 840345692}
   choiceCursor: {fileID: 840345694}
-  stopChoice: 0
+  stopChoice: 1
   firstsPlayer: 0
 --- !u!114 &840345694
 MonoBehaviour:
@@ -5877,8 +5953,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -24.369995, y: -57.5}
-  m_SizeDelta: {x: 1148.8, y: 139.3}
+  m_AnchoredPosition: {x: -24.369995, y: -13}
+  m_SizeDelta: {x: 1148.8, y: 69.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &869735168
 MonoBehaviour:
@@ -10675,11 +10751,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1965957115}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 572.5, y: -108.149994}
+  m_AnchoredPosition: {x: 616, y: -108.149994}
   m_SizeDelta: {x: 70, y: 59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1936188187
@@ -10744,6 +10820,7 @@ RectTransform:
   m_Children:
   - {fileID: 469389192}
   - {fileID: 869735167}
+  - {fileID: 328224839}
   - {fileID: 1936188186}
   m_Father: {fileID: 326594121}
   m_RootOrder: 9
