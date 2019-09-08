@@ -828,9 +828,9 @@ public class MiniGame2Manager : MonoBehaviour
 
     private void Text()
     {
-        ChangeText();
         if (_switchJudg == true)
         {
+            ChangeText();
             _dankai++;
             _switchJudg = false;
         }
@@ -899,7 +899,7 @@ public class MiniGame2Manager : MonoBehaviour
         if (_select1P > _select2P)
         {
             _win1P = true;
-            LoveMetar.player2LoveMetar += 5;
+            LoveMetar.player1LoveMetar += 5;
             Debug.Log("1Pの勝ち");
         }
         else
@@ -982,7 +982,6 @@ public class MiniGame2Manager : MonoBehaviour
 
     private void SetReady()
     {
-        Debug.Log("今何秒？");
         _readyImage.SetActive(true);
     }
 
