@@ -92,7 +92,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     }
     private void Start()
     {
-        PlayerPrefs.SetString("ScenarioNum", "0");
+        PlayerPrefs.SetString("ScenarioNum", "4");
         activeNumber = PlayerPrefs.GetInt("MiniGame2Data", -1);
         _nowTextLine = 0;
         _isLoadEnd = false;

@@ -31,7 +31,7 @@ public class Player1Controler : MonoBehaviour
     void Update()
     {
         _camera.transform.localRotation = Quaternion.identity;
-        _camera.transform.localPosition = new Vector3(0,0,-11f);
+        _camera.transform.localPosition = new Vector3(0,2,-11f);
         if (stop == false)
         {
             Player1Move();
@@ -41,7 +41,7 @@ public class Player1Controler : MonoBehaviour
     // 加速処理
     void SpeedUp(float num)
     {
-        _animator.SetBool("Run", false);
+        _animator.SetBool("Run", true);
         force = new Vector3(num, 0.0f, 0.0f);
         rb.AddForce(force);
     }
@@ -52,21 +52,20 @@ public class Player1Controler : MonoBehaviour
         //controllerのposを常に更新する
         transform.position = OVRInput.GetLocalControllerPosition(controller);
         //controllerのPosが一定の範囲内ならを分岐で
-        if (moveFlag = false && transform.position.y > -0.4f)
+        if (transform.position.y > -0.4f)
         {
             SpeedUp(moveSpeed);
-            moveFlag = true;
         }
-        if (moveFlag = true && transform.position.y < -0.6f)
+        if (transform.position.y < -0.6f)
         {
             SpeedUp(moveSpeed);
-            moveFlag = false;
         }
         if (transform.position.y >= 0f || transform.position.y <= -1)
         {
-            _animator.SetBool("Run", true);
+            _animator.SetBool("Run", false);
             rb.velocity = Vector3.zero;
         }
+        SpeedUp(moveSpeed * 0.3f);
     }
     //ジャンプの処理
     void Jump()
