@@ -1,4 +1,5 @@
-﻿#1pface,0
+﻿#bgsprite,0
+#1pface,0
 #name,プレイヤー1
 #message,流れる時と共に、彼女を、華恋を,落とすための努力を。
 #keywait,
@@ -91,7 +92,7 @@
 #timewait,
 
 //,白バッグ
-#spritechange,0,
+#spritechange,1
 //,手の突き出し判定
 #concheck,
 
@@ -107,9 +108,13 @@
 #timewait,
 //,（コントローラー振動）
 #convib,
+#timewait,
 //,スプライト変更
-#spritechange,1
+#bgsprite,0
+#spritechange,-1
+
 #timewait
+
 #1pface,-1
 //,(敗北したほう)
 #name,勝利者

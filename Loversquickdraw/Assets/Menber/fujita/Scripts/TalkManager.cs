@@ -78,7 +78,9 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     //選択または勝敗によってactiveNomberで変える
     private int activeNumber;
     public int ActiveNumber { set { activeNumber = value; } }
-
+    private bool _kokuhakuconwait;
+    float _waitTime;
+    bool once;
  
     //名前置き換え
     string[] nameRepTbl = { "まさし", "ひろき" };
@@ -93,8 +95,8 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     private void Start()
     {
         //デバッグ用で残る
-        PlayerPrefs.SetString("ScenarioNum", "0");
-        activeNumber = PlayerPrefs.GetInt("MiniGame2Data", -1);
+        PlayerPrefs.SetString("ScenarioNum", "4");
+        activeNumber = PlayerPrefs.GetInt("MiniGame2Data", 0);
         _nowTextLine = 0;
         _isLoadEnd = false;
         _isSeEnd = false;
@@ -106,6 +108,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     //左クリックしたとき名前とコメントの表示、Debug.logは配列番号とそれに対して画面表示する文字を確認
     void Update()
     {
+        _waitTime =+ Time.deltaTime;
         //if (Input.GetKeyDown(KeyCode.G))
         //{
         //    SceneManager.LoadScene("MiniGame2");
@@ -124,12 +127,28 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
             {
                 ScenarioAction();
             }
+            else if (_kokuhakuconwait)
+            {
+                if (OVRPosition.Instance._1PTrue && OVRPosition.Instance._2PTrue)
+                {
+                    OVRPosition.Instance._isPosition = false;
+                    _isWait = false;
+                }
+                if (_waitTime >= 3&&!once)
+                {
+                    once = true;
+                    _message.text = "コントローラーを前に突き出してください。";
+                    _message2.text = null;
+                }
+            }
             else if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.M))
             {
                 StopCoroutine("SakuraOut");
                 _isWait = false;
             }
         }
+        
+
     }
 
     //private void TextMove()
@@ -233,23 +252,30 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
         }
         else if (msgs[0].Equals("#coninit"))
         {
-
+            OVRPosition.InitPosition();
         }
         else if (msgs[0].Equals("#concheck"))
         {
+            _isWait = true;
+            OVRPosition.Instance._isPosition = true;
+            _kokuhakuconwait = true;
 
         }
         else if (msgs[0].Equals("#convib"))
         {
 
         }
-        else if (msgs[0].Equals("#timewait"))
-        {
+        //else if (msgs[0].Equals("#timewait"))
+        //{
 
+        //}
+        else if (msgs[0].Equals("#bgsprite"))
+        {
+            SpriteManager.SpriteDisp(int.Parse(msgs[1]));
         }
         else if (msgs[0].Equals("#spritechange"))
         {
-
+            SpriteManager.SpriteSwitch(int.Parse(msgs[1]));
         }
         else if (_ScenarioSkip)
         {
@@ -305,7 +331,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
             //fade呼び出し
             //cs.kansu();
         }
-        else if (msgs[0].Equals("#keywait"))
+        else if (msgs[0].Equals("#keywait")|| msgs[0].Equals("#timewait"))
         {
             StartCoroutine("SakuraOut");
             //StopCoroutine("TextDispCoroutine");
