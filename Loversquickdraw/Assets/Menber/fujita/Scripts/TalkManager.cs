@@ -364,7 +364,7 @@ public class TalkManager : MonoBehaviour
             Debug.Log("choicefaceを通った");
             if (int.Parse(msgs[1]) == 0)
             {
-                if (ChoiceManager.spritFirstPlayer == 0)
+                if (activeNumber == 0)
                 {
                     Player3.SetActive(false);
                     Player.sprite = null;
@@ -374,12 +374,12 @@ public class TalkManager : MonoBehaviour
             }
             else if (int.Parse(msgs[1]) == 1)
             {
-                if (ChoiceManager.spritFirstPlayer == 1)
+                if (activeNumber == 1)
                 {
                     Player.sprite = PlayerList[0];
                     Player3.SetActive(true);
                 }
-                else if (ChoiceManager.spritFirstPlayer == 2)
+                else if (activeNumber == 2)
                 {
                     Player2.sprite = PlayerList2[0];
                     Player4.SetActive(true);
@@ -391,7 +391,7 @@ public class TalkManager : MonoBehaviour
             Debug.Log("nochoicefaceを通った");
             if (int.Parse(msgs[1]) == 0)
             {
-                if (ChoiceManager.spritFirstPlayer == 0)
+                if (activeNumber == 0)
                 {
                     Player3.SetActive(false);
                     Player.sprite = null;
@@ -401,12 +401,12 @@ public class TalkManager : MonoBehaviour
             }
             else if (int.Parse(msgs[1]) == 1)
             {
-                if (ChoiceManager.spritFirstPlayer == 1)
+                if (activeNumber == 1)
                 {
                     Player2.sprite = PlayerList2[0];
                     Player4.SetActive(true);
                 }
-                else if (ChoiceManager.spritFirstPlayer == 2)
+                else if (activeNumber == 2)
                 {
                     Player.sprite = PlayerList[0];
                     Player3.SetActive(true);
