@@ -23,8 +23,8 @@ public class TalkManager : MonoBehaviour
     private Text _message;
     [SerializeField]
     private Text _message2;
-    [SerializeField]
-    private string ScenarioDataName;
+    //[SerializeField]
+    //private string ScenarioDataName;
     [SerializeField]
     private int SoundNum = 0;
 
@@ -75,13 +75,15 @@ public class TalkManager : MonoBehaviour
     [SerializeField] public GameObject TextFrame;
     [SerializeField] private GameObject cursor;
     [SerializeField] private GameObject cursor2;
-
-    
     int activeNumber;
     public int ActiveNumber { set { activeNumber = value; } }
 
+    //ミニゲーム２勝敗取得
+
+
     //名前置き換え
     string[] nameRepTbl = { "まさし", "ひろき" };
+
     //Sceneまたはシナリオを読む
     public bool _isSeEnd;
 
@@ -357,15 +359,18 @@ public class TalkManager : MonoBehaviour
                 Player2.sprite = null;
             }
         }
-        else if(msgs[0].Equals("#choiseface"))
+        else if(msgs[0].Equals("#choiceface"))
         {
-            if(int.Parse(msgs[1]) ==  -1)
-            if(ChoiceManager.spritFirstPlayer == 0)
+            Debug.Log("choicefaceを通った");
+            if (int.Parse(msgs[1]) == 0)
             {
-                Player3.SetActive(false);
-                Player.sprite = null;
-                Player4.SetActive(false);
-                Player2.sprite = null;
+                if (ChoiceManager.spritFirstPlayer == 0)
+                {
+                    Player3.SetActive(false);
+                    Player.sprite = null;
+                    Player4.SetActive(false);
+                    Player2.sprite = null;
+                }
             }
             else if (int.Parse(msgs[1]) == 1)
             {
@@ -376,8 +381,35 @@ public class TalkManager : MonoBehaviour
                 }
                 else if (ChoiceManager.spritFirstPlayer == 2)
                 {
-                    Player.sprite = PlayerList2[0];
+                    Player2.sprite = PlayerList2[0];
                     Player4.SetActive(true);
+                }
+            }
+        }
+        else if (msgs[0].Equals("#nochoiceface"))
+        {
+            Debug.Log("nochoicefaceを通った");
+            if (int.Parse(msgs[1]) == 0)
+            {
+                if (ChoiceManager.spritFirstPlayer == 0)
+                {
+                    Player3.SetActive(false);
+                    Player.sprite = null;
+                    Player4.SetActive(false);
+                    Player2.sprite = null;
+                }
+            }
+            else if (int.Parse(msgs[1]) == 1)
+            {
+                if (ChoiceManager.spritFirstPlayer == 1)
+                {
+                    Player2.sprite = PlayerList2[0];
+                    Player4.SetActive(true);
+                }
+                else if (ChoiceManager.spritFirstPlayer == 2)
+                {
+                    Player.sprite = PlayerList[0];
+                    Player3.SetActive(true);
                 }
             }
         }

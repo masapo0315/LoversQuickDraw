@@ -276,6 +276,7 @@ public class ChoiceManager : MonoBehaviour
             Invoke("GetBorY", invokeTime);
             stopChoice = true;
             talkManager.ActiveNumber = 0;
+            spritFirstPlayer = 1;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
             Debug.Log("choice1-2");
@@ -292,6 +293,7 @@ public class ChoiceManager : MonoBehaviour
             Invoke("GetBorY", invokeTime);
             stopChoice = true;
             talkManager.ActiveNumber = 1;
+            spritFirstPlayer = 2;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
             Debug.Log("choice2-2");
@@ -308,6 +310,7 @@ public class ChoiceManager : MonoBehaviour
             Invoke("GetTrigger", invokeTime);
             stopChoice = true;
             talkManager.ActiveNumber = 0;
+            spritFirstPlayer = 1;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
             Debug.Log("choice1-3");
@@ -324,6 +327,7 @@ public class ChoiceManager : MonoBehaviour
             Invoke("GetTrigger", invokeTime);
             stopChoice = true;
             talkManager.ActiveNumber = 1;
+            spritFirstPlayer = 2;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
             Debug.Log("choice2-3");

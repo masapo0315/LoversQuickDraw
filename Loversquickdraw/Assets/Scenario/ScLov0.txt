@@ -168,6 +168,7 @@
 #message,遅れた非プレイヤーが遅れて曲がる！,これは勝ったも同然……！
 #keywait,
 
+#nochoiceface,1
 #name,非プレイヤー
 #message,なあ、曲がり角逆じゃねえか！？
 
@@ -220,6 +221,7 @@
 #message,曲がり損ねたァァァ！！！
 #keywait,
 
+#nochoiceface,1
 #name,非プレイヤー
 #message,ふはははバカめ！チキレンースやってる,場合じゃないんだよ！！
 #keywait,
@@ -230,6 +232,8 @@
 
 //ここまで：選択３
 #kyoutu,
+
+#nochoiceface,0
 #choiceface,0
 #name,プレイヤー１
 #message,くそ、最初の接触は失敗か！,少女漫画も楽じゃねえな！
