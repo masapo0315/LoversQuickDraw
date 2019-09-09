@@ -7,6 +7,7 @@ public class SpriteManager : SingletonMonoBehaviour<SpriteManager> {
     [Header("Sprite")]
     [SerializeField] Sprite[] SpriteImages;
     [SerializeField] GameObject imageComponent;
+    [SerializeField] GameObject imageComponent2;
     [Header("FadeTime")]
     [SerializeField] float fadeTime=2f;
     Color _color;
@@ -16,14 +17,16 @@ public class SpriteManager : SingletonMonoBehaviour<SpriteManager> {
     IEnumerator fadeIn;
     private void Start()
     {
-        _color = Vector4.one;
+        _color = new Vector4(1,1,1,0);
+        _color.a = fadeAlpha;
+        Instance.imageComponent2.GetComponent<Image>().color = _color;
     }
     private void Update()
     {
         if (isFading)
         {
             _color.a = fadeAlpha;
-            Instance.imageComponent.GetComponent<Image>().color = _color;
+            Instance.imageComponent2.GetComponent<Image>().color = _color;
         }
     }
     public static void SpriteDisp(int i)
@@ -34,17 +37,30 @@ public class SpriteManager : SingletonMonoBehaviour<SpriteManager> {
     {
         if (i >= 0)
         {
-            Instance.imageComponent.GetComponent<Image>().sprite = Instance.SpriteImages[i];
-            Instance.StartCoroutine(Instance.FadeInScene(Instance.fadeTime, () =>
+            Debug.Log(Instance.imageComponent.GetComponent<Image>().sprite);
+            if (Instance.imageComponent.GetComponent<Image>().sprite == null)
             {
-                return;
-            }));
+                Instance.imageComponent.GetComponent<Image>().sprite = Instance.SpriteImages[i];
+                Instance.StartCoroutine(Instance.FadeInScene(Instance.fadeTime, () =>
+                {
+                    return;
+                }));
+            }else
+            {
+                Instance.imageComponent2.GetComponent<Image>().sprite = Instance.SpriteImages[i];
+                Instance.StartCoroutine(Instance.FadeInScene(Instance.fadeTime, () =>
+                {
+                    Instance.imageComponent2.GetComponent<Image>().color = Instance._color;
+                    Instance.imageComponent.GetComponent<Image>().sprite = null;
+                    return;
+                }));
+            }
 
         } else
         {
             Instance.StartCoroutine(Instance.FadeOutScene(Instance.fadeTime, () =>
             {
-                Instance.imageComponent.GetComponent<Image>().sprite = null;
+                Instance.imageComponent2.GetComponent<Image>().sprite = null;
             }));
             
         }
