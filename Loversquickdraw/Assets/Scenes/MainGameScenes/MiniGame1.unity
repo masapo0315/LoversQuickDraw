@@ -1971,6 +1971,7 @@ MonoBehaviour:
   moveSpeed: 7.5
   jumpPower: 8
   jump: 0
+  stop: 0
 --- !u!1 &769219083
 GameObject:
   m_ObjectHideFlags: 0
@@ -2486,6 +2487,7 @@ MonoBehaviour:
   moveSpeed: 7.5
   jumpPower: 8
   jump: 0
+  stop: 0
 --- !u!1 &1016976423
 GameObject:
   m_ObjectHideFlags: 0
