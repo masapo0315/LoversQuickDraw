@@ -3,19 +3,18 @@
 #message,流れる時と共に、彼女を、華恋を,落とすための努力を。
 #keywait,
 
-#name,プレイヤー1
+
 #message,色々あった。死のＢＢＱ、,血の海水浴、地獄の夏休み……
 #keywait,
 
-#name,プレイヤー1
-#message,俺たちは事あるごとに鉢合わせ、,激闘を繰り広げてきた。
+message,俺たちは事あるごとに鉢合わせ、,激闘を繰り広げてきた。
 #keywait,
 
-#name,プレイヤー1
+
 #message,――それも今日までの話。,ついに、俺は華恋に「告白」する。
 #keywait,
 
-#name,プレイヤー1
+
 #message,奇しくも、二人が華恋を呼び出したのは,同じ時間と場所だった。
 #keywait,
 
@@ -31,7 +30,7 @@
 #message,……話があるんだ。,まあ、呼び出したから当然なんだけど。
 #keywait,
 
-#name,プレイヤー1
+
 #message,ああ。別にコイツと一緒じゃなくても,良かったんだが。話自体は一緒だ。
 #keywait,
 
@@ -44,7 +43,7 @@
 #message,俺は……お前の――
 #keywait,
 
-#name,両プレイヤー
+
 #message,華恋のことが……好きだ。
 #keywait,
 
@@ -61,7 +60,7 @@
 #message,一緒に過ごす内に、どんどんお前に,惹かれていったんだ。
 #keywait,
 
-#name,プレイヤー２
+
 #message,……俺も、コイツも。
 #keywait,
 
@@ -70,7 +69,7 @@
 #keywait,
 
 #voicenum4-4
-#name,華恋
+
 #message,ふたりとも、私のことそんな風に,思ってくれてたなんて……
 #keywait,
 
@@ -82,43 +81,52 @@
 #message,俺と……！
 #keywait,
 
+//,コントローラーポジションイニシャライズ
+#coninit,
+
 #1pface,1
 #2pface,1
 #name,両プレイヤー
 #message,付き合ってください――ッ！！
-#keywait,
+#timewait,
+
+//,白バッグ
+#spritechange,0,
+//,手の突き出し判定
+#concheck,
 
 #name,両プレイヤー
 #message,訪れる静寂。男二人、頭を下げ,手を差し出す。
-#keywait,
+#timewait
 
-#name,両プレイヤー
 #message,華恋が、この想いを受け取って,くれるのなら、手を握ってくれるだろう
-#keywait,
+#timewait,
 
-#name,両プレイヤー
+
 #message,さあ、覚悟を決めて、目を瞑る――
-#keywait,
-　　　　　　　（コントローラー振動）
-
-
+#timewait,
+//,（コントローラー振動）
+#convib,
+//,スプライト変更
+#spritechange,1
+#timewait
 #1pface,-1(敗北したほう)
 #name,勝利者
 #message,…………！！！！！
 #keywait,
 
 #gayzou,3
-#name,勝利者
+
 #message,柔らかな、しかし確かな感触。,ほんのり暖かな、自分のではない体温。
 #keywait,
 
 #Karenface0,-1
 #Karenface1,1
-#name,勝利者
+
 #message,確かに彼女の――夢宮華恋の手は、,［勝利者］の手を包み込んでいた。
 #keywait,
 
-#name,勝利者
+
 #message,……か、華恋……
 #keywait,
 
@@ -128,7 +136,7 @@
 #keywait,
 
 #voicenum4-6
-#name,華恋
+
 #message,好きになっちゃったんだ、,［勝利者］くんのこと。
 #keywait,
 
@@ -142,12 +150,12 @@
 #keywait,
 
 #voicenum4-8
-#name,華恋
+
 #message,学校での［勝利者］くんが、どんどん,魅力的になっていって……
 #keywait,
 
 #voicenum4-9
-#name,華恋
+
 #message,えへへ、いつの間にか、,好きになってた
 #keywait,
 
@@ -155,7 +163,7 @@
 #message,そう言って笑った華恋は、,今までで一番可愛く見えた。
 #keywait,
 
-#name,勝利者
+
 #message,……ありがとう、華恋
 #keywait,
 
@@ -170,11 +178,13 @@
 #message,ああ、そうだな,さあ、行こうか
 #keywait,
 
+//,スプライト変更
+#spritechange,2
 #name,勝利者
 #message,――ああ、俺は今、間違いなく,世界一幸せな男だろう。
 #keywait,
 
-#name,勝利者
+
 #message,そして、おそらく今、世界一不幸な,男も存在していた――すぐ横に。
 #keywait,
 
