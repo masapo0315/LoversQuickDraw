@@ -220,7 +220,11 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     {
         string[] msgs = _loadTextData[_nowTextLine].Split(',');
         msgs[0] = msgs[0].ToLower();
-        if (msgs[0].Equals("#kyoutu"))
+        if (msgs[0].Equals("#bucksprite"))
+        {
+            //SpriteManager.
+        }
+        else if (msgs[0].Equals("#kyoutu"))
         {
             _ScenarioSkip = false;
             Debug.Log(_ScenarioSkip);
