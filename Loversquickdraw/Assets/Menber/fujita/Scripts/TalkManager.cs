@@ -75,12 +75,11 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     [SerializeField] public GameObject TextFrame;
     [SerializeField] private GameObject cursor;
     [SerializeField] private GameObject cursor2;
-    int activeNumber;
+    //選択または勝敗によってactiveNomberで変える
+    public int activeNumber;
     public int ActiveNumber { set { activeNumber = value; } }
 
-    //ミニゲーム２勝敗取得
-
-
+ 
     //名前置き換え
     string[] nameRepTbl = { "まさし", "ひろき" };
 
@@ -93,15 +92,13 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     }
     private void Start()
     {
-        //PlayerPrefs.SetString("ScenarioNum", "0");
+        PlayerPrefs.SetString("ScenarioNum", "0");
+        activeNumber = PlayerPrefs.GetInt("MiniGame2Data", -1);
         _nowTextLine = 0;
         _isLoadEnd = false;
         _isSeEnd = false;
-        //LoadFile(Application.dataPath + "/Scenario/" + ScenarioDataName + ".txt");
         var _ScenarioNum = PlayerPrefs.GetString("ScenarioNum");
         LoadFile(Application.dataPath + "/Scenario/ScLov" + _ScenarioNum + ".txt");
-        //string x = "プレイヤー１";
-        //x = x.Replace("プレイヤー１", "name1");
         StartCoroutine("SakuraOut");
     }
 
@@ -218,22 +215,6 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     }
     #endregion
 
-    //private void FaceChange()
-    //{
-    //    if (activeNumber == 0)
-    //    {
-    //        Player3.SetActive(true);
-    //        Player4.SetActive(false);
-    //    }
-    //    else if (activeNumber == -1)
-    //    {
-    //        Player3.SetActive(false);
-    //        Player4.SetActive(true);
-    //    }
-    //    else Debug.LogError("activeNumberがどちらでもない");
-    //}
-
-
     private void ScenarioAction()
     {
         string[] msgs = _loadTextData[_nowTextLine].Split(',');
@@ -244,6 +225,26 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
             Debug.Log(_ScenarioSkip);
             //#sentaku,1#sentaku,2#sentaku,3
             //いずれかが終わったら共通の会話文にする
+        }
+        else if (msgs[0].Equals("#coninit"))
+        {
+
+        }
+        else if (msgs[0].Equals("#concheck"))
+        {
+
+        }
+        else if (msgs[0].Equals("#convib"))
+        {
+
+        }
+        else if (msgs[0].Equals("#timewait"))
+        {
+
+        }
+        else if (msgs[0].Equals("#spritechange"))
+        {
+
         }
         else if (_ScenarioSkip)
         {
@@ -280,9 +281,6 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
                 msgs[2] = msgs[2].Replace("敗北者", nameRepTbl[1 - activeNumber]);
             }
 
-            //_isMessageDisp = true;
-            //_message.text = msgs[1];
-            //_isMessageDisp = false;
             if (msgs.Length == 2)
             {
                 _message.text = msgs[1];
@@ -378,7 +376,6 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
             }
             else if (int.Parse(msgs[1]) == 0)
             {
-                Debug.Log("aaaaaaaaaaaaaaaa");
                 if (activeNumber == 0)
                 {
                     Player.sprite = PlayerList[0];
