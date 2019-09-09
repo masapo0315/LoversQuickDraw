@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using UnityEngine.SceneManagement;
 
-public class TalkManager : MonoBehaviour
+public class TalkManager : SingletonMonoBehaviour<TalkManager>
 {
     public int Talktext = 0; //縦
     private new int name = 0; //横
@@ -85,7 +85,7 @@ public class TalkManager : MonoBehaviour
     string[] nameRepTbl = { "まさし", "ひろき" };
 
     //Sceneまたはシナリオを読む
-    public bool _isSeEnd;
+    public bool _isSeEnd=false;
 
     private void Awake()
     {
@@ -93,7 +93,7 @@ public class TalkManager : MonoBehaviour
     }
     private void Start()
     {
-        PlayerPrefs.SetString("ScenarioNum", "0");
+        //PlayerPrefs.SetString("ScenarioNum", "0");
         _nowTextLine = 0;
         _isLoadEnd = false;
         _isSeEnd = false;
@@ -290,6 +290,7 @@ public class TalkManager : MonoBehaviour
             }
             else if (msgs.Length == 3)
             {
+                Debug.Log(msgs[1] + " "+msgs[2]);
                 _message.text = msgs[1];
                 _message2.text = msgs[2];
             }

@@ -29,13 +29,13 @@ public class ChoiceControl : MonoBehaviour {
         //_choiceManager.stopChoice = false;
         _choiceManager.cursor.SetActive(true);
         _choiceManager.cursor2.SetActive(true);
-        _choiceCursor.DebugCursorNumber();
-        //_choiceCursor.CursorNumber();
+        //_choiceCursor.DebugCursorNumber();
+        _choiceCursor.CursorNumber();
         //3択の指を表示してせんたくする
         Debug.Log("？？？？？");
         _choiceManager.stopChoice = false;
-        _choiceManager.DebugPushButton();
-        //_choiceManager.PushButton();
+        //_choiceManager.DebugPushButton();
+        _choiceManager.PushButton();
         _choiceManager.SetSelectCallback(SelectCallback);
     }
 

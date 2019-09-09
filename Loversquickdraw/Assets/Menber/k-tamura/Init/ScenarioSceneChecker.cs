@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScenarioSceneChecker : MonoBehaviour {
 
     TalkManager talkManager;
+    bool _once;
 	// Use this for initialization
 	void Start () {
 		
@@ -12,22 +13,33 @@ public class ScenarioSceneChecker : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (talkManager._isSeEnd)
+        if (TalkManager.Instance._isSeEnd&&!_once)
         {
+            _once = true;
             int i = int.Parse(PlayerPrefs.GetString("ScenarioNum"));
             switch (i)
             {
                 case 0:
-                    SceneLoadManager.LoadScene("");
+                    SceneLoadManager.LoadScene("MiniGame1");
+                    PlayerPrefs.SetString("ScenarioNum", i + 1.ToString());
                     break;
                 case 1:
-                    SceneLoadManager.LoadScene("");
+                    SceneLoadManager.LoadScene("Scenario");
+                    PlayerPrefs.SetString("ScenarioNum", i + 1.ToString());
+                    break;
+                case 2:
+                    SceneLoadManager.LoadScene("Minigame2");
+                    PlayerPrefs.SetString("ScenarioNum", i + 1.ToString());
+                    break;
+                case 3:
+                    SceneLoadManager.LoadScene("Scenario");
+                    PlayerPrefs.SetString("ScenarioNum", i + 1.ToString());
                     break;
                 default:
                     SceneLoadManager.LoadScene("Init");
                     break;
             }
-            PlayerPrefs.SetString("ScenarioNum", i + 1.ToString());
+           
         }
 		
 	}
