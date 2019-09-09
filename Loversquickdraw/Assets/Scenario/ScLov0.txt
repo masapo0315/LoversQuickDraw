@@ -117,6 +117,7 @@
 //ここから：選択１
 
 #sentaku,1
+#choiceface,1
 #name,択プレイヤー
 #message,一歩先んじた俺は、十字路で急ブレーキ、,迷いなく左へ舵を切る！
 #keywait,
@@ -158,6 +159,7 @@
 //ここから：選択２
 
 #sentaku,2
+#choiceface,1
 #name,択プレイヤー
 #message,一歩先んじた俺は、十字路で急ブレーキ、,迷いなくインド人を右に！
 #keywait,
@@ -179,6 +181,7 @@
 #keywait,
 
 #name,
+#choiceface,0
 #message,華恋はこの先の角を左に曲がった通りを,必ず通って登校する……。
 #keywait,
 
@@ -186,6 +189,7 @@
 #message,左に曲がった通りを……,通りを……（エコー）
 #keywait,
 
+#choiceface,1
 #name,択プレイヤー
 #message,あ“あ”―――っ！！？
 #keywait,
@@ -207,6 +211,7 @@
 //ここから：選択３
 
 #sentaku,3
+#choiceface,1
 #name,択プレイヤー
 #message,一歩先んじた俺は、急ブレーキを,キャンセルして猛進！十字路を――
 #keywait,
@@ -224,8 +229,8 @@
 #keywait,
 
 //ここまで：選択３
-
 #kyoutu,
+#choiceface,0
 #name,プレイヤー１
 #message,くそ、最初の接触は失敗か！,少女漫画も楽じゃねえな！
 #keywait,

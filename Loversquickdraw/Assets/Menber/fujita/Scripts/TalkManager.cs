@@ -87,17 +87,17 @@ public class TalkManager : MonoBehaviour
 
     private void Awake()
     {
-        //_isSeEnd = false;
+        _isSeEnd = false;
     }
     private void Start()
     {
         PlayerPrefs.SetString("ScenarioNum", "0");
         _nowTextLine = 0;
         _isLoadEnd = false;
-        //_isSeEnd = false;
-        LoadFile(Application.dataPath + "/Scenario/" + ScenarioDataName + ".txt");
+        _isSeEnd = false;
+        //LoadFile(Application.dataPath + "/Scenario/" + ScenarioDataName + ".txt");
         var _ScenarioNum = PlayerPrefs.GetString("ScenarioNum");
-        //LoadFile(Application.dataPath + "/Scenario/ScLov" + _ScenarioNum + ".txt");
+        LoadFile(Application.dataPath + "/Scenario/ScLov" + _ScenarioNum + ".txt");
         //string x = "プレイヤー１";
         //x = x.Replace("プレイヤー１", "name1");
         StartCoroutine("SakuraOut");
@@ -238,16 +238,16 @@ public class TalkManager : MonoBehaviour
         msgs[0] = msgs[0].ToLower();
         if (msgs[0].Equals("#kyoutu"))
         {
-            //_ScenarioSkip = false;
+            _ScenarioSkip = false;
             Debug.Log(_ScenarioSkip);
             //#sentaku,1#sentaku,2#sentaku,3
             //いずれかが終わったら共通の会話文にする
         }
-        //else if (_ScenarioSkip)
-        //{
-        //    _nowTextLine++;
-        //    return;
-        //}
+        else if (_ScenarioSkip)
+        {
+            _nowTextLine++;
+            return;
+        }
 
         else if (msgs[0].Equals("#name"))
         {
@@ -357,6 +357,30 @@ public class TalkManager : MonoBehaviour
                 Player2.sprite = null;
             }
         }
+        else if(msgs[0].Equals("#choiseface"))
+        {
+            if(int.Parse(msgs[1]) ==  -1)
+            if(ChoiceManager.spritFirstPlayer == 0)
+            {
+                Player3.SetActive(false);
+                Player.sprite = null;
+                Player4.SetActive(false);
+                Player2.sprite = null;
+            }
+            else if (int.Parse(msgs[1]) == 1)
+            {
+                if (ChoiceManager.spritFirstPlayer == 1)
+                {
+                    Player.sprite = PlayerList[0];
+                    Player3.SetActive(true);
+                }
+                else if (ChoiceManager.spritFirstPlayer == 2)
+                {
+                    Player.sprite = PlayerList2[0];
+                    Player4.SetActive(true);
+                }
+            }
+        }
         else if (_isSelectMessege)
             return;
         //会話文を1,2,3のいずれかに変える
@@ -371,8 +395,7 @@ public class TalkManager : MonoBehaviour
         {
             Debug.LogWarning(_ScenarioSkip);
             if (int.Parse(msgs[1]) != ChoiceManager.rootflag)//一致してないときに
-            //_ScenarioSkip = true;
-            Debug.LogError(_ScenarioSkip);
+            _ScenarioSkip = true;
             Debug.Log(msgs[0] + msgs[1]);
         }
 

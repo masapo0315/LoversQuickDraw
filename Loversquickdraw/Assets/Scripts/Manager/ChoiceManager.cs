@@ -121,6 +121,7 @@ public class ChoiceManager : MonoBehaviour
             spritFirstPlayer = 1;//１Pがおした
             Invoke("DestroyAorX", invokeTime * 2);//この選択肢を消す
             rootflag = 1;//選択肢の一番(左)
+            //LoveMetar.player1LoveMetar += 5;
             //talkManager.ChoiceRoot(firstsPlayer,1);
             Debug.Log("choice1-1");
             if (_callback != null)
@@ -140,6 +141,7 @@ public class ChoiceManager : MonoBehaviour
             spritFirstPlayer = 2;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
+            //LoveMetar.player2LoveMetar += 5;
             //talkManager.ChoiceRoot(firstsPlayer, 4);
             Debug.Log("choice2-1");
             if (_callback != null)
@@ -240,6 +242,7 @@ public class ChoiceManager : MonoBehaviour
             Invoke("GetAorX", invokeTime);
             stopChoice = true;
             talkManager.ActiveNumber = 0;
+            spritFirstPlayer = 1;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
             Debug.Log("choice1-1");
@@ -256,6 +259,7 @@ public class ChoiceManager : MonoBehaviour
             Invoke("GetAorX", invokeTime);
             stopChoice = true;
             talkManager.ActiveNumber = 1;
+            spritFirstPlayer = 2;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
             Debug.Log("choice2-1");
