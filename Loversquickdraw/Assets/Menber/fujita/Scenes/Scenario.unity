@@ -7508,11 +7508,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa34788a19a99543a04ed5bb5f229d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initPosition: []
-  _nowPosition: []
-  PositionLength: []
+  _initPosition:
+  - 0
+  - 0
+  _nowPosition:
+  - 0
+  - 0
+  PositionLength:
+  - 0
+  - 0
   _isPosition: 0
-  distance: 0
+  distance: 0.3
   _1PTrue: 0
   _2PTrue: 0
 --- !u!114 &1206461907

@@ -8,7 +8,7 @@ public class OVRPosition : SingletonMonoBehaviour<OVRPosition> {
     [SerializeField] float[] _nowPosition;
     [SerializeField] float[] PositionLength;
     public bool _isPosition;
-    [SerializeField] float distance=-0.3f;
+    [SerializeField] float distance=0.3f;
     public bool _1PTrue;
     public bool _2PTrue;
     public static void InitPosition()
@@ -22,11 +22,12 @@ public class OVRPosition : SingletonMonoBehaviour<OVRPosition> {
             if (!_1PTrue || !_2PTrue)
             {
                 Instance._nowPosition = VRControllerInit.NowVRControllerPos();
-                if (Instance._nowPosition[1] - Instance._initPosition[1] >= distance && !_1PTrue)
+                if (Instance._initPosition[1] - Instance._nowPosition[1] >= Instance.distance && !Instance._1PTrue)
                 {
+                    Debug.Log(Instance._initPosition[1] - Instance._nowPosition[1]);
                     Instance._1PTrue = true;
                 }
-                if (Instance._nowPosition[0] - Instance._initPosition[0] >= distance && Instance._2PTrue)
+                if (Instance._initPosition[0] - Instance._nowPosition[0] >= Instance.distance && !Instance._2PTrue)
                 {
                     Instance._2PTrue = true;
                 }

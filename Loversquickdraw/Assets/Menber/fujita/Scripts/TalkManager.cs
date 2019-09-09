@@ -80,8 +80,9 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     public int ActiveNumber { set { activeNumber = value; } }
     private bool _kokuhakuconwait;
     float _waitTime;
+    float _time;
     bool once;
- 
+    bool _timeWait;
     //名前置き換え
     string[] nameRepTbl = { "まさし", "ひろき" };
 
@@ -108,7 +109,9 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     //左クリックしたとき名前とコメントの表示、Debug.logは配列番号とそれに対して画面表示する文字を確認
     void Update()
     {
-        _waitTime =+ Time.deltaTime;
+
+        _waitTime += Time.deltaTime;
+        
         //if (Input.GetKeyDown(KeyCode.G))
         //{
         //    SceneManager.LoadScene("MiniGame2");
@@ -123,23 +126,36 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
             //        _isMessageDisp = false;
             //    }
             //}
+
             if (!_isWait)
             {
                 ScenarioAction();
             }
+            else if (_timeWait)
+            {
+                if (_waitTime - _time >= 3)
+                {
+                    _timeWait = false;
+                    _isWait = false;
+                }
+            }
+
             else if (_kokuhakuconwait)
             {
                 if (OVRPosition.Instance._1PTrue && OVRPosition.Instance._2PTrue)
                 {
                     OVRPosition.Instance._isPosition = false;
                     _isWait = false;
+                    _kokuhakuconwait = false;
                 }
-                if (_waitTime >= 3&&!once)
+                
+                if (_waitTime-_time >= 6 && !once)
                 {
                     once = true;
                     _message.text = "コントローラーを前に突き出してください。";
                     _message2.text = null;
                 }
+                
             }
             else if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.M))
             {
@@ -256,6 +272,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
         }
         else if (msgs[0].Equals("#concheck"))
         {
+            _time = _waitTime;
             _isWait = true;
             OVRPosition.Instance._isPosition = true;
             _kokuhakuconwait = true;
@@ -265,10 +282,13 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
         {
 
         }
-        //else if (msgs[0].Equals("#timewait"))
-        //{
-
-        //}
+        else if (msgs[0].Equals("#timewait"))
+        {
+            _isWait = true;
+            _time = _waitTime;
+            _timeWait = true;
+            
+        }
         else if (msgs[0].Equals("#bgsprite"))
         {
             SpriteManager.SpriteDisp(int.Parse(msgs[1]));
@@ -319,7 +339,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
             }
             else if (msgs.Length == 3)
             {
-                Debug.Log(msgs[1] + " "+msgs[2]);
+                Debug.Log(msgs[1] + " " + msgs[2]);
                 _message.text = msgs[1];
                 _message2.text = msgs[2];
             }
@@ -331,7 +351,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
             //fade呼び出し
             //cs.kansu();
         }
-        else if (msgs[0].Equals("#keywait")|| msgs[0].Equals("#timewait"))
+        else if (msgs[0].Equals("#keywait"))
         {
             StartCoroutine("SakuraOut");
             //StopCoroutine("TextDispCoroutine");
@@ -395,7 +415,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
                 Player2.sprite = null;
             }
         }
-        else if(msgs[0].Equals("#choiceface"))
+        else if (msgs[0].Equals("#choiceface"))
         {
             Debug.Log("choicefaceを通った");
             if (int.Parse(msgs[1]) == -1)
@@ -457,7 +477,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
         {
             Debug.LogWarning(_ScenarioSkip);
             if (int.Parse(msgs[1]) != ChoiceManager.rootflag)//一致してないときに
-            _ScenarioSkip = true;
+                _ScenarioSkip = true;
             Debug.Log(msgs[0] + msgs[1]);
         }
 
@@ -469,7 +489,11 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
             return;
         }
         else if (msgs[0].Equals("//"))
+        {
             Debug.Log("comment");
+            _nowTextLine++;
+            return;
+        }
         else
         {
             Debug.LogError(msgs[0] + "コマンドがないです");
