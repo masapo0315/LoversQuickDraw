@@ -21,8 +21,8 @@ public class MiniGame2Manager : MonoBehaviour
 
     [SerializeField] private PlayerCursorController playerCursorController;
     [SerializeField] private SoundManager sound;
+    [SerializeField] private TalkManager talkManager;
 
-    [HideInInspector] public bool _win1P = true;
     private bool _ruleAfter = false;
     private bool _switchJudg = false;
     private bool _ruleCheck1, _ruleCheck2 = false;
@@ -898,13 +898,13 @@ public class MiniGame2Manager : MonoBehaviour
         Debug.Log(_select2P);
         if (_select1P > _select2P)
         {
-            _win1P = true;
+            talkManager.ActiveNumber = 0;
             LoveMetar.player1LoveMetar += 5;
             Debug.Log("1Pの勝ち");
         }
         else
         {
-            _win1P = false;
+            talkManager.ActiveNumber = 1;
             LoveMetar.player2LoveMetar += 5;
             Debug.Log("2Pの勝ち");
         }
