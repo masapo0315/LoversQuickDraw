@@ -311,11 +311,11 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
         }
         else if (msgs[0].Equals("#bgmstart"))
         {
-            // SoundManager.Instance.
+            SoundManager.Instance.BGMFirstPlay();
         }
         else if (msgs[0].Equals("#bgmstop"))
         {
-            // SoundManager.Instance.
+            SoundManager.BGMStop();
         }
         else if (msgs[0].Equals("#voicenum"))
         {
