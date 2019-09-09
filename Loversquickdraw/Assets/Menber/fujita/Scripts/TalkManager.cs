@@ -104,6 +104,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
         var _ScenarioNum = PlayerPrefs.GetString("ScenarioNum");
         LoadFile(Application.dataPath + "/Scenario/ScLov" + _ScenarioNum + ".txt");
         StartCoroutine("SakuraOut");
+
     }
 
     //左クリックしたとき名前とコメントの表示、Debug.logは配列番号とそれに対して画面表示する文字を確認
@@ -280,7 +281,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
         }
         else if (msgs[0].Equals("#convib"))
         {
-
+            OVRControllerVib.ControllerVib(activeNumber);
         }
         else if (msgs[0].Equals("#timewait"))
         {
