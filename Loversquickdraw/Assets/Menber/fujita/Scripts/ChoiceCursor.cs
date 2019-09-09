@@ -38,11 +38,11 @@ public class ChoiceCursor : MonoBehaviour
     void Update()
     {
         CursorNumber();
-        //DebugCursorNumber();
+        DebugCursorNumber();
         Select();
     }
 
-    private void CursorNumber()
+    public void CursorNumber()
     {
         //←を押すと1Pを左の選択肢に
         if (OVRInput.GetDown(OVRInput.RawButton.RThumbstickLeft))
@@ -76,7 +76,7 @@ public class ChoiceCursor : MonoBehaviour
             LeftMenu = 2;
         }
     }
-    private void DebugCursorNumber()
+    public void DebugCursorNumber()
     {
         //←を押すと1Pを左の選択肢に
         if (Input.GetKeyDown(KeyCode.LeftArrow))

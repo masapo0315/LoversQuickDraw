@@ -9,6 +9,10 @@ public class ChoiceControl : MonoBehaviour {
     private System.Action<int> _callback;
     [SerializeField]
     private ChoiceManager _choiceManager;
+    [SerializeField]
+    private ChoiceCursor _choiceCursor;
+    [SerializeField]
+    private TalkManager _talkManager;
 
     private int _selectnum = 0;
 
@@ -20,7 +24,15 @@ public class ChoiceControl : MonoBehaviour {
             _fusenControl[i].SetText(msgs[i]);
             _fusenControl[i].gameObject.SetActive(true);
         }
-        //3択の指を表示してせんたくする　
+        Debug.Log("ここまで来た");
+        _choiceManager.stopChoice = false;
+        _choiceManager.cursor.SetActive(true);
+        _choiceManager.cursor2.SetActive(true);
+        _choiceCursor.DebugCursorNumber();
+        //_choiceCursor.CursorNumber();
+        //3択の指を表示してせんたくする
+        _choiceManager.DebugPushButton();
+        //_choiceManager.PushButton();
         _choiceManager.SetSelectCallback(SelectCallback);
     }
 
@@ -35,5 +47,6 @@ public class ChoiceControl : MonoBehaviour {
                 _fusenControl[i].gameObject.SetActive(false);
             }
         }
+        _talkManager._ScenarioSkip = false;
     }
 }

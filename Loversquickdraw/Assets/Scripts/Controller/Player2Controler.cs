@@ -24,7 +24,7 @@ public class Player2Controler : MonoBehaviour
     
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = player2.GetComponent<Rigidbody>();
         StartCoroutine("Delay");
     }
     
