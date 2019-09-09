@@ -17,23 +17,25 @@ public class ScenarioSceneChecker : MonoBehaviour {
         {
             _once = true;
             int i = int.Parse(PlayerPrefs.GetString("ScenarioNum"));
+            int SNum = i + 1;
             switch (i)
             {
+                
                 case 0:
                     SceneLoadManager.LoadScene("MiniGame1");
-                    PlayerPrefs.SetString("ScenarioNum", i + 1.ToString());
+                    PlayerPrefs.SetString("ScenarioNum", SNum.ToString());
                     break;
                 case 1:
                     SceneLoadManager.LoadScene("Scenario");
-                    PlayerPrefs.SetString("ScenarioNum", i + 1.ToString());
+                    PlayerPrefs.SetString("ScenarioNum", SNum.ToString());
                     break;
                 case 2:
                     SceneLoadManager.LoadScene("Minigame2");
-                    PlayerPrefs.SetString("ScenarioNum", i + 1.ToString());
+                    PlayerPrefs.SetString("ScenarioNum", SNum.ToString());
                     break;
                 case 3:
                     SceneLoadManager.LoadScene("Scenario");
-                    PlayerPrefs.SetString("ScenarioNum", i + 1.ToString());
+                    PlayerPrefs.SetString("ScenarioNum", SNum.ToString());
                     break;
                 default:
                     SceneLoadManager.LoadScene("Init");
