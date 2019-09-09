@@ -19,11 +19,12 @@ public class OVRControllerVib : SingletonMonoBehaviour<OVRControllerVib> {
     {
         if (i == 0)
         {
-            OVRHaptics.LeftChannel.Mix(Instance.hapticsClip);
+            //レフトライトを逆にしたことによりエラーの可能性あり
+            OVRHaptics.RightChannel.Mix(Instance.hapticsClip);
         }
         else if(i==1)
         {
-            OVRHaptics.RightChannel.Mix(Instance.hapticsClip);
+            OVRHaptics.LeftChannel.Mix(Instance.hapticsClip);
         }
     }
 }

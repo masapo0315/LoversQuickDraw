@@ -1,33 +1,28 @@
-﻿#BGMstart,
+﻿#bgmstart,
+#bgsprite,0
 
 #1pface,0
 #name,プレイヤー１
 #message,俺はプレイヤー１。,色濃（いろこい）高校の新入生だ。
 #keywait,
 
-#name,プレイヤー１
 #message,高校――すなわち青春。華々しい,“高校生”の期間、俺は…
 #keywait,
 
-#name,プレイヤー１
 #message,「彼女」と過ごしたいッッッ！！
 #keywait,
 
-#name,プレイヤー１
 #message,というのも、俺には長い間淡い恋情を,抱き続けてきた相手がいるのだ。
 #keywait,
 
 #1pface,-1
 #Karenface,1
-#name,プレイヤー１
 #message,その相手は……『夢宮華恋』,（ゆめみや　かれん）。
 #keywait,
 
-#name,プレイヤー１
 #message,才色兼備、容姿端麗加えて世話焼き…。,そんな彼女だが、俺の幼馴染だ。
 #keywait,
 
-#name,プレイヤー１
 #message,正直、高嶺の花かと思わなくもないが、,覚悟は決まっている。俺は彼女が好――
 #keywait,
 
@@ -48,7 +43,6 @@
 #keywait,
 
 
-#name,プレイヤー２
 #message,高校――すなわち青春。華々しい,“高校生”の期間、俺は…
 #keywait,
 
@@ -57,11 +51,9 @@
 #message,お前もそれやるんかァ！？,つーかプレイヤー２かよ、何のつもりだ？
 #keywait,
 
-#name,プレイヤー１
 #message,そう、忌々しいことに、華恋の幼馴染は,俺だけではない。
 #keywait,
 
-#name,プレイヤー１
 #message,このプレイヤー２との３人ですくすく,育ってきた仲良し３人組なのだ――！
 #keywait,
 
@@ -74,11 +66,9 @@
 #message,！！
 #keywait,
 
-#name,プレイヤー１
 #message,華恋はこの先の角を左に曲がった通りを,必ず通って登校する……。
 #keywait,
 
-#name,プレイヤー１
 #message,つまり、俺がこの道を通る理由は１つ！
 #keywait,
 
@@ -94,7 +84,6 @@
 #message,お前なんかに渡さない。夢宮華恋と,イチャイチャするのは――
 #keywait,
 
-#name,両プレイヤー
 #message,この俺だァァアアァァァッッ！！！！
 #keywait,
 
@@ -110,53 +99,43 @@
 #2pface,-1
 #label,左に曲がる,右に曲がる,直進
 
-#name,択プレイヤー
-#message,うおおおおおおおッッ！！！
-#keywait,
-
-//ここから：選択１
-
-#sentaku,1
-#choiceface,0
-#name,択プレイヤー
+//,ここから：選択１
+//,#lineplus,
 #message,一歩先んじた俺は、十字路で急ブレーキ、,迷いなく左へ舵を切る！
+#choiceface,0
+#sentaku,1
+#name,択プレイヤー
 #keywait,
 
-
-#name,択プレイヤー
 #message,思惑通り、角の向こうには華恋の頭が,見え――ない！？
 #keywait,
 
-
-#name,択プレイヤー
 #message,スピードを出しすぎた……！
 #keywait,
 
-
-#name,択プレイヤー
 #message,勢いよく飛び出した目に映った華恋の顔,顔ははるか遠く。
 #keywait,
 
-#name,択プレイヤー
 #message,続く非プレイヤーも同じ状況に見舞われた。
 #keywait,
 
-
+#choiceface,-1
 #Karenface,0
 #Voicenum,1-1
 #name,華恋
 #message,あれ、択プレイヤーくん！？もー、また,危ないことして―！気を付けてね～！？
 #keywait,
 
+#choiceface,0
 #Karenface,-1
 #name,択プレイヤー
 #message,しかし、遠目に目が合ったのは俺。,何はともあれ一歩リードだ。やったぜ。
 #keywait,
 
-//ここまで：選択１
+//,ここまで：選択１
 
 
-//ここから：選択２
+//,ここから：選択２
 
 #sentaku,2
 #choiceface,0
@@ -164,25 +143,25 @@
 #message,一歩先んじた俺は、十字路で急ブレーキ、,迷いなくインド人を右に！
 #keywait,
 
-#name,択プレイヤー
 #message,遅れた非プレイヤーが遅れて曲がる！,これは勝ったも同然……！
 #keywait,
 
 #nochoiceface,0
 #name,非プレイヤー
 #message,なあ、曲がり角逆じゃねえか！？
-
 #keywait,
+
+#choiceface,0
 #name,択プレイヤー
 #message,はあ！？
 
+#choiceface,-1
+#nochoiceface,-1
 #keywait,
-#name,択プレイヤー
 #message,走りながら、道順を思い出す――
 #keywait,
 
 #name,
-#choiceface,0
 #message,華恋はこの先の角を左に曲がった通りを,必ず通って登校する……。
 #keywait,
 
@@ -195,21 +174,18 @@
 #message,あ“あ”―――っ！！？
 #keywait,
 
-#name,択プレイヤー
 #message,確かにというか、既に目の前の道は,住宅街の行き止まり！アブナイ！
 #keywait,
 
-#name,択プレイヤー
 #message,うおおおお南無三ッ！！
 #keywait,
 
-#name,択プレイヤー
 #message,今度こそ急ブレーキ、１８０゜ターン！,しかしこれで勝負は振出しに戻る…！
 #keywait,
 
-//ここまで：選択２
+//,ここまで：選択２
 
-//ここから：選択３
+//,ここから：選択３
 
 #sentaku,3
 #choiceface,0
@@ -217,44 +193,54 @@
 #message,一歩先んじた俺は、急ブレーキを,キャンセルして猛進！十字路を――
 #keywait,
 
-#name,択プレイヤー
 #message,曲がり損ねたァァァ！！！
 #keywait,
 
 #nochoiceface,0
 #name,非プレイヤー
-#message,ふはははバカめ！チキレンースやってる,場合じゃないんだよ！！
+#message,ふはははバカめ！チキンレースやってる,場合じゃないんだよ！！
 #keywait,
 
 #name,択プレイヤー
 #message,非プレイヤーは後ろの角に消えてゆく…！,逆に出遅れてしまった！
 #keywait,
 
-//ここまで：選択３
+//,ここまで：選択３
+
+#choiceface,-1
+#nochoiceface,-1
 #kyoutu,
 
-#nochoiceface,0
-#choiceface,0
+#1pface,0
 #name,プレイヤー１
 #message,くそ、最初の接触は失敗か！,少女漫画も楽じゃねえな！
 #keywait,
 
+#2pface,0
 #name,プレイヤー２
 #message,こんなハナから汗臭い少女漫画が,あるかよ！
 #keywait,
 
-#name,プレイヤー１
+#1pface,-1
+#2pface,-1
+#name,
 #message,軽口を叩きつつも、二人の目は既に,次の曲がり角に向いていた。
 #keywait,
 
+#1pface,0
+#2pface,0
 #name,両プレイヤー
 #message,これが、正真正銘、最後のチャンス！
 #keywait,
 
-#name,プレイヤー２
+#1pface,-1
+#2pface,-1
+#name,
 #message,スタートは。同時であった。
 #keywait,
 
+#1pface,0
+#2pface,0
 #name,両プレイヤー
 #message,うおおおおおおおッ！！！
 #keywait,
