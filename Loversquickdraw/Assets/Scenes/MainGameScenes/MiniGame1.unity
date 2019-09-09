@@ -1292,6 +1292,7 @@ GameObject:
   - component: {fileID: 483472371}
   - component: {fileID: 483472370}
   - component: {fileID: 483472369}
+  - component: {fileID: 483472368}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player2
@@ -1299,6 +1300,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &483472368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 483472367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc3311da99df16459f428b3690eb14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player2Controler: {fileID: 920002277}
 --- !u!95 &483472369
 Animator:
   serializedVersion: 3
@@ -1521,7 +1534,7 @@ GameObject:
   - component: {fileID: 537677404}
   m_Layer: 0
   m_Name: P2Ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2436,8 +2449,9 @@ MonoBehaviour:
   player2: {fileID: 483472367}
   rb: {fileID: 483472371}
   _animator: {fileID: 483472369}
-  moveSpeed: 15
-  jumpPower: 15
+  moveSpeed: 7.5
+  jumpPower: 8
+  jump: 0
 --- !u!1 &1016976423
 GameObject:
   m_ObjectHideFlags: 0

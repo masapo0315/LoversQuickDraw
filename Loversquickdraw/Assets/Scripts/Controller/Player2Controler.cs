@@ -13,13 +13,13 @@ public class Player2Controler : MonoBehaviour
     //2Pコントローラー
     [SerializeField] private GameObject player2;
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private Animator _animator;
+    [SerializeField] public Animator _animator;
     [SerializeField] private float moveSpeed; //速度
     [SerializeField] private float jumpPower; //ジャンプ力
 
     private Vector3 force;
 
-    private bool jump = false;     //設置判定
+    public bool jump = false;     //設置判定
     private bool stop;
     
     void Start()
@@ -54,10 +54,12 @@ public class Player2Controler : MonoBehaviour
         if (transform.position.y > -0.4f)
         {
             SpeedUp(moveSpeed);
+            _animator.SetBool("Run", true);
         }
         if (transform.position.y < -0.6f)
         {
             SpeedUp(moveSpeed);
+            _animator.SetBool("Run", true);
         }
         if (transform.position.y >= 0f || transform.position.y <= -1)
         {
@@ -66,9 +68,9 @@ public class Player2Controler : MonoBehaviour
         }
     }
     //ジャンプの処理
-    void Jump()
+    public void Jump()
     {
-        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) && jump == false)
+        if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger) && jump == false)
         {
             _animator.SetBool("Jump", true);
             rb.velocity = new Vector3(5, jumpPower, 0);
@@ -78,18 +80,20 @@ public class Player2Controler : MonoBehaviour
     //ジャンプ時のコリジョン判定
     private void OnCollisionEnter(Collision col)
     {
+        /*
         switch (col.gameObject.tag)
         {
             case "ground":
                 _animator.SetBool("Jump", false);
                 jump = false;
+                Debug.Log("地面Now");
                 break;
             case "Obstacles":
                 Destroy(col.gameObject);
                 StartCoroutine("Delay");
                 break;
-        }
-        /*
+        }*/
+        
         if (col.gameObject.tag == "ground")
         {
             _animator.SetBool("Jump", false);
@@ -99,7 +103,7 @@ public class Player2Controler : MonoBehaviour
         {
             Destroy(col.gameObject);
             StartCoroutine("Delay");
-        }*/
+        }
     }
     //遅延処理
     private IEnumerator Delay()
