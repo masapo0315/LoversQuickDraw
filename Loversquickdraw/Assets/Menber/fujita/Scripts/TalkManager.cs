@@ -436,7 +436,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
         else if (msgs[0].Equals("#end"))
         {
             //PlayerPlrefsについて
-            //_isSeEnd = true;
+            _isSeEnd = true;
             _isLoadEnd = false;
             return;
         }
