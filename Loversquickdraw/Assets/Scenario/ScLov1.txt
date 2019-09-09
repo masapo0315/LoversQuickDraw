@@ -1,7 +1,7 @@
-﻿#BGMstart,
+﻿﻿#BGMstart,
 
 #name,勝利者
-#message,全力で路地を駆け抜け、一歩また一歩と,［敗北者］を引き離す。もらった。
+#message,全力で路地を駆け抜け、一歩また一歩と,敗北者を引き離す。もらった。
 #keywait,
 
 #name,勝利者
@@ -84,8 +84,7 @@
 #keywait,
 
 #name,勝利者
-#message,［敗北者］に逆転なんて許さないよう、,気を引き締めなければ！
+#message,敗北者に逆転なんて許さないよう、,気を引き締めなければ！
 #keywait,
 
 #BGMstop,
-#end

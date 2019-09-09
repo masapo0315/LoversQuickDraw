@@ -33,6 +33,7 @@ public class ChoiceManager : MonoBehaviour
 
     //trueの場合は1Pの勝ち、falseの場合は2Pの勝ち
     [HideInInspector] public bool firstsPlayer = false;
+    public int spritFirstPlayer = 0;
 
     private System.Action<int, int> _callback;
 
@@ -117,6 +118,7 @@ public class ChoiceManager : MonoBehaviour
             Invoke("GetAorX", invokeTime);//AorX意外を消す
             stopChoice = true;//Playerが選択時他プレイヤーがボタンを入力不可
             firstsPlayer = true;//１Pがおした
+            spritFirstPlayer = 1;//１Pがおした
             Invoke("DestroyAorX", invokeTime * 2);//この選択肢を消す
             rootflag = 1;//選択肢の一番(左)
             //talkManager.ChoiceRoot(firstsPlayer,1);
@@ -135,6 +137,7 @@ public class ChoiceManager : MonoBehaviour
             Invoke("GetAorX", invokeTime);
             stopChoice = true;
             firstsPlayer = false;
+            spritFirstPlayer = 2;
             Invoke("DestroyAorX", invokeTime * 2);
             rootflag = 1;
             //talkManager.ChoiceRoot(firstsPlayer, 4);
@@ -152,6 +155,7 @@ public class ChoiceManager : MonoBehaviour
             Invoke("GetBorY", invokeTime);
             stopChoice = true;
             firstsPlayer = true;
+            spritFirstPlayer = 1;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
             //talkManager.ChoiceRoot(firstsPlayer, 2);
@@ -169,6 +173,7 @@ public class ChoiceManager : MonoBehaviour
             Invoke("GetBorY", invokeTime);
             stopChoice = true;
             firstsPlayer = false;
+            spritFirstPlayer = 2;
             Invoke("DestroyBorY", invokeTime * 2);
             rootflag = 2;
             //talkManager.ChoiceRoot(firstsPlayer, 5);
@@ -186,6 +191,7 @@ public class ChoiceManager : MonoBehaviour
             Invoke("GetTrigger", invokeTime);
             stopChoice = true;
             firstsPlayer = true;
+            spritFirstPlayer = 1;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
             //talkManager.ChoiceRoot(firstsPlayer, 3);
@@ -203,6 +209,7 @@ public class ChoiceManager : MonoBehaviour
             Invoke("GetTrigger", invokeTime);
             stopChoice = true;
             firstsPlayer = false;
+            spritFirstPlayer = 2;
             Invoke("DestroyTrigger", invokeTime * 2);
             rootflag = 3;
             //talkManager.ChoiceRoot(firstsPlayer, 6);
