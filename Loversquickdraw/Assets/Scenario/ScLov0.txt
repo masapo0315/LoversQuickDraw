@@ -117,7 +117,7 @@
 //ここから：選択１
 
 #sentaku,1
-#choiceface,1
+#choiceface,0
 #name,択プレイヤー
 #message,一歩先んじた俺は、十字路で急ブレーキ、,迷いなく左へ舵を切る！
 #keywait,
@@ -159,7 +159,7 @@
 //ここから：選択２
 
 #sentaku,2
-#choiceface,1
+#choiceface,0
 #name,択プレイヤー
 #message,一歩先んじた俺は、十字路で急ブレーキ、,迷いなくインド人を右に！
 #keywait,
@@ -168,7 +168,7 @@
 #message,遅れた非プレイヤーが遅れて曲がる！,これは勝ったも同然……！
 #keywait,
 
-#nochoiceface,1
+#nochoiceface,0
 #name,非プレイヤー
 #message,なあ、曲がり角逆じゃねえか！？
 
@@ -190,7 +190,7 @@
 #message,左に曲がった通りを……,通りを……（エコー）
 #keywait,
 
-#choiceface,1
+#choiceface,0
 #name,択プレイヤー
 #message,あ“あ”―――っ！！？
 #keywait,
@@ -212,7 +212,7 @@
 //ここから：選択３
 
 #sentaku,3
-#choiceface,1
+#choiceface,0
 #name,択プレイヤー
 #message,一歩先んじた俺は、急ブレーキを,キャンセルして猛進！十字路を――
 #keywait,
@@ -221,7 +221,7 @@
 #message,曲がり損ねたァァァ！！！
 #keywait,
 
-#nochoiceface,1
+#nochoiceface,0
 #name,非プレイヤー
 #message,ふはははバカめ！チキレンースやってる,場合じゃないんだよ！！
 #keywait,

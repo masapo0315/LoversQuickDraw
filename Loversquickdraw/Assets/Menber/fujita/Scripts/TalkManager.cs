@@ -257,6 +257,8 @@ public class TalkManager : MonoBehaviour
             msgs[1] = msgs[1].Replace("プレイヤー２", nameRepTbl[1]);
             msgs[1] = msgs[1].Replace("択プレイヤー", nameRepTbl[activeNumber]);
             msgs[1] = msgs[1].Replace("非プレイヤー", nameRepTbl[1 - activeNumber]);
+            msgs[1] = msgs[1].Replace("勝利者", nameRepTbl[activeNumber]);
+            msgs[1] = msgs[1].Replace("敗北者", nameRepTbl[1 - activeNumber]);
             //FaceChange();
             _name.text = msgs[1];
         }
@@ -266,12 +268,16 @@ public class TalkManager : MonoBehaviour
             msgs[1] = msgs[1].Replace("プレイヤー２", nameRepTbl[1]);
             msgs[1] = msgs[1].Replace("択プレイヤー", nameRepTbl[activeNumber]);
             msgs[1] = msgs[1].Replace("非プレイヤー", nameRepTbl[1 - activeNumber]);
+            msgs[1] = msgs[1].Replace("勝利者", nameRepTbl[activeNumber]);
+            msgs[1] = msgs[1].Replace("敗北者", nameRepTbl[1 - activeNumber]);
             if (msgs.Length > 2)
             {
                 msgs[2] = msgs[2].Replace("プレイヤー１", nameRepTbl[0]);
                 msgs[2] = msgs[2].Replace("プレイヤー２", nameRepTbl[1]);
                 msgs[2] = msgs[2].Replace("択プレイヤー", nameRepTbl[activeNumber]);
-                msgs[2] = msgs[2].Replace("非プレイヤー", nameRepTbl[activeNumber]);
+                msgs[2] = msgs[2].Replace("非プレイヤー", nameRepTbl[1 - activeNumber]);
+                msgs[2] = msgs[2].Replace("勝利者", nameRepTbl[activeNumber]);
+                msgs[2] = msgs[2].Replace("敗北者", nameRepTbl[1 - activeNumber]);
             }
 
             //_isMessageDisp = true;
@@ -362,24 +368,22 @@ public class TalkManager : MonoBehaviour
         else if(msgs[0].Equals("#choiceface"))
         {
             Debug.Log("choicefaceを通った");
-            if (int.Parse(msgs[1]) == 0)
+            if (int.Parse(msgs[1]) == -1)
             {
-                if (activeNumber == 0)
-                {
-                    Player3.SetActive(false);
-                    Player.sprite = null;
-                    Player4.SetActive(false);
-                    Player2.sprite = null;
-                }
+                Player3.SetActive(false);
+                Player.sprite = null;
+                Player4.SetActive(false);
+                Player2.sprite = null;
             }
-            else if (int.Parse(msgs[1]) == 1)
+            else if (int.Parse(msgs[1]) == 0)
             {
-                if (activeNumber == 1)
+                Debug.Log("aaaaaaaaaaaaaaaa");
+                if (activeNumber == 0)
                 {
                     Player.sprite = PlayerList[0];
                     Player3.SetActive(true);
                 }
-                else if (activeNumber == 2)
+                else if (activeNumber == 1)
                 {
                     Player2.sprite = PlayerList2[0];
                     Player4.SetActive(true);
@@ -389,24 +393,21 @@ public class TalkManager : MonoBehaviour
         else if (msgs[0].Equals("#nochoiceface"))
         {
             Debug.Log("nochoicefaceを通った");
-            if (int.Parse(msgs[1]) == 0)
+            if (int.Parse(msgs[1]) == -1)
+            {
+                Player3.SetActive(false);
+                Player.sprite = null;
+                Player4.SetActive(false);
+                Player2.sprite = null;
+            }
+            else if (int.Parse(msgs[1]) == 0)
             {
                 if (activeNumber == 0)
-                {
-                    Player3.SetActive(false);
-                    Player.sprite = null;
-                    Player4.SetActive(false);
-                    Player2.sprite = null;
-                }
-            }
-            else if (int.Parse(msgs[1]) == 1)
-            {
-                if (activeNumber == 1)
                 {
                     Player2.sprite = PlayerList2[0];
                     Player4.SetActive(true);
                 }
-                else if (activeNumber == 2)
+                else if (activeNumber == 1)
                 {
                     Player.sprite = PlayerList[0];
                     Player3.SetActive(true);
