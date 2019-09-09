@@ -26,6 +26,10 @@ public class SpriteManager : SingletonMonoBehaviour<SpriteManager> {
             Instance.imageComponent.GetComponent<Image>().color = _color;
         }
     }
+    public static void SpriteDisp(int i)
+    {
+        Instance.imageComponent.GetComponent<Image>().sprite = Instance.SpriteImages[i];
+    }
     public static void SpriteSwitch(int i)
     {
         if (i >= 0)

@@ -1,4 +1,4 @@
-﻿#1pface,1
+﻿#1pface,0
 #name,プレイヤー1
 #message,流れる時と共に、彼女を、華恋を,落とすための努力を。
 #keywait,
@@ -7,7 +7,7 @@
 #message,色々あった。死のＢＢＱ、,血の海水浴、地獄の夏休み……
 #keywait,
 
-message,俺たちは事あるごとに鉢合わせ、,激闘を繰り広げてきた。
+#message,俺たちは事あるごとに鉢合わせ、,激闘を繰り広げてきた。
 #keywait,
 
 
@@ -84,8 +84,8 @@ message,俺たちは事あるごとに鉢合わせ、,激闘を繰り広げて�
 //,コントローラーポジションイニシャライズ
 #coninit,
 
-#1pface,1
-#2pface,1
+#1pface,0
+#2pface,0
 #name,両プレイヤー
 #message,付き合ってください――ッ！！
 #timewait,
@@ -97,7 +97,7 @@ message,俺たちは事あるごとに鉢合わせ、,激闘を繰り広げて�
 
 #name,両プレイヤー
 #message,訪れる静寂。男二人、頭を下げ,手を差し出す。
-#timewait
+#timewait,
 
 #message,華恋が、この想いを受け取って,くれるのなら、手を握ってくれるだろう
 #timewait,
@@ -110,7 +110,8 @@ message,俺たちは事あるごとに鉢合わせ、,激闘を繰り広げて�
 //,スプライト変更
 #spritechange,1
 #timewait
-#1pface,-1(敗北したほう)
+#1pface,-1
+//,(敗北したほう)
 #name,勝利者
 #message,…………！！！！！
 #keywait,
