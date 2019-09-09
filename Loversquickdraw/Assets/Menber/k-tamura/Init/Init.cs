@@ -37,6 +37,7 @@ public class Init : MonoBehaviour {
     /// </summary>
 	void Start()
     {
+        PlayerPrefs.SetString("ScenarioNum", "0");
         SceneLoadManager.LoadScene(SceneLoad);
     }
 

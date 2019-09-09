@@ -31,7 +31,7 @@ public class Player1Controler : MonoBehaviour
     void Update()
     {
         _camera.transform.localRotation = Quaternion.identity;
-        _camera.transform.localPosition = Vector3.zero;
+        _camera.transform.localPosition = new Vector3(0,0,-11f);
         if (stop == false)
         {
             Player1Move();

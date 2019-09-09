@@ -25,7 +25,7 @@ public class GameControl : MonoBehaviour {
     {
         //メッセージ表示
         var selMsgs = msgs.Where(x => x.IndexOf("#") < 0).ToArray();
-       // _ChoiceControl.SetSlectMessage(selMsgs, SelectCallback);
+        //_ChoiceControl.SetSlectMessage(selMsgs, SelectCallback);
 
         _isSelectMessege = true;
     }

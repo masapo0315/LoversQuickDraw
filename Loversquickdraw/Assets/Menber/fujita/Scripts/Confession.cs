@@ -74,7 +74,7 @@ public class Confession : MonoBehaviour
     {
         if (choice == true)
         {
-            ChoiceManager.PushButton();
+            //ChoiceManager.PushButton();
             if (ChoiceManager.getdestroyFlag())
             {
                 choice = false;
