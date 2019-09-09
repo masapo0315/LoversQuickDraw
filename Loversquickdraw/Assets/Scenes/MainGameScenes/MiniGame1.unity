@@ -1945,8 +1945,8 @@ MonoBehaviour:
   player1: {fileID: 404583203}
   rb: {fileID: 404583207}
   _animator: {fileID: 404583205}
-  moveSpeed: 15
-  jumpPower: 15
+  moveSpeed: 7.5
+  jumpPower: 8
 --- !u!1 &769219083
 GameObject:
   m_ObjectHideFlags: 0
