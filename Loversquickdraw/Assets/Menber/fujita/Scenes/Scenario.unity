@@ -5776,7 +5776,6 @@ MonoBehaviour:
   _name: {fileID: 469389193}
   _message: {fileID: 869735168}
   _message2: {fileID: 328224840}
-  ScenarioDataName: ScLov0
   SoundNum: 0
   _choiceControl: {fileID: 1909772963}
   _dispSpeed: 1
@@ -8209,7 +8208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM_Once: {fileID: 0}
   BGM_Loop: {fileID: 8300000, guid: 1982a829b36da684f9326332d81f080b, type: 3}
-  FirstBGM_Play: 1
+  FirstBGM_Play: 0
   FirstBGM_Loop: 1
   SEData:
   - {fileID: 8300000, guid: 4c0f2fa4fd0768c4394acf9371814648, type: 3}

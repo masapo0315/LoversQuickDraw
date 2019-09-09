@@ -22,19 +22,7 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     {
         if (FirstBGM_Play)
         {
-            if (BGM_Once != null)
-            {
-                AudioSources[0].volume = BGMSoundVolume / 100;
-                AudioSources[0].clip = BGM_Once;
-                AudioSources[0].Play();
-            }
-            else
-            {
-                AudioSources[0].volume = BGMSoundVolume / 100;
-                AudioSources[0].clip = BGM_Loop;
-                AudioSources[0].loop = true;
-                AudioSources[0].Play();
-            }
+            BGMFirstPlay();
         }
 
     }
@@ -49,6 +37,22 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         }
         FadeOutScript();
     }
+    public void BGMFirstPlay()
+    {
+        if (BGM_Once != null)
+        {
+            AudioSources[0].volume = BGMSoundVolume / 100;
+            AudioSources[0].clip = BGM_Once;
+            AudioSources[0].Play();
+        }
+        else
+        {
+            AudioSources[0].volume = BGMSoundVolume / 100;
+            AudioSources[0].clip = BGM_Loop;
+            AudioSources[0].loop = true;
+            AudioSources[0].Play();
+        }
+    }
     /// <summary>
     /// BGM_Loop BGMはAudioSources[0]使用
     /// </summary>
@@ -58,6 +62,11 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         AudioSources[0].clip = BGM_Loop;
         AudioSources[0].loop = true;
         AudioSources[0].Play();
+    }
+    public static void BGMStop()
+    {
+        Instance.AudioSources[0].Stop();
+        Instance.AudioSources[0].clip = null;
     }
     /// <summary>
     /// SEを再生する用 AudioSourceが最低でも3個必要
