@@ -76,7 +76,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     [SerializeField] private GameObject cursor;
     [SerializeField] private GameObject cursor2;
     //選択または勝敗によってactiveNomberで変える
-    public int activeNumber;
+    private int activeNumber;
     public int ActiveNumber { set { activeNumber = value; } }
 
  
@@ -92,6 +92,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     }
     private void Start()
     {
+        //デバッグ用で残る
         PlayerPrefs.SetString("ScenarioNum", "0");
         activeNumber = PlayerPrefs.GetInt("MiniGame2Data", -1);
         _nowTextLine = 0;
