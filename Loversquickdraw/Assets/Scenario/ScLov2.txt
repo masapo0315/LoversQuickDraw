@@ -1,200 +1,298 @@
-﻿ #BGMStart,
+﻿﻿#BGMStart,
 
-#1pface,1#name,プレイヤー１
-#message,放課後。俺は偶然を装い一緒に帰るため,扉の陰から華恋を見守っていた。
-#keywait,
+#name,
+#message,それから数日が経ち、通常授業が,始まったころには……
+#keywait
+
+#1pface,0
+#name,プレイヤー１
+#message,しっかし、珍しい学校だよな。,昼休みは屋上開放とは
+#keywait
+
+#Karenface,1
+#name,華恋
+#message,ふふ、でも、そのおかげで,皆で美味しいお昼が食べられるね？
+#keywait
+
+#2pface,0
+#name,プレイヤー２
+#message,（笑顔が眩しすぎる、天使かな？）
+#keywait
+
+#Karenface,-1
+#1pface,-1
+#2pface,-1
+#name,
+#message,３人揃って、屋上で昼食を摂るように,なっていた。
+#keywait
+
+#name,
+#message,もちろん、俺たちは下心――もとい、,  純粋な恋心からの行動であるが。
+#keywait
+
+
+#Karenface,1
+#name,華恋
+#message,でも、私は楽しいよ。,３人で食べるごはん。
+#keywait
+
+
+#name,
+#message,！！
+#keywait
+
+#name,華恋
+#message,昔……私たちがまだちっちゃい頃ね？,ミニピクニックだーって言って、
+#keywait
+
+#name,華恋
+#message,わざわざ近くの公園に、お昼食べるため,だけに集まったりしたの、覚えてる？
+#keywait
+
+#name,プレイヤー２
+#message,あー……あれな。懐かしい……
+#keywait
+
+#name,
+#message,華恋の言うとおり、そんな無邪気な時期
+,もあった。
+#keywait
+
+#name,華恋
+#message,ふふ、２人ともボーっとしちゃって。,それ、いただきっ！
+#keywait
+
+#name,両プレイヤー
+#message,あ” っ！？
+#keywait
+
+#name,
+#message,華恋は素早く箸を伸ばし、俺たちの,弁当箱に入っていた卵焼きを口へ運ぶ。
+#keywait
+
+#name,
+#message,固まる男２人をよそに、可愛らしい,盗賊は戦利品に舌鼓。
+#keywait
+
+#name,華恋
+#message,ん～、おいしい！さすがお母様方！,片方は甘くて片方は甘くないね
+#keywait
+
+#name,華恋
+#message,どっちがどっちなんだろ?
+#keywait
+
+#Karenface,-1
+#1pface,0
+#2pface,0
+#name,
+#message,衝撃が走る。
+#keywait
+
+
+#name,
+#message,卵焼きには、大きく分けて２つが,存在する。
+#keywait
+
+#name,
+#message,華恋の言った通り。,「甘いもの」と「甘くないもの」だ。
+#keywait
+
+#name,
+#message,そしてその２つの間には、,海より深い断絶が存在する――
+#keywait
+
+#name,
+#message,華恋も人間である以上、,必ず好みがあるはずだ。
+#keywait
+
+
+#name,
+#message,うまく好みに誘導できれば、,　仲が深まる……のか……！？
+#keywait
 
 #1pface,-1
-#Karenface,4
-#Voicenum,2-1
-#name,華恋#message,あれ？ここにもない……,ん～、どこいっちゃったんだろ……
-#keywait,
+#2pface,-1
+#label,甘いほうが俺のだよ,甘くないのが俺だ,お返しだ、唐揚げもーらい！
 
-#Karenface,-1
-#name,プレイヤー１#message,しかし、華恋はなかなか教室を出ない。,何かを探しているような様子だ。
-#keywait,
-#name,プレイヤー１
-#message,掛けられたバッグには、彼女の,好きなキャラのグッズが揺れている。#keywait,
-
-#name,プレイヤー１
-#message,声をかけるチャンスだ！,教室には華恋だけ。つまり二人きりッ！
-#keywait,
-
-#2pface,1
-#name,プレイヤー２#message,あれ、華恋じゃないか。どうしたんだ、,こんな遅くまで#keywait,
-
-#Karenface,4
-#Voicenum,2-2
-#name,華恋
-#message,あれ、［Ｐ　２］くん？#keywait,
-
-#name,プレイヤー１
-#message,あいつ……ロッカーの中から……！！,くそ、遅れてたまるか！
-#keywait,
-
-#1pface,
-#name,プレイヤー１#message,あれ、二人揃ってどうしたんだよ？
-#keywait,
-
-#Voicenum,2-3
-#name,華恋#message,［Ｐ　１］くんも！,……実はね、探し物をしてるの#keywait,
-#name,プレイヤー１#message,探し物？何かなくしたのか？
-#keywait,
-
-#Voicenum,2-4
-#name,華恋#message,そうなの。髪飾りなんだけど……。,大事にしてたから、諦めきれなくて#keywait,
-#name,プレイヤー１
-#message,確かに、いつもしている髪飾りがない。,何かの拍子で落としてしまったのだろう#keywait,
-#name,プレイヤー２
-#message,そうか……そういうことなら任せろ。,俺も一緒に探すよ。
-#keywait,
-
-#Karenface,-1
-#Karenface,5
-#Voicenum,2-5
-#name,華恋
-#message,え、ほんと！？悪いよう……
-#keywait,
-
-#Voicenum,2-6#name,華恋#message,でも、そういうことなら,頼らせてもらっちゃおうかな？
-#keywait,
-#name,プレイヤー１
-#message,くそ、俺が言おうとしたことばかり…！,しかし、これはチャンスでもある――#keywait,
-#name,両プレイヤー#message,髪飾りを見つければ、好感度急上昇,間違いなし！！
-#keywait,
-
-#Voicenum,2-7
-#name,華恋#message,二人とも、ありがとうね。,それで、落とした髪飾りなんだけど……
-#keywait,
-
-#Voicenum,2-8
-#name,華恋
-#message,スーパールーパー、っていう,キャラクターのものなの。#keywait,#name,両プレイヤー
-#message,……スーパールーパー？？？？？
-#keywait,
+//甘い
 
 
-#Karenface,-1
-#Karenface,4
-#Voicenum,2-9
-#name,華恋#message,そう、スーパールーパー。知らない？#keywait,
+#sentaku,1
+#name, 択プレイヤー
+#message,俺は華恋の好みを知らない。,俺とした事が情けないが、一か八かだ。
+#keywait
+
+#name, 択プレイヤー
+#message,そう決心した俺は、口を開いた――,のが、間違いだった。
+#keywait
 
 #name,両プレイヤー
-#message,……まるで聞いたことがない。,しかし……。#keywait,
+#message,多分俺だわ、甘いやつ
+#keywait
 
-#1pface,-1
-#2pface,-1#sentaku,ああ、知ってるよ,……聞いたことはあるな,知らないな、なんだそれ？　
-ここから：選択１
+#name, 択プレイヤー
+#message,……ん？
+#keywait
 
-#sentaku1,
-#Karenface,-1
-#Karenface,5
-#Voicenum,2-10#name,華恋
-#message,ほんと！？　嬉しいな、なかなか,知ってる人いなくて悲しかったんだよー
-#keywait,
-
-#Voicenum,2-11
+#Karenface,0
 #name,華恋
-#message,ほら、これ！買ったときの写真！,かわいいでしょ～
-#keywait,
+#message,？
+#keywait
 
-#Voicenum,2-12#name,華恋#message,も～、［択　Ｐ］ってば水くさいよ～#keywait,
+#name, 択プレイヤー
+#message,……しまった。
+#keywait
 
-#Voicenum,2-13
-#name,華恋#message,知ってるならもっと,早く言ってくれれば良いのに～#keywait,
+#name, 択プレイヤー
+#message,華恋の好みと合わせることに集中して、,失念していた。
+#keywait
 
-#name,択プレイヤー
-#message,……だ、だいぶお気に入りみたいだな。,なら、なおさら見つけてやらないとな！#keywait,
+#name, 択プレイヤー
+#message,俺の弁当に入っていたのは、,「甘くない卵焼き」だということを。
+#keywait
 
-#Voicenum,
+#name, 択プレイヤー
+#message,その俺が嘘をつけば必然、わけがわからなくなるだろ……！
+#keywait
+
+#name,非プレイヤー
+#message,あれ、片方は甘くないんじゃないのか？
+#keywait
+
+
 #name,華恋
-#message,うん……！　頼りにしてるよ、,［択　Ｐ］くん！
-#keywait,
+#message,ん～、勘違いだったかな？
+#keywait
 
-#Karenface,-1
-#name,択プレイヤー#message,……「やっぱり知らない」とは,とても言えなかった。#keywait,#name,択プレイヤー#message,とても良い反応……だったが、,少し後ろめたいな。……後で調べよう。#keywait,ここまで：選択１ここから：選択２
+#name, 択プレイヤー
+#message,はは……。
+#keywait
 
-#sentaku2,#Karenface5,1
-#Karenface4,-1
-#Voicenum,2-14
-#name,華恋#message,うーん、やっぱりそんな感じなのかな？,友達もみんなそういう反応なの。#keywait,
 
-#Voicenum,2-15-2
-#name,華恋
-#message,こんなにかわいいのにね？
-#keywait,
-#name,択プレイヤー
-#message,この写真のが落としたやつか？,スーパールーパー、だったか#keywait,
-#name,択プレイヤー#message,かわいい……かわいい……？,かわいい……のか…………？？#keywait,
+#name, 択プレイヤー
+#message,……変な空気にしてしまった。,悪いことはするものではない……。
+#keywait
 
-#Voicenum,2-16#name,華恋#message,うん、買った時に写真撮っておいたの！,えへへ、やっぱりかわいい……
-#keywait,
+//選択肢
+//甘くないやつ
 
-#Voicenum,2-17
-#name,華恋#message,ともかく！一緒に探してくれるのは,嬉しいな！頼りにしてるからね？#keywait,
-#name,択プレイヤー
-#message,反応はまずまず、だろうか。,しかし髪飾りを見つければ問題なしだ！#keywait,
-ここまで：選択２
-
-ここから：選択３
 
-#sentaku3,
-#BGMStop,
-#Voicenum,2-18#name,華恋
-#message,えっ#keywait,
-#name,択プレイヤー
-#message,瞬間、空気が凍った。,もし音楽が流れていたなら止まる勢いで#keywait,
+#sentaku,2
+#name, 択プレイヤー
+#message,俺は華恋の好みを知らない。,俺とした事が情けないが、一か八かだ。
+#keywait
 
-#Voicenum,2-19
-#name,華恋#message,知らないの、スーパールーパー――？,今売ってないのかな、そんなわけ……
-#keywait,
+#name, 択プレイヤー
+#message,そう決心した俺は、口を開いた――,のが、間違いだった。
+#keywait
 
-#name,択プレイヤー#message,心なしか華恋の目から光が失われている,ような気さえする。コワイ！#keywait,
-
-#Voicenum,2-20
-#name,華恋
-#message,そんな、スーパールーパー……#keywait,
-
-#Voicenum,2-21
-#name,華恋
-#message,それほどに人気のないキャラクター,だというの……！？#keywait,
-#name,択プレイヤー
-#message,しかもどうやらひどく動揺している。,余程の地雷を踏んでしまったのか。
-#keywait,
-
-#Voicenum,2-22
-#name,華恋#message,うそ、嘘だと言ってよ［択　Ｐ］くん！,ほらこれ！買ったときの写真！#keywait,
-#name,択プレイヤー#message,……いや、他で見たことはないなあ#keywait,#Voicenum,2-23
-#name,華恋
-#message,嘘だあーっ！,スーパールーパー……#keywait,#name,択プレイヤー#message,そ、そんなにお気に入りだったのか…。,見つかると良いな！
-#keywait,
-
-#Voicenum,2-24
-#name,華恋
-#message,うん……ありがと……#keywait,
-#BGMStart,
-#name,択プレイヤー
-#message,理不尽な気もするが、言葉選びを,間違えてしまったようだ。#keywait,
-#name,択プレイヤー#message,何とかして髪飾りを見つけ、,汚名を払拭するしかない！#keywait,
-ここまで：選択３
-
-#kyoutuu,#name,プレイヤー１#message,で、この写真のを探せば良いんだな？
-#keywait,
-
-#Voicenum,2-25
-#name,華恋#message,うん。でも、どこでなくしたかも,覚えてなくって。今日なのは確かだけど#keywait,
-
-#Voicenum,2-26
-#name,華恋
-#message,あちこち回ることになっちゃうかも。,ゴメンね。#keywait,
-#name,プレイヤー２#message,なに、お安い御用さ。,俺に任せとけって！
-#keywait,
-#name,プレイヤー２
-#message,そう、「俺」に……！#keywait,
 #name,両プレイヤー
-#message,華恋の髪飾りを探し出すのは――#keywait,
-#name,両プレイヤー
-#message,この俺だ！！！！#keywait,
+#message,多分俺だわ、甘くないやつ
+#keywait
+
+#name, 択プレイヤー
+#message,……ん？
+#keywait
+
+#Karenface,0
+#name,華恋
+#message,？
+#keywait
+
+#name, 択プレイヤー
+#message,……しまった。
+#keywait
+
+#name, 択プレイヤー
+#message,華恋の好みと合わせることに集中して、,失念していた。
+#keywait
+
+#name, 択プレイヤー
+#message,俺の弁当に入っていたのは、,「甘い卵焼き」
+だということを。
+#keywait
+
+#name, 択プレイヤー
+#message,その俺が嘘をつけば必然、,わけがわからなくなるだろ……！
+#keywait
+
+#name,非プレイヤー
+#message,あれ、片方は甘いんじゃないのか？
+#keywait
+
+#name,華恋
+#message,ん～、勘違いだったかな？
+#keywait
+
+#name, 択プレイヤー
+#message,はは……。
+#keywait
+
+#name,
+#message,……変な空気にしてしまった。,悪いことはするものではない……。
+#keywait
+
+//選択肢
+
+//からあげ
+
+#sentaku,3
+#name, 択プレイヤー
+#message,いや、そんなことはどうでもいい。,食べ盛りから昼食を奪った罪は重い…！
+#keywait
+
+#name, 択プレイヤー
+#message,うお、やりおったな！,ならば俺もッ！そうらいただきッ！
+#keywait
+
+#Karenface,2
+#name,華恋
+#message,ああ～っ、私のから揚げ！？
+#keywait
+
+#name, 択プレイヤー
+#message,うむ、ジューシー。
+#keywait
+
+#name,華恋
+#message,うええひどいよ択プレイヤーくん！,……あはは、これも懐かしいね
+#keywait
+
+#name, 択プレイヤー
+#message,……そうか？
+#keywait
+
+#Karenface,-1
+#Karenface,1
+#name,華恋
+#message,うん、「ピクニック」の時も、,こんな感じだったなぁって
+#keywait
+
+#name,華恋
+#message,……それはそれとして！
+#keywait
+
+#name,華恋
+#message,から揚げと卵焼きでは、,釣り合いが取れていないと思います！
+#keywait
+
+#name, 択プレイヤー
+#message,……その心は？
+#keywait
+
+#name,華恋
+#message,卵焼き、もういっこちょうだい？
+#keywait
+
+#name, 
+#message,おお、存外良い雰囲気。,こういう積み重ねが大事なんだよな。
+#keywait
+
+#name,
+#message,……結局、華恋の好みは,どっちだったんだろうな？
+#keywait
+
 
 #BGMStop,
-#end
+#end

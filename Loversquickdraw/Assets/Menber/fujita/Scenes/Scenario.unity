@@ -5776,7 +5776,7 @@ MonoBehaviour:
   _name: {fileID: 469389193}
   _message: {fileID: 869735168}
   _message2: {fileID: 328224840}
-  ScenarioDataName: Sctest
+  ScenarioDataName: ScLov0
   SoundNum: 0
   _choiceControl: {fileID: 1909772963}
   _dispSpeed: 1
@@ -5829,6 +5829,7 @@ MonoBehaviour:
   choiceCursor: {fileID: 840345694}
   stopChoice: 1
   firstsPlayer: 0
+  spritFirstPlayer: 0
 --- !u!114 &840345694
 MonoBehaviour:
   m_ObjectHideFlags: 0
