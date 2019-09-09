@@ -18,8 +18,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainGameScenes/PVScene.unity
     guid: 35917a3034bc17a48ad64ef3c4124eb4
   - enabled: 1
-    path: Assets/Scenes/MainGameScenes/InputPlayer1Name.unity
-    guid: 422578714bc8c3f46a7f804a104ea68a
+    path: Assets/Scenes/MiniGame1Manual.unity
+    guid: ba481f6102323c84bb865012fd3955cf
   - enabled: 1
     path: Assets/Menber/fujita/Scenes/Scenario.unity
     guid: 1a775c647d829c544b03f9cc7cec412e

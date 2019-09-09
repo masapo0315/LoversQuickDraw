@@ -42,8 +42,18 @@ public class Manual : MonoBehaviour {
     //ボタン入力でフラグの切り替え(falseにも切り替え可)
     private void FlackChange()
     {
-        Debug.Log(Player1Enter);
-        Debug.Log(Player2Enter);
+        if (Player1Enter == false && Input.GetKeyDown(KeyCode.A))
+        {
+            Player1Enter = true;
+            Debug.Log(Player1Enter);
+        }
+
+        if (Player2Enter == false && Input.GetKeyDown(KeyCode.B))
+        {
+            Player2Enter = true;
+            Debug.Log(Player2Enter);
+        }
+        
     }
 
 }
