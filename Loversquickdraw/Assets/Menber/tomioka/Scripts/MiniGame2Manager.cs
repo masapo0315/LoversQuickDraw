@@ -877,7 +877,7 @@ public class MiniGame2Manager : MonoBehaviour
     private void Scene()
     {
         //告白パートに飛ぶ
-        SceneLoadManager.LoadScene("Title");
+        SceneLoadManager.LoadScene("Scenario");
     }
 
     private void DestroyPlace()
@@ -898,13 +898,13 @@ public class MiniGame2Manager : MonoBehaviour
         Debug.Log(_select2P);
         if (_select1P > _select2P)
         {
-            talkManager.ActiveNumber = 0;
+            PlayerPrefs.SetInt("MiniGame2Data",0);
             LoveMetar.player1LoveMetar += 5;
             Debug.Log("1Pの勝ち");
         }
         else
         {
-            talkManager.ActiveNumber = 1;
+            PlayerPrefs.SetInt("MiniGame2Data", 1);
             LoveMetar.player2LoveMetar += 5;
             Debug.Log("2Pの勝ち");
         }
