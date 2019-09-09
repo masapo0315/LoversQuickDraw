@@ -24,14 +24,14 @@ public class Player2Controler : MonoBehaviour
     
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = player2.GetComponent<Rigidbody>();
         StartCoroutine("Delay");
     }
     
     void Update()
     {
         _camera.transform.localRotation = Quaternion.identity;
-        _camera.transform.localPosition = Vector3.zero;
+        _camera.transform.localPosition = new Vector3(0,-29.5f,-11);
         if (stop == false)
         {
             Player2Move();
