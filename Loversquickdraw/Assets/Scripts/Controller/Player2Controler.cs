@@ -106,7 +106,7 @@ public class Player2Controler : MonoBehaviour
         }
     }
     //遅延処理
-    private IEnumerator Delay()
+    public IEnumerator Delay()
     {
         stop = true;
         yield return new WaitForSeconds(2.0f);

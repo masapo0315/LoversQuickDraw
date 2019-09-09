@@ -16,7 +16,7 @@ public class Player1Trigger : MonoBehaviour {
         if (col.gameObject.tag == "Obstacles")
         {
             Destroy(col.gameObject);
-            StartCoroutine("Delay");
+            player1Controler.StartCoroutine("Delay");
         }
     }
 }
