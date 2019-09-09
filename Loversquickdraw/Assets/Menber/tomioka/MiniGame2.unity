@@ -4662,7 +4662,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5331aa2836556064d859b89205a5688a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 29b0fd876441c4d44b57ba3df5d33ef4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15668,7 +15668,7 @@ MonoBehaviour:
   _goImage: {fileID: 1728047255}
   playerCursorController: {fileID: 1770000128}
   sound: {fileID: 1770000130}
-  _win1P: 1
+  talkManager: {fileID: 0}
   _ready1: 0
   _ready2: 0
   _lovePoint: 5
