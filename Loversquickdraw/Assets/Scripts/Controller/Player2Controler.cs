@@ -20,7 +20,7 @@ public class Player2Controler : MonoBehaviour
     private Vector3 force;
 
     public bool jump = false;     //設置判定
-    private bool stop;
+    public bool stop;
     
     void Start()
     {
@@ -92,7 +92,7 @@ public class Player2Controler : MonoBehaviour
         }
     }
     //遅延処理
-    private IEnumerator StartDeray()
+    private IEnumerator StartDelay()
     {
         stop = true;
         yield return new WaitForSeconds(7.0f);

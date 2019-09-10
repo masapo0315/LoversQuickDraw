@@ -20,7 +20,7 @@ public class Player1Controler : MonoBehaviour
     private Vector3 force;
 
     public bool jump = false;     //設地判定
-    private bool stop;
+    public bool stop;
     
     void Start()
     {
