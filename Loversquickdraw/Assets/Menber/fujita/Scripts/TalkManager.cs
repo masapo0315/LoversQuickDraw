@@ -35,7 +35,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     private bool _isSelectMessege = false;
 
     private List<string> _loadTextData = new List<string>();
-    private int _nowTextLine = 0;
+    public int _nowTextLine = 0;
     private bool _isLoadEnd = false;
     public bool _isWait = false;
     // private bool _isMessageDisp = false;

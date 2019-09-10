@@ -5847,6 +5847,7 @@ MonoBehaviour:
   _message2: {fileID: 328224840}
   SoundNum: 0
   _choiceControl: {fileID: 1909772963}
+  _isWait: 0
   _dispSpeed: 1
   _ScenarioSkip: 0
   FaceList:
@@ -6617,8 +6618,8 @@ MonoBehaviour:
   SpriteImages:
   - {fileID: 21300000, guid: 0005ff5dee479cf43a0b14d85919dd03, type: 3}
   - {fileID: 21300000, guid: d419edffd3674f94b90076a6e28f3541, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: b319af52da537444e8c1acea2329f164, type: 3}
+  - {fileID: 21300000, guid: 012ff2556487516449b8ba866e9c76ca, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
