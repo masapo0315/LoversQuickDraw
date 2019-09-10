@@ -80,7 +80,6 @@
 
 #Karenface,-1
 #choiceface,-1
-#bgsprite,7
 #name,勝利者
 #message,さっきの半ベソはどこへやら、,からかうように笑う華恋。
 #keywait,
@@ -114,7 +113,7 @@
 #message,不慣れな手つきではあるが、無事に髪飾り,を着け終わると、もう完全下校時刻だった
 #keywait,
 
-#gayzou,-1
+#bgsprite,3
 #Karenface,1
 #Voicenum,40
 #name,華恋
