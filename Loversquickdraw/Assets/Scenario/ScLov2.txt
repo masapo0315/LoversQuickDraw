@@ -8,7 +8,7 @@
 
 #1pface,-1
 #Karenface,4
-#Voicenum,2-1
+#Voicenum,6
 #name,華恋
 #message,あれ？ここにもない……,ん～、どこいっちゃったんだろ……
 #keywait,
@@ -30,7 +30,7 @@
 #keywait,
 
 #Karenface,4
-#Voicenum,2-2
+#Voicenum,7
 #name,華恋
 #message,あれ、プレイヤー２くん？
 #keywait,
@@ -43,7 +43,7 @@
 #message,あれ、二人揃ってどうしたんだよ？
 #keywait,
 
-#Voicenum,2-3
+#Voicenum,8
 #name,華恋
 #message,プレイヤー１くんも！,……実はね、探し物をしてるの
 #keywait,
@@ -52,7 +52,7 @@
 #message,探し物？何かなくしたのか？
 #keywait,
 
-#Voicenum,2-4
+#Voicenum,9
 #name,華恋
 #message,そうなの。髪飾りなんだけど……。,大事にしてたから、諦めきれなくて
 #keywait,
@@ -68,14 +68,13 @@
 
 #Karenface,-1
 #Karenface,5
-#Voicenum,2-5
+#Voicenum,10
 #name,華恋
 #message,え、ほんと！？悪いよう……
 #keywait,
 
-//,会話の流れがおかしい
 
-#Voicenum,2-6
+#Voicenum,11
 #message,でも、そういうことなら,頼らせてもらっちゃおうかな？
 #keywait,
 
@@ -87,12 +86,12 @@
 #message,髪飾りを見つければ、好感度急上昇,間違いなし！！
 #keywait,
 
-#Voicenum,2-7
+#Voicenum,12
 #name,華恋
 #message,二人とも、ありがとうね。,それで、落とした髪飾りなんだけど……
 #keywait,
 
-#Voicenum,2-8
+#Voicenum,13
 #message,スーパールーパー、っていう,キャラクターのものなの。
 #keywait,
 
@@ -103,7 +102,7 @@
 
 #Karenface,-1
 #Karenface,4
-#Voicenum,2-9
+#Voicenum,14
 #name,華恋
 #message,そう、スーパールーパー。知らない？
 #keywait,
@@ -122,20 +121,20 @@
 #sentaku,1
 #Karenface,-1
 #Karenface,5
-#Voicenum,2-10
+#Voicenum,15
 #name,華恋
 #message,ほんと！？　嬉しいな、なかなか,知ってる人いなくて悲しかったんだよー
 #keywait,
 
-#Voicenum,2-11
+#Voicenum,16
 #message,ほら、これ！買ったときの写真！,かわいいでしょ～
 #keywait,
 
-#Voicenum,2-12
+#Voicenum,17
 #message,も～、択プレイヤーってば水くさいよ～
 #keywait,
 
-#Voicenum,2-13
+#Voicenum,18
 #message,知ってるならもっと,早く言ってくれれば良いのに～
 #keywait,
 
@@ -163,12 +162,12 @@
 //,ここから：選択２
 
 #sentaku,2
-#Voicenum,2-14
+#Voicenum,19
 #name,華恋
 #message,うーん、やっぱりそんな感じなのかな？,友達もみんなそういう反応なの。
 #keywait,
 
-#Voicenum,2-15-2
+#Voicenum,20
 #message,こんなにかわいいのにね？
 #keywait,
 
@@ -180,12 +179,12 @@
 #message,かわいい……かわいい……？,かわいい……のか…………？？
 #keywait,
 
-#Voicenum,2-16
+#Voicenum,21
 #name,華恋
 #message,うん、買った時に写真撮っておいたの！,えへへ、やっぱりかわいい……
 #keywait,
 
-#Voicenum,2-17
+#Voicenum,22
 #message,ともかく！一緒に探してくれるのは,嬉しいな！頼りにしてるからね？
 #keywait,
 
@@ -202,7 +201,7 @@
 
 #sentaku,3
 #BGMStop,
-#Voicenum,2-18
+#Voicenum,23
 #name,華恋
 #message,えっ
 #keywait,
@@ -211,7 +210,7 @@
 #message,瞬間、空気が凍った。,もし音楽が流れていたなら止まる勢いで
 #keywait,
 
-#Voicenum,2-19
+#Voicenum,24
 #name,華恋
 #message,知らないの、スーパールーパー――？,今売ってないのかな、そんなわけ……
 #keywait,
@@ -220,13 +219,13 @@
 #message,心なしか華恋の目から光が失われている,ような気さえする。コワイ！
 #keywait,
 
-#Voicenum,2-20
+#Voicenum,25
 #name,華恋
 #message,そんな、スーパールーパー……
 #keywait,
 
 #choiceface,0
-#Voicenum,2-21
+#Voicenum,26
 #message,それほどに人気のないキャラクター,だというの……！？
 #keywait,
 
@@ -234,7 +233,7 @@
 #message,しかもどうやらひどく動揺している。,余程の地雷を踏んでしまったのか。
 #keywait,
 
-#Voicenum,2-22
+#Voicenum,27
 #name,華恋
 #message,うそ、嘘だと言ってよ択プレイヤーくん！,ほらこれ！買ったときの写真！
 #keywait,
@@ -243,7 +242,7 @@
 #message,……いや、他で見たことはないなあ
 #keywait,
 
-#Voicenum,2-23
+#Voicenum,28
 #name,華恋
 #message,嘘だあーっ！,スーパールーパー……
 #keywait,
@@ -252,7 +251,7 @@
 #message,そ、そんなにお気に入りだったのか…。,見つかると良いな！
 #keywait,
 
-#Voicenum,2-24
+#Voicenum,29
 #name,華恋
 #message,うん……ありがと……
 #keywait,
@@ -275,12 +274,12 @@
 #message,で、この写真のを探せば良いんだな？
 #keywait,
 
-#Voicenum,2-25
+#Voicenum,30
 #name,華恋
 #message,うん。でも、どこでなくしたかも,覚えてなくって。今日なのは確かだけど
 #keywait,
 
-#Voicenum,2-26
+#Voicenum,31
 #message,あちこち回ることになっちゃうかも。,ゴメンね。
 #keywait,
 
