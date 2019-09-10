@@ -14,7 +14,20 @@ public class ChoiceControl : MonoBehaviour {
     [SerializeField]
     private TalkManager _talkManager;
 
+    bool set = false;
+
     private int _selectnum = 0;
+
+    private void Update()
+    {
+        if (_choiceManager.stopChoice == false)
+        {
+            _choiceManager.DebugPushButton();
+            _choiceManager.PushButton();
+        } 
+
+        
+    }
 
     public void SetSelectMessage(string[] msgs, System.Action<int> callback)
     {
@@ -33,8 +46,9 @@ public class ChoiceControl : MonoBehaviour {
         //3択の指を表示してせんたくする
         Debug.Log("？？？？？");
         _choiceManager.stopChoice = false;
+        Debug.Log(_choiceManager.stopChoice);
         _choiceManager.DebugPushButton();
-        //_choiceManager.PushButton();
+        _choiceManager.PushButton();
         _choiceManager.SetSelectCallback(SelectCallback);
     }
 

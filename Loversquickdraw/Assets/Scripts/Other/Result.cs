@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class Result : MonoBehaviour
 {
@@ -49,7 +48,7 @@ public class Result : MonoBehaviour
         {
             if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) || OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
             {
-                SceneManager.LoadScene("Scenario");
+                SceneLoadManager.LoadScene("Scenario");
             }
         }
     }
@@ -59,6 +58,7 @@ public class Result : MonoBehaviour
         //Debug.Log("1Pの勝利");
         Player1Win = true;
         PlayerPrefs.SetInt("MiniGame1Data", 0);
+        Debug.Log(Player1Win);
         //Singlton.Instance.WinFlag[0] = 1;
         gameSet = true;
     }
@@ -84,7 +84,7 @@ public class Result : MonoBehaviour
             images[0].enabled = true;
             images[2].enabled = true;
             Time.timeScale = 0f;
-            
+            Debug.Log("1pwin");
             Player1WinCheck();
         }
         else if (col.gameObject.tag == "Player2")
@@ -94,7 +94,7 @@ public class Result : MonoBehaviour
             images[1].enabled = true;
             images[3].enabled = true;
             Time.timeScale = 0f;
-            
+            Debug.Log("2pwin");
             Player2WinCheck();
         }
     }

@@ -1934,7 +1934,7 @@ GameObject:
   - component: {fileID: 751223816}
   m_Layer: 0
   m_Name: 1PController
-  m_TagString: Untagged
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1968,7 +1968,7 @@ MonoBehaviour:
   player1: {fileID: 404583203}
   rb: {fileID: 404583207}
   _animator: {fileID: 404583205}
-  moveSpeed: 7.5
+  moveSpeed: 10
   jumpPower: 8
   jump: 0
   stop: 0
@@ -2450,7 +2450,7 @@ GameObject:
   - component: {fileID: 920002277}
   m_Layer: 0
   m_Name: 2PController
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2484,7 +2484,7 @@ MonoBehaviour:
   player2: {fileID: 483472367}
   rb: {fileID: 483472371}
   _animator: {fileID: 483472369}
-  moveSpeed: 7.5
+  moveSpeed: 10
   jumpPower: 8
   jump: 0
   stop: 0
@@ -3411,8 +3411,8 @@ MonoBehaviour:
   - {fileID: 80050749}
   - {fileID: 1135575401}
   - {fileID: 1686115752}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  player1: {fileID: 404583207}
+  player2: {fileID: 483472371}
   _animator: {fileID: 1367570837}
 --- !u!65 &1367570839
 BoxCollider:
