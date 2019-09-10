@@ -13,7 +13,7 @@
 #keywait,
 
 #Karenface,4
-#Voicenum,3-1
+#Voicenum,33
 #name,華恋
 #message,えっ！　ちょっと見せて！？,……ほんとだ！！　良かった～……！
 #keywait,
@@ -30,7 +30,7 @@
 #message,はは、よっぽど大事にしてたんだな。,見つかって良かった
 #keywait,
 
-#Voicenum,3-2
+#Voicenum,34
 #name,華恋
 #message,ほんとだよぉ～！！,勝利者くん、ありがとぉ～！！
 #keywait,
@@ -44,7 +44,7 @@
 #keywait,
 
 #Karenface,4
-#Voicenum,3-3
+#Voicenum,35
 #name,華恋
 #message,？　……！？　ご、ごめんっ！,急に飛びついちゃって……！
 #keywait,
@@ -63,7 +63,7 @@
 #message,軽くパニックになっている俺に、,華恋は髪飾りを渡してきた。
 #keywait,
 
-#Voicenum,3-4
+#Voicenum,36
 #name,華恋
 #message,じゃあ――はい、これ。
 #keywait,
@@ -73,7 +73,7 @@
 #message,悪霊退散煩悩霧散……えっ？
 #keywait,
 
-#Voicenum,3-5
+#Voicenum,37
 #name,華恋
 #message,これ。勝利者くんにつけてほしいな。,……せっかく見つけてもらったんだし？
 #keywait,
@@ -89,7 +89,7 @@
 #keywait,
 
 #bgsprite,5
-#Voicenum,3-6
+#Voicenum,38
 #name,華恋
 #message,良いから言ってんの！ほら、ここにっ
 #keywait,
@@ -101,7 +101,7 @@
 #message,わ、分かった。ここで良いんだな……？
 #keywait,
 
-#Voicenum,3-7
+#Voicenum,39
 #name,華恋
 #message,もー、そう言ってるでしょ？,可愛くしてね？　なーんて
 #keywait,
@@ -116,7 +116,7 @@
 
 #gayzou,-1
 #Karenface,1
-#Voicenum,3-8
+#Voicenum,40
 #name,華恋
 #message,いけない、もうこんな時間？,ごめんね、こんな時間まで付き合わせて
 #keywait,
@@ -125,12 +125,12 @@
 #message,構わないさ、貴重な体験も出来たしな。,それに、それ付けてた方が可愛いし
 #keywait,
 
-#Voicenum,3-9
+#Voicenum,41
 #name,華恋
 #message,ふふ、何それ。ナンパみたいよ？,でも、ありがとっ
 #keywait,
 
-#Voicenum,3-10
+#Voicenum,42
 #message,ほら、早くしないと校門が閉まっちゃう。,早くいこ？
 #keywait,
 

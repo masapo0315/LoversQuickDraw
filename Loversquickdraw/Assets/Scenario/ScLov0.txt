@@ -121,7 +121,7 @@
 
 #choiceface,-1
 #Karenface,0
-#Voicenum,1-1
+#Voicenum,0
 #name,華恋
 #message,あれ、択プレイヤーくん！？もー、また,危ないことして―！気を付けてね～！？
 #keywait,
