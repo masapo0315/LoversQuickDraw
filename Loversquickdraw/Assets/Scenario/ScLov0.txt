@@ -16,7 +16,7 @@
 #keywait,
 
 #1pface,-1
-#Karenface,0
+#Karenface,3
 #message,その相手は……『夢宮華恋』,（ゆめみや　かれん）。
 #keywait,
 
@@ -101,10 +101,10 @@
 
 //,ここから：選択１
 //,#lineplus,
-#message,一歩先んじた俺は、十字路で急ブレーキ、,迷いなく左へ舵を切る！
 #choiceface,0
 #sentaku,1
 #name,択プレイヤー
+#message,一歩先んじた俺は、十字路で急ブレーキ、,迷いなく左へ舵を切る！
 #keywait,
 
 #message,思惑通り、角の向こうには華恋の頭が,見え――ない！？

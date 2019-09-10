@@ -23,8 +23,10 @@
 #message,もちろん、直前にブレーキをかけて,お互いをかばうことも忘れない。
 #keywait,
 
-#bgsprite,2
+
+#Karenface,-1
 #choiceface,-1
+#bgsprite,2
 #Voicenum,2
 #name,華恋
 #message,う～ん、いたたた……
