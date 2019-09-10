@@ -25,7 +25,7 @@ public class Player1Controler : MonoBehaviour
     void Start()
     {
         rb = player1.GetComponent<Rigidbody>();
-        StartCoroutine("Delay");
+        StartCoroutine("StartDelay");
     }
     
     void Update()
@@ -48,7 +48,6 @@ public class Player1Controler : MonoBehaviour
     //プレイヤー1の移動
     void Player1Move()
     {
-        bool moveFlag = false;
         //controllerのposを常に更新する
         transform.position = OVRInput.GetLocalControllerPosition(controller);
         //controllerのPosが一定の範囲内ならを分岐で
@@ -70,7 +69,7 @@ public class Player1Controler : MonoBehaviour
     //ジャンプの処理
     void Jump()
     {
-        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) && jump == false)
+        if (OVRInput.GetDown(OVRInput.RawButton.A) && jump == false)
         {
             _animator.SetBool("Jump", true);
             rb.velocity = new Vector3(5, jumpPower, 0);
@@ -80,18 +79,6 @@ public class Player1Controler : MonoBehaviour
     //ジャンプ時のコリジョン判定
     private void OnCollisionEnter(Collision col)
     {
-        switch(col.gameObject.tag)
-        {
-            case "ground":
-                _animator.SetBool("Jump", false);
-                jump = false;
-                break;
-            case "Obstacles":
-                Destroy(col.gameObject);
-                StartCoroutine("Delay");
-                break;
-        }
-        /*
         if (col.gameObject.tag == "ground")
         {
             _animator.SetBool("Jump", false);
@@ -101,9 +88,18 @@ public class Player1Controler : MonoBehaviour
         {
             Destroy(col.gameObject);
             StartCoroutine("Delay");
-        }*/
+        }
     }
     //遅延処理
+    private IEnumerator StartDelay()
+    {
+        stop = true;
+        yield return new WaitForSeconds(7.0f);
+
+        stop = false;
+        yield break;
+    }
+
     private IEnumerator Delay()
     {
         stop = true;

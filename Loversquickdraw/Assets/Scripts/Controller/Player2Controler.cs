@@ -25,7 +25,7 @@ public class Player2Controler : MonoBehaviour
     void Start()
     {
         rb = player2.GetComponent<Rigidbody>();
-        StartCoroutine("Delay");
+        StartCoroutine("StartDelay");
     }
     
     void Update()
@@ -70,7 +70,7 @@ public class Player2Controler : MonoBehaviour
     //ジャンプの処理
     public void Jump()
     {
-        if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger) && jump == false)
+        if (OVRInput.GetDown(OVRInput.RawButton.X) && jump == false)
         {
             _animator.SetBool("Jump", true);
             rb.velocity = new Vector3(5, jumpPower, 0);
@@ -80,20 +80,6 @@ public class Player2Controler : MonoBehaviour
     //ジャンプ時のコリジョン判定
     private void OnCollisionEnter(Collision col)
     {
-        /*
-        switch (col.gameObject.tag)
-        {
-            case "ground":
-                _animator.SetBool("Jump", false);
-                jump = false;
-                Debug.Log("地面Now");
-                break;
-            case "Obstacles":
-                Destroy(col.gameObject);
-                StartCoroutine("Delay");
-                break;
-        }*/
-        
         if (col.gameObject.tag == "ground")
         {
             _animator.SetBool("Jump", false);
@@ -106,6 +92,15 @@ public class Player2Controler : MonoBehaviour
         }
     }
     //遅延処理
+    private IEnumerator StartDeray()
+    {
+        stop = true;
+        yield return new WaitForSeconds(7.0f);
+
+        stop = false;
+        yield break;
+    }
+
     public IEnumerator Delay()
     {
         stop = true;
