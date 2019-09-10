@@ -58,6 +58,7 @@ public class Result : MonoBehaviour
     {
         //Debug.Log("1Pの勝利");
         Player1Win = true;
+        PlayerPrefs.SetInt("MiniGame1Data", 0);
         //Singlton.Instance.WinFlag[0] = 1;
         gameSet = true;
     }
@@ -66,6 +67,7 @@ public class Result : MonoBehaviour
     {
         //Debug.Log("2Pの勝利");
         Player2Win = true;
+        PlayerPrefs.SetInt("MiniGame1Data", 1);
         //Singlton.Instance.WinFlag[0] = 2;
         gameSet = true;
     }
