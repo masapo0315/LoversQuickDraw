@@ -9,12 +9,12 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject MenuWindow;
 
     //配列の数もメニューの総数を入れる
-    [SerializeField] private GameObject[] menuNum = new GameObject[6];
+    [SerializeField] private GameObject[] menuNum = new GameObject[5];
     //同じく配列の数はメニューの総数を入れる
-    private Vector3[] tmp = new Vector3[6];
+    private Vector3[] tmp = new Vector3[5];
 
     //メニューの総数を入れる
-    private int MaxMenuNumber = 6;
+    private int MaxMenuNumber = 5;
     private int MenuNumber = 0;
 
     private bool MenuOn = false;
@@ -66,7 +66,7 @@ public class MenuController : MonoBehaviour
 
     private void SceneCommand()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow)|| (OVRInput.GetDown(OVRInput.RawButton.LThumbstickDown))|| OVRInput.GetDown(OVRInput.RawButton.RThumbstickDown))
+        if (Input.GetKeyDown(KeyCode.DownArrow) || (OVRInput.GetDown(OVRInput.RawButton.LThumbstickDown)) || OVRInput.GetDown(OVRInput.RawButton.RThumbstickDown))
         {
             MenuNumber++;
             MenuNumber %= MaxMenuNumber;
@@ -110,9 +110,6 @@ public class MenuController : MonoBehaviour
             case 4:
                 Cursor.transform.position = tmp[4];
                 break;
-            case 5:
-                Cursor.transform.position = tmp[5];
-                break;
         }
     }
 
@@ -133,13 +130,10 @@ public class MenuController : MonoBehaviour
                     SceneManager.LoadScene("Scenario");
                     break;
                 case 3:
-                    SceneManager.LoadScene("Scenario2");
-                    break;
-                case 4:
                     SceneManager.LoadScene("MiniGame1");
                     break;
-                case 5:
-                    SceneManager.LoadScene("MiniGame2_test");
+                case 4:
+                    SceneManager.LoadScene("MiniGame2");
                     break;
             }
         }

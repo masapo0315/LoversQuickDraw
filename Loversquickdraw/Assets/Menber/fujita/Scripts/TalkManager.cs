@@ -96,7 +96,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     private void Start()
     {
         //デバッグ用で残る
-        PlayerPrefs.SetString("ScenarioNum", "0");
+        PlayerPrefs.SetString("ScenarioNum", "4");
         activeNumber = PlayerPrefs.GetInt("MiniGame2Data", 0);
         _nowTextLine = 0;
         _isLoadEnd = false;
@@ -256,6 +256,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     {
         string[] msgs = _loadTextData[_nowTextLine].Split(',');
         msgs[0] = msgs[0].ToLower();
+        Debug.LogWarning(msgs[0]);
         if (msgs[0].Equals("#kyoutu"))
         {
             _ScenarioSkip = false;
