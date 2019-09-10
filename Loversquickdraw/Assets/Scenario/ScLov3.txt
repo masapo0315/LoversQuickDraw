@@ -1,4 +1,4 @@
-﻿﻿#BGMStart,
+﻿﻿#bgmstart,
 #bgsprite,3
 
 #name,勝利者
@@ -86,6 +86,7 @@
 
 #message,……マジでか？　良いのか、俺で
 #keywait,
+#Karenface,-1
 
 #bgsprite,5
 #Voicenum,38
@@ -109,7 +110,6 @@
 #message,この女、魔性の気がある……！
 #keywait,
 
-#Karenface,-1
 #message,不慣れな手つきではあるが、無事に髪飾り,を着け終わると、もう完全下校時刻だった
 #keywait,
 

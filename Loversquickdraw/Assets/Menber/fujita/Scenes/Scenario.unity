@@ -5854,10 +5854,10 @@ MonoBehaviour:
   FaceList:
   - {fileID: 21300000, guid: dc81e6f843aaf4a43ad16e03e637039b, type: 3}
   - {fileID: 21300000, guid: 6a67ec90a8169354ea1172d1fd8fb6e9, type: 3}
-  - {fileID: 21300000, guid: 6a67ec90a8169354ea1172d1fd8fb6e9, type: 3}
   - {fileID: 21300000, guid: ae159a37d5e29a1448e05f5f3b303e70, type: 3}
-  - {fileID: 21300000, guid: c5db27361b5ec2a4090c5065a1d0846e, type: 3}
   - {fileID: 21300000, guid: 579c83a4727344c4d93f1c3967e10f6b, type: 3}
+  - {fileID: 21300000, guid: 8a0fd98860a34c9498dffcac58a9182c, type: 3}
+  - {fileID: 21300000, guid: c5db27361b5ec2a4090c5065a1d0846e, type: 3}
   PlayerList:
   - {fileID: 21300000, guid: d362a197f2ed186499dab7502cadc3a6, type: 3}
   PlayerList2:
@@ -6627,7 +6627,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3682127533d2eb344b0bea2c91665770, type: 3}
   - {fileID: 21300000, guid: baa6c15f5960b904498110c4180c1d92, type: 3}
   - {fileID: 21300000, guid: 6b58e1b5e2e1d5b4d9acbfc145153abb, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 433cebf18d00a054e8fd9e40cf9aa716, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   imageComponent: {fileID: 958223725}

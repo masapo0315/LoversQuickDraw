@@ -93,7 +93,7 @@
 #timewait,
 
 //,白バッグ
-#bgsprite,2
+#bgsprite,1
 //,手の突き出し判定
 #concheck,
 
@@ -111,7 +111,7 @@
 #convib,
 #timewait,
 //,スプライト変更
-#bgsprite,11
+#bgsprite,10
 //,#spritechange,-1
 
 #timewait
@@ -121,8 +121,6 @@
 #name,勝利者
 #message,…………！！！！！
 #keywait,
-
-#gayzou,3
 
 #message,柔らかな、しかし確かな感触。,ほんのり暖かな、自分のではない体温。
 #keywait,
