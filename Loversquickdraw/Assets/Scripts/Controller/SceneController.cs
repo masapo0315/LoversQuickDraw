@@ -17,7 +17,7 @@ public class SceneController : MonoBehaviour
         time += Time.deltaTime;
         if (once == false)
         {
-            if (OVRInput.GetDown(OVRInput.Button.One) || Input.GetKeyDown(KeyCode.Space))
+            if (OVRInput.GetDown(OVRInput.RawButton.A) ||OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetKeyDown(KeyCode.Space))
             {
                 once = true;
                 SceneLoadManager.LoadScene("Scenario");

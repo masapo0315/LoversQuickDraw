@@ -221,8 +221,8 @@
 #message,こんなハナから汗臭い少女漫画が,あるかよ！
 #keywait,
 
-#1pface,-1
-#2pface,-1
+#1pface,0
+#2pface,0
 #name,
 #message,軽口を叩きつつも、二人の目は既に,次の曲がり角に向いていた。
 #keywait,
@@ -233,8 +233,8 @@
 #message,これが、正真正銘、最後のチャンス！
 #keywait,
 
-#1pface,-1
-#2pface,-1
+#1pface,0
+#2pface,0
 #name,
 #message,スタートは。同時であった。
 #keywait,

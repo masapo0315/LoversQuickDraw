@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChoiceControl : MonoBehaviour {
+public class ChoiceControl : MonoBehaviour
+{
 
     [SerializeField]
     private ChoiceFunctionControl[] _fusenControl = new ChoiceFunctionControl[3];
@@ -14,8 +15,6 @@ public class ChoiceControl : MonoBehaviour {
     [SerializeField]
     private TalkManager _talkManager;
 
-    bool set = false;
-
     private int _selectnum = 0;
 
     private void Update()
@@ -24,8 +23,7 @@ public class ChoiceControl : MonoBehaviour {
         {
             _choiceManager.DebugPushButton();
             _choiceManager.PushButton();
-        } 
-
+        }
         
     }
 
@@ -46,9 +44,7 @@ public class ChoiceControl : MonoBehaviour {
         //3択の指を表示してせんたくする
         Debug.Log("？？？？？");
         _choiceManager.stopChoice = false;
-        Debug.Log(_choiceManager.stopChoice);
-        _choiceManager.DebugPushButton();
-        _choiceManager.PushButton();
+
         _choiceManager.SetSelectCallback(SelectCallback);
     }
 

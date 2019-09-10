@@ -87,7 +87,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     string[] nameRepTbl = { "カズオ", "ユージ" };
 
     //Sceneまたはシナリオを読む
-    public bool _isSeEnd=false;
+    public bool _isSeEnd = false;
 
     private void Awake()
     {
@@ -96,7 +96,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     private void Start()
     {
         //デバッグ用で残る
-        //PlayerPrefs.SetString("ScenarioNum", "4");
+        //PlayerPrefs.SetString("ScenarioNum", "2");
         activeNumber = PlayerPrefs.GetInt("MiniGame2Data", 0);
         _nowTextLine = 0;
         _isLoadEnd = false;
@@ -112,7 +112,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     {
 
         _waitTime += Time.deltaTime;
-        
+
         //if (Input.GetKeyDown(KeyCode.G))
         //{
         //    SceneManager.LoadScene("MiniGame2");
@@ -149,14 +149,14 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
                     _isWait = false;
                     _kokuhakuconwait = false;
                 }
-                
-                if (_waitTime-_time >= 6 && !once)
+
+                if (_waitTime - _time >= 6 && !once)
                 {
                     once = true;
                     _message.text = "コントローラーを前に突き出してください。";
                     _message2.text = null;
                 }
-                
+
             }
             else if (OVRInput.GetDown(OVRInput.RawButton.A) || OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.M))
             {
@@ -164,7 +164,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
                 _isWait = false;
             }
         }
-        
+
 
     }
 
@@ -256,7 +256,6 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     {
         string[] msgs = _loadTextData[_nowTextLine].Split(',');
         msgs[0] = msgs[0].ToLower();
-        Debug.LogWarning(msgs[0]);
         if (msgs[0].Equals("#kyoutu"))
         {
             _ScenarioSkip = false;
@@ -364,12 +363,12 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
         }
         else if (msgs[0].Equals("#bgmstop"))
         {
-            SoundManager.BGMStop();
+            SoundManager.Instance.BGMStop();
         }
         else if (msgs[0].Equals("#voicenum"))
         {
             SoundManager.Instance.SinarioSounds(SoundNum, 1);
-            SoundNum++;
+            SoundNum = int.Parse(msgs[1]);
         }
         else if (msgs[0].Equals("#karenface"))
         {
@@ -521,7 +520,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     /// <returns></returns>
     private int SearchLabel(int selectNum)
     {
-        var nowLine = _nowTextLine-50;
+        var nowLine = _nowTextLine - 50;
         while (nowLine < _loadTextData.Count)
         {
             var msgs = _loadTextData[nowLine].Split(',');

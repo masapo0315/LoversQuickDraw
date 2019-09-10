@@ -1,4 +1,4 @@
-﻿﻿#BGMStart,
+﻿﻿#BGMstart,
 #bgsprite,3
 
 #1pface,0
@@ -257,7 +257,7 @@
 #keywait,
 
 #choiceface,-1
-#BGMStart,
+#BGMstart,
 #name,択プレイヤー
 #message,理不尽な気もするが、言葉選びを,間違えてしまったようだ。
 #keywait,

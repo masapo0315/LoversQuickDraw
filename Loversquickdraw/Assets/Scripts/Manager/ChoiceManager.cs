@@ -88,8 +88,6 @@ public class ChoiceManager : MonoBehaviour
 
     private void Start()
     {
-        stopChoice = true;
-
         cursor.SetActive(false);
         cursor2.SetActive(false);
     }
@@ -117,13 +115,13 @@ public class ChoiceManager : MonoBehaviour
             Debug.Log("1Pが1を押した");
             cursor2.SetActive(false);//2pのカーソルを消す
             ChangeColor1();//他の選択肢を非表示
-            //TalkManager.Instance._isWait = false;
+            TalkManager.Instance._isWait = false;
             Invoke("GetAorX", invokeTime);//AorX意外を消す
             stopChoice = true;//Playerが選択時他プレイヤーがボタンを入力不可
             firstsPlayer = true;//１Pがおした
             spritFirstPlayer = 1;//１Pがおした
             Invoke("DestroyAorX", invokeTime * 2);//この選択肢を消す
-            //TalkManager.Instance._isWait = true;
+            TalkManager.Instance._isWait = true;
             rootflag = 1;//選択肢の一番(左)
             //LoveMetar.player1LoveMetar += 5;
             //talkManager.ChoiceRoot(firstsPlayer,1);

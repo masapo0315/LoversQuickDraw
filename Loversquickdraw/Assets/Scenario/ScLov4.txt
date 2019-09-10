@@ -20,9 +20,9 @@
 #keywait,
 
 #bgsprite,6
-#BGMStart,
+#BGMstart,
 #1pface,-1
-#Karenface0,
+#Karenface,0
 #Voicenum,43
 #name,華恋
 #message,……二人とも、どうしたの？,真剣な顔で、屋上に呼び出したりして。

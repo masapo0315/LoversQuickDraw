@@ -25,6 +25,7 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
             BGMFirstPlay();
         }
 
+        DontDestroyOnLoad(this);
     }
     /// <summary>
     /// Update関数
@@ -63,7 +64,7 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
         AudioSources[0].loop = true;
         AudioSources[0].Play();
     }
-    public static void BGMStop()
+    public void BGMStop()
     {
         Instance.AudioSources[0].Stop();
         Instance.AudioSources[0].clip = null;
