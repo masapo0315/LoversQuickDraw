@@ -16,7 +16,7 @@
 #keywait,
 
 #1pface,-1
-#Karenface,1
+#Karenface,0
 #message,その相手は……『夢宮華恋』,（ゆめみや　かれん）。
 #keywait,
 
