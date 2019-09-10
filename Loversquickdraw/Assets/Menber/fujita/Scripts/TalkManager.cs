@@ -37,7 +37,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     private List<string> _loadTextData = new List<string>();
     private int _nowTextLine = 0;
     private bool _isLoadEnd = false;
-    private bool _isWait = false;
+    public bool _isWait = false;
     // private bool _isMessageDisp = false;
     private bool _isCharacterText = false;
 
@@ -84,7 +84,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     bool once;
     bool _timeWait;
     //名前置き換え
-    string[] nameRepTbl = { "まさし", "ひろき" };
+    string[] nameRepTbl = { "カズオ", "ユージ" };
 
     //Sceneまたはシナリオを読む
     public bool _isSeEnd=false;
@@ -96,7 +96,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     private void Start()
     {
         //デバッグ用で残る
-        PlayerPrefs.SetString("ScenarioNum", "4");
+        PlayerPrefs.SetString("ScenarioNum", "0");
         activeNumber = PlayerPrefs.GetInt("MiniGame2Data", 0);
         _nowTextLine = 0;
         _isLoadEnd = false;
@@ -256,11 +256,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     {
         string[] msgs = _loadTextData[_nowTextLine].Split(',');
         msgs[0] = msgs[0].ToLower();
-        if (msgs[0].Equals("#bucksprite"))
-        {
-            //SpriteManager.
-        }
-        else if (msgs[0].Equals("#kyoutu"))
+        if (msgs[0].Equals("#kyoutu"))
         {
             _ScenarioSkip = false;
             Debug.Log(_ScenarioSkip);
@@ -288,12 +284,15 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
             _isWait = true;
             _time = _waitTime;
             _timeWait = true;
-            
         }
+
+        //背景変更用0,1,2アタッチしたら通学路、教室、屋上
+        //
         else if (msgs[0].Equals("#bgsprite"))
         {
             SpriteManager.SpriteDisp(int.Parse(msgs[1]));
         }
+        //画面全体に出すとき華恋が転んだ時など一枚絵
         else if (msgs[0].Equals("#spritechange"))
         {
             SpriteManager.SpriteSwitch(int.Parse(msgs[1]));
@@ -347,11 +346,6 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
         }
 
         #region ショートカット
-        else if (msgs[0].Equals("#gayzou"))
-        {
-            //fade呼び出し
-            //cs.kansu();
-        }
         else if (msgs[0].Equals("#keywait"))
         {
             StartCoroutine("SakuraOut");
@@ -359,6 +353,10 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
             //TextMove();
             _isWait = true;
         }
+        //else if (msgs[0].Equals("#lineplus"))
+        //{
+        //    _nowTextLine += 5;
+        //}
         else if (msgs[0].Equals("#bgmstart"))
         {
             SoundManager.Instance.BGMFirstPlay();
