@@ -128,10 +128,15 @@ public class MenuController : MonoBehaviour
                     SceneManager.LoadScene("Init");
                     break;
                 case 2:
-                    string s=PlayerPrefs.GetString("ScenarioNum");
-                    int i = int.Parse(s) + 1;
-                    PlayerPrefs.SetString("ScenarioNum",i.ToString());
-                    SceneManager.LoadScene("Scenario");
+                    
+                    int s=int.Parse(PlayerPrefs.GetString("ScenarioNum"));
+                    if (s == 4) SceneLoadManager.LoadScene("Init");
+                    else
+                    {
+                        s++;
+                        PlayerPrefs.SetString("ScenarioNum", s.ToString());
+                        SceneManager.LoadScene("Scenario");
+                    }
                     break;
                 case 3:
                     PlayerPrefs.SetString("ScenarioNum", "1");
