@@ -22,8 +22,8 @@
 #bgsprite,6
 #BGMstart,
 #1pface,-1
-#Karenface,0
-#Voicenum,43
+//,#karenface,0
+#voicenum,43
 #name,華恋
 #message,……二人とも、どうしたの？,真剣な顔で、屋上に呼び出したりして。
 #keywait,
@@ -86,8 +86,8 @@
 //,コントローラーポジションイニシャライズ
 #coninit,
 
-#1pface,0
-#2pface,0
+//,#1pface,0
+//,#2pface,0
 #name,両プレイヤー
 #message,付き合ってください――ッ！！
 #timewait,
@@ -111,6 +111,8 @@
 #convib,
 #timewait,
 //,スプライト変更
+#1pface,-1
+#2pface,-1
 #bgsprite,10
 //,#spritechange,-1
 
@@ -125,8 +127,8 @@
 #message,柔らかな、しかし確かな感触。,ほんのり暖かな、自分のではない体温。
 #keywait,
 
-#Karenface0,-1
-#Karenface1,1
+//,#Karenface0,-1
+//,#Karenface1,1
 
 #message,確かに彼女の――夢宮華恋の手は、,勝利者の手を包み込んでいた。
 #keywait,
@@ -183,7 +185,7 @@
 #keywait,
 
 //,スプライト変更
-#spritechange,2
+//#spritechange,2
 #name,勝利者
 #message,――ああ、俺は今、間違いなく,世界一幸せな男だろう。
 #keywait,

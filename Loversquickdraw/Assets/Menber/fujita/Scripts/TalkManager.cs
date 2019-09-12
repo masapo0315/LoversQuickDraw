@@ -367,8 +367,10 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
         }
         else if (msgs[0].Equals("#voicenum"))
         {
-            SoundManager.Instance.SinarioSounds(SoundNum, 1);
             SoundNum = int.Parse(msgs[1]);
+            Debug.Log(SoundNum);
+            SoundManager.Instance.SinarioSounds(SoundNum, 1);
+            
         }
         else if (msgs[0].Equals("#karenface"))
         {

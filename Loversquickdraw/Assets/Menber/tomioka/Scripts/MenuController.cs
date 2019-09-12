@@ -124,7 +124,7 @@ public class MenuController : MonoBehaviour
                     MenuOffCommand();
                     break;
                 case 1:
-                    SceneManager.LoadScene("Title");
+                    SceneManager.LoadScene("Init");
                     break;
                 case 2:
                     SceneManager.LoadScene("Scenario");

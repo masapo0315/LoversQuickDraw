@@ -15764,7 +15764,7 @@ MonoBehaviour:
   - {fileID: 1809588956}
   FadeFlag: 0
   FadeSpeed: 0.03
-  BGMSoundVolume: 100
+  BGMSoundVolume: 40
 --- !u!1 &1800498564
 GameObject:
   m_ObjectHideFlags: 0

@@ -168,7 +168,6 @@ public class SceneLoadManager : MonoBehaviour
         {
             fadeAlpha = Mathf.Lerp(1f, 0f, time / interval);
             time += Time.unscaledDeltaTime;
-            SoundManager.Instance.BGMStop();
             yield return 0;
         }
 

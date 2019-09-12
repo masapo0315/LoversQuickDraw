@@ -1,4 +1,4 @@
-﻿﻿#BGMstart,
+﻿﻿#bgmstart,
 #bgsprite,3
 
 #1pface,0
@@ -7,13 +7,13 @@
 #keywait,
 
 #1pface,-1
-#Karenface,4
-#Voicenum,6
+#karenface,4
+#voicenum,6
 #name,華恋
 #message,あれ？ここにもない……,ん～、どこいっちゃったんだろ……
 #keywait,
 
-#Karenface,-1
+#karenface,-1
 #name,プレイヤー１
 #message,しかし、華恋はなかなか教室を出ない。,何かを探しているような様子だ。
 #keywait,
@@ -29,8 +29,8 @@
 #message,あれ、華恋じゃないか。どうしたんだ、,こんな遅くまで
 #keywait,
 
-#Karenface,4
-#Voicenum,7
+#karenface,4
+#voicenum,7
 #name,華恋
 #message,あれ、プレイヤー２くん？
 #keywait,
@@ -43,7 +43,7 @@
 #message,あれ、二人揃ってどうしたんだよ？
 #keywait,
 
-#Voicenum,8
+#voicenum,8
 #name,華恋
 #message,プレイヤー１くんも！,……実はね、探し物をしてるの
 #keywait,
@@ -52,7 +52,7 @@
 #message,探し物？何かなくしたのか？
 #keywait,
 
-#Voicenum,9
+#voicenum,9
 #name,華恋
 #message,そうなの。髪飾りなんだけど……。,大事にしてたから、諦めきれなくて
 #keywait,
@@ -66,15 +66,15 @@
 #keywait,
 
 
-#Karenface,-1
-#Karenface,5
-#Voicenum,10
+#karenface,-1
+#karenface,5
+#voicenum,10
 #name,華恋
 #message,え、ほんと！？悪いよう……
 #keywait,
 
 
-#Voicenum,11
+#voicenum,11
 #message,でも、そういうことなら,頼らせてもらっちゃおうかな？
 #keywait,
 
@@ -86,12 +86,12 @@
 #message,髪飾りを見つければ、好感度急上昇,間違いなし！！
 #keywait,
 
-#Voicenum,12
+#voicenum,12
 #name,華恋
 #message,二人とも、ありがとうね。,それで、落とした髪飾りなんだけど……
 #keywait,
 
-#Voicenum,13
+#voicenum,13
 #message,スーパールーパー、っていう,キャラクターのものなの。
 #keywait,
 
@@ -100,9 +100,9 @@
 #keywait,
 
 
-#Karenface,-1
-#Karenface,4
-#Voicenum,14
+#karenface,-1
+#karenface,4
+#voicenum,14
 #name,華恋
 #message,そう、スーパールーパー。知らない？
 #keywait,
@@ -119,22 +119,22 @@
 //,ここから：選択１
 
 #sentaku,1
-#Karenface,-1
-#Karenface,5
-#Voicenum,15
+#karenface,-1
+#karenface,5
+#voicenum,15
 #name,華恋
 #message,ほんと！？　嬉しいな、なかなか,知ってる人いなくて悲しかったんだよー
 #keywait,
 
-#Voicenum,16
+#voicenum,16
 #message,ほら、これ！買ったときの写真！,かわいいでしょ～
 #keywait,
 
-#Voicenum,17
+#voicenum,17
 #message,も～、択プレイヤーってば水くさいよ～
 #keywait,
 
-#Voicenum,18
+#voicenum,18
 #message,知ってるならもっと,早く言ってくれれば良いのに～
 #keywait,
 
@@ -143,12 +143,12 @@
 #message,……だ、だいぶお気に入りみたいだな。,なら、なおさら見つけてやらないとな！
 #keywait,
 
-#Voicenum,
+#voicenum,
 #name,華恋
 #message,うん……！　頼りにしてるよ、,択プレイヤーくん！
 #keywait,
 
-#Karenface,-1
+#karenface,-1
 #name,択プレイヤー
 #message,……「やっぱり知らない」とは,とても言えなかった。
 #keywait,
@@ -162,12 +162,12 @@
 //,ここから：選択２
 
 #sentaku,2
-#Voicenum,19
+#voicenum,19
 #name,華恋
 #message,うーん、やっぱりそんな感じなのかな？,友達もみんなそういう反応なの。
 #keywait,
 
-#Voicenum,20
+#voicenum,20
 #message,こんなにかわいいのにね？
 #keywait,
 
@@ -179,16 +179,16 @@
 #message,かわいい……かわいい……？,かわいい……のか…………？？
 #keywait,
 
-#Voicenum,21
+#voicenum,21
 #name,華恋
 #message,うん、買った時に写真撮っておいたの！,えへへ、やっぱりかわいい……
 #keywait,
 
-#Voicenum,22
+#voicenum,22
 #message,ともかく！一緒に探してくれるのは,嬉しいな！頼りにしてるからね？
 #keywait,
 
-#Karenface,-1
+#karenface,-1
 #name,択プレイヤー
 #message,反応はまずまず、だろうか。,しかし髪飾りを見つければ問題なしだ！
 #keywait,
@@ -200,8 +200,8 @@
 //,ここから：選択３
 
 #sentaku,3
-#BGMStop,
-#Voicenum,23
+#bgmstop,
+#voicenum,23
 #name,華恋
 #message,えっ
 #keywait,
@@ -210,7 +210,7 @@
 #message,瞬間、空気が凍った。,もし音楽が流れていたなら止まる勢いで
 #keywait,
 
-#Voicenum,24
+#voicenum,24
 #name,華恋
 #message,知らないの、スーパールーパー――？,今売ってないのかな、そんなわけ……
 #keywait,
@@ -219,13 +219,13 @@
 #message,心なしか華恋の目から光が失われている,ような気さえする。コワイ！
 #keywait,
 
-#Voicenum,25
+#voicenum,25
 #name,華恋
 #message,そんな、スーパールーパー……
 #keywait,
 
 #choiceface,0
-#Voicenum,26
+#voicenum,26
 #message,それほどに人気のないキャラクター,だというの……！？
 #keywait,
 
@@ -233,7 +233,7 @@
 #message,しかもどうやらひどく動揺している。,余程の地雷を踏んでしまったのか。
 #keywait,
 
-#Voicenum,27
+#voicenum,27
 #name,華恋
 #message,うそ、嘘だと言ってよ択プレイヤーくん！,ほらこれ！買ったときの写真！
 #keywait,
@@ -242,7 +242,7 @@
 #message,……いや、他で見たことはないなあ
 #keywait,
 
-#Voicenum,28
+#voicenum,28
 #name,華恋
 #message,嘘だあーっ！,スーパールーパー……
 #keywait,
@@ -251,13 +251,13 @@
 #message,そ、そんなにお気に入りだったのか…。,見つかると良いな！
 #keywait,
 
-#Voicenum,29
+#voicenum,29
 #name,華恋
 #message,うん……ありがと……
 #keywait,
 
 #choiceface,-1
-#BGMstart,
+#bgmstart,
 #name,択プレイヤー
 #message,理不尽な気もするが、言葉選びを,間違えてしまったようだ。
 #keywait,
@@ -274,12 +274,12 @@
 #message,で、この写真のを探せば良いんだな？
 #keywait,
 
-#Voicenum,30
+#voicenum,30
 #name,華恋
 #message,うん。でも、どこでなくしたかも,覚えてなくって。今日なのは確かだけど
 #keywait,
 
-#Voicenum,31
+#voicenum,31
 #message,あちこち回ることになっちゃうかも。,ゴメンね。
 #keywait,
 
@@ -299,5 +299,5 @@
 #message,この俺だ！！！！
 #keywait,
 
-#BGMStop,
+#bgmstop,
 #end,

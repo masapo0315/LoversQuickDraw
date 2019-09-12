@@ -16,7 +16,7 @@
 #keywait,
 
 #1pface,-1
-#Karenface,3
+#karenface,3
 #message,その相手は……『夢宮華恋』,（ゆめみや　かれん）。
 #keywait,
 
@@ -26,7 +26,7 @@
 #message,正直、高嶺の花かと思わなくもないが、,覚悟は決まっている。俺は彼女が好――
 #keywait,
 
-#Karenface,-1
+#karenface,-1
 #2pface,0
 #name,プレイヤー２
 #message,いや、俺の方が好きなんだが？？
@@ -120,14 +120,14 @@
 #keywait,
 
 #choiceface,-1
-#Karenface,0
-#Voicenum,0
+#karenface,0
+#voicenum,0
 #name,華恋
 #message,あれ、択プレイヤーくん！？もー、また,危ないことして―！気を付けてね～！？
 #keywait,
 
 #choiceface,0
-#Karenface,-1
+#karenface,-1
 #name,択プレイヤー
 #message,しかし、遠目に目が合ったのは俺。,何はともあれ一歩リードだ。やったぜ。
 #keywait,

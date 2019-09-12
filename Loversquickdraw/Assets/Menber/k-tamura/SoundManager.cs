@@ -25,7 +25,7 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
             BGMFirstPlay();
         }
 
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
     /// <summary>
     /// Update関数
@@ -109,6 +109,7 @@ public class SoundManager : SingletonMonoBehaviour<SoundManager>
     /// <param name="SoundVol">SE音量設定 float0-1</param>
     public void SinarioSounds(int Soundnum, float SoundVol)
     {
+        Debug.Log(SEData.Length);
         if (SEData[Soundnum] != null)
         {
             AudioSources[1].Stop();

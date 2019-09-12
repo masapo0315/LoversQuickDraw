@@ -12,8 +12,8 @@
 #message,まさしくそれは、見せてもらった写真の,物。スーパールーパーの髪飾りだった。
 #keywait,
 
-#Karenface,4
-#Voicenum,33
+#karenface,4
+#voicenum,33
 #name,華恋
 #message,えっ！　ちょっと見せて！？,……ほんとだ！！　良かった～……！
 #keywait,
@@ -30,12 +30,12 @@
 #message,はは、よっぽど大事にしてたんだな。,見つかって良かった
 #keywait,
 
-#Voicenum,34
+#voicenum,34
 #name,華恋
 #message,ほんとだよぉ～！！,勝利者くん、ありがとぉ～！！
 #keywait,
 
-#Karenface,-1
+#karenface,-1
 #name,勝利者
 #message,もはや半ベソで、なんと華恋は,俺に抱きついてきた……！！！
 #keywait,
@@ -43,8 +43,8 @@
 #message,うわっとと！？　そんなにか！？,てか近い近い近いバカ！
 #keywait,
 
-#Karenface,4
-#Voicenum,35
+#karenface,4
+#voicenum,35
 #name,華恋
 #message,？　……！？　ご、ごめんっ！,急に飛びついちゃって……！
 #keywait,
@@ -63,7 +63,7 @@
 #message,軽くパニックになっている俺に、,華恋は髪飾りを渡してきた。
 #keywait,
 
-#Voicenum,36
+#voicenum,36
 #name,華恋
 #message,じゃあ――はい、これ。
 #keywait,
@@ -73,12 +73,12 @@
 #message,悪霊退散煩悩霧散……えっ？
 #keywait,
 
-#Voicenum,37
+#voicenum,37
 #name,華恋
 #message,これ。勝利者くんにつけてほしいな。,……せっかく見つけてもらったんだし？
 #keywait,
 
-#Karenface,-1
+#karenface,-1
 #choiceface,-1
 #name,勝利者
 #message,さっきの半ベソはどこへやら、,からかうように笑う華恋。
@@ -86,10 +86,10 @@
 
 #message,……マジでか？　良いのか、俺で
 #keywait,
-#Karenface,-1
+#karenface,-1
 
 #bgsprite,5
-#Voicenum,38
+#voicenum,38
 #name,華恋
 #message,良いから言ってんの！ほら、ここにっ
 #keywait,
@@ -101,7 +101,7 @@
 #message,わ、分かった。ここで良いんだな……？
 #keywait,
 
-#Voicenum,39
+#voicenum,39
 #name,華恋
 #message,もー、そう言ってるでしょ？,可愛くしてね？　なーんて
 #keywait,
@@ -114,8 +114,8 @@
 #keywait,
 
 #bgsprite,3
-#Karenface,1
-#Voicenum,40
+#karenface,1
+#voicenum,40
 #name,華恋
 #message,いけない、もうこんな時間？,ごめんね、こんな時間まで付き合わせて
 #keywait,
@@ -124,12 +124,12 @@
 #message,構わないさ、貴重な体験も出来たしな。,それに、それ付けてた方が可愛いし
 #keywait,
 
-#Voicenum,41
+#voicenum,41
 #name,華恋
 #message,ふふ、何それ。ナンパみたいよ？,でも、ありがとっ
 #keywait,
 
-#Voicenum,42
+#voicenum,42
 #message,ほら、早くしないと校門が閉まっちゃう。,早くいこ？
 #keywait,
 
@@ -137,9 +137,9 @@
 #message,……結構頑張ったが、,すげなくかわされてしまった。
 #keywait,
 
-#Karenface,-1
+#karenface,-1
 #message,しかし、かなりイイ雰囲気だった！,これはワンチャンあるか……！？
 #keywait,
 
-#BGMStop,
+#bgnstop,
 #end,

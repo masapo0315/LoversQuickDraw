@@ -149,7 +149,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 1:
                     case 3:
                     case 4:
-                        false1P();
+                        False1P();
                         break;
 
                     case 2:
@@ -170,7 +170,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 1:
                     case 2:
                     case 3:
-                        false1P();
+                        False1P();
                         break;
 
                     case 4:
@@ -200,7 +200,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 2:
                     case 3:
                     case 4:
-                        false1P();
+                        False1P();
                         break;
                 }
                 break;
@@ -212,7 +212,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 2:
                     case 3:
                     case 4:
-                        false1P();
+                        False1P();
                         break;
 
                     case 1:
@@ -233,7 +233,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 1:
                     case 2:
                     case 3:
-                        false1P();
+                        False1P();
                         break;
 
                     case 4:
@@ -271,7 +271,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 2:
                     case 3:
                     case 4:
-                        false1P();
+                        False1P();
                         break;
                 }
                 break;
@@ -283,7 +283,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 1:
                     case 2:
                     case 3:
-                        false1P();
+                        False1P();
                         break;
 
                     case 4:
@@ -304,7 +304,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 1:
                     case 2:
                     case 4:
-                        false1P();
+                        False1P();
                         break;
 
                     case 3:
@@ -334,7 +334,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 2:
                     case 3:
                     case 4:
-                        false1P();
+                        False1P();
                         break;
                 }
                 break;
@@ -346,7 +346,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 1:
                     case 3:
                     case 4:
-                        false1P();
+                        False1P();
                         break;
 
                     case 2:
@@ -374,7 +374,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 1:
                     case 2:
                     case 4:
-                        false1P();
+                        False1P();
                         break;
 
                     case 3:
@@ -395,7 +395,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 2:
                     case 3:
                     case 4:
-                        false1P();
+                        False1P();
                         break;
 
                     case 0:
@@ -416,7 +416,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 1:
                     case 2:
                     case 3:
-                        false1P();
+                        False1P();
                         break;
 
                     case 4:
@@ -437,7 +437,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 1:
                     case 2:
                     case 4:
-                        false1P();
+                        False1P();
                         break;
 
                     case 3:
@@ -458,7 +458,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 2:
                     case 3:
                     case 4:
-                        false1P();
+                        False1P();
                         break;
 
                     case 1:
@@ -493,7 +493,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 1:
                     case 3:
                     case 4:
-                        false2P();
+                        False2P();
                         break;
 
                     case 2:
@@ -514,7 +514,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 1:
                     case 2:
                     case 3:
-                        false2P();
+                        False2P();
                         break;
 
                     case 4:
@@ -544,7 +544,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 2:
                     case 3:
                     case 4:
-                        false2P();
+                        False2P();
                         break;
                 }
                 break;
@@ -556,7 +556,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 2:
                     case 3:
                     case 4:
-                        false2P();
+                        False2P();
                         break;
 
                     case 1:
@@ -577,7 +577,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 1:
                     case 2:
                     case 3:
-                        false2P();
+                        False2P();
                         break;
 
                     case 4:
@@ -615,7 +615,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 2:
                     case 3:
                     case 4:
-                        false2P();
+                        False2P();
                         break;
                 }
                 break;
@@ -627,7 +627,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 1:
                     case 2:
                     case 3:
-                        false2P();
+                        False2P();
                         break;
 
                     case 4:
@@ -648,7 +648,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 1:
                     case 2:
                     case 4:
-                        false2P();
+                        False2P();
                         break;
 
                     case 3:
@@ -678,7 +678,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 2:
                     case 3:
                     case 4:
-                        false2P();
+                        False2P();
                         break;
                 }
                 break;
@@ -690,7 +690,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 1:
                     case 3:
                     case 4:
-                        false2P();
+                        False2P();
                         break;
 
                     case 2:
@@ -718,7 +718,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 1:
                     case 2:
                     case 4:
-                        false2P();
+                        False2P();
                         break;
 
                     case 3:
@@ -739,7 +739,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 2:
                     case 3:
                     case 4:
-                        false2P();
+                        False2P();
                         break;
 
                     case 0:
@@ -760,7 +760,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 1:
                     case 2:
                     case 3:
-                        false2P();
+                        False2P();
                         break;
 
                     case 4:
@@ -781,7 +781,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 1:
                     case 2:
                     case 4:
-                        false2P();
+                        False2P();
                         break;
 
                     case 3:
@@ -802,7 +802,7 @@ public class MiniGame2Manager : MonoBehaviour
                     case 2:
                     case 3:
                     case 4:
-                        false2P();
+                        False2P();
                         break;
 
                     case 1:
@@ -838,27 +838,27 @@ public class MiniGame2Manager : MonoBehaviour
 
     private void True()
     {
-        sound.SESounds(0, 0.5f);
+        sound.SESounds(0, 0.2f);
     }
 
-    private void false1P()
+    private void False1P()
     {
         if (_ruleAfter == true)
         {
             Penalty1P();
             Debug.Log("1P失敗");
-            sound.SESounds(1, 0.5f);
+            sound.SESounds(1, 0.2f);
             Invoke("PenaltyEnd1P", _penaltyTime);
         }
     }
 
-    private void false2P()
+    private void False2P()
     {
         if (_ruleAfter == true)
         {
             Penalty2P();
             Debug.Log("2P失敗");
-            sound.SESounds(1, 0.5f);
+            sound.SESounds(1, 0.2f);
             Invoke("PenaltyEnd2P", _penaltyTime);
         }
     }

@@ -4086,7 +4086,7 @@ MonoBehaviour:
   - {fileID: 849579741}
   FadeFlag: 0
   FadeSpeed: 0.03
-  BGMSoundVolume: 50
+  BGMSoundVolume: 30
 --- !u!4 &1652437646
 Transform:
   m_ObjectHideFlags: 0
