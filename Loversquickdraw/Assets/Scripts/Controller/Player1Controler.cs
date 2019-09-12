@@ -34,8 +34,9 @@ public class Player1Controler : MonoBehaviour
         _camera.transform.localPosition = new Vector3(0,2,-11f);
         if (stop == false)
         {
-            Player1Move();
-            Jump();
+            //Player1Move();
+            //Jump();
+            KeyDebug();
         }
     }
     // 加速処理
@@ -76,7 +77,28 @@ public class Player1Controler : MonoBehaviour
             jump = true;
         }
     }
-    //ジャンプ時のコリジョン判定
+    /// <summary>
+    /// PCDebug用
+    /// </summary>
+    void KeyDebug()
+    {
+        if(Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            SpeedUp(moveSpeed);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            SpeedUp(moveSpeed);
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && jump == false)
+        {
+            _animator.SetBool("Jump", true);
+            rb.velocity = new Vector3(5, jumpPower, 0);
+            jump = true;
+        }
+    }
+
+        //ジャンプ時のコリジョン判定
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "ground")

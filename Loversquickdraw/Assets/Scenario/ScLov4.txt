@@ -20,7 +20,7 @@
 #keywait,
 
 #bgsprite,6
-#BGMstart,
+#bgmstart,
 #1pface,-1
 //,#karenface,0
 #voicenum,43
@@ -119,6 +119,7 @@
 #timewait
 
 #1pface,-1
+#2pface,-1
 //,(敗北したほう)
 #name,勝利者
 #message,…………！！！！！
@@ -185,7 +186,7 @@
 #keywait,
 
 //,スプライト変更
-//#spritechange,2
+//,#spritechange,2
 #name,勝利者
 #message,――ああ、俺は今、間違いなく,世界一幸せな男だろう。
 #keywait,
