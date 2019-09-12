@@ -34,8 +34,8 @@ public class Player1Controler : MonoBehaviour
         _camera.transform.localPosition = new Vector3(0,2,-11f);
         if (stop == false)
         {
-            //Player1Move();
-            //Jump();
+            Player1Move();
+            Jump();
             KeyDebug();
         }
     }
@@ -82,11 +82,11 @@ public class Player1Controler : MonoBehaviour
     /// </summary>
     void KeyDebug()
     {
-        if(Input.GetKeyDown(KeyCode.RightArrow))
+        if(Input.GetKey(KeyCode.RightArrow))
         {
             SpeedUp(moveSpeed);
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             SpeedUp(moveSpeed);
         }
