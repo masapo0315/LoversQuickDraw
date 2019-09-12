@@ -93,7 +93,7 @@
 #timewait,
 
 //,白バッグ
-#bgsprite,1
+#spritechange,1
 //,手の突き出し判定
 #concheck,
 
@@ -106,6 +106,7 @@
 
 
 #message,さあ、覚悟を決めて、目を瞑る――
+#check,
 #timewait,
 //,（コントローラー振動）
 #convib,
@@ -113,8 +114,7 @@
 //,スプライト変更
 #1pface,-1
 #2pface,-1
-#bgsprite,10
-//,#spritechange,-1
+#winsprite,
 
 #timewait
 
@@ -174,7 +174,6 @@
 #message,……ありがとう、華恋
 #keywait,
 
-#bgsprite,8
 #voicenum,52
 #name,華恋
 #message,ふふ、私こそ。,ね、今日一緒に帰ろ？勝利者くん
@@ -185,7 +184,7 @@
 #keywait,
 
 //,スプライト変更
-//#spritechange,2
+
 #name,勝利者
 #message,――ああ、俺は今、間違いなく,世界一幸せな男だろう。
 #keywait,

@@ -245,5 +245,5 @@
 #message,うおおおおおおおッ！！！
 #keywait,
 
-#BGMstop,
+#bgmstop,
 #end,

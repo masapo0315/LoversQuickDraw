@@ -122,6 +122,7 @@ public class ChoiceManager : MonoBehaviour
             spritFirstPlayer = 1;//１Pがおした
             Invoke("DestroyAorX", invokeTime * 2);//この選択肢を消す
             TalkManager.Instance._isWait = true;
+            LoveMetar.player1LoveMetar += 1;
             rootflag = 1;//選択肢の一番(左)
             //LoveMetar.player1LoveMetar += 5;
             //talkManager.ChoiceRoot(firstsPlayer,1);
@@ -144,6 +145,7 @@ public class ChoiceManager : MonoBehaviour
             spritFirstPlayer = 2;
             Invoke("DestroyAorX", invokeTime * 2);
             TalkManager.Instance._isWait = true;
+            LoveMetar.player1LoveMetar += 1;
             rootflag = 1;
             //LoveMetar.player2LoveMetar += 5;
             //talkManager.ChoiceRoot(firstsPlayer, 4);
@@ -165,6 +167,7 @@ public class ChoiceManager : MonoBehaviour
             spritFirstPlayer = 1;
             Invoke("DestroyBorY", invokeTime * 2);
             TalkManager.Instance._isWait = true;
+            LoveMetar.player1LoveMetar -= 1;
             rootflag = 2;
             //talkManager.ChoiceRoot(firstsPlayer, 2);
             Debug.Log("choice1-2");
@@ -185,6 +188,7 @@ public class ChoiceManager : MonoBehaviour
             spritFirstPlayer = 2;
             Invoke("DestroyBorY", invokeTime * 2);
             TalkManager.Instance._isWait = true;
+            LoveMetar.player1LoveMetar -= 1;
             rootflag = 2;
             //talkManager.ChoiceRoot(firstsPlayer, 5);
             Debug.Log("choice2-2");
@@ -206,6 +210,7 @@ public class ChoiceManager : MonoBehaviour
             Invoke("DestroyTrigger", invokeTime * 2);
             TalkManager.Instance._isWait = true;
             rootflag = 3;
+            LoveMetar.player1LoveMetar -= 1;
             //talkManager.ChoiceRoot(firstsPlayer, 3);
             Debug.Log("choice1-3");
             if (_callback != null)
@@ -225,6 +230,7 @@ public class ChoiceManager : MonoBehaviour
             spritFirstPlayer = 2;
             Invoke("DestroyTrigger", invokeTime * 2);
             TalkManager.Instance._isWait = true;
+            LoveMetar.player1LoveMetar -= 1;
             rootflag = 3;
             //talkManager.ChoiceRoot(firstsPlayer, 6);
             Debug.Log("choice2-3");

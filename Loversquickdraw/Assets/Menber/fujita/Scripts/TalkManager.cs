@@ -96,7 +96,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
     private void Start()
     {
         //デバッグ用で残る
-        //PlayerPrefs.SetString("ScenarioNum", "2");
+        //PlayerPrefs.SetString("ScenarioNum", "4");
         activeNumber = PlayerPrefs.GetInt("MiniGame2Data", 0);
         _nowTextLine = 0;
         _isLoadEnd = false;
@@ -292,7 +292,7 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
         {
             SpriteManager.SpriteDisp(int.Parse(msgs[1]));
         }
-        //画面全体に出すとき華恋が転んだ時など一枚絵
+        //画面全体に出すとき華恋が転んだ時などフェード
         else if (msgs[0].Equals("#spritechange"))
         {
             SpriteManager.SpriteSwitch(int.Parse(msgs[1]));
@@ -302,6 +302,22 @@ public class TalkManager : SingletonMonoBehaviour<TalkManager>
             _nowTextLine++;
             return;
         }
+        else if (msgs[0].Equals("#check"))
+        {
+            if (LoveMetar.player1LoveMetar >= LoveMetar.player2LoveMetar)
+            {
+                activeNumber = 0;
+            }
+            else
+            {
+                activeNumber = 1;
+            }     
+        }
+        else if (msgs[0].Equals("#winsprite"))
+        {
+            SpriteManager.SpriteDisp(7 + activeNumber);
+        }
+
 
         else if (msgs[0].Equals("#name"))
         {

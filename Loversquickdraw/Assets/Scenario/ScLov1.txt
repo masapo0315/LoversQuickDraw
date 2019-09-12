@@ -1,4 +1,4 @@
-﻿﻿#BGMstart,
+﻿﻿#bgmstart,
 #bgsprite,0
 
 #choiceface,0
@@ -85,5 +85,5 @@
 #message,敗北者に逆転なんて許さないよう、,気を引き締めなければ！
 #keywait,
 
-#BGMstop,
+#bgmstop,
 #end,
