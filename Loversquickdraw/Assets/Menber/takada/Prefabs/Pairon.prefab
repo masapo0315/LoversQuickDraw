@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 65132263737439370}
   - component: {fileID: 54663168135015844}
   m_Layer: 0
-  m_Name: "\u30D1\u30A4\u30ED\u30F3"
+  m_Name: Pairon
   m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

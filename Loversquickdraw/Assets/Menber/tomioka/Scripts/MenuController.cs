@@ -124,15 +124,26 @@ public class MenuController : MonoBehaviour
                     MenuOffCommand();
                     break;
                 case 1:
+                    PlayerPrefs.SetString("ScenarioNum", "0");
                     SceneManager.LoadScene("Init");
                     break;
                 case 2:
-                    SceneManager.LoadScene("Scenario");
+                    
+                    int s=int.Parse(PlayerPrefs.GetString("ScenarioNum"));
+                    if (s == 4) SceneLoadManager.LoadScene("Init");
+                    else
+                    {
+                        s++;
+                        PlayerPrefs.SetString("ScenarioNum", s.ToString());
+                        SceneManager.LoadScene("Scenario");
+                    }
                     break;
                 case 3:
+                    PlayerPrefs.SetString("ScenarioNum", "1");
                     SceneManager.LoadScene("MiniGame1");
                     break;
                 case 4:
+                    PlayerPrefs.SetString("ScenarioNum", "3");
                     SceneManager.LoadScene("MiniGame2");
                     break;
             }
