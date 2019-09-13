@@ -11,6 +11,8 @@ public class SceneController : MonoBehaviour
     {
         Cursor.visible = false;
         once = false;
+        LoveMetar.player1LoveMetar = 0;
+        LoveMetar.player2LoveMetar = 0;
     }
     void Update ()
     {

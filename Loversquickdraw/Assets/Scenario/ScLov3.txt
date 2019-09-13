@@ -141,5 +141,5 @@
 #message,しかし、かなりイイ雰囲気だった！,これはワンチャンあるか……！？
 #keywait,
 
-#bgnstop,
+#bgmstop,
 #end,

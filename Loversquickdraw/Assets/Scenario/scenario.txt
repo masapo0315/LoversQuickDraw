@@ -5,7 +5,7 @@
 //,koikeジャス さんがアイテムを 1 個アップロードしました
 //,テキスト
 //,プロローグ.txt
-#BGMstart,
+#bgmstart,
 #1pface,0
 #name,プレイヤー１
 #message,俺は［プレイヤー１］。,色濃（いろこい）高校の新入生だ。
@@ -24,13 +24,13 @@
 #keywait,
 
 #1pface,-1
-#Karenface,5
+#karenface,5
 #name,プレイヤー１
 #message,その相手は……『夢宮華恋』,（ゆめみや　かれん）。
 #keywait,
 
 #1pface,0
-#Karenface,-1
+#karenface,-1
 #name,プレイヤー１
 #message,才色兼備、容姿端麗加えて世話焼き…。,そんな彼女だが、俺の幼馴染だ。
 #keywait,
@@ -159,8 +159,8 @@
 #keywait,
 
 //,#sentaku,1,
-#Karenface,0
-#Voicenum,
+#karenface,0
+#voicenum,
 #name,華恋
 #message,あれ、［択　Ｐ］くん！？もー、また,危ないことして―！気を付けてね～！？
 #keywait,
@@ -177,46 +177,57 @@
 #name,択プレイヤー
 #message,一歩先んじた俺は、十字路で急ブレーキ、,迷いなくインド人を右に！
 #keywait,
+
 //,#sentaku,2,
 #name,択プレイヤー
 #message,遅れた［非択Ｐ］が遅れて曲がる！,これは勝ったも同然……！
 #keywait,
+
 //,#sentaku,2,
 #name,非プレイヤー
 #message,なあ、曲がり角逆じゃねえか！？
+
 //,#sentaku,2,
 #keywait,
 #name,択プレイヤー
 #message,はあ！？
+
 //,#sentaku,2,
 #keywait,
 #name,択プレイヤー
 #message,走りながら、道順を思い出す――
 #keywait,
+
 //,#sentaku,2,
 #name,回想
 #message,華恋はこの先の角を左に曲がった通りを,必ず通って登校する……。
 #keywait,
+
 //,#sentaku,2,
 #name,回想
 #message,左に曲がった通りを……,通りを……（エコー）
 #keywait,
+
 //,#sentaku,2,
 #name,択プレイヤー
 #message,あ“あ”―――っ！！？
 #keywait,
+
 //,#sentaku,2,
 #name,択プレイヤー
 #message,確かにというか、既に目の前の道は,住宅街の行き止まり！アブナイ！
 #keywait,
+
 //,#sentaku,2,
 #name,択プレイヤー
 #message,うおおおお南無三ッ！！
 #keywait,
+
 //,#sentaku,2,
 #name,択プレイヤー
 #message,今度こそ急ブレーキ、１８０゜ターン！,しかしこれで勝負は振出しに戻る…！
 #keywait,
+
 #kyoutu
 //,ここまで：選択２
 

@@ -12,8 +12,8 @@
 #message,うわははははは遅刻遅刻ゥ～～！！！
 #keywait,
 
-#Karenface,0
-#Voicenum,1
+#karenface,0
+#voicenum,1
 #name,華恋
 #message,え……？きゃああっ！？
 #keywait,
@@ -24,10 +24,10 @@
 #keywait,
 
 
-#Karenface,-1
+#karenface,-1
 #choiceface,-1
 #bgsprite,2
-#Voicenum,2
+#voicenum,2
 #name,華恋
 #message,う～ん、いたたた……
 #keywait,
@@ -39,7 +39,7 @@
 #message,すかさず立ち上がって華恋の手を取る。,この辺の気配りが人気の秘訣だ。
 #keywait,
 
-#Voicenum,3
+#voicenum,3
 #name,華恋
 #message,ん……ありがと。,まったく、急ぐにしても程々にね？
 #keywait,
@@ -52,8 +52,8 @@
 #message,見る者全てを虜にするようなこの笑顔。,俺はこの子が好きなのだ、と再認識する。
 #keywait,
 
-#Karenface,1
-#Voicenum,4
+#karenface,1
+#voicenum,4
 #name,華恋
 #message,それにしても、登校初日に曲がり角で,ぶつかるなんて、まるで運命みたいね？
 #keywait,
@@ -63,7 +63,7 @@
 #message,お……おう、そうか？
 #keywait,
 
-#Voicenum,5
+#voicenum,5
 #name,華恋
 #message,ふふ、なーんて。ほら、早くしないと,遅刻しちゃうよ？ほら、行きましょ
 #keywait,

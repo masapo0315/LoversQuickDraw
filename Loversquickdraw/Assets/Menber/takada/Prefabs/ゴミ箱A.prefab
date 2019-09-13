@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 65364627383074128}
   - component: {fileID: 54441394415346460}
   m_Layer: 0
-  m_Name: gomibako
+  m_Name: "\u30B4\u30DF\u7BB1A"
   m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
