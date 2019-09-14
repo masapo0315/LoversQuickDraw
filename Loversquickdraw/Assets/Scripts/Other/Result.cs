@@ -14,7 +14,7 @@ public class Result : MonoBehaviour
     [SerializeField] private Text text;
 
     //勝敗に関係するフラグ
-    public static bool gameSet = false;
+    public static bool gameSet;
     public static bool Player1Win;
     public static bool Player2Win;
     
@@ -28,6 +28,7 @@ public class Result : MonoBehaviour
     //
     void Start()
     {
+        gameSet = false;
         Time.timeScale = 1.0f;
         text.enabled = false;
         for (int i = 0; i <= images.Length - 1; i++)
