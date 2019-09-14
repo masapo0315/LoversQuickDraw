@@ -40,12 +40,14 @@ public class Result : MonoBehaviour
     //
     void Update()
     {
+
         GameSet();
 
     }
     //ゲーム終了時に次のシナリオへ
     private void GameSet()
     {
+        
         if (gameSet == true)
         {
             if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) || OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
