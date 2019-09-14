@@ -11,6 +11,7 @@ public class Result : MonoBehaviour
 
     //表示するUIの配列
     public Image[] images;
+    [SerializeField] private Text text;
 
     //勝敗に関係するフラグ
     public static bool gameSet = false;
@@ -28,7 +29,7 @@ public class Result : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1.0f;
-
+        text.enabled = false;
         for (int i = 0; i <= images.Length - 1; i++)
         {
             images[i].enabled = false;
@@ -80,7 +81,7 @@ public class Result : MonoBehaviour
         if (col.gameObject.tag == "Player1")
         {
             _animator.SetBool("Goal", true);
-
+            text.enabled = true;
             images[0].enabled = true;
             images[2].enabled = true;
             Time.timeScale = 0f;
@@ -90,7 +91,7 @@ public class Result : MonoBehaviour
         else if (col.gameObject.tag == "Player2")
         {
             _animator.SetBool("Goal", true);
-
+            text.enabled = true;
             images[1].enabled = true;
             images[3].enabled = true;
             Time.timeScale = 0f;
